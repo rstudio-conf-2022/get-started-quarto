@@ -29,7 +29,7 @@ This workshop is designed for those who have no or little prior experience with 
 
 ## Learning objectives
 
-LEARNING_OBJECTIVES
+[ADD AN ITEMIZED LIST OF LEARNING OBJECTIVES.]
 
 ## Is this course for me?
 
