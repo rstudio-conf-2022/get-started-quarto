@@ -3,7 +3,7 @@ Getting Started with Quarto
 
 ### rstudio::conf 2022
 
-by INSTRUCTOR_NAME
+by Tom Mock
 
 -----
 
