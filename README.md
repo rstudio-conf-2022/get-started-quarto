@@ -1,5 +1,4 @@
-GettingTom Mock, PhD is the Customer Enablement Lead at RStudio, helping RStudio’s customers be as successful as possible. He is deeply involved in the global data science community, sharing tips on RStats Twitter (find him at @thomas_mock), as co-founder of TidyTuesday, a weekly Data Science learning challenge, and presenting on various Data Science topics on YouTube or at conferences.
-Started with Quarto
+Getting Started with Quarto
 ================
 
 ### rstudio::conf 2022
@@ -79,7 +78,7 @@ RSTUDIO.CLOUD ACCOUNT, ETC.\]
 
 ## Instructor
 
-\[ADD INSTRUCTOR BIO\]
+Tom Mock, PhD is the Customer Enablement Lead at RStudio, helping RStudio’s customers be as successful as possible. He is deeply involved in the global data science community, sharing tips on RStats Twitter (find him at @thomas_mock), as co-founder of TidyTuesday, a weekly Data Science learning challenge, and presenting on various Data Science topics on YouTube or at conferences.
 
 -----
 
