@@ -33,7 +33,15 @@ LEARNING_OBJECTIVES
 
 ## Is this course for me?
 
-THREE_QUESTIONS
+This two-day workshop is primarily intended as a broad overview of Quarto as the next generation of RMarkdown. You should take this workshop if you have experience programming in R and want to learn how to take advantage of Quarto for literate data science programming in academia, science, and industry.
+
+This workshop will be appropriate for attendees who answer yes to these questions:
+
+- Have you programmed in R and want to better encapsulate your code, documentation, and outputs in a cohesive “data product”?
+
+- Do you want to learn about the next generation of RMarkdown for data science?
+
+- Do you want to have a better interactive experience when writing technical or scientific documents with literate programming?
 
 ## Prework
 
