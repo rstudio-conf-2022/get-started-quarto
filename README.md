@@ -1,4 +1,4 @@
-WORKSHOP_TITLE
+Getting Started with Quarto
 ================
 
 ### rstudio::conf 2022
