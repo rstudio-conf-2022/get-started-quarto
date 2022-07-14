@@ -511,7 +511,7 @@ $primary_3: #878f99;
 
 ## SASS variables + Quarto
 
-<iframe src="https://quarto.org/docs/output-formats/html-themes.html#sass-variables" height="800" width="1200" />
+<iframe src="https://quarto.org/docs/output-formats/html-themes.html#sass-variables" height="800" width="1200" ></iframe>
 
 ## `format: PDF`
 
@@ -521,3 +521,6 @@ TIP!
 - Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX
 
 ## Output options
+
+text
+
