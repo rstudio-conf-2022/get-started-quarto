@@ -403,6 +403,13 @@ Tom Mock | 2022-07-25
 </section>
 <section id="section" class="slide level2" data-background-image="images/quarto-slides.png" data-background-position="center" data-background-size="auto 50%">
 <h2></h2>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://c.tenor.com/3EYd9ID79vcAAAAd/mic-drop-the-voice.gif"></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="core-workflow" class="slide level2">
 <h2>Core workflow</h2>
@@ -432,6 +439,129 @@ format: revealjs
 </ul>
 </div>
 </section>
+<section id="yaml-for-these-slides" class="slide level2">
+<h2>YAML for these slides</h2>
+<pre><code>---
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+---</code></pre>
+</section>
+<section id="transitions" class="slide level2">
+<h2>Transitions</h2>
+<table>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>none</code></td>
+<td>No transition (switch instantly)</td>
+</tr>
+<tr class="even">
+<td><code>fade</code></td>
+<td>Cross fade</td>
+</tr>
+<tr class="odd">
+<td><code>slide</code></td>
+<td>Slide horizontally</td>
+</tr>
+<tr class="even">
+<td><code>convex</code></td>
+<td>Slide at a convex angle</td>
+</tr>
+<tr class="odd">
+<td><code>concave</code></td>
+<td>Slide at a concave angle</td>
+</tr>
+<tr class="even">
+<td><code>zoom</code></td>
+<td>Scale the incoming slide so it grows in from the center of the screen.</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Presentation"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> slide</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="at">    </span><span class="fu">transition-speed</span><span class="kw">:</span><span class="at"> fast</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sizing" class="slide level2">
+<h2>Sizing</h2>
+<table>
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>width</code></th>
+<th style="text-align: left;">The "normal" width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>height</code></td>
+<td style="text-align: left;">The "normal" height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="at">    </span><span class="fu">height</span><span class="kw">:</span><span class="at"> </span><span class="dv">1080</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="at">    </span><span class="fu">width</span><span class="kw">:</span><span class="at"> </span><span class="dv">1920</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="slide-numbering" class="slide level2">
+<h2>Slide numbering</h2>
+<table>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>slide-number</code></td>
+<td><p>Display the page number of the current slide</p>
+<ul>
+<li><p><code>true</code>: Show slide number</p></li>
+<li><p><code>false</code>: Hide slide number</p></li>
+</ul>
+<p>Can optionally be set as a string that specifies the number formatting:</p>
+<ul>
+<li><p><code>h.v</code>: Horizontal . vertical slide number</p></li>
+<li><p><code>h/v</code>: Horizontal / vertical slide number</p></li>
+<li><p><code>c</code>: Flattened slide number</p></li>
+<li><p><code>c/t</code>: Flattened slide number / total slides (default)</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> c/t</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="presentation-preview" class="slide level2">
 <h2>Presentation preview</h2>
 <ul>
@@ -440,6 +570,24 @@ format: revealjs
 <div class="fragment">
 <p><img data-src="images/presentation-tab.png" height="800"></p>
 </div>
+</section></section>
+<section>
+<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Using RStudio, create a new <code>revealjs</code> Quarto presentation</li>
+<li>Change YAML:
+<ul>
+<li>author for your name</li>
+<li>titled “My first Quarto Presentation!”</li>
+<li>Add slide numbering</li>
+</ul></li>
+<li>Write out what you did this morning (woke up, ate breakfast, walked to this room, etc) in sub-sections</li>
+<li>New sections should have level 2 headers</li>
+<li>Add some code to generate a basic plot</li>
+<li>Link out to an image with markdown syntax</li>
+<li>Render it!</li>
+</ul>
 </section>
 <section id="revealjs-vs-xaringan" class="slide level2">
 <h2><code>revealjs</code> vs <code>xaringan</code></h2>
@@ -488,9 +636,9 @@ format: revealjs
 </div>
 <div class="fragment">
 <p>Or affect globally:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <pre><code>::: {.nonincremental}
@@ -507,7 +655,7 @@ format: revealjs
 <p>Use <code>. . .</code> syntax to indicate a break at an arbitrary location</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
 Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
@@ -522,15 +670,15 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </section>
 <section id="incremental-reveal-1" class="slide level2">
 <h2>Incremental reveal</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Not limited to just bullet points...</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`. . .`</span> syntax to indicate a break at an arbitrary location</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>. . .</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Not limited to just bullet points...</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`. . .`</span> syntax to indicate a break at an arbitrary location</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>. . .</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="fragments" class="slide level2">
 <h2>Fragments</h2>
@@ -635,9 +783,13 @@ Appears first
 ::: {.fragment fragment-index=2}
 Appears second
 :::</code></pre>
-</section>
-<section id="your-turn-reveal-your-revealjs" class="slide level2">
-<h2>YOUR TURN REVEAL YOUR REVEALJS</h2>
+</section></section>
+<section>
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open <code>materials/workshop/05-presentations/reveal-prez.qmd</code></li>
+</ul>
 </section>
 <section id="column-layout" class="slide level2">
 <h2>Column layout</h2>
@@ -668,10 +820,10 @@ contents...
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(mtcars)</span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="in">```{r}</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(mtcars)</span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:60%;">
 <div class="cell">
@@ -698,17 +850,17 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <h2>Output location, <code>column-fragment</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#| output-location: column-fragment</span></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb18-6"><a href="#cb18-6"></a></span>
-<span id="cb18-7"><a href="#cb18-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb18-11"><a href="#cb18-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="in">```{r}</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co">#| output-location: column-fragment</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-6"><a href="#cb22-6"></a></span>
+<span id="cb22-7"><a href="#cb22-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb22-11"><a href="#cb22-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output-display">
 <p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
@@ -720,17 +872,17 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <h2>Output location, <code>column</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="co">#| output-location: column</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb19-8"><a href="#cb19-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb19-11"><a href="#cb19-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb23-8"><a href="#cb23-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
@@ -741,17 +893,17 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <section id="output-location-fragment" class="slide level2">
 <h2>Output location, <code>fragment</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="in">```{r}</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="co">#| output-location: fragment</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb20-6"><a href="#cb20-6"></a></span>
-<span id="cb20-7"><a href="#cb20-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb20-10"><a href="#cb20-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb20-11"><a href="#cb20-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#| output-location: fragment</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb24-8"><a href="#cb24-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output-display">
@@ -762,17 +914,17 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <section id="output-location-slide" class="slide level2">
 <h2>Output location, <code>slide</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb21-6"><a href="#cb21-6"></a></span>
-<span id="cb21-7"><a href="#cb21-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb21-9"><a href="#cb21-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb21-10"><a href="#cb21-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb21-11"><a href="#cb21-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="|2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co">#| output-location: slide</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co">#| code-line-numbers: "|2"</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-6"><a href="#cb25-6"></a></span>
+<span id="cb25-7"><a href="#cb25-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb25-8"><a href="#cb25-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -780,7 +932,23 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 <div class="cell-output-display">
 <p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </div>
-</div></section><section id="stack-layout" class="slide level2">
+</div></section><section id="images" class="slide level2">
+<h2>Images</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<pre><code>![](images/boston-sleep.png){fig-align="center"}</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/boston-sleep.png"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<pre><code>![](images/boston-sleep.png)</code></pre>
+<p><img data-src="images/boston-sleep.png"></p>
+</div>
+</div>
+</section>
+<section id="stack-layout" class="slide level2">
 <h2>Stack layout</h2>
 <div class="r-stack">
 <p><img data-src="images/howard-table.png" class="fragment" width="450"></p>
@@ -813,24 +981,24 @@ Attention
 <section id="stretch-images-.r-stretch" class="slide level2">
 <h2>Stretch images <code>{.r-stretch}</code></h2>
 <p>Fit to the remaining space.</p>
-<pre><code>![](images/howard-comfy.png){.r-stretch}</code></pre>
+<pre><code>![](images/howard-glamour.jpg){.r-stretch}</code></pre>
 <div class="fragment">
-<img data-src="images/howard-comfy.png" class="r-stretch">
+<img data-src="images/howard-glamour.jpg" class="r-stretch">
 </div>
 </section>
 <section id="title-slide-yaml-edition" class="slide level2">
 <h2>Title Slide, YAML edition</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="#cb25-1"></a><span class="pp">---</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Hello Quarto</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Slides with revealjs</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> &lt;a href="https://themockup.blog"&gt;Tom Mock&lt;/a&gt;</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2022-07-11</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> RStudio</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="fu">title-slide-attributes</span><span class="kw">:</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="at">    </span><span class="fu">data-background-image</span><span class="kw">:</span><span class="at"> images/paper-texture.jpg</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a><span class="at">    </span><span class="fu">data-background-size</span><span class="kw">:</span><span class="at"> cover</span></span>
-<span id="cb25-11"><a href="#cb25-11"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1"></a><span class="pp">---</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Hello Quarto</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> Slides with revealjs</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> &lt;a href="https://themockup.blog"&gt;Tom Mock&lt;/a&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2022-07-11</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="fu">institute</span><span class="kw">:</span><span class="at"> RStudio</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="fu">title-slide-attributes</span><span class="kw">:</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="at">    </span><span class="fu">data-background-image</span><span class="kw">:</span><span class="at"> images/paper-texture.jpg</span></span>
+<span id="cb31-10"><a href="#cb31-10"></a><span class="at">    </span><span class="fu">data-background-size</span><span class="kw">:</span><span class="at"> cover</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <iframe src="../../materials/title-slide.html" width="1280px" height="720px">
 </iframe>
@@ -851,8 +1019,7 @@ Attention
 &lt;img src="images/headshot.jpeg" style="border-radius: 50%; border:10px solid #447099;" width="250px"/&gt;
 &lt;h2&gt;Tom Mock, RStudio&lt;/h2&gt;
 
-:::
-</code></pre>
+:::</code></pre>
 </section>
 <section id="logo-and-footer" class="slide level2">
 <h2>Logo and Footer</h2>
@@ -892,10 +1059,6 @@ logo: https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png</
 -   Some bullets
 -   Another bullet
 :::</code></pre>
-</div>
-</section>
-<section class="slide level2">
-
 <div style="text-align: right;">
 <h2>
 Right aligned!
@@ -904,6 +1067,7 @@ Right aligned!
 <li>Some bullets</li>
 <li>Another bullet</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="slide-backgrounds-color" class="slide level2" data-background-color="blue">
@@ -954,11 +1118,89 @@ Right aligned!
 </tbody>
 </table>
 </section>
-<section id="slide-transitions" class="slide level2">
-<h2>Slide transitions</h2>
+<section id="tabsets" class="slide level2">
+<h2>Tabsets</h2>
+<pre><code>::: {.panel-tabset}
+
+## Element 1
+
+## Element 2
+
+:::</code></pre>
 </section>
-<section id="sizing" class="slide level2">
-<h2>Sizing</h2>
+<section id="tabsets-1" class="slide level2">
+<h2>Tabsets</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1"></a><span class="in">```{r}</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="footnote" class="slide level2">
+<h2>Footnote</h2>
+<p>Footnotes in presentations are placed at the bottom of the slide and numbered.</p>
+<pre><code>For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?</code></pre>
+<div class="fragment">
+<p>For example, did you know that Howard is a dog<sup>1</sup>?</p>
+</div>
+<div class="fragment">
+<p>He also likes to sleep<sup>2</sup></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>Specifically he is a Boston Terrier, although sometimes he acts like a cat</p></li><li id="fn2" role="doc-endnote"><p>He sleeps a LOT during the day</p></li></ol></aside></section>
+<section id="asides" class="slide level2">
+<h2>Asides</h2>
+<p>Asides are like footnotes, but don’t have numbers.</p>
+<pre><code>::: aside
+They are placed above footnotes if footnotes are present on the page
+:::</code></pre>
+</section></section>
+<section>
+<section id="code-1" class="title-slide slide level1 center">
+<h1>Code</h1>
+
+</section>
+<section id="code-line-highlighting" class="slide level2">
+<h2>Code line-highlighting</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="|3|5|8|10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1"></a><span class="in">```{r}</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="co">#| code-line-numbers: "|3|5|8|10"</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb43-6"><a href="#cb43-6"></a></span>
+<span id="cb43-7"><a href="#cb43-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb43-8"><a href="#cb43-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb43-11"><a href="#cb43-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="themesappearance" class="slide level2">
 <h2>Themes/Appearance</h2>
@@ -969,42 +1211,13 @@ Right aligned!
 </section>
 <section id="random-html-position-absolute" class="slide level2">
 <h2>Random HTML + Position absolute</h2>
-</section>
-<section id="tabsets" class="slide level2">
-<h2>Tabsets</h2>
-</section></section>
-<section>
-<section id="code" class="title-slide slide level1 center">
-<h1>Code</h1>
 
-</section>
-<section id="code-line-highlighting" class="slide level2">
-<h2>Code line-highlighting</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="|3|5|8|10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="co">#| output-location: column</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="co">#| code-line-numbers: "|3|5|8|10"</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb32-6"><a href="#cb32-6"></a></span>
-<span id="cb32-7"><a href="#cb32-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb32-10"><a href="#cb32-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb32-11"><a href="#cb32-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column">
-<div class="cell-output-display">
-<p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
-</div>
-</div>
-</div>
 
-<p><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
 </section></section>
+
     </div>
   </div>
 

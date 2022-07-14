@@ -1,7 +1,7 @@
 ---
 format: 
   revealjs:
-    slide-number: true
+    slide-number: c/t
     width: 1920
     height: 1080
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
@@ -25,6 +25,10 @@ editor: source
 -   Powerpoint for when you *have* to collaborate via Office
 
 ##  {background-image="images/quarto-slides.png" background-position="center" background-size="auto 50%"}
+
+. . .
+
+![](https://c.tenor.com/3EYd9ID79vcAAAAd/mic-drop-the-voice.gif){fig-align="center"}
 
 ## Core workflow
 
@@ -52,6 +56,96 @@ editor: source
 
 -   User guide: <https://quarto.org/docs/presentations/revealjs/>
 
+## YAML for these slides
+
+    ---
+    format: 
+      revealjs:
+        slide-number: c/t
+        width: 1920
+        height: 1080
+        logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+        footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+        css: ["theme/theme.css"]
+        theme: simple
+        echo: true
+    ---
+
+## Transitions
+
++-------------+------------------------------------------------------------------------+
+| Transition  | Description                                                            |
++=============+========================================================================+
+| `none`      | No transition (switch instantly)                                       |
++-------------+------------------------------------------------------------------------+
+| `fade`      | Cross fade                                                             |
++-------------+------------------------------------------------------------------------+
+| `slide`     | Slide horizontally                                                     |
++-------------+------------------------------------------------------------------------+
+| `convex`    | Slide at a convex angle                                                |
++-------------+------------------------------------------------------------------------+
+| `concave`   | Slide at a concave angle                                               |
++-------------+------------------------------------------------------------------------+
+| `zoom`      | Scale the incoming slide so it grows in from the center of the screen. |
++-------------+------------------------------------------------------------------------+
+
+. . .
+
+``` yaml
+---
+title: "Presentation"
+format:
+  revealjs:
+    transition: slide
+    transition-speed: fast
+---
+```
+
+## Sizing
+
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `width`  | The "normal" width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.  |
++:=========+:===============================================================================================================================================================================+
+| `height` | The "normal" height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units. |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+``` yaml
+format:
+  revealjs:
+    height: 1080
+    width: 1920
+```
+
+## Slide numbering
+
++----------------+-------------------------------------------------------------------------+
+| `slide-number` | Display the page number of the current slide                            |
+|                |                                                                         |
+|                | -   `true`: Show slide number                                           |
+|                |                                                                         |
+|                | -   `false`: Hide slide number                                          |
+|                |                                                                         |
+|                | Can optionally be set as a string that specifies the number formatting: |
+|                |                                                                         |
+|                | -   `h.v`: Horizontal . vertical slide number                           |
+|                |                                                                         |
+|                | -   `h/v`: Horizontal / vertical slide number                           |
+|                |                                                                         |
+|                | -   `c`: Flattened slide number                                         |
+|                |                                                                         |
+|                | -   `c/t`: Flattened slide number / total slides (default)              |
++----------------+-------------------------------------------------------------------------+
+
+. . .
+
+``` yaml
+---
+format:
+  revealjs:
+    slide-number: c/t
+---
+```
+
 ## Presentation preview
 
 -   In the latest version of RStudio, Quarto `revealjs` presentations will open up as a "background job" in the Presentation tab.
@@ -59,6 +153,19 @@ editor: source
 . . .
 
 ![](images/presentation-tab.png){height="800px"}
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Using RStudio, create a new `revealjs` Quarto presentation
+-   Change YAML:
+    -   author for your name
+    -   titled "My first Quarto Presentation!"
+    -   Add slide numbering
+-   Write out what you did this morning (woke up, ate breakfast, walked to this room, etc) in sub-sections
+-   New sections should have level 2 headers
+-   Add some code to generate a basic plot
+-   Link out to an image with markdown syntax
+-   Render it!
 
 ## `revealjs` vs `xaringan`
 
@@ -68,6 +175,12 @@ editor: source
 . . .
 
 If you loved `xaringan`, you'll love `revealjs`!
+
+## Presentation Visual Editor
+
+Unlike `xaringan`, Quarto + `revealjs` can be edited with the RStudio Visual Editor!
+
+![](images/reveal-visual-editor.jpeg)
 
 ## Separate slides
 
@@ -265,7 +378,7 @@ Appears second
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-- Open `materials/workshop/05-presentations/reveal-prez.qmd`
+-   Open `materials/workshop/05-presentations/reveal-prez.qmd`
 
 ## Column layout
 
@@ -373,6 +486,22 @@ mtcars |>
   geom_smooth(method = "loess", formula = "y~x")
 ```
 
+## Images
+
+::: columns
+::: {.column width="50%"}
+    ![](images/boston-sleep.png){fig-align="center"}
+
+![](images/boston-sleep.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+    ![](images/boston-sleep.png)
+
+![](images/boston-sleep.png)
+:::
+:::
+
 ## Stack layout
 
 ::: r-stack
@@ -409,15 +538,15 @@ ATTENTION
 
 Fit to the remaining space.
 
-    ![](images/howard-comfy.png){.r-stretch}
+    ![](images/howard-glamour.jpg){.r-stretch}
 
 . . .
 
-![](images/howard-comfy.png){.r-stretch}
+![](images/howard-glamour.jpg){.r-stretch}
 
 ## Title Slide, YAML edition
 
-```yaml
+``` yaml
 ---
 format: revealjs
 title: Hello Quarto
@@ -433,34 +562,33 @@ title-slide-attributes:
 
 . . .
 
-<iframe src="../../materials/title-slide.html" width="1280px" height="720px"></iframe>
+<iframe src="../../materials/title-slide.html" width="1280px" height="720px">
+
+</iframe>
 
 ## Title Slide, DIY
 
-<iframe src="../../materials/title-slide2.html" width="1280px" height="720px"></iframe>
+<iframe src="../../materials/title-slide2.html" width="1280px" height="720px">
+
+</iframe>
 
 ## 
 
-```
-# {background-image="images/paper-texture.jpg" background-size="cover"}
+    # {background-image="images/paper-texture.jpg" background-size="cover"}
 
-:::{style="text-align: center;"}
+    :::{style="text-align: center;"}
 
-<h1>Hello Quarto</h1>
-<img src="images/headshot.jpeg" style="border-radius: 50%; border:10px solid #447099;" width="250px"/>
-<h2>Tom Mock, RStudio</h2>
+    <h1>Hello Quarto</h1>
+    <img src="images/headshot.jpeg" style="border-radius: 50%; border:10px solid #447099;" width="250px"/>
+    <h2>Tom Mock, RStudio</h2>
 
-:::
-
-```
+    :::
 
 ## Logo and Footer
 
-```
-format: revealjs
-footer: <https://quarto.org/>
-logo: https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png
-```
+    format: revealjs
+    footer: <https://quarto.org/>
+    logo: https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png
 
 . . .
 
@@ -476,16 +604,13 @@ logo: https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png
 
 A footer can also be set by slide with:
 
-::: {.footer}
+::: footer
 <https://themockup.blog>
 :::
 
-```
-::: {.footer}
-<https://themockup.blog>
-:::
-```
-
+    ::: {.footer}
+    <https://themockup.blog>
+    :::
 
 ## Slide alignment
 
@@ -494,16 +619,12 @@ A footer can also be set by slide with:
 
 . . .
 
-```
-::: {style="text-align: right;"}
-<h2>Right aligned!</h2>
+    ::: {style="text-align: right;"}
+    <h2>Right aligned!</h2>
 
--   Some bullets
--   Another bullet
-:::
-```
-
----
+    -   Some bullets
+    -   Another bullet
+    :::
 
 ::: {style="text-align: right;"}
 <h2>Right aligned!</h2>
@@ -524,42 +645,33 @@ A footer can also be set by slide with:
 
 Note, you may need to set a `background-color` to black/white to "force" the text to contrast.
 
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 | **Attribute**         | **Default** | **Description**                                                                                   |
-|:----------------------|:------------|:--------------------------------------------------------------------------------------------------|
++:======================+:============+:==================================================================================================+
 | `background-image`    |             | URL of the image to show. GIFs restart when the slide opens.                                      |
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 | `background-size`     | cover       | See [background-size](https://developer.mozilla.org/docs/Web/CSS/background-size) on MDN.         |
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 | `background-position` | center      | See [background-position](https://developer.mozilla.org/docs/Web/CSS/background-position) on MDN. |
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 | `background-repeat`   | no-repeat   | See [background-repeat](https://developer.mozilla.org/docs/Web/CSS/background-repeat) on MDN.     |
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 | `background-opacity`  | 1           | Opacity of the background image on a 0-1 scale. 0 is transparent and 1 is fully opaque.           |
-
-## Slide transitions
-
-## Sizing
-
-## Themes/Appearance
-
--   https://quarto.org/docs/presentations/revealjs/themes.html
-
--   Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
-
-## Random HTML + Position absolute
++-----------------------+-------------+---------------------------------------------------------------------------------------------------+
 
 ## Tabsets
 
-```
-::: {.panel-tabset}
+    ::: {.panel-tabset}
 
-## Element 1
+    ## Element 1
 
-## Element 2
+    ## Element 2
 
-:::
-```
+    :::
 
 ## Tabsets
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## Code
 
 ```{r}
@@ -568,7 +680,6 @@ Note, you may need to set a `background-color` to black/white to "force" the tex
 head(mtcars)
 ```
 
-
 ## Output
 
 ```{r}
@@ -576,31 +687,33 @@ head(mtcars)
 #| echo: false
 head(mtcars)
 ```
+:::
+
 ## Footnote
 
 Footnotes in presentations are placed at the bottom of the slide and numbered.
 
-```
-For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
-```
+    For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
 
 . . .
 
-For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
+For example, did you know that Howard is a dog[^1]?
+
+[^1]: Specifically he is a Boston Terrier, although sometimes he acts like a cat
 
 . . .
 
-He also likes to sleep^[He sleeps a LOT during the day]
+He also likes to sleep[^2]
+
+[^2]: He sleeps a LOT during the day
 
 ## Asides
 
 Asides are like footnotes, but don't have numbers.
 
-```
-::: aside
-They are placed above footnotes if footnotes are present on the page
-:::
-```
+    ::: aside
+    They are placed above footnotes if footnotes are present on the page
+    :::
 
 # Code
 
@@ -618,3 +731,11 @@ mtcars |>
   geom_point() +
   geom_smooth(method = "loess", formula = "y~x")
 ```
+
+## Themes/Appearance
+
+-   https://quarto.org/docs/presentations/revealjs/themes.html
+
+-   Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
+
+## Random HTML + Position absolute

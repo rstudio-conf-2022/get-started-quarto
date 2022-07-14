@@ -1,7 +1,7 @@
 ---
 format: 
   revealjs:
-    slide-number: true
+    slide-number: c/t
     width: 1920
     height: 1080
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
@@ -77,7 +77,7 @@ Table of contents (ToC) and sections are useful for breaking up longer documents
 
 - Quarto will automatically build a ToC for level 3 headers and above but you can control this with:
 
-```
+```yaml
 toc-depth: 4
 ```
 
@@ -89,7 +89,7 @@ toc-depth: 2
 
 ## Table of Contents and Section
 
-<iframe src = "../../materials/static/toc-1.html" height="800" width="1000" ></iframe>
+<iframe src = "https://rstudio-conf-2022.github.io/get-started-quarto/materials/static/toc-1.html" height="800" width="1200" ></iframe>
 
 ## Tabsets
 
@@ -129,6 +129,8 @@ head(mtcars)
 ## Footnotes
 
 You can create inline footnotes like so: `some inline text with a^[footnote]`
+
+. . .
 
 Pandoc also supports numbering and formatting footnotes using the following syntax:
 
@@ -359,9 +361,157 @@ format:
 - https://quarto.org/docs/output-formats/html-themes.html
 - https://quarto.org/docs/output-formats/html-themes-more.html
 
-## CSS vs SCSS/SASS
+## CSS
 
-- Think code vs a reusable function
+CSS = Cascading Style Sheets:
+
+> CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc [mdn web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS)
+
+. . .
+
+HTML structures the page, CSS styles it
+
+. . .
+
+```html
+<div style="color: red; font-size: 100px;">Some text</div>
+```
+
+. . .
+
+<div style="color: red; font-size: 35px;">Some text</div>
+
+. . .
+
+CSS can also bring in additional resources, like new fonts!
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+```
+
+
+## Inline css
+
+```
+:::{style="color: white; font-size: 150px; background-color:#d3d3d3;"}
+Text
+:::
+```
+
+. . .
+
+:::{style="color: white; font-size: 150px; background-color:#d3d3d3;"}
+Text
+:::
+
+. . .
+
+```
+Some text with [dplyr code]{style="font-family: 'Fira Mono !important'; background-color:#d3d3d3;"} and more text.
+```
+
+. . .
+
+Some text with [code]{style="font-family: 'Fira Mono'; background-color:#d3d3d3;"} and more text.
+
+## CSS Class
+
+```{css}
+.big-text {
+  font-size: 150px;
+  color: blue;
+}
+```
+
+```
+::: {.big-text}
+- Big text
+- Still big
+:::
+
+- Smol text
+```
+
+::: {.big-text}
+- Big text
+- Still big
+:::
+
+- Smol text
+
+## Class + spans
+
+```
+Here is some [big text]{.big-text} and some small text.
+```
+
+Here is some [big text]{.big-text} and some small text.
+
+## CSS Id
+
+```{css}
+#blue {
+  background-color: #3c6f9a;
+  color: #fa551b;
+}
+```
+
+. . .
+
+```markdown
+::: {#blue}
+Some content
+:::
+```
+
+::: {#blue}
+Some content
+:::
+
+. . .
+
+```markdown
+Some [text]{#blue}
+```
+
+Some [text]{#blue}
+
+## SCSS/SASS
+
+> SASS (Syntactically Awesome Style Sheets) is a pre-processor scripting language that will be compiled or interpreted into CSS. SassScript is itself a scripting language whereas SCSS is the main syntax for the SASS which builds on top of the existing CSS syntax
+
+. . .
+
+Sass reduces repetition of CSS and therefore saves time - think of it like manually changing code vs using functions in R.
+
+. . .
+
+Color palette: [`#404042`]{style="background-color: #404042;"} [`#3c6f9a`]{style="background-color: #3c6f9a;"} [`#fa551b`]{style="background-color: #fa551b;"}
+
+. . .
+
+```css
+$primary_1: #a2b9bc;
+$primary_2: #b2ad7f;
+$primary_3: #878f99;
+
+/* use the variables */
+.main-header {
+  background-color: $primary_1;
+}
+
+.menu-left {
+  background-color: $primary_2;
+}
+
+.menu-right {
+  background-color: $primary_3;
+}
+```
+
+## SASS variables + Quarto
+
+<iframe src="https://quarto.org/docs/output-formats/html-themes.html#sass-variables" height="800" width="1200" />
 
 ## `format: PDF`
 

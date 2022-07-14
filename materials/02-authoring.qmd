@@ -11,7 +11,7 @@ format:
 editor: source
 ---
 
-# 02 - Authoring Quarto {background-color="#447099" background-image="images/typewriter.png" background-size="cover"}
+# 02 - Authoring Quarto {background-color="#447099" background-image="images/typewriter.jpg" background-size="cover"}
 
 ## Quarto, anatomy
 

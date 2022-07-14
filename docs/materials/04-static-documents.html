@@ -440,13 +440,13 @@
 <ul>
 <li>Quarto will automatically build a ToC for level 3 headers and above but you can control this with:</li>
 </ul>
-<pre><code>toc-depth: 4</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>or</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="table-of-contents-and-section" class="slide level2">
 <h2>Table of Contents and Section</h2>
-<iframe src="../../materials/static/toc-1.html" height="800" width="1000">
+<iframe src="https://rstudio-conf-2022.github.io/get-started-quarto/materials/static/toc-1.html" height="800" width="1200">
 </iframe>
 </section>
 <section id="tabsets" class="slide level2">
@@ -647,12 +647,63 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </section>
 <section id="html-appearance" class="slide level2">
 <h2>HTML Appearance</h2>
+<p>Out of the box, Quarto is styled with Bootstrap 5 and opinionated defaults.</p>
+<p>Bootstrap is the most popular CSS Framework for responsive websites, where v5 is the latest.</p>
+<div class="fragment">
+<p>Quarto comes pre-installed with 25 themes from <a href="https://bootswatch.com/">Bootswatch</a> and you can use them like so:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1"></a><span class="pp">---</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> litera</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</div>
+<div class="fragment">
+<p>Or you can customize a theme with CSS/SCSS/SASS.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a href="#cb23-1"></a><span class="pp">---</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> litera</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="at">      </span><span class="kw">-</span><span class="at"> custom.scss</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="bootswatch-themes" class="slide level2">
+<h2>Bootswatch themes</h2>
+<iframe src="https://bootswatch.com/" height="900" width="1200">
+</iframe>
+</section>
+<section id="bootswatch-lumen" class="slide level2">
+<h2>Bootswatch: lumen</h2>
+<iframe src="https://bootswatch.com/lumen/" height="900" width="1200">
+</iframe>
+</section>
+<section id="bootswatch-litera" class="slide level2">
+<h2>Bootswatch: litera</h2>
+<iframe src="https://bootswatch.com/litera/" height="900" width="1200">
+</iframe>
+</section>
+<section id="bootswatch-flatly" class="slide level2">
+<h2>Bootswatch: flatly</h2>
+<iframe src="https://bootswatch.com/flatly/" height="900" width="1200">
+</iframe>
+</section>
+<section id="bootswatch-sketchy" class="slide level2">
+<h2>Bootswatch: sketchy</h2>
+<iframe src="https://bootswatch.com/sketchy/" height="900" width="1200">
+</iframe>
+</section></section>
+<section>
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>Core Quarto (YAML, Markdown/Text, Code)</li>
-<li>CSS/SCSS (styling and appearance)</li>
-<li>25 bootswatch themes</li>
-<li>https://quarto.org/docs/output-formats/html-themes.html</li>
-<li>https://quarto.org/docs/output-formats/html-themes-more.html</li>
+<li><p>Create a Quarto document and try out some themes!</p></li>
+<li><p>Core Quarto (YAML, Markdown/Text, Code)</p></li>
+<li><p>CSS/SCSS (styling and appearance)</p></li>
+<li><p>25 bootswatch themes</p></li>
+<li><p>https://quarto.org/docs/output-formats/html-themes.html</p></li>
+<li><p>https://quarto.org/docs/output-formats/html-themes-more.html</p></li>
 </ul>
 </section>
 <section id="css-vs-scsssass" class="slide level2">

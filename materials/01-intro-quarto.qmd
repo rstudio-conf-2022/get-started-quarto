@@ -304,6 +304,7 @@ RStudio IDE > Render button
 
 - Open RStudio
 - At the top left, click the new file button and create a new Quarto document
+- Add some text, insert some code, and then click the Render button
 
 ## What about for Data Science at Work?
 
@@ -656,6 +657,26 @@ plt.show()
 :::
 
 :::
+
+## What about the CLI?
+
+> Quarto is a command line interface (CLI) that renders plain text formats (`.qmd`, `.rmd`, `.md`) OR mixed formats (`.ipynb`/Jupyter notebook) into static PDF/Word/HTML reports, books, websites, presentations and more
+
+![](images/quarto-cli-help.png){width="1200px" fig-align="center" fig-alt="A screenshot of a Visual and Source Quarto document"}
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- In RStudio, open the Terminal:
+
+```bash
+quarto --help
+```
+
+## Resources
+
+- [https://quarto.org/](https://quarto.org/)
+- [Quarto FAQ](https://quarto.org/docs/faq/)
+- [Quarto Discussions](https://github.com/quarto-dev/quarto-cli/discussions)
 
 ## 
 

@@ -1,6 +1,7 @@
 ---
 format: 
   revealjs:
+    scrollable: false
     slide-number: true
     width: 1920
     height: 1080
@@ -12,9 +13,13 @@ format:
 editor: source
 ---
 
+# {background-color="black" background-image="images/calculations.jpeg"}
+
+[Code and Editors]{style="color: white; font-size: 250px;"}
+
 # {background-color="#6a9c42"}
 
-[03 Computation and Editors]{style="color: white; font-size: 150px;"}
+[Code]{style="color: white; font-size: 200px;"}
 
 ## Execute code
 
@@ -243,9 +248,9 @@ plt.show()
 
 Or use the Command Palette: `Cmd + Shift + P`/`Ctrl + Shift + P`
 
-## YOUR TURN 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-- CREATE a code chunk, load `tidyverse` and `palmerpenguins` and populate with some `tidyverse` code to evaluate the good ole `palmerpenguins::penguins` dataset!
+- In a blank Quarto doc, insert a code chunk, load `tidyverse` and `palmerpenguins` and populate with some `tidyverse` code to evaluate the good ole `palmerpenguins::penguins` dataset!
 
 ## Inline code
 
@@ -499,9 +504,7 @@ List of 2
 
 ::::
 
-## Navigating within RStudio 
-
-TO DO DEMO
+# Demo: Navigating within RStudio {background-color="black"}
 
 ## Chunk names, good and bad
 
@@ -619,7 +622,9 @@ mpg_cars
 #| eval: true
 ```
 
+# {background-color="#6a9c42"}
 
+[Editors]{style="color: white; font-size: 150px;"}
 
 ## RStudio
 
@@ -653,7 +658,7 @@ format:
 
 . . .
 
-![](images/yaml-autocomplete.gif)
+![](images/yaml-autocomplete.gif){height=50%}
 
 ## `knitr` auto-completion
 
@@ -705,4 +710,4 @@ quarto_render("document.qmd", output_format = "pdf")
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-- Renders via R Console
+- Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`

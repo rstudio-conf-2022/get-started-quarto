@@ -410,17 +410,25 @@ Tom Mock | 2022-07-25
 </ul>
 </div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="why-not-wordpress-tumblr-medium.com-blogger.com-etc1" class="slide level2">
+<h2>Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?<sup>1</sup></h2>
+<ul>
+<li><p>No R Markdown support (even math support is often nonexistent or awkward)</p></li>
+<li><p>Huge benefits of static websites compared to dynamic websites</p>
+<ul>
+<li><p>all static files, no PHP or databases, no login/password, work everywhere (even offline)</p></li>
+<li><p>typically fast to visit (no computation needed on the server side), and easy to speed up via CDN</p></li>
+</ul></li>
+</ul>
 <h3 id="create-a-website">Create a website</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">quarto</span> create-project MySiteName <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="create-a-blog">Create a blog</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">quarto</span> create-project MyBlogName <span class="at">--type</span> website:blog</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>RStudio &gt; New Project &gt; New Quarto Blog</p>
-<p><img data-src="images/quarto-blog.png"></p>
+<p><img src="images/quarto-blog.png" width="800px"></p>
 </div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>From Yihui: <a href="https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36" class="uri">https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36</a></p></li></ol></aside></section>
 <section id="creating-a-blog" class="slide level2">
 <h2>Creating a blog</h2>
 <pre><code>$ quarto create-project MyBlogName --type website:blog
@@ -479,8 +487,10 @@ Creating project at myblog:
 <li>Can build custom listings in several ways</li>
 </ul>
 </section>
-<section id="blog" class="slide level2" data-background-image="images/mockup-blog.png" data-background-size="contain">
-<h2>Blog</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<iframe src="https://themockup.blog" height="800" width="1200">
+</iframe>
 </section>
 <section id="core-blog-workflow" class="slide level2">
 <h2>Core blog workflow</h2>
@@ -494,10 +504,8 @@ Creating project at myblog:
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Create a new RStudio project and select Quarto blog</li>
+<li>Give it a name</li>
 <li>Explore the directory</li>
-<li>Create a new folder in <code>/posts/</code> - title it <code>2022-07-26-my-first-post</code></li>
-<li>Create a new blank <code>index.qmd</code> in that folder, add a <code>format: html</code> YAML header</li>
-<li>Add some text and a markdown image: <code>![]()</code></li>
 </ul>
 </section>
 <section id="rendering-posts" class="slide level2">
@@ -515,10 +523,14 @@ Creating project at myblog:
 <div class="fragment">
 <p>When you render the website, it will re-execute code in older posts. Not ideal in many situations!</p>
 </div>
-</section>
-<section id="render-together" class="slide level2">
-<h2>Render together</h2>
-<p>Let’s render together!</p>
+</section></section>
+<section>
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Let’s render the <code>index.qmd</code> together!</li>
+<li>Now, let’s try Build &gt; Render Website</li>
+</ul>
 </section>
 <section id="freeze" class="slide level2">
 <h2>Freeze</h2>
@@ -533,7 +545,7 @@ Creating project at myblog:
 </div>
 <div class="fragment">
 <p><code>freeze: true</code> is typically added to a <code>_metadata.yml</code> file within a specific directory, affecting all files in that directory.</p>
-<p>In the case of a blog - the <code>_metadata.yml</code> is saved at the root of the <code>posts</code> directory.</p>
+<p>In the case of a blog - the <code>_metadata.yml</code> is saved at the root of the <code>posts</code> directory. You can have it only within specific subdirectories for more complex sites.</p>
 </div>
 </section>
 <section id="cache" class="slide level2">
@@ -547,10 +559,40 @@ Creating project at myblog:
 <div class="fragment">
 <p>I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a <code>tidymodels</code> workshop with grid-tuning.</p>
 </div>
+</section></section>
+<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Add a <code>_metadata.yml</code> to the <code>/posts/</code> directory</li>
+<li>Add the freeze code to <code>_metadata.yml</code></li>
+</ul>
+<!-- -->
+<pre><code>execute:
+  freeze: true</code></pre>
+<ul>
+<li>Render <code>index.qmd</code> and note the items that are built</li>
+<li>Explore the <code>_freeze</code> directory</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Marvel at the “beautiful” JSON - it’s not for you, it’s for the machine</li>
+</ul>
+</div>
+</section>
+
+<section>
+<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Create a new folder in <code>/posts/</code> - title it <code>2022-07-26-my-first-post</code></li>
+<li>Create a new blank <code>index.qmd</code> in that folder, add a <code>format: html</code> YAML header</li>
+<li>Add some text and a markdown image: <code>![]()</code>, along with maybe some code :laptop:</li>
+<li>Render it!</li>
+</ul>
 </section>
 <section id="adding-an-about-page" class="slide level2">
 <h2>Adding an About page</h2>
-<pre><code>---
+<pre><code>---yaml
 twitter-card:
   image: images/profile-preview.png
   creator: "@thomas_mock"
@@ -570,35 +612,42 @@ about:
 </section>
 <section id="about-page-templates" class="slide level2">
 <h2>About page templates</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">about</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> trestles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<div class="tabset">
-<section id="jolla" class="slide level2">
-<h2>jolla</h2>
-
-<img data-src="https://quarto.org/docs/websites/images/about-jolla.png" class="r-stretch"></section>
-<section id="trestles" class="slide level2">
-<h2>trestles</h2>
-
-<img data-src="https://quarto.org/docs/websites/images/about-trestles.png" class="r-stretch"></section>
-<section id="solana" class="slide level2">
-<h2>solana</h2>
-
-<img data-src="https://quarto.org/docs/websites/images/about-solana.png" class="r-stretch"></section>
-<section id="marquee" class="slide level2">
-<h2>marquee</h2>
-
-<img data-src="https://quarto.org/docs/websites/images/about-marquee.png" class="r-stretch"></section>
-<section id="broadside" class="slide level2">
-<h2>broadside</h2>
-
-<img data-src="https://quarto.org/docs/websites/images/about-broadside.png" class="r-stretch"></section>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">about</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="at">  </span><span class="fu">template</span><span class="kw">:</span><span class="at"> trestles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">jolla</a></li><li><a href="#tabset-1-2">trestles</a></li><li><a href="#tabset-1-3">solana</a></li><li><a href="#tabset-1-4">marquee</a></li><li><a href="#tabset-1-5">broadside</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><img data-src="https://quarto.org/docs/websites/images/about-jolla.png"></p>
 </div>
+<div id="tabset-1-2">
+<p><img data-src="https://quarto.org/docs/websites/images/about-trestles.png"></p>
+</div>
+<div id="tabset-1-3">
+<p><img data-src="https://quarto.org/docs/websites/images/about-solana.png"></p>
+</div>
+<div id="tabset-1-4">
+<p><img src="https://quarto.org/docs/websites/images/about-marquee.png" width="600px"></p>
+</div>
+<div id="tabset-1-5">
+<p><img data-src="https://quarto.org/docs/websites/images/about-broadside.png"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="your-turn-4" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open your about page (<code>about.qmd</code>)</li>
+<li>Change some of the details, add more details and choose a specific template (jolla, trestles, solana, marquee, broadside)</li>
+<li>Render it!</li>
+</ul>
+</section>
 <section id="listings" class="slide level2">
 <h2>Listings</h2>
-
-<img data-src="images/mockup-blog.png" class="r-stretch"></section>
+<img data-src="images/mockup-blog.png" class="r-stretch">
+</section>
 <section id="listings-1" class="slide level2">
 <h2>Listings</h2>
 <table>
@@ -624,132 +673,249 @@ about:
 </tbody>
 </table>
 </section>
-<div class="tabset">
-<section id="default" class="slide level2">
-<h2>Default</h2>
+<section id="listings-2" class="slide level2">
+<h2>Listings</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Default</a></li><li><a href="#tabset-2-2">Grid</a></li><li><a href="#tabset-2-3">Table</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
 <blockquote>
 <p>By default, listings will appear in full width rows that display the item’s metadata (author and date), title, description, and image.</p>
 </blockquote>
-
-<img data-src="https://quarto.org/docs/websites/images/listing-default.png" class="r-stretch"></section>
-<section id="grid" class="slide level2">
-<h2>Grid</h2>
+<p><img src="https://quarto.org/docs/websites/images/listing-default.png" height="400px"></p>
+</div>
+<div id="tabset-2-2">
 <blockquote>
 <p>Grid style listings display a card for each item.</p>
 </blockquote>
-
-<img data-src="https://quarto.org/docs/websites/images/listing-grid.png" class="r-stretch"></section>
-<section id="table" class="slide level2">
-<h2>Table</h2>
+<p><img src="https://quarto.org/docs/websites/images/listing-grid.png" height="400px"></p>
+</div>
+<div id="tabset-2-3">
 <blockquote>
 <p>The table listing style provides a traditional tabular layout.</p>
 </blockquote>
-
-<img data-src="https://quarto.org/docs/websites/images/listing-table.png" class="r-stretch"></section>
+<p><img src="https://quarto.org/docs/websites/images/listing-table.png" height="400px"></p>
 </div>
-<section id="your-turn-1" class="slide level2">
-<h2>YOUR TURN</h2>
-<p>Let’s change the listing top of our blog</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="your-turn-5" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open your existing Quarto blog from before</li>
+<li>Let’s change the listing type of our blog - change from default to <code>grid</code></li>
+<li>Re-render the <code>index.qmd</code></li>
+</ul>
 </section>
 <section id="listing-location" class="slide level2">
 <h2>Listing location</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Listing Example"</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> sample-listings</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="pp">---</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="fu">You can review the following documents for additional information</span><span class="kw">:</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#sample-listings}</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="populating-listings" class="slide level2">
-<h2>Populating listings</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="pp">---</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Listing Example"</span></span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> sample-listings</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="pp">---</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="fu">You can review the following documents for additional information</span><span class="kw">:</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#sample-listings}</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="populating-listings" class="slide level2">
+<h2>Populating listings</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Listing Example"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Listing Example"</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lab-reports</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"reports/*.qmd"</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lab-notes</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"lab-notes/*reports.qmd"</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Listing Example"</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lab-reports</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"reports/*.qmd"</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> lab-notes</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"lab-notes/*reports.qmd"</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a>Some stuff</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>::: {#lab-reports}</span>
+<span id="cb13-4"><a href="#cb13-4"></a>:::</span>
+<span id="cb13-5"><a href="#cb13-5"></a></span>
+<span id="cb13-6"><a href="#cb13-6"></a>Some other stuff</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a>::: {#lab-notes}</span>
+<span id="cb13-9"><a href="#cb13-9"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="manual-listings" class="slide level2">
 <h2>Manual listings</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1"></a><span class="pp">---</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">author</span><span class="kw">:</span><span class="at"> First Author</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> First title</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Second Author</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Second title</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sometimes you might want to build out your own listing and link to arbitrary content rather than specific rendered <code>file.qmd</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1"></a><span class="pp">---</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">author</span><span class="kw">:</span><span class="at"> First Author</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">First Title</span><span class="kw">]</span><span class="at">(a-url.com)</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">author</span><span class="kw">:</span><span class="at"> Second Author</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="at">      </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Second Title</span><span class="kw">]</span><span class="at">(a-url2.com)</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1"></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> items.yml</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">author</span><span class="kw">:</span><span class="at"> Tom Mock</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;a href='quarto.org'&gt;An intro to Quarto&lt;/a&gt;</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="kw">-</span><span class="at"> </span><span class="fu">Author</span><span class="kw">:</span><span class="at"> Katie Masiello</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;a href='pins.rstudio.com'&gt;Intro to pins&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1"></a><span class="pp">---</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="at">    </span><span class="kw">-</span><span class="at"> items.yml</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">author</span><span class="kw">:</span><span class="at"> Tom Mock</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;a href='quarto.org'&gt;An intro to Quarto&lt;/a&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">-</span><span class="at"> </span><span class="fu">Author</span><span class="kw">:</span><span class="at"> Katie Masiello</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> &lt;a href='pins.rstudio.com'&gt;Intro to pins&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="complex-example" class="slide level2">
+<h2>Complex Example:</h2>
+<iframe src="https://colorado.rstudio.com/rsc/fake-connectwidgets/" height="800" width="1200">
+</iframe>
+</section>
+<section id="complex-example-index.qmd-yaml" class="slide level2">
+<h2>Complex Example, <code>index.qmd</code> YAML</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">listing</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> etl</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"etl.yml"</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="at">    </span><span class="fu">grid-columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a><span class="at">    </span><span class="fu">image-height</span><span class="kw">:</span><span class="at"> 100px</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> modeling</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"modeling.yml"</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a><span class="at">    </span><span class="fu">image-height</span><span class="kw">:</span><span class="at"> 100px</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a><span class="at">    </span><span class="fu">grid-columns</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> pins</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"pins.yml"</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a><span class="at">    </span><span class="fu">field-display-names</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb17-16"><a href="#cb17-16"></a><span class="at">      </span><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Description"</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a><span class="at">      </span><span class="fu">date-modified</span><span class="kw">:</span><span class="at"> </span><span class="st">"Last Updated"</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> api</span></span>
+<span id="cb17-19"><a href="#cb17-19"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"api.yml"</span></span>
+<span id="cb17-20"><a href="#cb17-20"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a><span class="at">    </span><span class="fu">image-align</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb17-22"><a href="#cb17-22"></a><span class="at">    </span><span class="fu">image-height</span><span class="kw">:</span><span class="at"> 75px</span></span>
+<span id="cb17-23"><a href="#cb17-23"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> apps</span></span>
+<span id="cb17-24"><a href="#cb17-24"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> </span><span class="st">"apps.yml"</span></span>
+<span id="cb17-25"><a href="#cb17-25"></a><span class="at">    </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb17-26"><a href="#cb17-26"></a><span class="at">    </span><span class="fu">image-align</span><span class="kw">:</span><span class="at"> left</span></span>
+<span id="cb17-27"><a href="#cb17-27"></a><span class="at">    </span><span class="fu">image-height</span><span class="kw">:</span><span class="at"> 75px</span></span>
+<span id="cb17-28"><a href="#cb17-28"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="publishing" class="slide level2">
 <h2>Publishing</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Destination</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html">GitHub Pages</a></td>
+<td>Publish content based on source code managed within a GitHub repository. Use GitHub Pages when the source code for your document or site is hosted on GitHub.</td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/rstudio-connect.html">RStudio Connect</a></td>
+<td>Publishing platform for secure sharing of data products within an organization. Use RStudio Connect when you want to publish content within an organization rather than on the public internet.</td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/netlify.html">Netlify</a></td>
+<td>Professional web publishing platform. Use Netlify when you want support for custom domains, authentication, previewing branches, and other more advanced capabilities.</td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/other.html">Other Services</a></td>
+<td>Content rendered with Quarto uses standard formats (HTML, PDFs, MS Word, etc.) that can be published anywhere. Use this if one of the methods above don’t meet your requirements.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="publishing-1" class="slide level2">
+<h2>Publishing</h2>
 <h3 id="static-only">Static Only</h3>
 <ul>
-<li><code>quarto::quarto_publish_???()</code>
+<li><code>quarto</code> CLI: <code>quarto publish DESTINATION DOCUMENT.QMD</code></li>
+<li><code>quarto</code> R package: <code>quarto::quarto_publish_???()</code></li>
+</ul>
+<h3 id="code">Code</h3>
+<ul>
+<li><p>Evaluate R/Python code and render on a schedule</p></li>
+<li><p>RStudio Connect</p></li>
+<li><p><code>rsconnect::deployDoc(quarto = "path/to/quarto")</code></p>
+<ul>
+<li><code>rsconnect::deployDoc(quarto = quarto::quarto_path())</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="static-publish" class="slide level2">
+<h2>Static Publish</h2>
+<ul>
+<li><p><code>quarto::quarto_publish_???()</code></p>
 <ul>
 <li><code>quarto_publish_site(server = "rstudioconnect.example.com")</code></li>
 <li><code>quarto_publish_doc(server = "rpubs.com")</code></li>
 <li><code>quarto_publish_app(server = "shinyapps.io")</code></li>
 </ul></li>
-<li><code>quarto publish DESTINATION DOCUMENT.QMD</code>
+<li><p><code>quarto publish DESTINATION DOCUMENT.QMD</code></p>
 <ul>
 <li><code>quarto publish netlify document.qmd</code></li>
 <li><code>quarto publish gh-pages document.qmd</code></li>
 <li><code>quarto publish connect document.qmd</code></li>
 </ul></li>
 </ul>
-<h3 id="code">Code</h3>
+</section>
+<section id="netlify" class="slide level2">
+<h2>Netlify</h2>
+<iframe src="https://www.netlify.com/" height="800" width="1200">
+</iframe>
+</section></section>
+<section id="your-turn-6" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>RStudio Connect</li>
-<li><code>rsconnect::deployDoc(quarto = "path/to/quarto")</code>
+<li>Go to <a href="https://www.netlify.com/" class="uri">https://www.netlify.com/</a> and signup or sign-in (I like using GitHub login)</li>
+<li>Got to: <a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a></li>
+<li>Drag and drop the <code>_site</code> folder to deploy</li>
+<li>Explore your site!</li>
+</ul>
+</section>
+
+<section>
+<section id="your-turn-7" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">quarto</span> publish netlify _site</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><code>rsconnect::deployDoc(quarto = quarto::quarto_path())</code></li>
-</ul></li>
+<li>Authenticate with Netlify</li>
+<li>Explore your new site!</li>
 </ul>
 </section>
 <section id="quarto-project" class="slide level2">
 <h2>Quarto Project</h2>
 <ul>
-<li>https://quarto.org/docs/projects/quarto-projects.html</li>
+<li><a href="https://quarto.org/docs/projects/quarto-projects.html" class="uri">https://quarto.org/docs/projects/quarto-projects.html</a></li>
 </ul>
 <blockquote>
-<p>When you create a project, a _quarto.yml config file is created. Here is an example of what the _quarto.yml</p>
+<p>When you create a project, a _quarto.yml config file is created. Here is an example of what the _quarto.yml looks like:</p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _output</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib  </span></span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="at">  </span></span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _output</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib  </span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="at">  </span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="more-complex-example" class="slide level2">
 <h2>More complex example</h2>
@@ -802,6 +968,7 @@ format:
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
 </section></section>
+
     </div>
   </div>
 

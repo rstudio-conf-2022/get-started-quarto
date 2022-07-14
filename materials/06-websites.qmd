@@ -1,6 +1,7 @@
 ---
 format: 
   revealjs:
+    scrollable: false
     slide-number: true
     width: 1920
     height: 1080
@@ -34,7 +35,17 @@ editor_options:
 
 -   Website/book are very similar in that they associate multiple pages/resources into a connected resource
 
-## 
+## Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?[^1]
+
+[^1]: From Yihui: <https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36>
+
+-   No R Markdown support (even math support is often nonexistent or awkward)
+
+-   Huge benefits of static websites compared to dynamic websites
+
+    -   all static files, no PHP or databases, no login/password, work everywhere (even offline)
+
+    -   typically fast to visit (no computation needed on the server side), and easy to speed up via CDN
 
 ### Create a website
 
@@ -54,7 +65,7 @@ quarto create-project MyBlogName --type website:blog
 
 RStudio \> New Project \> New Quarto Blog
 
-![](images/quarto-blog.png)
+<img src="images/quarto-blog.png" width="800px"/>
 
 ## Creating a blog
 
@@ -86,7 +97,11 @@ RStudio \> New Project \> New Quarto Blog
 -   Includes a listing automatically from `posts` directory
 -   Can build custom listings in several ways
 
-## Blog {background-image="images/mockup-blog.png" background-size="contain"}
+## 
+
+<iframe src="https://themockup.blog" height="800" width="1200">
+
+</iframe>
 
 ## Core blog workflow
 
@@ -96,10 +111,8 @@ RStudio \> New Project \> New Quarto Blog
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 -   Create a new RStudio project and select Quarto blog
+-   Give it a name
 -   Explore the directory
--   Create a new folder in `/posts/` - title it `2022-07-26-my-first-post`
--   Create a new blank `index.qmd` in that folder, add a `format: html` YAML header
--   Add some text and a markdown image: `![]()`
 
 ## Rendering posts
 
@@ -116,9 +129,10 @@ These will preview the entire website
 
 When you render the website, it will re-execute code in older posts. Not ideal in many situations!
 
-## Render together
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-Let's render together!
+-   Let's render the `index.qmd` together!
+-   Now, let's try Build \> Render Website
 
 ## Freeze
 
@@ -140,7 +154,7 @@ execute:
 
 `freeze: true` is typically added to a `_metadata.yml` file within a specific directory, affecting all files in that directory.
 
-In the case of a blog - the `_metadata.yml` is saved at the root of the `posts` directory.
+In the case of a blog - the `_metadata.yml` is saved at the root of the `posts` directory. You can have it only within specific subdirectories for more complex sites.
 
 ## Cache
 
@@ -157,9 +171,33 @@ execute:
 
 I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a `tidymodels` workshop with grid-tuning.
 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Add a `_metadata.yml` to the `/posts/` directory
+-   Add the freeze code to `_metadata.yml`
+
+<!-- -->
+
+    execute:
+      freeze: true
+
+-   Render `index.qmd` and note the items that are built
+-   Explore the `_freeze` directory
+
+. . .
+
+-   Marvel at the "beautiful" JSON - it's not for you, it's for the machine
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Create a new folder in `/posts/` - title it `2022-07-26-my-first-post`
+-   Create a new blank `index.qmd` in that folder, add a `format: html` YAML header
+-   Add some text and a markdown image: `![]()`, along with maybe some code :laptop:
+-   Render it!
+
 ## Adding an About page
 
-    ---
+    ---yaml
     twitter-card:
       image: images/profile-preview.png
       creator: "@thomas_mock"
@@ -184,7 +222,7 @@ about:
   template: trestles
 ```
 
-::: tabset
+::: panel-tabset
 ## jolla
 
 ![](https://quarto.org/docs/websites/images/about-jolla.png)
@@ -199,16 +237,22 @@ about:
 
 ## marquee
 
-![](https://quarto.org/docs/websites/images/about-marquee.png)
+<img src="https://quarto.org/docs/websites/images/about-marquee.png" width="600px"/>
 
 ## broadside
 
 ![](https://quarto.org/docs/websites/images/about-broadside.png)
 :::
 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open your about page (`about.qmd`)
+-   Change some of the details, add more details and choose a specific template (jolla, trestles, solana, marquee, broadside)
+-   Render it!
+
 ## Listings
 
-![](images/mockup-blog.png)
+![](images/mockup-blog.png){.r-stretch}
 
 ## Listings
 
@@ -218,29 +262,33 @@ about:
 |  table  | A table of listings.        |
 |  grid   | A grid of listing cards.    |
 
-::: tabset
+## Listings
+
+::: panel-tabset
 ## Default
 
 > By default, listings will appear in full width rows that display the item's metadata (author and date), title, description, and image.
 
-![](https://quarto.org/docs/websites/images/listing-default.png)
+<img src="https://quarto.org/docs/websites/images/listing-default.png" height="400px"/>
 
 ## Grid
 
 > Grid style listings display a card for each item.
 
-![](https://quarto.org/docs/websites/images/listing-grid.png)
+<img src="https://quarto.org/docs/websites/images/listing-grid.png" height="400px"/>
 
 ## Table
 
 > The table listing style provides a traditional tabular layout.
 
-![](https://quarto.org/docs/websites/images/listing-table.png)
+<img src="https://quarto.org/docs/websites/images/listing-table.png" height="400px"/>
 :::
 
-## YOUR TURN
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-Let's change the listing top of our blog
+-   Open your existing Quarto blog from before
+-   Let's change the listing type of our blog - change from default to `grid`
+-   Re-render the `index.qmd`
 
 ## Listing location
 
@@ -282,16 +330,32 @@ listing:
     type: table
 ```
 
+. . .
+
+``` markdown
+Some stuff
+
+::: {#lab-reports}
+:::
+
+Some other stuff
+
+::: {#lab-notes}
+:::
+```
+
 ## Manual listings
+
+Sometimes you might want to build out your own listing and link to arbitrary content rather than specific rendered `file.qmd`
 
 ``` yaml
 ---
 listing:
   contents:
     - author: First Author
-      title: First title
-    - name: Second Author
-      title: Second title
+      title: [First Title](a-url.com)
+    - author: Second Author
+      title: [Second Title](a-url2.com)
 ---
 ```
 
@@ -312,30 +376,112 @@ listing:
   title: <a href='pins.rstudio.com'>Intro to pins</a>
 ```
 
+## Complex Example:
+
+<iframe src="https://colorado.rstudio.com/rsc/fake-connectwidgets/" height="800" width="1200">
+
+</iframe>
+
+## Complex Example, `index.qmd` YAML
+
+``` yaml
+listing: 
+  - id: etl
+    contents: "etl.yml"
+    type: grid
+    grid-columns: 2
+    image-height: 100px
+  - id: modeling
+    contents: "modeling.yml"
+    type: grid
+    image-height: 100px
+    grid-columns: 2
+  - id: pins
+    contents: "pins.yml"
+    type: table
+    field-display-names: 
+      subtitle: "Description"
+      date-modified: "Last Updated"
+  - id: api
+    contents: "api.yml"
+    type: default
+    image-align: left
+    image-height: 75px
+  - id: apps
+    contents: "apps.yml"
+    type: default
+    image-align: left
+    image-height: 75px
+---
+```
+
+## Publishing
+
+| Destination                                                                | Description                                                                                                                                                                                     |
+|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)       | Publish content based on source code managed within a GitHub repository. Use GitHub Pages when the source code for your document or site is hosted on GitHub.                                   |
+| [RStudio Connect](https://quarto.org/docs/publishing/rstudio-connect.html) | Publishing platform for secure sharing of data products within an organization. Use RStudio Connect when you want to publish content within an organization rather than on the public internet. |
+| [Netlify](https://quarto.org/docs/publishing/netlify.html)                 | Professional web publishing platform. Use Netlify when you want support for custom domains, authentication, previewing branches, and other more advanced capabilities.                          |
+| [Other Services](https://quarto.org/docs/publishing/other.html)            | Content rendered with Quarto uses standard formats (HTML, PDFs, MS Word, etc.) that can be published anywhere. Use this if one of the methods above don't meet your requirements.               |
+
 ## Publishing
 
 ### Static Only
 
+-   `quarto` CLI: `quarto publish DESTINATION DOCUMENT.QMD`
+-   `quarto` R package: `quarto::quarto_publish_???()`
+
+### Code
+
+-   Evaluate R/Python code and render on a schedule
+
+-   RStudio Connect
+
+-   `rsconnect::deployDoc(quarto = "path/to/quarto")`
+
+    -   `rsconnect::deployDoc(quarto = quarto::quarto_path())`
+
+## Static Publish
+
 -   `quarto::quarto_publish_???()`
+
     -   `quarto_publish_site(server = "rstudioconnect.example.com")`
     -   `quarto_publish_doc(server = "rpubs.com")`
     -   `quarto_publish_app(server = "shinyapps.io")`
+
 -   `quarto publish DESTINATION DOCUMENT.QMD`
+
     -   `quarto publish netlify document.qmd`
     -   `quarto publish gh-pages document.qmd`
     -   `quarto publish connect document.qmd`
 
-### Code
+## Netlify
 
--   RStudio Connect
--   `rsconnect::deployDoc(quarto = "path/to/quarto")`
-    -   `rsconnect::deployDoc(quarto = quarto::quarto_path())`
+<iframe src="https://www.netlify.com/" height="800" width="1200">
+
+</iframe>
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Go to <https://www.netlify.com/> and signup or sign-in (I like using GitHub login)
+-   Got to: <https://app.netlify.com/drop>
+-   Drag and drop the `_site` folder to deploy
+-   Explore your site!
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+``` bash
+quarto publish netlify _site
+```
+
+-   Authenticate with Netlify
+-   Explore your new site!
 
 ## Quarto Project
 
--   https://quarto.org/docs/projects/quarto-projects.html
+-   <https://quarto.org/docs/projects/quarto-projects.html>
 
-> When you create a project, a \_quarto.yml config file is created. Here is an example of what the \_quarto.yml
+> When you create a project, a \_quarto.yml config file is created. Here is an example of what the \_quarto.yml looks like:
 
 ``` yaml
 project:
