@@ -23,6 +23,10 @@ editor_options:
 
 ## Websites
 
+-   Websites are essentially `format: html` + a Quarto Project
+
+. . .
+
 -   Website is different than `format: html` in that it has *multiple pages*
 -   Website is our first exploration into Quarto Projects
 

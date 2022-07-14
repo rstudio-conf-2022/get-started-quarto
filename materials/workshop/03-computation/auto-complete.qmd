@@ -1,0 +1,14 @@
+---
+format: 
+  html:
+    theme: zenb
+title: "cool document"
+author: "Tom Mock"
+---
+
+```{r}
+#| echo: fenced
+#| eval: true
+#| fig-width: 6
+#| fig-height: 4
+```

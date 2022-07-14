@@ -17,6 +17,8 @@ editor_options:
 
 # Advanced Quarto + `knitr`
 
+## Parameters
+
 ## Quarto Extensions
 
 > Quarto Extensions are a powerful way to modify or extend the behavior of Quarto, and can be created and distributed by anyone. There are two types of extensions available:
@@ -40,3 +42,10 @@ You can install extensions directly from Quarto!
 ``` bash
 quarto install extension quarto-ext/lightbox
 ```
+
+## Commenting
+
+This page has commenting with Hypothes.is enabled via the following YAML option:
+
+    comments:
+      hypothesis: true

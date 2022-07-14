@@ -263,7 +263,9 @@ Appears second
     Appears second
     :::
 
-## YOUR TURN REVEAL YOUR REVEALJS
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/05-presentations/reveal-prez.qmd`
 
 ## Column layout
 
@@ -543,6 +545,62 @@ Note, you may need to set a `background-color` to black/white to "force" the tex
 ## Random HTML + Position absolute
 
 ## Tabsets
+
+```
+::: {.panel-tabset}
+
+## Element 1
+
+## Element 2
+
+:::
+```
+
+## Tabsets
+
+::: {.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| eval: false
+head(mtcars)
+```
+
+
+## Output
+
+```{r}
+#| eval: true
+#| echo: false
+head(mtcars)
+```
+## Footnote
+
+Footnotes in presentations are placed at the bottom of the slide and numbered.
+
+```
+For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
+```
+
+. . .
+
+For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
+
+. . .
+
+He also likes to sleep^[He sleeps a LOT during the day]
+
+## Asides
+
+Asides are like footnotes, but don't have numbers.
+
+```
+::: aside
+They are placed above footnotes if footnotes are present on the page
+:::
+```
 
 # Code
 

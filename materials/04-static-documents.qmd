@@ -297,6 +297,62 @@ format:
 
 ## HTML Appearance
 
+Out of the box, Quarto is styled with Bootstrap 5 and opinionated defaults.
+
+Bootstrap is the most popular CSS Framework for responsive websites, where v5 is the latest.
+
+. . .
+
+Quarto comes pre-installed with 25 themes from [Bootswatch](https://bootswatch.com/) and you can use them like so:
+
+```yaml
+---
+format:
+  html:
+    theme: litera
+---
+```
+
+<br>
+
+. . .
+
+Or you can customize a theme with CSS/SCSS/SASS.
+
+```yaml
+---
+format:
+  html:
+    theme: 
+      - litera
+      - custom.scss
+---
+```
+
+## Bootswatch themes
+
+<iframe src="https://bootswatch.com/" height="900" width="1200"></iframe>
+
+## Bootswatch: lumen
+
+<iframe src="https://bootswatch.com/lumen/" height="900" width="1200"></iframe>
+
+## Bootswatch: litera
+
+<iframe src="https://bootswatch.com/litera/" height="900" width="1200"></iframe>
+
+## Bootswatch: flatly
+
+<iframe src="https://bootswatch.com/flatly/" height="900" width="1200"></iframe>
+
+## Bootswatch: sketchy
+
+<iframe src="https://bootswatch.com/sketchy/" height="900" width="1200"></iframe>
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Create a Quarto document and try out some themes!
+
 - Core Quarto (YAML, Markdown/Text, Code)
 - CSS/SCSS (styling and appearance) 
 - 25 bootswatch themes

@@ -1,0 +1,14 @@
+{
+  "hash": "9dfdbdcaf2ea1affc68b28415691a1ca",
+  "result": {
+    "markdown": "---\nformat: \n  html:\n    theme: zenb\ntitle: \"cool document\"\nauthor: \"Tom Mock\"\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

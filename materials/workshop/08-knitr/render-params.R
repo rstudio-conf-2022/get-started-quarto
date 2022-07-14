@@ -13,7 +13,7 @@ quarto::quarto_render(
 )
 
 # See the document
-rstudioapi::viewer("_site/materials/workshop/08-knitr/penguin-params.html")
+rstudioapi::viewer("docs/materials/workshop/08-knitr/penguin-params.html")
 
 # now we can render it with a specific species (chinstrap)
 quarto::quarto_render(
@@ -23,7 +23,7 @@ quarto::quarto_render(
 )
 
 # see the new chinstrap report
-rstudioapi::viewer("_site/choose-chinstrap.html")
+rstudioapi::viewer("docs/choose-chinstrap.html")
 
 
 # Multi-render ------------------------------------------------------------
@@ -63,7 +63,7 @@ penguin_names %>%
   purrr::walk(render_fun)
 
 # we can then see if all 3 reports were generated
-output_files <- fs::dir_ls("_site/materials/workshop/08-knitr/", glob = "*report.html")
+output_files <- fs::dir_ls("docs/materials/workshop/08-knitr/", glob = "*report.html")
 
 # then compare the time now to the time the files were generated
 # should be within a few seconds as long as you 
