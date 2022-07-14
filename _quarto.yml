@@ -13,7 +13,32 @@ website:
     background: "#447099"
     left:
       - href: index.qmd
-        text: Home
+        text: readme
+      - text: Day 1
+        menu: 
+          - href: materials/01-intro-quarto.qmd
+            text: "Intro to Quarto"
+          - href: materials/02-authoring.qmd
+            text: "Authoring Quarto"
+          - href: materials/03-computation-editors.qmd
+            text: "Code and Editors"
+          - href: materials/04-static-documents.qmd
+            text: "Static Documents" 
+      - text: Day 2
+        menu: 
+          - href: materials/05-presentations.qmd
+            text: "Presentations"
+          - href: materials/06-websites.qmd
+            text: "Websites & Books"
+          - href: materials/07-plots-tables.qmd
+            text: "Plots & Tables"
+          - href: materials/08-advanced-knitr.qmd
+            text: "Advanced Quarto"
+    right: 
+      - icon: github
+        href: https://github.com/rstudio-conf-2022/get-started-quarto
+      - icon: twitter
+        href: https://twitter.com/quarto_pub
   sidebar: 
     style: docked
     contents: 

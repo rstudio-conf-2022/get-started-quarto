@@ -43,7 +43,7 @@ On Sunday July 24th - clone this repo!
 :::{.callout-caution collapse="true"}
 ## (Optional!) Pre-Work for Python
 
-This will be a R/RStudio centric course based on the attendees, but we will briefly cover other editors and Python. You are not required to install Jupyter/Python/VScode if
+This will be a R/RStudio centric course based on the attendees, but we will briefly cover other editors and Python. You are not required to install Jupyter/Python/VScode, but if you'd like to test them out:
 
 - Install Python, following instructions at [Minimum Viable Python](https://solutions.rstudio.com/python/minimum-viable-python/installing-python/)
 - Install [Jupyter](https://quarto.org/docs/computations/python.html#installation)

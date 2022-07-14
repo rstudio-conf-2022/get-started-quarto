@@ -488,9 +488,17 @@ Creating project at myblog:
 <li>Create a new folder under <code>/posts</code> - this folder will be the “slug” URL</li>
 <li>Create a new <code>index.qmd</code> within the new folder</li>
 </ul>
-</section>
-<section id="your-turn-build-a-blog" class="slide level2">
-<h2>YOUR TURN BUILD A BLOG</h2>
+</section></section>
+<section>
+<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Create a new RStudio project and select Quarto blog</li>
+<li>Explore the directory</li>
+<li>Create a new folder in <code>/posts/</code> - title it <code>2022-07-26-my-first-post</code></li>
+<li>Create a new blank <code>index.qmd</code> in that folder, add a <code>format: html</code> YAML header</li>
+<li>Add some text and a markdown image: <code>![]()</code></li>
+</ul>
 </section>
 <section id="rendering-posts" class="slide level2">
 <h2>Rendering posts</h2>
@@ -558,7 +566,6 @@ about:
     - icon: github
       text: Github
       href: https://github.com/jthomasmock
-
 ---</code></pre>
 </section>
 <section id="about-page-templates" class="slide level2">
@@ -569,9 +576,12 @@ about:
 <div class="tabset">
 <section id="jolla" class="slide level2">
 <h2>jolla</h2>
-<p><img data-src="https://quarto.org/docs/websites/images/about-jolla.png"> ## trestles</p>
-<p><img data-src="https://quarto.org/docs/websites/images/about-trestles.png"></p>
-</section>
+
+<img data-src="https://quarto.org/docs/websites/images/about-jolla.png" class="r-stretch"></section>
+<section id="trestles" class="slide level2">
+<h2>trestles</h2>
+
+<img data-src="https://quarto.org/docs/websites/images/about-trestles.png" class="r-stretch"></section>
 <section id="solana" class="slide level2">
 <h2>solana</h2>
 
@@ -637,7 +647,7 @@ about:
 
 <img data-src="https://quarto.org/docs/websites/images/listing-table.png" class="r-stretch"></section>
 </div>
-<section id="your-turn" class="slide level2">
+<section id="your-turn-1" class="slide level2">
 <h2>YOUR TURN</h2>
 <p>Let’s change the listing top of our blog</p>
 </section>
@@ -1003,6 +1013,48 @@ format:
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

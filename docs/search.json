@@ -1351,13 +1351,6 @@
     "text": "Core blog workflow\n\nCreate a new folder under /posts - this folder will be the “slug” URL\nCreate a new index.qmd within the new folder"
   },
   {
-    "objectID": "materials/06-websites.html#your-turn-build-a-blog",
-    "href": "materials/06-websites.html#your-turn-build-a-blog",
-    "title": "Hello Quarto",
-    "section": "YOUR TURN BUILD A BLOG",
-    "text": "YOUR TURN BUILD A BLOG"
-  },
-  {
     "objectID": "materials/06-websites.html#rendering-posts",
     "href": "materials/06-websites.html#rendering-posts",
     "title": "Hello Quarto",
@@ -1390,7 +1383,7 @@
     "href": "materials/06-websites.html#adding-an-about-page",
     "title": "Hello Quarto",
     "section": "Adding an About page",
-    "text": "Adding an About page\n---\ntwitter-card:\n  image: images/profile-preview.png\n  creator: \"@thomas_mock\"\nopen-graph: true\ntitle: \"Tom Mock\"\nimage: images/profile-preview.png\nabout:\n  template: trestles\n  links:\n    - icon: twitter\n      text: Twitter\n      href: https://twitter.com/thomasmock\n    - icon: github\n      text: Github\n      href: https://github.com/jthomasmock\n\n---"
+    "text": "Adding an About page\n---\ntwitter-card:\n  image: images/profile-preview.png\n  creator: \"@thomas_mock\"\nopen-graph: true\ntitle: \"Tom Mock\"\nimage: images/profile-preview.png\nabout:\n  template: trestles\n  links:\n    - icon: twitter\n      text: Twitter\n      href: https://twitter.com/thomasmock\n    - icon: github\n      text: Github\n      href: https://github.com/jthomasmock\n---"
   },
   {
     "objectID": "materials/06-websites.html#about-page-templates",
@@ -1404,7 +1397,14 @@
     "href": "materials/06-websites.html#jolla",
     "title": "Hello Quarto",
     "section": "jolla",
-    "text": "jolla\n ## trestles"
+    "text": "jolla"
+  },
+  {
+    "objectID": "materials/06-websites.html#trestles",
+    "href": "materials/06-websites.html#trestles",
+    "title": "Hello Quarto",
+    "section": "trestles",
+    "text": "trestles"
   },
   {
     "objectID": "materials/06-websites.html#solana",
@@ -1463,8 +1463,8 @@
     "text": "Table\n\nThe table listing style provides a traditional tabular layout."
   },
   {
-    "objectID": "materials/06-websites.html#your-turn",
-    "href": "materials/06-websites.html#your-turn",
+    "objectID": "materials/06-websites.html#your-turn-1",
+    "href": "materials/06-websites.html#your-turn-1",
     "title": "Hello Quarto",
     "section": "YOUR TURN",
     "text": "YOUR TURN\nLet’s change the listing top of our blog"

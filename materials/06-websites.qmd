@@ -93,7 +93,13 @@ RStudio \> New Project \> New Quarto Blog
 -   Create a new folder under `/posts` - this folder will be the "slug" URL
 -   Create a new `index.qmd` within the new folder
 
-## YOUR TURN BUILD A BLOG
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Create a new RStudio project and select Quarto blog
+-   Explore the directory
+-   Create a new folder in `/posts/` - title it `2022-07-26-my-first-post`
+-   Create a new blank `index.qmd` in that folder, add a `format: html` YAML header
+-   Add some text and a markdown image: `![]()`
 
 ## Rendering posts
 
@@ -169,7 +175,6 @@ I typically use cache throughout various types of outputs when I have computatio
         - icon: github
           text: Github
           href: https://github.com/jthomasmock
-
     ---
 
 ## About page templates
@@ -182,7 +187,9 @@ about:
 ::: tabset
 ## jolla
 
-![](https://quarto.org/docs/websites/images/about-jolla.png) \## trestles
+![](https://quarto.org/docs/websites/images/about-jolla.png)
+
+## trestles
 
 ![](https://quarto.org/docs/websites/images/about-trestles.png)
 
