@@ -1,0 +1,708 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+---
+
+# {background-color="#6a9c42"}
+
+[03 Computation and Editors]{style="color: white; font-size: 150px;"}
+
+## Execute code
+
+```{r setup, include = FALSE}
+library(tidyverse)
+```
+
+One of the biggest similarities AND differences between Quarto and RMarkdown is how it handles native code.
+
+. . .
+
+Quarto uses the `{knitr}` engine just like RMarkdown to execute R code natively, along with many other languages.
+
+. . .
+
+Quarto can _also_ use the Jupyter engine to natively execute Julia, Python, or other languages that Jupyter supports.
+
+## Choose your engine
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+You can specify Jupyter to use defaults
+
+```yaml
+---
+engine: jupyter
+---
+```
+
+<br>
+
+Or a specific Python version
+
+```yaml
+---
+engine: python3
+---
+```
+
+<br>
+
+Or even a specific Jupyter Kernel!
+
+```yaml
+---
+jupyter: 
+  kernelspec:
+    name: "venvPython"
+    language: "python"
+    display_name: "Python 3.7 (venv Python)"
+---
+```
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+## Choose your engine
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+You can specify Jupyter to use defaults
+
+```yaml
+---
+engine: jupyter
+---
+```
+
+<br>
+
+Or a specific Python version
+
+```yaml
+---
+engine: python3
+---
+```
+
+<br>
+
+Or even a specific Jupyter Kernel!
+
+```yaml
+---
+jupyter: 
+  kernelspec:
+    name: "venvPython"
+    language: "python"
+    display_name: "Python 3.7 (venv Python)"
+---
+```
+
+:::
+
+::: {.column width="50%"}
+
+If R code is found first will default to `knitr`
+
+```yaml
+---
+format: html
+---
+```
+
+<br>
+
+Or can force using `knitr` if you're mixing R/Python content or if your first code chunk is not R.
+
+```yaml
+---
+format: html
+engine: knitr
+---
+```
+
+:::
+
+::::
+
+## Start your engine!
+
+![](images/howard-speed.gif)
+
+
+## `knitr` code cells
+
+[https://quarto.org/docs/reference/cells/cells-knitr.html](https://quarto.org/docs/reference/cells/cells-knitr.html)
+
+<iframe src="https://quarto.org/docs/reference/cells/cells-knitr.html" width="1200px" height="800px"></iframe>
+
+## Anatomy of a code chunk
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+````md
+```{{r car-stuff}}
+#| echo: false
+mtcars %>% 
+  distinct(cyl)
+```
+````
+
+:::
+
+::: {.column width="50%"}
+
+- Has 3x backticks on each end ```` ``` ````  
+- Place engine (`r` and chunk label `label`) between curly braces `{r label}`  
+- Place options underneath, behind the `#|` (hashpipe): `#| option1: value`  
+
+:::
+
+::::
+
+
+## Code
+
+```{r example-code-intro}
+#| echo: fenced
+#| output-location: column
+#| label: fig-airquality
+#| fig-cap: Temperature and ozone level.
+#| warning: false
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+
+## Code, more than just R
+
+::: columns
+
+::: {.column width="50%"}
+
+```{python example-code-python, eval = FALSE}
+#| echo: fenced
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/polar-axis.png){width="650px"}
+
+:::
+
+:::
+
+## Create code chunks
+
+- You can manually type out code chunks: ```` ```{r} ````
+- the keyboard shortcut `Ctrl + Alt + I` (OS X: `Cmd + Option + I`)
+- the Add Chunk command in the editor toolbar
+
+. . .
+
+Or use the Command Palette: `Cmd + Shift + P`/`Ctrl + Shift + P`
+
+## YOUR TURN 
+
+- CREATE a code chunk, load `tidyverse` and `palmerpenguins` and populate with some `tidyverse` code to evaluate the good ole `palmerpenguins::penguins` dataset!
+
+## Inline code
+
+```{verbatim, lang = "markdown"}
+The mtcars dataset has `r nrow(mtcars)` rows
+```
+
+. . .
+
+The mtcars dataset has `r nrow(mtcars)` rows
+
+. . .
+
+```{verbatim, lang = "markdown"}
+The mtcars dataset has an average miles/per gallon of `r mean(mtcars$mpg)`
+```
+
+. . .
+
+The mtcars dataset has an average miles/per gallon of `r mean(mtcars$mpg)`
+
+. . .
+
+```{r, echo=FALSE}
+fmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))
+```
+
+
+```{verbatim, lang = "markdown"}
+fmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))
+The mtcars dataset has an average miles/per gallon of `r fmt_mean`
+```
+
+. . .
+
+The mtcars dataset has an average miles/per gallon of `r fmt_mean`
+
+
+## Inline code with `Jupyter`
+
+Pure Python/Julia Quarto documents via `engine: jupyter` can also do inline code, but this requires the use of [IPython.display.Markdown](https://ipython.readthedocs.io/en/stable/api/generated/IPython.display.html) or the [`Markdown`](https://docs.julialang.org/en/v1/stdlib/Markdown/) package for Julia
+
+
+::: {.panel-tabset}
+
+## Python
+
+````
+```{{python}}
+#| echo: false
+radius = 10
+from IPython.display import display, Markdown
+display(Markdown("""
+The radius of the circle is {radius}.
+""".format(radius = radius)))
+```
+````
+
+## Julia
+
+````
+```{{julia}}
+#| echo: false
+radius = 10
+using Markdown
+Markdown.parse("""
+The radius of the circle is $radius.
+""")
+```
+````
+
+:::
+
+## Code chunks options
+
+All code chunk options at [yihui.org/knitr/options/](https://yihui.org/knitr/options/)
+
+. . .
+
+If you've used RMarkdown before, you're likely used to:
+
+
+```{r, echo = "fenced", eval = TRUE}
+mtcars %>% filter(mpg >= 25)
+```
+
+. . .
+
+Quarto introduces the "hash pipe" in `#|`
+
+```{r}
+#| echo: fenced
+#| eval: true
+mtcars %>% filter(mpg >= 25)
+```
+
+## Quarto's hash pipe `#|`
+
+![](images/hash-pipe.gif){width="800px"}
+
+[Weezer - Hash Pipe](https://www.youtube.com/watch?v=_9BGLtqqkVI)
+
+## Quarto chunk options
+
+```{r}
+#| echo: fenced
+#| warning: false
+#| fig-cap: "Air Quality"
+#| fig-alt: "A ggplot2 with temperature by ozone levels along with a trend line indicating the increase in temperature with increasing ozone levels."
+
+library(ggplot2)
+ggplot(airquality, aes(Ozone, Temp)) + 
+        geom_point() + 
+        geom_smooth(method = "loess", se = FALSE)
+```
+
+
+## RMarkdown vs Quarto
+
+You _can_ mix and match or use only R Markdown or Quarto style `knitr` options. However, note the difference between 'naming' of the chunk options, typically `one.two` vs `one-two`. The `one.two` exists for backwards compatibility and you should focus on `one-two` syntax.
+
+```
+fig.align vs fig-align
+fig.dpi vs fig-dpi
+```
+
+. . .
+
+```{r fig.align = "left"}
+#| echo: fenced
+#| fig-dpi: 350
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) + geom_point()
+```
+
+. . .
+
+<br>
+
+Note the differences between:
+
+- `one.two` vs `one-two`
+- `one.two = FALSE` vs `one-two: false`
+
+## Quarto chunk options
+
+::: note
+Note that if you prefer it is still possible to include chunk options on the first line (e.g. ```` ```{r, echo = FALSE} ````). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines.
+
+:::
+
+. . .
+
+> Chunk options included this way use YAML syntax rather than R syntax for consistency with options provided in YAML front matter. You can still however use R code for option values by prefacing them with !expr. For example:
+
+```
+#| fig-cap: !expr paste("Air", "Quality")
+```
+
+## Setup Chunk
+
+A special chunk! This sets up the default values for the **entire document**.
+
+. . .
+
+````
+```{{r setup}}
+#| include: false
+knitr::opts_chunk$set(
+  comment = '#>', fig.width = 6, fig.height = 6
+)
+```
+````
+
+## `knitr::opts_chunk` defaults
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+str(knitr::opts_chunk$get()[1:27])
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: true
+str(knitr::opts_chunk$get()[28:53])
+```
+
+:::
+
+::::
+
+## Code chunks are controllable
+
+Some examples
+
+| Option      | Description |
+| ----------- | ----------- |
+| `fig-height: 4` | Plots generated from this chunk will have a height of 4 inches. |
+| `fig-width: 6` | Plots generated from this chunk will have a width of 6 inches. |
+| `dpi: 150`   | Plots generated will have a dots per inch (pixel density) of 150 |
+| `echo: false` | Code will not be echoed (ie not shown) |
+| `eval: false` | Nothing will be evaluated, but code still be printed |
+| `cache: true` | Results will be cached, and chunk will not be run in subsequent renders, unless code is changed. | 
+| `message: false` | No messages will be printed |
+| `warning: false` | No warnings will be printed | 
+| `include: false` | No ouputs/echo/messages/etc will be returned | 
+
+## There's a lot of options!
+
+[https://quarto.org/docs/reference/cells/cells-knitr.html](https://quarto.org/docs/reference/cells/cells-knitr.html)
+
+<iframe src="https://quarto.org/docs/reference/cells/cells-knitr.html" height="800px" width="1200px"></iframe>
+
+## Chunks can be named
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r, echo = FALSE, out.width="80%"}
+#| fig.alt="A screenshot of a RMarkdown document inside RStudio. The screenshot highlights the automatically generated document outline for each chunk name."
+knitr::include_graphics("images/qmd-outline.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Useful for troubleshooting (ie _where_ is the document failing on render)  
+
+```
+label: unnamed-chunk-23
+  |..............................|  83%
+  ordinary text without R code
+  |..............................|  85%
+label: unnamed-chunk-24 (with options) 
+List of 2
+ $ fig.dim: num [1:2] 6 4
+ $ dpi    : num 150
+  |..............................|  86%
+  ordinary text without R code
+```
+:::
+
+::::
+
+## Navigating within RStudio 
+
+TO DO DEMO
+
+## Chunk names, good and bad
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Good
+
+- `chunk`
+- `myChunk`
+- `my-chunk`
+- `mychunk1`
+
+:::
+
+::: {.column width="50%"}
+### Bad
+
+(These _will_ fail)
+
+- `my_chunk`
+- `my chunk`
+
+:::
+
+::::
+
+## Named chunks can be re-used!
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+````md
+```{{r myPlt}}
+#| eval: false
+ggplot(mtcars, aes(x = disp, y = mpg, 
+    color = factor(cyl))) +
+  geom_point()
+```
+````
+
+Note that you when using **named chunks** you can't alter the internal code, only the chunk options. This is necessary because you are referencing the initially defined code in that chunk.
+
+:::
+
+::: {.column width="50%"}
+
+
+````md
+```{{r myPlt}}
+#| eval: true
+#| dpi: 300
+#| fig-height: 6
+#| fig-width: 4
+```
+````
+
+```{r coolPlot, echo = FALSE, dpi=300, fig.dim = c(6,4)}
+ggplot(mtcars, aes(x = disp, y = mpg, color = factor(cyl))) +
+  geom_point()
+```
+
+:::
+
+::::
+
+## Working with code
+
+```{r}
+mtcars |> 
+  filter(mpg >= 25)
+```
+
+## Working with code
+
+```{r}
+mpg_cars <- mtcars |> 
+  filter(mpg >= 25)
+```
+
+
+## Working with code
+
+```{r}
+mpg_cars <- mtcars |> 
+  filter(mpg >= 25)
+
+mpg_cars
+```
+
+## Working with code
+
+```{r mpg-cars}
+#| echo: fenced
+#| eval: false
+mpg_cars <- mtcars |> 
+  filter(mpg >= 25)
+
+mpg_cars
+```
+
+## Working with code
+
+````
+```{{r mpg-cars}}
+#| echo: false
+#| eval: true
+```
+````
+
+```{r mpg-cars}
+#| echo: false
+#| eval: true
+```
+
+
+
+## RStudio
+
+RStudio has deep integration with R, `knitr` and Quarto
+
+- Render button
+- Visual Editor
+- Preview of output
+
+. . .
+
+You should _always_ be using a recent release of the RStudio IDE - especially for the Quarto features. 
+
+RStudio `2022.07` and beyond come bundled with a production-stable release of Quarto, no additional install needed!
+
+## RStudio + Quarto
+
+## YAML Auto-completion
+
+Quarto + RStudio provides a rich YAML auto-completion based on text.
+
+```yaml
+---
+format: 
+  html:
+    toc-depth: 3
+    #toc-location: body
+---
+
+```
+
+. . .
+
+![](images/yaml-autocomplete.gif)
+
+## `knitr` auto-completion
+
+You can use tab-completion inside `knitr` chunk options for RMarkdown style or Quarto style as well.
+
+![](images/knitr-autocomplete.gif)
+
+## RStudio Visual Editor
+
+![](https://quarto.org/docs/visual-editor/images/visual-editing.png)
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/03-authoring/visual-editor.qmd`
+
+## Quarto workflow
+
+Running Quarto Render will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
+
+## Rendering
+
+1. Render in RStudio
+
+![](https://quarto.org/docs/tools/images/rstudio-render.png)
+
+- Starts a background job and previews the output
+
+2. System shell via `quarto render`
+
+```{bash}
+#| eval: false
+#| echo: true
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+- Renders via terminal
+
+3. R console via `quarto` R package
+
+```{r}
+#| eval: false
+#| echo: true
+library(quarto)
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Renders via R Console

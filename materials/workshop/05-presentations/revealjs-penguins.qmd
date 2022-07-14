@@ -1,0 +1,118 @@
+---
+title: "Penguin Report"
+subtitle: "with revealjs"
+author: "Tom Mock"
+institute: "RStudio, PBC"
+date: today
+format:
+  revealjs:
+    highlight-style: github
+    slide-number: c/t
+---
+
+##
+
+![Diagram of penguin head with indication of bill length and bill depth.](https://allisonhorst.github.io/palmerpenguins/reference/figures/culmen_depth.png)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(palmerpenguins) # need to install
+library(broom) 
+library(skimr) # need to install
+library(bslib) # need to install
+```
+
+## Literate Programming
+
+Per [Donald Knuth](https://en.wikipedia.org/wiki/Literate_programming
+) 
+
+> A programming paradigm introduced by Donald Knuth in which a computer program is given an explanation of its logic in a natural language, such as English, interspersed with snippets of macros and traditional source code, from which compilable source code can be generated.
+
+## Specific statistics
+
+```{r}
+penguins %>% 
+  group_by(species, sex) %>% 
+  summarize(
+    n = n(), 
+    weight = mean(body_mass_g, na.rm = TRUE),
+    flipper_length = mean(flipper_length_mm, na.rm = TRUE)
+    ) %>% 
+  arrange(desc(weight))
+```
+
+## Cleanup the data
+
+If you noticed above, there was some NA or missing data. We can remove those rows for now.
+
+```{r}
+penguins_clean <- penguins %>% 
+  na.omit() %>% 
+  mutate(species_num = as.numeric(species))
+```
+
+## Plot Section
+
+Let's move on to some plots, for the overall distributions and for just the Adelie penguins. The overall distribution of the data by species shows some overlap in body weight for Adelie/Chinstrap, but more of a separation for the Gentoo penguins.
+
+## Distribution 
+
+```{r, fig.retina=1, fig.dim=c(8,4)}
+penguins %>% 
+  ggplot(aes(body_mass_g, fill = species)) + 
+  geom_density(color = "white", alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) +
+  labs(x = "Penguin Bins")
+```
+
+## LM + Scatter Plot
+
+```{r, fig.retina=1, fig.dim=c(8,4)}
+penguin_size_plot <- penguins_clean %>% 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) + 
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  geom_point(size = 2, alpha = 0.5) +
+  labs(x = "Mass (g)", y = "Flipper Length (mm)") +
+  geom_smooth(aes(group = "none"), method = "lm")
+
+penguin_size_plot
+```
+
+## Modeling section {background-color="black"}
+
+Moving on to some basic modeling we can see if what kind of relationships we observe in the data. Note that I'm really not following any plan, just indicating how you can fit some different models all at once with `dplyr` + `broom`.
+
+##
+
+```{r}
+model_inputs <- tibble(
+  model_form = c(
+    list(flipper_length_mm ~ body_mass_g),
+    list(species_num ~ bill_length_mm + body_mass_g + sex),
+    list(flipper_length_mm ~ bill_length_mm + species)
+    ),
+  data = list(penguins_clean)
+) 
+
+model_metrics <- model_inputs %>% 
+  rowwise(model_form, data) %>% 
+  summarize(lm = list(lm(model_form, data = data)), .groups = "drop") %>% 
+  rowwise(model_form, lm, data) %>% 
+  summarise(broom::glance(lm), .groups = "drop")
+```
+
+##
+
+```{r}
+model_metrics %>% 
+  select(model_form, r.squared:p.value) %>% 
+  mutate(model_form = as.character(model_form)) %>% 
+  gt::gt() %>% 
+  gt::fmt_number(r.squared:statistic) %>% 
+  gt::fmt_scientific(p.value) %>% 
+  gt::cols_width(
+    model_form ~ px(150)
+  )
+```

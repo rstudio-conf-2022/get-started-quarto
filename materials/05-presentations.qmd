@@ -1,0 +1,562 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+---
+
+# Presentations {background-image="images/presenter.png" background-size="cover" background-color="#4f6952"}
+
+<h2>Making Slides with Code</h2>
+
+<h3>Tom Mock \| 2022-07-25</h3>
+
+## Quarto presentation formats
+
+-   `revealjs` - essentially the replacement for `xaringan`, but with Pandoc-native syntax
+-   `beamer` for LaTex slides
+-   Powerpoint for when you *have* to collaborate via Office
+
+##  {background-image="images/quarto-slides.png" background-position="center" background-size="auto 50%"}
+
+## Core workflow
+
+    ---
+    format: revealjs
+    ---
+
+    ## Step 1
+    - Split slides up with level 2 headers: `## Heading 2`
+    - Add some markdown + text and/or some R/Python code
+
+    ## Step 2
+    - quarto render
+
+    ## Step 3
+    - Profit
+
+## `revealjs`
+
+> reveal.js is an open source HTML presentation framework. It's a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.
+
+. . .
+
+-   `revealjs` for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides
+
+-   User guide: <https://quarto.org/docs/presentations/revealjs/>
+
+## Presentation preview
+
+-   In the latest version of RStudio, Quarto `revealjs` presentations will open up as a "background job" in the Presentation tab.
+
+. . .
+
+![](images/presentation-tab.png){height="800px"}
+
+## `revealjs` vs `xaringan`
+
+-   `xaringan` for RMarkdown uses only `knitr` and `remark.js`, without Pandoc and with some Pandoc-incompatabilities
+-   `revealjs` was a lesser known RMarkdown package, but is the primary HTML slide generator for Quarto
+
+. . .
+
+If you loved `xaringan`, you'll love `revealjs`!
+
+## Separate slides
+
+-   Level 2 header = new slide
+
+-   Level 1 header = new slide and new section
+
+. . .
+
+-   `---` can also delineate slides via horizontal rules or leave the heading "blank" for untitled slides
+
+## Reminder about pandoc div and spans
+
+    ::: {.class}
+    <SOME CONTENT>
+    :::
+
+. . .
+
+    Some text with a specific [span]{.span-class}
+
+## Lists
+
+-   Create lists with `-` or `*` or `1.`
+
+. . .
+
+Incrementally reveal elements with:
+
+    ::: {.incremental}
+
+    - First item
+    - Second item
+
+    :::
+
+. . .
+
+Or affect globally:
+
+``` yaml
+format:
+  revealjs:
+    incremental: true
+```
+
+. . .
+
+    ::: {.nonincremental}
+
+    - 1st Item
+    - 2nd Item
+
+    :::
+
+## Incremental reveal
+
+Not limited to just bullet points...
+
+Use `. . .` syntax to indicate a break at an arbitrary location
+
+. . .
+
+```{r}
+head(mtcars)
+```
+
+## Incremental reveal
+
+    Not limited to just bullet points...
+
+    Use `. . .` syntax to indicate a break at an arbitrary location
+
+    . . .
+
+    ```{{r}}
+    head(mtcars)
+    ```
+
+## Fragments
+
+You can also make a point with fragments
+
+. . .
+
+::: fragment
+Fade in
+:::
+
+::: {.fragment .fade-out}
+Fade out
+:::
+
+::: {.fragment .highlight-red}
+Highlight red
+:::
+
+::: {.fragment .fade-in-then-out}
+Fade in, then out
+:::
+
+::: {.fragment .fade-up}
+Slide up while fading in
+:::
+
+## Fragments
+
+    ::: {.fragment}
+    Fade in
+    :::
+
+    ::: {.fragment .fade-out}
+    Fade out
+    :::
+
+    ::: {.fragment .highlight-red}
+    Highlight red
+    :::
+
+    ::: {.fragment .fade-in-then-out}
+    Fade in, then out
+    :::
+
+    ::: {.fragment .fade-up}
+    Slide up while fading in
+    :::
+
+## Fragments, nesting
+
+Fragments can be nested to affect the same "text" multiple times
+
+::: {.fragment .fade-in}
+::: {.fragment .highlight-red}
+::: {.fragment .semi-fade-out}
+Fade in \> Turn red \> Semi fade out
+:::
+:::
+:::
+
+## Fragments, nesting
+
+    ::: {.fragment .fade-in}
+    ::: {.fragment .highlight-red}
+    ::: {.fragment .semi-fade-out}
+    Fade in > Turn red > Semi fade out
+    :::
+    :::
+    :::
+
+## Fragments, spans
+
+This is an [important sentence!]{.fragment .highlight-red}
+
+. . .
+
+    This is an [important sentence!]{.fragment .highlight-red}
+
+. . .
+
+<br>
+
+Mind the [gap]{.fragment .fade-in} when riding the rail!
+
+. . .
+
+    Mind the [gap]{.fragment .fade-in} when riding the rail!
+
+## Fragments, order
+
+::: {.fragment fragment-index="3"}
+Appears last
+:::
+
+::: {.fragment fragment-index="1"}
+Appears first
+:::
+
+::: {.fragment fragment-index="2"}
+Appears second
+:::
+
+## Fragments, order
+
+    ::: {.fragment fragment-index=3}
+    Appears last
+    :::
+
+    ::: {.fragment fragment-index=1}
+    Appears first
+    :::
+
+    ::: {.fragment fragment-index=2}
+    Appears second
+    :::
+
+## YOUR TURN REVEAL YOUR REVEALJS
+
+## Column layout
+
+    :::: {.columns}
+
+    ::: {.column width="40%"}
+    contents...
+    :::
+
+    ::: {.column width="60%"}
+    contents...
+    :::
+
+    ::::
+
+## Column layout
+
+::: columns
+::: {.column width="40%"}
+On the left
+:::
+
+::: {.column width="60%"}
+On the right
+:::
+:::
+
+## Column layout
+
+::: columns
+::: {.column width="40%"}
+```{r}
+#| echo: fenced
+#| eval: false
+dplyr::glimpse(mtcars)
+```
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| eval: true
+dplyr::glimpse(mtcars)
+```
+:::
+:::
+
+## Output location, `column-fragment`
+
+```{r}
+#| echo: fenced
+#| output-location: column-fragment
+#| code-line-numbers: "|2"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Output location, `column`
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| code-line-numbers: "|2"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Output location, `fragment`
+
+```{r}
+#| echo: fenced
+#| output-location: fragment
+#| code-line-numbers: "|2"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Output location, `slide`
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| code-line-numbers: "|2"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Stack layout
+
+::: r-stack
+![](images/howard-table.png){.fragment width="450"}
+
+![](images/boston-sleep.png){.fragment width="400"}
+
+![](images/boston-terrier.png){.fragment width="300"}
+:::
+
+## Stack layout
+
+    ::: {.r-stack}
+    ![](image1.png){.fragment width="450"}
+
+    ![](image2.png){.fragment width="400"}
+
+    ![](image3.png){.fragment width="300"}
+    :::
+
+##  {background-color="red"}
+
+::: r-fit-text
+ATTENTION
+:::
+
+## Fit Text `{.r-fit-text}`
+
+    ::: {.r-fit-text}
+    Attention
+    :::
+
+## Stretch images `{.r-stretch}`
+
+Fit to the remaining space.
+
+    ![](images/howard-comfy.png){.r-stretch}
+
+. . .
+
+![](images/howard-comfy.png){.r-stretch}
+
+## Title Slide, YAML edition
+
+```yaml
+---
+format: revealjs
+title: Hello Quarto
+subtitle: Slides with revealjs
+author: <a href="https://themockup.blog">Tom Mock</a>
+date: 2022-07-11
+institute: RStudio
+title-slide-attributes:
+    data-background-image: images/paper-texture.jpg
+    data-background-size: cover
+---
+```
+
+. . .
+
+<iframe src="../../materials/title-slide.html" width="1280px" height="720px"></iframe>
+
+## Title Slide, DIY
+
+<iframe src="../../materials/title-slide2.html" width="1280px" height="720px"></iframe>
+
+## 
+
+```
+# {background-image="images/paper-texture.jpg" background-size="cover"}
+
+:::{style="text-align: center;"}
+
+<h1>Hello Quarto</h1>
+<img src="images/headshot.jpeg" style="border-radius: 50%; border:10px solid #447099;" width="250px"/>
+<h2>Tom Mock, RStudio</h2>
+
+:::
+
+```
+
+## Logo and Footer
+
+```
+format: revealjs
+footer: <https://quarto.org/>
+logo: https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png
+```
+
+. . .
+
+::: {style="position: absolute; height: 50px; width: 400px; background: #44709935; bottom: -50px; left: 750px;"}
+:::
+
+. . .
+
+::: {style="position: absolute; height: 50px; width: 250px; background: #44709935; bottom: -50px; right: -150px;"}
+:::
+
+. . .
+
+A footer can also be set by slide with:
+
+::: {.footer}
+<https://themockup.blog>
+:::
+
+```
+::: {.footer}
+<https://themockup.blog>
+:::
+```
+
+
+## Slide alignment
+
+-   Heading level one will be center-aligned
+-   Heading level two will be left-aligned
+
+. . .
+
+```
+::: {style="text-align: right;"}
+<h2>Right aligned!</h2>
+
+-   Some bullets
+-   Another bullet
+:::
+```
+
+---
+
+::: {style="text-align: right;"}
+<h2>Right aligned!</h2>
+
+-   Some bullets
+-   Another bullet
+:::
+
+## Slide backgrounds, color {background-color="blue"}
+
+    ## Slide backgrounds, color {background-color="blue"}
+
+## Slide backgrounds, images {background-image="images/howard-table.png" background-size="cover"}
+
+    ## Slide backgrounds, images {background-image="images/howard-table.png" background-size="cover"}
+
+## Slide backgrounds, images
+
+Note, you may need to set a `background-color` to black/white to "force" the text to contrast.
+
+| **Attribute**         | **Default** | **Description**                                                                                   |
+|:----------------------|:------------|:--------------------------------------------------------------------------------------------------|
+| `background-image`    |             | URL of the image to show. GIFs restart when the slide opens.                                      |
+| `background-size`     | cover       | See [background-size](https://developer.mozilla.org/docs/Web/CSS/background-size) on MDN.         |
+| `background-position` | center      | See [background-position](https://developer.mozilla.org/docs/Web/CSS/background-position) on MDN. |
+| `background-repeat`   | no-repeat   | See [background-repeat](https://developer.mozilla.org/docs/Web/CSS/background-repeat) on MDN.     |
+| `background-opacity`  | 1           | Opacity of the background image on a 0-1 scale. 0 is transparent and 1 is fully opaque.           |
+
+## Slide transitions
+
+## Sizing
+
+## Themes/Appearance
+
+-   https://quarto.org/docs/presentations/revealjs/themes.html
+
+-   Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
+
+## Random HTML + Position absolute
+
+## Tabsets
+
+# Code
+
+## Code line-highlighting
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| code-line-numbers: "|3|5|8|10"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```

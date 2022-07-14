@@ -1,0 +1,18 @@
+{
+  "hash": "f189dc35a33b6b7eeecfc3e7d3947248",
+  "result": {
+    "markdown": "---\nformat: \n  revealjs:\n    slide-number: true\n    width: 1920\n    height: 1080\n    logo: \"https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png\"\n    footer: \"Hello Quarto\"\n    css: [\"theme/theme.css\"]\n    theme: simple\n    echo: true\neditor: source\n---\n\n\n## Slide 1\n\n\n## Code\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# echo: true\nlibrary(dplyr)\nmtcars |> \n  group_by(cyl, am) |> \n  summarize(mean = mean(mpg), n = n(), .groups = \"drop\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n# A tibble: 6 × 4\n    cyl    am  mean     n\n  <dbl> <dbl> <dbl> <int>\n1     4     0  22.9     3\n2     4     1  28.1     8\n3     6     0  19.1     4\n4     6     1  20.6     3\n5     8     0  15.0    12\n6     8     1  15.4     2\n```\n:::\n:::\n\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nhead(mtcars)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n```\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    function fireSlideChanged(previousSlide, currentSlide) {\n\n      // dispatch for htmlwidgets\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for reveal\n    if (window.Reveal) {\n      window.Reveal.addEventListener(\"slidechanged\", function(event) {\n        fireSlideChanged(event.previousSlide, event.currentSlide);\n      });\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "hash": "ca13d2117b4f519723062dc531a57479",
+  "result": {
+    "markdown": "---\ntitle: \"Penguins\"\ndate: 2022-07-13\nformat: html\nparams:\n  species: Adelie\n---\n\n\n\n\nWe have data about 344 penguins. Only 276 are classified asChinstrap. \nThe distribution of the Chinstrap penguins are shown below:\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](penguin-params_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "penguin-params_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

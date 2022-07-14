@@ -1,0 +1,28 @@
+---
+title: "Penguins"
+date: 2022-07-13
+format: html
+params:
+  species: Adelie
+---
+
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(palmerpenguins)
+
+smaller <- penguins %>% 
+  filter(species == params$species, 
+         !is.na(body_mass_g))
+```
+
+We have data about `r nrow(penguins)` penguins. Only `r nrow(penguins) - nrow(smaller)` are classified as`r params$species`. 
+The distribution of the `r params$species` penguins are shown below:
+
+```{r}
+#| echo: false
+smaller %>% 
+  ggplot(aes(body_mass_g)) + 
+  geom_histogram(binwidth = 100)
+```

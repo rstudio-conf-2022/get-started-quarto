@@ -1,0 +1,29 @@
+
+## `layout-ncol=2`
+
+```
+::: {layout-ncol=2}
+![Howard on a couch](images/howard-comfy.png)
+
+![Howard in a table](images/howard-table.png)
+:::
+```
+
+::: {layout-ncol=2}
+![Howard on a couch](../images/howard-comfy.png)
+
+![Howard in a table](../images/howard-table.png)
+:::
+
+## `layout-nrow=2`
+
+::: {layout-nrow=2}
+![Howard on a couch](../images/howard-comfy.png)
+
+![Howard in a table](../images/howard-table.png)
+
+![Howard sleeping](../images/boston-sleep.png)
+
+![Howard awake](../images/boston-terrier.png)
+:::
+

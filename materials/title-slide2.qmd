@@ -1,0 +1,13 @@
+---
+format: revealjs
+---
+
+# {background-image="images/paper-texture.jpg" background-size="cover"}
+
+:::{style="text-align: center;"}
+
+<h1>Hello Quarto</h1>
+<img src="images/headshot.jpeg" style="border-radius: 50%; border:10px solid #447099;" width="250px"/>
+<h2>Tom Mock, RStudio</h2>
+
+:::

@@ -1,0 +1,764 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+editor: source
+---
+
+# 02 - Authoring Quarto {background-color="#447099" background-image="images/typewriter.png" background-size="cover"}
+
+## Quarto, anatomy
+
+1. Metadata: YAML
+
+2. Text: Markdown
+
+3. Code: `knitr` or `jupyter`
+
+. . .
+
+Add it all together, and you have beautiful, powerful, and useful outputs!
+
+## Literate programming
+
+> Literate programming is writing out the program logic in a human language with included (separated by a primitive markup) code snippets and macros. - [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
+
+````
+---
+title: "ggplot2 demo"
+date: "5/22/2021"
+format: html
+---
+
+## Air Quality
+
+There is a relationship between temperature and the ozone level.
+
+```{{r}}
+#| label: fig-airquality
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+
+````
+
+. . .
+
+::: {style="background: #a13c6530; width: 400px; height: 145px; margin: 5px; position: absolute; top: 245px; left: 0px;"}
+:::
+
+. . .
+
+::: {style="background: #fa551c30; width: 900px; height: 110px; margin: 5px; position: absolute; top: 405px; left: 0px;"}
+:::
+
+. . .
+
+::: {style="background: #6a9c4230; width: 550px; height: 210px; margin: 5px; position: absolute; top: 520px; left: 0px;"}
+:::
+
+# 1 Metadata {background-color="#a13c65"}
+
+## Metadata: YAML
+
+"Yet Another Markup Language" or "YAML Ain't Markup Language"
+
+```yaml
+---
+key: value
+---
+```
+
+## Output Options
+
+```yaml
+---
+format: something
+---
+```
+
+. . .
+
+```yaml
+---
+format: html
+---
+```
+
+```yaml
+---
+format: pdf
+---
+```
+
+```yaml
+---
+format: revealjs
+---
+```
+
+. . .
+
+Then add option arguments!
+
+```yaml
+---
+format: 
+  html:
+    toc: true
+    code-fold: true
+---
+```
+
+. . .
+
+Sub-options should be below the main format output and spacing matters!
+
+```yaml
+---
+format: 
+  html:
+    option1: text
+    option2: logical
+---
+```
+
+## YAML for `format: html`
+
+<iframe src="https://quarto.org/docs/reference/formats/html.html" title="Quarto HTML reference" height="900px" width="1300px"></iframe>
+
+## YAML is sensitive
+
+```yaml
+---
+format:html # invalid, no space between
+---
+
+---
+format: # invalid, read as missing
+html
+---
+
+---
+format: 
+  html: # valid but needs next object
+---
+```
+
+. . .
+
+Valid YAML can look a bit differently based on what all is needed
+
+```yaml
+format: html # valid - there's a space
+
+format:
+  html # valid - there's 2x spaces on a new line and no trailing :
+
+# valid - format = HTML with selections made
+format: 
+  html:
+    toc: true
+```
+
+## Quarto linting
+
+> Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. - [Lint](https://en.wikipedia.org/wiki/Lint_(software)#:~:text=Lint%2C%20or%20a%20linter%2C%20is,examined%20C%20language%20source%20code.)
+
+. . .
+
+:::: columns
+
+::: {.column width="50%"}
+
+![](images/lint-rstudio.png)
+
+:::
+
+::: {.column width="50%"}
+
+![](images/lint-vscode.png)
+
+:::
+
+::::
+
+## Quarto YAML Intelligence 
+
+![](images/quarto-tab-complete.png)
+
+## HTML options
+
+[quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html) 
+
+<iframe src="https://quarto.org/docs/reference/formats/html.html" height="800" width="1000"></iframe>
+
+## Rendering
+
+1. Render in RStudio
+
+![](https://quarto.org/docs/tools/images/rstudio-render.png)
+
+2. System shell via `quarto render`
+
+```{bash}
+#| eval: false
+#| echo: true
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+3. R console via `quarto` R package
+
+```{r}
+#| eval: false
+#| echo: true
+library(quarto)
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Use RStudio to create a new default Quarto document
+- Add a random title and your name as the author
+- Change theme to sketchy
+- Add toc and swap toc location to left
+- Make all code sections fold
+
+You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) if needed.
+
+# Text & Markdown {background-color="#fa551c70"}
+
+## Lists {.smaller}
+
++-------------------------------------+---------------------------------+
+| Markdown Syntax                     | Output                          |
++=====================================+=================================+
+|     * unordered list                | -   unordered list              |
+|         + sub-item 1                |                                 |
+|         + sub-item 2                |     -   sub-item 1              |
+|             - sub-sub-item 1        |                                 |
+|                                     |     -   sub-item 2              |
+|                                     |                                 |
+|                                     |         -   sub-sub-item 1      |
++-------------------------------------+---------------------------------+
+|     *   item 2                      | -   item 2                      |
+|                                     |                                 |
+|         Continued (indent 4 spaces) |     Continued (indent 4 spaces) |
++-------------------------------------+---------------------------------+
+|     1. ordered list                 | 1.  ordered list                |
+|     2. item 2                       |                                 |
+|         i) sub-item 1               | 2.  item 2                      |
+|              A.  sub-sub-item 1     |                                 |
+|                                     |     i.  sub-item 1              |
+|                                     |                                 |
+|                                     |         A.  sub-sub-item 1      |
++-------------------------------------+---------------------------------+
+|     (@)  A list whose numbering     | 1.  A list whose numbering      |
+|                                     |                                 |
+|     continues after                 | continues after                 |
+|                                     |                                 |
+|     (@)  an interruption            | 2.  an interruption             |
++-------------------------------------+---------------------------------+
+|     term                            | **term**                        |
+|     : definition                    |                                 |
+|                                     | :   definition                  |
++-------------------------------------+---------------------------------+
+
+## Text Formatting
+
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++===================================+===============================+
+|     *italics* and **bold**        | *italics* and **bold**        |
++-----------------------------------+-------------------------------+
+|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
++-----------------------------------+-------------------------------+
+|     ~~strikethrough~~             | ~~strikethrough~~             |
++-----------------------------------+-------------------------------+
+|     `verbatim code`               | `verbatim code`               |
++-----------------------------------+-------------------------------+
+
+## Headings
+
++---------------------+-----------------+
+| Markdown Syntax     | Output          |
++=====================+=================+
+|     # Header 1      | # Header 1      |
++---------------------+-----------------+
+|     ## Header 2     | ## Header 2     |
++---------------------+-----------------+
+|     ### Header 3    | ### Header 3    |
++---------------------+-----------------+
+|     #### Header 4   | #### Header 4   |
++---------------------+-----------------+
+|     ##### Header 5  | ##### Header 5  |
++---------------------+-----------------+
+|     ###### Header 6 | ###### Header 6 |
++---------------------+-----------------+
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/02-authoring/markdown-syntax.qmd`
+
+## Tables
+
+::: columns
+
+::: {.column width="50%"}
+
+```
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+```
+
+:::
+
+::: {.column width="50%"}
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+:::
+
+:::
+
+## Grid tables
+
+```
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+
+: Sample grid table.
+```
+
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+
+: Sample grid table.
+
+## Grid table, alignment
+
+Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:
+
+```
++---------------+---------------+--------------------+
+| Right         | Left          | Centered           |
++==============:+:==============+:==================:+
+| Bananas       | $1.34         | built-in wrapper   |
++---------------+---------------+--------------------+
+```
+
+For headerless tables, the colons go on the top line instead:
+
+```
++--------------:+:--------------+:------------------:+
+| Right         | Left          | Centered           |
++---------------+---------------+--------------------+
+```
+
+Note that grid tables are quite awkward to write with a plain text editor (because unlike pipe tables, the column indicators must align). The RStudio IDE's Quarto Visual Editor can assist in making these tables.
+
+## Tables from code
+
+`knitr` itself can turn R dataframes into tables with `knitr::kable()`
+
+> A very simple table generator, and it is simple by design. It is not intended to replace any other R packages for making tables. 
+. . .
+
+```{r}
+head(mtcars) |> 
+  knitr::kable()
+```
+
+## Code
+
+The way you treat code is very different for different contexts
+
+. . .
+
+In a teaching scenario like today, I _really_ want to display code
+
+. . .
+
+In a business, you may want to have a data-science facing output which displays the source code AND a stakeholder-facing output which hides the code
+
+## Code
+
+If you simply want code highlighting, you can use 3x backticks + the language ```` ```r ````
+
+. . .
+
+````
+```r
+head(mtcars)
+```
+````
+
+. . .
+
+<br>
+Which returns the below but is not executed since there aren't `{}` around the language:
+
+```r
+head(mtcars)
+```
+
+. . .
+
+If you instead want to see source code and evaluate it, you could use `echo: true` where `echo: false` would instead hide the code but still evaluate it.
+
+````
+```{{r}}
+#| echo: true
+1 + 1
+```
+````
+
+<br>
+
+. . .
+
+```{r}
+#| echo: true
+1 + 1
+```
+
+## Code
+
+In some scenarios you want to both execute the code and return the FULL code including backticks, like today where I'm teaching! `echo: fenced` is a great option for this.
+
+. . .
+
+````
+```{{r}}
+#| echo: fenced
+1 + 1
+```
+````
+. . .
+
+<br>
+
+```{r}
+#| echo: fenced
+1 + 1
+```
+
+## Code
+
+If you want to, you may return purely decorative code which is not executed
+
+`````
+````
+```{{{r}}}
+1 + 1
+```
+````
+`````
+
+. . .
+
+Rendered as the below and not evaluated:
+
+````
+```{{r}}
+1 + 1
+```
+````
+
+. . .
+
+The general rule here is that if you want to return code verbatim, you need to have at least N + 1 on the backticks. So for a normal 3x backtick chunk... you'll need?
+
+## Divs and Spans
+
+Pandoc and therefore Quarto can parse ["fenced `Div` blocks"](https://pandoc.org/MANUAL.html#divs-and-spans)
+
+. . .
+
+```
+::: {.border}
+This content can be styled with a border
+:::
+```
+
+. . .
+
+::: {style="border-left:10px solid red"}
+ This content can be styled with a border
+:::
+
+. . .
+
+
+```
+This is text with [special]{style="color:red;"} formatting.
+```
+
+. . .
+
+This is text with [special]{style="color:red;"} formatting.
+
+## Callout Blocks
+
+    :::{.callout-note}
+    Note that there are five types of callouts, including: 
+    `note`, `tip`, `warning`, `caution`, and `important`.
+    :::
+
+:::{.callout-note}
+
+## Note
+
+Note that there are five types of callouts, including: 
+    `note`, `tip`, `warning`, `caution`, and `important`.
+
+:::
+
+:::{.callout-warning}
+
+## Warning
+
+Callouts provide a simple way to attract attention, for example, to this warning.
+
+:::
+
+:::{.callout-important}
+
+## This is important
+
+Danger, callouts will really improve your writing.
+
+
+:::
+
+:::{.callout-tip}
+
+## Tip with caption
+
+:::
+
+:::{.callout-caution}
+## Caution, under construction
+
+Here is something under construction
+:::
+
+## Callout markdown syntax
+
+```
+:::{.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+
+:::{.callout-tip}
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+```
+
+<br>
+<br>
+
+```
+:::{.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+```
+
+## Figures
+
+Basic markdown syntax:
+
+```
+![Boston Terrier](images/boston-terrier.png)
+```
+
+![Boston Terrier](images/boston-terrier.png)
+
+## Fragments
+
+:::: columns
+
+::: {.column width="50%"}
+
+```
+![Boston terrier](images/boston-terrier.png){fig-align="left"}
+```
+![](images/boston-terrier.png)
+:::
+
+::: {.column width="50%"}
+
+```
+![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+```
+
+![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+
+:::
+
+::::
+
+## Subfigures
+
+```
+::: {#fig-bostons layout-ncol=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard
+
+:::
+```
+
+## Subfigures
+
+::: {#fig-bostons layout-ncol=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard
+
+:::
+
+## Subfigures
+
+<iframe src="sub-figure.html" height="800px" width="1200px"></iframe>
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/02-authoring/figure-layout.qmd`
+
+## Subfigures
+
+```
+::: {#fig-bostons layout-nrow=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+![Still Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Still sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard, twice
+
+:::
+```
+
+## Subfigures
+
+::: {#fig-bostons layout-nrow=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+![Still Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Still sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard, twice
+
+:::
+
+## Subfigures
+
+::: {#fig-bostons layout-nrow=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+![Still Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Still sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard, twice
+
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/02-authoring/figure-layout-2.qmd`
+
+
+## Footnotes
+
+Pandoc supports numbering and formatting footnotes.
+
+## Inline footnotes
+
+```
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+```
+
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
+
+. . .
+
+Notice that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
+
+## Cross References
+
+Cross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables. 
+
+```
+![Elephant](elephant.png){#fig-elephant}
+```
+. . .
+
+The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document:
+
+```
+See @fig-elephant for an illustration.
+```
+
+. . .
+
+![](https://quarto.org/docs/authoring/images/crossref-figure.png)

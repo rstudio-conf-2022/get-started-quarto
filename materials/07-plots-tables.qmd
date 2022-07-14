@@ -1,0 +1,494 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+editor_options:
+  markdown:
+    canonical: true
+---
+
+# Plots, Graphics, and tables {background-color="#4f6952"}
+
+## Layout
+
+    ::: {#fig-dogs layout-ncol=2}
+
+    ![Sleeping](images/boston-sleep.png){#fig-sleep}
+
+    ![Happy](images/boston-terrier.png){#fig-awake}
+
+    The two states of Howard.
+
+    :::
+
+## Layout
+
+::: {#fig-dogs layout-ncol="2"}
+![Sleeping](images/boston-sleep.png){#fig-sleep}
+
+![Happy](images/boston-terrier.png){#fig-awake}
+
+The two states of Howard.
+:::
+
+## Figure panels
+
+    ::: {layout-ncol=2}
+    ![Howard on a couch](images/howard-comfy.png)
+
+    ![Howard in a table](images/howard-table.png)
+    :::
+
+## Multiple rows
+
+    ::: {layout-nrow=2}
+    ![Howard on a couch](images/howard-comfy.png)
+
+    ![Howard in a table](images/howard-table.png)
+
+    ![Howard sleeping](images/boston-sleep.png)
+
+    ![Howard awake](images/boston-terrier.png)
+    :::
+
+## Figure divs
+
+> You can treat any markdown content you want as a figure by enclosing it in Pandoc div block with an identifier prefaced with #fig-. For example, here we create a figure that includes an embedded iframe:
+
+    ::: {#fig-elephant}
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ"></iframe>
+
+    Elephant
+    :::
+
+::: {#fig-elephant}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ">
+
+</iframe>
+
+Elephant
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/04-static/figure-layout`
+-   Swap between row and col layout
+
+## Custom Layouts
+
+::: columns
+::: {.column width="50%"}
+Read `[[1,1], [1]]` as:
+
+Row 1: two equal sized images each taking up half of the column
+
+Row 2: one image, taking up the entire column
+
+    ::: {layout="[[1,1], [1]]"}
+    ![Howard sleeping](images/boston-sleep.png)
+
+    ![Howard in a table](images/howard-table.png)
+
+    ![Howard on a couch](images/howard-comfy.png)
+    :::
+:::
+
+::: {.column width="50%"}
+![](images/custom-layout-equal.png)
+:::
+:::
+
+## Custom Layouts
+
+::: columns
+::: {.column width="50%"}
+Read `"[[70,30], [100]]"` as:
+
+Row 1: two images, taking up 70% and 30% of the column
+
+Row 2: one image, taking up 100% of column
+
+    ::: {layout="[[70,30], [100]]"}
+
+    ![Howard on a couch](images/howard-comfy.png)
+
+    ![Howard sleeping](images/boston-sleep.png)
+
+    ![Howard in a table](images/howard-table.png)
+    :::
+:::
+
+::: {.column width="50%"}
+![](images/custom-layout-70-30.png)
+:::
+:::
+
+## Custom layouts
+
+::: columns
+::: {.column width="50%"}
+You can also add negative values for "blank space"
+
+`[[40,-20,40], [100]]`
+
+Row 1: 40% image 1, 20% blank, 40% image 2
+
+Row 2: 100% image 3
+
+    ::: {layout="[[40,-20,40], [100]]"}
+    ![Howard on a couch](images/howard-comfy.png)
+
+    ![Howard sleeping](images/boston-sleep.png)
+
+    ![Howard in a table](images/howard-table.png)
+    :::
+:::
+
+::: {.column width="50%"}
+![](images/howard-layout-blankspace.png)
+:::
+:::
+
+## Custom layouts, vertical
+
+::: columns
+::: {.column width="50%"}
+If images within a row are of differing heights, you can control vertical alignment.
+
+`{layout="[25,-2,10]" layout-valign="bottom"}`
+
+Row: 25
+
+    ::: {layout="[25,-2,10]" layout-valign="bottom"}
+    ![Howard on a couch](images/howard-comfy.png)
+
+    ![Howard in a table](images/howard-table.png)
+    :::
+:::
+
+::: {.column width="50%"}
+![](images/howard-layout-vertical.png)
+:::
+:::
+
+## Figure layout
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+
+plot(cars)
+plot(pressure)
+```
+
+## Figure layout, subcaptions
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| label: fig-charts
+#| fig-cap: Charts
+#| fig-subcap: 
+#|   - "Cars"
+#|   - "Pressure"
+#| layout-ncol: 2
+
+plot(cars)
+plot(pressure)
+```
+
+## Figure layout, custom
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| layout: [[45,-10, 45], [100]]
+
+plot(cars)
+plot(pressure)
+plot(mtcars)
+```
+
+## Block layout, arbitrary content
+
+    ::: {layout-ncol=2}
+    ### List One
+
+    - Item A
+    - Item B
+    - Item C
+
+    ### List Two
+
+    - Item X
+    - Item Y
+    - Item Z
+    :::
+
+## Block layout, arbitrary content
+
+    ::: {layout-ncol=2}
+    - Item X
+    - Item Y
+    - Item Z
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. 
+    :::
+
+## `ggplot2`
+
+```{r}
+library(palmerpenguins)
+library(ggplot2)
+ggplot2::theme_set(ggplot2::theme_minimal())
+penguins <- na.omit(penguins)
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: true
+mass_flipper <- ggplot(data = penguins, 
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot")
+```
+
+## `ggplot2`
+
+```{r}
+mass_flipper
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: fenced
+#| fig-height: 2
+mass_flipper
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: fenced
+#| fig-height: 4
+#| fig-dpi: 600
+mass_flipper
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: fenced
+#| fig-height: 10
+#| fig-dpi: 600
+mass_flipper
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: fenced
+#| fig-height: 10
+#| fig-width: 16
+#| fig-dpi: 400
+mass_flipper
+```
+
+## `ggplot2`
+
+```{r}
+#| echo: fenced
+#| fig-align: center
+mass_flipper
+```
+
+## `ggiraph`
+
+```{r}
+library(tidyverse)
+library(sf)
+library(ggiraph)
+library(glue)
+library(cowplot)
+
+texas_income <- readRDS(url("https://wilkelab.org/SDS375/datasets/Texas_income.rds")) %>%
+  select(-county)
+US_census <- read_csv("https://wilkelab.org/SDS375/datasets/US_census.csv")
+tx_census <- US_census %>% 
+  filter(state == "Texas") %>%
+  select(FIPS, name, pop2010, area) %>%
+  extract(name, "county", regex = "(.+) County") %>%
+  mutate(
+    FIPS = as.character(FIPS),
+    popratio = pop2010/median(pop2010),
+  )
+texas_counties <- left_join(texas_income, tx_census, by = "FIPS")
+```
+
+## `ggiraph`
+
+Example from https://github.com/wilkelab/SDS375/blob/31609013bf4a4c0f34f991fa32474b8371f8873b/worksheets/interactive-plots.Rmd#L484-L514
+
+```{r}
+texas_scatter <- texas_counties %>%
+  ggplot(aes(pop2010, median_income)) +
+  geom_point_interactive(
+    aes(
+      tooltip = county,
+      data_id = county
+    ),
+    na.rm = TRUE, size = 3
+  ) +
+  scale_x_log10() +
+  theme_bw()
+# then make the map
+texas_county_map <- texas_counties %>%
+  ggplot() +
+  geom_sf_interactive(
+    aes(
+      tooltip = county,
+      data_id = county
+    ),
+    size = 0.2, color = "black"
+  ) +
+  theme_void()
+```
+
+```{r}
+#| eval: false
+girafe(
+  ggobj = plot_grid(texas_scatter, texas_county_map),
+  width_svg = 6,
+  height_svg = 3
+)
+```
+
+## `ggiraph`
+
+```{r}
+#| echo: false
+girafe(
+  ggobj = plot_grid(texas_scatter, texas_county_map),
+  width_svg = 6,
+  height_svg = 3
+)
+```
+
+## `plotly`
+
+## Reminder about layout
+
+## YOUR TURN
+
+## `gt` + `gtExtras`
+
+> With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
+
+. . .
+
+![](https://gt.rstudio.com/reference/figures/gt_workflow_diagram.svg){width="1800px" fig-align="center"}
+
+# `gt`, a Grammar of Tables
+
+![](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg){.r-stretch fig-align="center"}
+
+## Load libraries
+
+```{r}
+library(dplyr, warn.conflicts = FALSE)
+library(gt)
+library(gtExtras)
+
+penguins <- palmerpenguins::penguins
+
+penguin_sum <- penguins |>
+  na.omit() |>
+  group_by(species, sex) |>
+  summarise(
+    n = n(),
+    bill_len = mean(bill_length_mm),
+    plt_bill = list(bill_length_mm),
+    mass = mean(body_mass_g),
+    plt_mass = list(body_mass_g),
+    .groups = "drop"
+  ) |> 
+  arrange(species, desc(bill_len))
+
+penguin_sum
+```
+
+## `gtExtras`
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| fig-width: 10
+gt(penguin_sum) |>
+  gt_plt_dist(
+    plt_bill, 
+    line_color = "#447099", 
+    fill = "#75aadb",
+    fig_dim = c(15, 50)
+    ) |> 
+  gt_plt_dist(
+    plt_mass, 
+    line_color = "#447099", 
+    fill = "#75aadb"
+    ) |> 
+  gt_add_divider(
+    c(bill_len, mass), "left", 
+    weight = px(1), color = "#d3d3d3"
+    ) |> 
+  cols_align("left", species) |> 
+  text_transform(
+    cells_body(sex),
+    fn = function(x){
+      ifelse(x == "male", "mars", "venus")
+                 }) %>% 
+  gt_fa_column(
+    column = sex,
+    palette = c("#af8dc3", "#7fbf7b")
+    ) |> 
+  gt_theme_nytimes() |> 
+  tab_options(data_row.padding = px(2),
+              table.font.size = px(40),
+              column_labels.font.size = px(35))
+```
+
+## `gtExtras`
+
+```{r}
+penguins |> 
+  gt_plt_summary()
+```
+
+## `reactable`

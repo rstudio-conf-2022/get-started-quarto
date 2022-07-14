@@ -1,0 +1,384 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+editor_options:
+  markdown:
+    canonical: true
+---
+
+# Websites {background-image="images/website.png" background-size="cover" background-color="black"}
+
+<h2>Building with Quarto</h2>
+
+<h3>Tom Mock \| 2022-07-25</h3>
+
+## Websites
+
+-   Website is different than `format: html` in that it has *multiple pages*
+-   Website is our first exploration into Quarto Projects
+
+. . .
+
+-   Website/book are very similar in that they associate multiple pages/resources into a connected resource
+
+## 
+
+### Create a website
+
+``` bash
+quarto create-project MySiteName --type website
+```
+
+. . .
+
+### Create a blog
+
+``` bash
+quarto create-project MyBlogName --type website:blog
+```
+
+. . .
+
+RStudio \> New Project \> New Quarto Blog
+
+![](images/quarto-blog.png)
+
+## Creating a blog
+
+    $ quarto create-project MyBlogName --type website:blog
+
+    Creating project at myblog:
+      - Created _quarto.yml
+      - Created index.qmd
+      - Created posts/welcome/index.qmd
+      - Created posts/post-with-code/index.qmd
+      - Created about.qmd
+      - Created styles.css
+      - Created posts/_metadata.yml
+
+## Navigation & Structure
+
+| File                  | Description                |
+|:----------------------|:---------------------------|
+| `_quarto.yml`         | Quarto project file.       |
+| `index.qmd`           | Blog home page.            |
+| `about.qmd`           | Blog about page.           |
+| `posts/`              | Directory containing posts |
+| `posts/_metadata.yml` | Shared options for `posts` |
+| `styles.css`          | Custom CSS for website     |
+
+## Create a blog
+
+-   A blog is a website with specific "opinions" already made
+-   Includes a listing automatically from `posts` directory
+-   Can build custom listings in several ways
+
+## Blog {background-image="images/mockup-blog.png" background-size="contain"}
+
+## Core blog workflow
+
+-   Create a new folder under `/posts` - this folder will be the "slug" URL
+-   Create a new `index.qmd` within the new folder
+
+## YOUR TURN BUILD A BLOG
+
+## Rendering posts
+
+-   On a specific post, Render with RStudio \> Render
+-   Build tab \> Render/Preview Website
+
+These will preview the entire website
+
+. . .
+
+-   Render with `quarto render` on a specific post - this will just render that specific post
+
+. . .
+
+When you render the website, it will re-execute code in older posts. Not ideal in many situations!
+
+## Render together
+
+Let's render together!
+
+## Freeze
+
+> You can use the freeze option to denote that computational documents should never be re-rendered during a global project render, or alternatively only be re-rendered when their source file changes
+
+. . .
+
+``` yaml
+execute:
+  freeze: true  # never re-render during project render
+```
+
+``` yaml
+execute:
+  freeze: auto  # re-render only when source changes
+```
+
+. . .
+
+`freeze: true` is typically added to a `_metadata.yml` file within a specific directory, affecting all files in that directory.
+
+In the case of a blog - the `_metadata.yml` is saved at the root of the `posts` directory.
+
+## Cache
+
+Cache on the other hand, stores the results of computations for a specific file.
+
+> Note that cache invalidation is triggered by changes in chunk source code (or other cache attributes you've defined).
+
+``` yaml
+execute:
+  cache: true
+```
+
+. . .
+
+I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a `tidymodels` workshop with grid-tuning.
+
+## Adding an About page
+
+    ---
+    twitter-card:
+      image: images/profile-preview.png
+      creator: "@thomas_mock"
+    open-graph: true
+    title: "Tom Mock"
+    image: images/profile-preview.png
+    about:
+      template: trestles
+      links:
+        - icon: twitter
+          text: Twitter
+          href: https://twitter.com/thomasmock
+        - icon: github
+          text: Github
+          href: https://github.com/jthomasmock
+
+    ---
+
+## About page templates
+
+``` yaml
+about:
+  template: trestles
+```
+
+::: tabset
+## jolla
+
+![](https://quarto.org/docs/websites/images/about-jolla.png) \## trestles
+
+![](https://quarto.org/docs/websites/images/about-trestles.png)
+
+## solana
+
+![](https://quarto.org/docs/websites/images/about-solana.png)
+
+## marquee
+
+![](https://quarto.org/docs/websites/images/about-marquee.png)
+
+## broadside
+
+![](https://quarto.org/docs/websites/images/about-broadside.png)
+:::
+
+## Listings
+
+![](images/mockup-blog.png)
+
+## Listings
+
+|  Type   | Description                 |
+|:-------:|:----------------------------|
+| default | A blog style list of items. |
+|  table  | A table of listings.        |
+|  grid   | A grid of listing cards.    |
+
+::: tabset
+## Default
+
+> By default, listings will appear in full width rows that display the item's metadata (author and date), title, description, and image.
+
+![](https://quarto.org/docs/websites/images/listing-default.png)
+
+## Grid
+
+> Grid style listings display a card for each item.
+
+![](https://quarto.org/docs/websites/images/listing-grid.png)
+
+## Table
+
+> The table listing style provides a traditional tabular layout.
+
+![](https://quarto.org/docs/websites/images/listing-table.png)
+:::
+
+## YOUR TURN
+
+Let's change the listing top of our blog
+
+## Listing location
+
+``` yaml
+---
+title: "Listing Example"
+listing:
+  id: sample-listings
+  contents: posts
+  type: table
+---
+
+You can review the following documents for additional information:
+
+::: {#sample-listings}
+:::
+```
+
+## Populating listings
+
+``` yaml
+---
+title: "Listing Example"
+listing:
+  contents: posts
+---
+```
+
+. . .
+
+``` yaml
+title: "Listing Example"
+listing:
+  - id: lab-reports
+    contents: "reports/*.qmd"
+    type: grid
+  - id: lab-notes
+    contents: "lab-notes/*reports.qmd"
+    type: table
+```
+
+## Manual listings
+
+``` yaml
+---
+listing:
+  contents:
+    - author: First Author
+      title: First title
+    - name: Second Author
+      title: Second title
+---
+```
+
+. . .
+
+``` yaml
+---
+listing:
+  contents:
+    - items.yml
+---
+```
+
+``` yaml
+- author: Tom Mock
+  title: <a href='quarto.org'>An intro to Quarto</a>
+- Author: Katie Masiello
+  title: <a href='pins.rstudio.com'>Intro to pins</a>
+```
+
+## Publishing
+
+### Static Only
+
+-   `quarto::quarto_publish_???()`
+    -   `quarto_publish_site(server = "rstudioconnect.example.com")`
+    -   `quarto_publish_doc(server = "rpubs.com")`
+    -   `quarto_publish_app(server = "shinyapps.io")`
+-   `quarto publish DESTINATION DOCUMENT.QMD`
+    -   `quarto publish netlify document.qmd`
+    -   `quarto publish gh-pages document.qmd`
+    -   `quarto publish connect document.qmd`
+
+### Code
+
+-   RStudio Connect
+-   `rsconnect::deployDoc(quarto = "path/to/quarto")`
+    -   `rsconnect::deployDoc(quarto = quarto::quarto_path())`
+
+## Quarto Project
+
+-   https://quarto.org/docs/projects/quarto-projects.html
+
+> When you create a project, a \_quarto.yml config file is created. Here is an example of what the \_quarto.yml
+
+``` yaml
+project:
+  output-dir: _output
+
+toc: true
+number-sections: true
+bibliography: references.bib  
+  
+format:
+  html:
+    css: styles.css
+```
+
+## More complex example
+
+<iframe src="https://github.com/jthomasmock/themockup-blog/blob/master/_quarto.yml" height="800px" width="1200px">
+
+</iframe>
+
+## Quarto Projects
+
+-   Minimal project has at least 1x file and 1x `_quarto.yml`
+-   A project is a directory (and can have sub-directories)
+
+. . .
+
+A typical project is used to: - Aggregate content (website/blog/book) - Share metadata (YAML config) across multiple files - Render an entire directory together or redirect output to another directory - Freeze computation across a project or team
+
+## Books
+
+    project:
+      type: book
+
+    book:
+      title: "mybook"
+      author: "Jane Doe"
+      date: "8/18/2021"
+      chapters:
+        - index.qmd
+        - intro.qmd
+        - summary.qmd
+        - references.qmd
+
+    bibliography: references.bib
+
+    format:
+      html:
+        theme: cosmo
+      pdf:
+        documentclass: scrreport
+      epub:
+        cover-image: cover.png
+
+## Book structure
+
+## Book crossferfs

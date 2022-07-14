@@ -1,0 +1,48 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!materials/workshop/"
+
+website:
+  title: "Hello Quarto"
+  twitter-card:
+    image: "preview.png"
+  navbar:
+    background: "#447099"
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar: 
+    style: docked
+    contents: 
+      - section: "Day 1"
+        contents: 
+          - href: materials/01-intro-quarto.qmd
+            text: "Intro to Quarto"
+          - href: materials/02-authoring.qmd
+            text: "Authoring Quarto"
+          - href: materials/03-computation-editors.qmd
+            text: "Code and Editors"
+          - href: materials/04-static-documents.qmd
+            text: "Static Documents"
+      - section: "Day 2"
+        contents:
+          - href: materials/05-presentations.qmd
+            text: "Presentations"
+          - href: materials/06-websites.qmd
+            text: "Websites & Books"
+          - href: materials/07-plots-tables.qmd
+            text: "Plots & Tables"
+          - href: materials/08-advanced-knitr.qmd
+            text: "Advanced Quarto"
+
+format:
+  html:
+    theme: 
+      - litera
+      - style.css
+    toc: true
+    
+execute: 
+  freeze: true

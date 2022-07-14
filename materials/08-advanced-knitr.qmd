@@ -1,0 +1,42 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+editor_options:
+  markdown:
+    canonical: true
+---
+
+# Advanced Quarto + `knitr`
+
+## Quarto Extensions
+
+> Quarto Extensions are a powerful way to modify or extend the behavior of Quarto, and can be created and distributed by anyone. There are two types of extensions available:
+
+-   [Shortcodes](https://quarto.org/docs/extensions/shortcodes.html) are special markdown directives that generate various types of content. For example, you could create shortcodes to embed tweets or videos in a document.
+
+-   [Filters](https://quarto.org/docs/extensions/filters.html) are a flexible and powerful tool for introducing new global behaviors and/or new markdown rendering behaviors. For example, you could create filters to implement output folding, an image carousel, or just about anything you can imagine!
+
+. . .
+
+Note that you *have* to use at least version Quarto `v1.0.15` to use extensions
+
+. . .
+
+Available extensions can be found at: <https://github.com/quarto-ext/>
+
+. . .
+
+You can install extensions directly from Quarto!
+
+``` bash
+quarto install extension quarto-ext/lightbox
+```

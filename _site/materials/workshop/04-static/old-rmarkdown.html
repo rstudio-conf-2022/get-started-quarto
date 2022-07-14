@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.11">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Mock">
+
+<title>Hello Quarto - &nbsp;</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../../site_libs/react-17.0.0/react.min.js"></script>
+<script src="../../../site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="../../../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="../../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../../../site_libs/reactable-binding-0.2.3/reactable.js"></script>
+
+
+<meta name="twitter:title" content="Hello Quarto - &nbsp;">
+<meta name="twitter:description" content="This is an example from reactable documentation - showing the Twitter followers of some politicians.">
+<meta name="twitter:image" content="../../../preview.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Hello Quarto</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">Home</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">&nbsp;</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Day 1</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/01-intro-quarto.html" class="sidebar-item-text sidebar-link">Intro to Quarto</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/02-authoring.html" class="sidebar-item-text sidebar-link">Authoring Quarto</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/03-computation-editors.html" class="sidebar-item-text sidebar-link">Code and Editors</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/04-static-documents.html" class="sidebar-item-text sidebar-link">Static Documents</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Day 2</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/05-presentations.html" class="sidebar-item-text sidebar-link">Presentations</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/06-websites.html" class="sidebar-item-text sidebar-link">Websites &amp; Books</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/07-plots-tables.html" class="sidebar-item-text sidebar-link">Plots &amp; Tables</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../materials/08-advanced-knitr.html" class="sidebar-item-text sidebar-link">Advanced Quarto</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#twitter-followers" id="toc-twitter-followers" class="nav-link active" data-scroll-target="#twitter-followers">Twitter followers</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">&nbsp;</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tom Mock </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="twitter-followers" class="level2">
+<h2 class="anchored" data-anchor-id="twitter-followers">Twitter followers</h2>
+<p>This is an example from <code>reactable</code> documentation - showing the Twitter followers of some politicians.</p>
+<p><a href="https://glin.github.io/reactable/articles/building-twitter-followers.html">Example adapted from <code>{reactable}</code> documentation</a></p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="htmlwidget-c959e05d666f1a318f65" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c959e05d666f1a318f65">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"account":["marwilliamson","BernieSanders","Hickenlooper","CoryBooker","JoeBiden","AndrewYang","TulsiGabbard","BetoORourke","amyklobuchar","PeteButtigieg","SenGillibrand","KamalaHarris","JulianCastro","sethmoulton","JayInslee","ewarren","TimRyan","JohnDelaney","MichaelBennet","ericswalwell"],"followers":[2610335,9254423,144816,4246252,3558333,267897,349443,1424745,692985,1033834,1410303,2640072,212582,138450,51504,2486101,20080,20266,21053,84415],"exclusive_followers_pct":[0.748,0.632,0.563,0.525,0.438,0.434,0.347,0.265,0.24,0.237,0.233,0.223,0.214,0.201,0.19,0.164,0.156,0.129,0.117,0.092]},"columns":[{"accessor":"account","name":"account","type":"character","align":"left","headerClassName":"header","cell":[{"name":"a","attribs":{"href":"https://twitter.com/marwilliamson","target":"_blank"},"children":["@marwilliamson"]},{"name":"a","attribs":{"href":"https://twitter.com/BernieSanders","target":"_blank"},"children":["@BernieSanders"]},{"name":"a","attribs":{"href":"https://twitter.com/Hickenlooper","target":"_blank"},"children":["@Hickenlooper"]},{"name":"a","attribs":{"href":"https://twitter.com/CoryBooker","target":"_blank"},"children":["@CoryBooker"]},{"name":"a","attribs":{"href":"https://twitter.com/JoeBiden","target":"_blank"},"children":["@JoeBiden"]},{"name":"a","attribs":{"href":"https://twitter.com/AndrewYang","target":"_blank"},"children":["@AndrewYang"]},{"name":"a","attribs":{"href":"https://twitter.com/TulsiGabbard","target":"_blank"},"children":["@TulsiGabbard"]},{"name":"a","attribs":{"href":"https://twitter.com/BetoORourke","target":"_blank"},"children":["@BetoORourke"]},{"name":"a","attribs":{"href":"https://twitter.com/amyklobuchar","target":"_blank"},"children":["@amyklobuchar"]},{"name":"a","attribs":{"href":"https://twitter.com/PeteButtigieg","target":"_blank"},"children":["@PeteButtigieg"]},{"name":"a","attribs":{"href":"https://twitter.com/SenGillibrand","target":"_blank"},"children":["@SenGillibrand"]},{"name":"a","attribs":{"href":"https://twitter.com/KamalaHarris","target":"_blank"},"children":["@KamalaHarris"]},{"name":"a","attribs":{"href":"https://twitter.com/JulianCastro","target":"_blank"},"children":["@JulianCastro"]},{"name":"a","attribs":{"href":"https://twitter.com/sethmoulton","target":"_blank"},"children":["@sethmoulton"]},{"name":"a","attribs":{"href":"https://twitter.com/JayInslee","target":"_blank"},"children":["@JayInslee"]},{"name":"a","attribs":{"href":"https://twitter.com/ewarren","target":"_blank"},"children":["@ewarren"]},{"name":"a","attribs":{"href":"https://twitter.com/TimRyan","target":"_blank"},"children":["@TimRyan"]},{"name":"a","attribs":{"href":"https://twitter.com/JohnDelaney","target":"_blank"},"children":["@JohnDelaney"]},{"name":"a","attribs":{"href":"https://twitter.com/MichaelBennet","target":"_blank"},"children":["@MichaelBennet"]},{"name":"a","attribs":{"href":"https://twitter.com/ericswalwell","target":"_blank"},"children":["@ericswalwell"]}],"width":150},{"accessor":"followers","name":"followers","type":"numeric","align":"left","headerClassName":"header","defaultSortDesc":true,"cell":[{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["2,610,335"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"28.2063506282347%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["9,254,423"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"100%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  144,816"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"1.56483013581722%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["4,246,252"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"45.8834872795419%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["3,558,333"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"38.4500794917198%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  267,897"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"2.89479960014795%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  349,443"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"3.77595664256972%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["1,424,745"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"15.3952872048317%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  692,985"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"7.48814918012717%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["1,033,834"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"11.1712421184984%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["1,410,303"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"15.2392320947508%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["2,640,072"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"28.527678062695%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  212,582"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"2.29708540446012%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["  138,450"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"1.49604140636321%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["   51,504"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"0.556533886553489%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["2,486,101"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"26.8639222564173%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["   20,080"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"0.216977330731478%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["   20,266"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"0.218987180508174%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["   21,053"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"0.22749122230527%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]},{"name":"div","attribs":{"className":"bar-cell"},"children":[{"name":"span","attribs":{"className":"number"},"children":["   84,415"]},{"name":"div","attribs":{"style":{"marginRight":"6px"},"className":"bar-chart"},"children":[{"name":"div","attribs":{"style":{"width":"0.912158434945107%","backgroundColor":"#3fc1c9"},"className":"bar"},"children":[]}]}]}]},{"accessor":"exclusive_followers_pct","name":"Exclusive Followers","type":"numeric","align":"left","headerClassName":"header","defaultSortDesc":true,"cell":"function(cellInfo) {\n        // Format as percentage\n        const pct = (cellInfo.value * 100).toFixed(1) + '%'\n        // Pad single-digit numbers\n        let value = pct.padStart(5)\n        // Show % on first row only\n        if (cellInfo.viewIndex > 0) {\n          value = value.replace('%', ' ')\n        }\n        // Render bar chart\n        return (\n          '<div class=\"bar-cell\">' +\n            '<span class=\"number\">' + value + '<\/span>' +\n            '<div class=\"bar-chart\" style=\"background-color: #e1e1e1\">' +\n              '<div class=\"bar\" style=\"width: ' + pct + '; background-color: #fc5185\"><\/div>' +\n            '<\/div>' +\n          '<\/div>'\n        )\n      }","html":true}],"defaultSorted":[{"id":"exclusive_followers_pct","desc":true}],"defaultPageSize":20,"paginationType":"numbers","showPageInfo":true,"minRows":1,"compact":true,"className":"followers-tbl","dataKey":"b919ca15ae14212b92ff75376168508e","key":"b919ca15ae14212b92ff75376168508e"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.2.cell"],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><link href="https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&amp;display=fallback" rel="stylesheet"></p>
+</div>
+</div>
+<div class="cell">
+
+<style type="text/css">
+/* CSS for the R Markdown document, inserted through a ```{css} code chunk */
+
+/* Styles for the table container, title, and subtitle */
+.twitter-followers {
+  /* Center the table */
+  margin: 0 auto;
+  /* Reduce the table width */
+  width: 575px;
+  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.followers-header {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.followers-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Styles for the table */
+.followers-tbl {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.followers-tbl a {
+  color: inherit;
+}
+
+/* Styles for the column headers */
+.header {
+  border-bottom: 2px solid #555;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.header:hover {
+  background-color: #eee;
+}
+
+/* Styles for the bar charts */
+.bar-cell {
+  display: flex;
+  align-items: center;
+}
+
+.number {
+  font-family: "Fira Mono", Consolas, Monaco, monospace;
+  font-size: 13.5px;
+  white-space: pre;
+}
+
+.bar-chart {
+  flex-grow: 1;
+  margin-left: 6px;
+  height: 14px;
+}
+
+.bar {
+  height: 100%;
+}
+</style>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

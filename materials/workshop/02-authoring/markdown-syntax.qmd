@@ -1,0 +1,23 @@
+---
+format: html
+---
+
+# DELETE THIS SECTION WHEN COMPLETED
+
+1.  Add a title and author to the YAML header. Add a table of contents as well.
+
+    ---
+    format:
+      html:
+        toc: true
+    ---
+
+1.  Add two sections with level two headers
+
+-   Add a subsection to one of your major sections
+
+1.  Switch to Visual mode and insert a 3 row x 2 col table, populate with a label of restaurant + cuisine, and then add 3 examples.
+
+1. Add an image link to a web image you have chosen and a local image.
+
+1. Use any markdown syntax that you can recall or refresh your memory from <https://quarto.org/docs/authoring/markdown-basics.html>

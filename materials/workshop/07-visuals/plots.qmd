@@ -1,0 +1,100 @@
+---
+format: html
+execute: 
+  echo: fenced
+---
+
+## Load libraries
+
+```{r}
+#| echo: true
+library(palmerpenguins)
+library(ggplot2)
+ggplot2::theme_set(ggplot2::theme_minimal())
+penguins <- na.omit(penguins)
+```
+
+## `ggplot2`
+
+```{r}
+mass_flipper <- ggplot(data = penguins, 
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g)) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin size, Palmer Station LTER",
+       subtitle = "Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme(legend.position = c(0.2, 0.7),
+        plot.title.position = "plot",
+        plot.caption = element_text(hjust = 0, face= "italic"),
+        plot.caption.position = "plot",
+        plot.background = element_rect(color = "black"))
+```
+
+## Basic plot
+
+```{r}
+mass_flipper
+```
+
+## Basic plot
+
+Increasing the width/DPI only affects the scaling of the image, it will not overflow.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4
+#| fig-dpi: 600
+mass_flipper
+```
+
+## Aside
+
+```{r}
+#| echo: false
+#| fig-column: margin
+mass_flipper
+```
+
+> The palmerpenguins R package contains two datasets that we believe are a viable alternative to Anderson’s Iris data (see datasets::iris). In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education, as well as software documentation and testing. 
+
+## Overflow Content
+
+There are many options for overflow, either left/right
+
+```{r}
+#| echo: fenced
+#| column: body-outset-right
+#| fig-width: 10
+mass_flipper
+```
+
+```{r}
+#| echo: fenced
+#| column: screen-inset-right
+#| fig-width: 10
+mass_flipper
+```
+
+```{r}
+#| echo: fenced
+#| column: page-inset-left
+#| fig-width: 10
+mass_flipper
+```
+
+```{r}
+#| echo: fenced
+#| column: screen-left
+#| fig-width: 10
+mass_flipper
+```
+
+

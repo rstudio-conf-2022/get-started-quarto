@@ -1,0 +1,67 @@
+---
+format: html
+---
+
+## Figures
+
+Basic markdown syntax:
+
+```
+![Boston Terrier](images/boston-terrier.png)
+```
+
+![Boston Terrier](images/boston-terrier.png)
+
+## Fragments
+
+:::: columns
+
+::: {.column width="50%"}
+
+```
+![Boston terrier](images/boston-terrier.png){fig-align="left"}
+```
+![](images/boston-terrier.png)
+:::
+
+::: {.column width="50%"}
+
+```
+![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+```
+
+![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+
+:::
+
+::::
+
+## Subfigures
+
+```
+::: {#fig-bostons layout-ncol=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard
+
+:::
+```
+
+## Subfigures
+
+::: {#fig-bostons layout-ncol=2}
+
+![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+
+![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+
+Two states of Howard
+
+:::
+
+## Subfigures
+
+<iframe src="sub-figure.html" height="800px" width="1200px"></iframe>

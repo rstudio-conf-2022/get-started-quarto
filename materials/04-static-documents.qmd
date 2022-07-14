@@ -1,0 +1,317 @@
+---
+format: 
+  revealjs:
+    slide-number: true
+    width: 1920
+    height: 1080
+    logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
+    footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
+    css: ["theme/theme.css"]
+    theme: simple
+    echo: true
+editor: source
+---
+
+# Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black"}
+
+## HTML Workhorse
+
+[quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
+
+<iframe src="https://quarto.org/docs/reference/formats/html.html" height="850px" width="900px"></iframe>
+
+## Quarto and RMarkdown
+
+- Basic RMarkdown documents that render to static HTML and PDF are the most transferable directly to Quarto
+
+. . .
+
+:::: columns
+
+::: {.column width="50%"}
+
+### R Markdown
+
+```yaml
+title: "My Document"
+output:
+  html_document:
+    toc: true
+    number_sections: true
+    css: styles.css
+```    
+:::
+
+::: {.column width="50%"}
+
+### Quarto
+
+```yaml
+title: "My Document"
+format:
+  html:
+    toc: true
+    number-sections: true
+    css: styles.css
+```
+
+:::
+
+::::
+
+. . .
+
+<br>
+
+> One source of the difference in syntax is that Quarto is more closely aligned with Pandoc format names and options (thus the use of - as a word separator rather than _).
+
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/04-static/old-rmarkdown.rmd`
+
+
+## Table of contents and Sections
+
+Table of contents (ToC) and sections are useful for breaking up longer documents.
+
+- Quarto will automatically build a ToC for level 3 headers and above but you can control this with:
+
+```
+toc-depth: 4
+```
+
+or 
+
+```yaml
+toc-depth: 2
+```
+
+## Table of Contents and Section
+
+<iframe src = "../../materials/static/toc-1.html" height="800" width="1000" ></iframe>
+
+## Tabsets
+
+```
+::: {.panel-tabset}
+
+## Element 1
+
+## Element 2
+
+:::
+```
+
+## Tabsets
+
+::: {.panel-tabset}
+
+## Code
+
+```{r}
+#| echo: fenced
+#| eval: false
+head(mtcars)
+```
+
+
+## Output
+
+```{r}
+#| eval: true
+#| echo: false
+head(mtcars)
+```
+
+:::
+
+## Footnotes
+
+You can create inline footnotes like so: `some inline text with a^[footnote]`
+
+Pandoc also supports numbering and formatting footnotes using the following syntax:
+
+<iframe src="../../materials/static/fancy-footnotes.html" height="800" width="1200"></iframe>
+
+## Cross-references
+
+`![Howard is glamorous](images/howard-glamour.jpg){#fig-glamour}`
+
+> The presence of the caption (Howard is glamouros) and label (#fig-howard) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document
+
+. . .
+
+![Howard is glamorous](images/howard-glamour.jpg){#fig-glamour}
+
+## Reference popups
+
+If you hover your mouse over the citation and footnote in this sentence you’ll see a popup displaying the reference contents:
+
+```
+format:
+  html:
+    citations-hover: false
+    footnotes-hover: false
+```
+
+. . .
+
+<br>
+
+```
+For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?
+```
+
+. . .
+
+<iframe src="../../materials/static/footnote.html" height="600" width = "1000"></iframe>
+
+# Code {background-color="#4f6952"}
+
+## Hide all code
+
+```yaml
+format: html
+execute:
+  echo: false
+```
+
+. . .
+
+Turn back on at individual code-block level:
+
+```r
+#| echo: true
+```
+
+## Fold code
+
+```yaml
+format:
+  html:
+    code-fold: true
+    code-summary: "Hidden code"
+```
+
+. . .
+
+Turn on at individual code-block level:
+
+```r
+#| code-fold: true
+#| code-summary: "Hidden code"
+```
+
+## Code tools
+
+```yaml
+format:
+  html:
+    code-fold: true
+    code-tools: true
+```
+
+. . .
+
+![](https://quarto.org/docs/output-formats/images/code-tools-01.png)
+
+## Code tools, source
+
+> For example, here we specify that we want only “View Source” (no toggling of code visibility) and no caption on the code menu:
+
+```yaml
+format:
+  html: 
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+```
+
+. . .
+
+![](https://quarto.org/docs/output-formats/images/code-tools-source.png)
+
+## Code tools, source repo
+
+In some situations (especially for longer documents), you may prefer to send viewers to the source code on a version-control website rather than the built in viewer.
+
+. . .
+
+```yaml
+format:
+  html: 
+    code-tools:
+      source: https://github.com/quarto-dev/quarto-web/blob/main/index.md
+```
+
+# Code appearance {background-color="#4f6952"}
+
+## Code highlighting
+
+[Full highlighting options](https://quarto.org/docs/output-formats/html-code.html#highlighting)
+
+```{r}
+#| message: false
+library(dplyr)
+mtcars |> 
+  group_by(cyl, am) |> 
+  summarize(mean = mean(mpg), n = n(), .groups = "drop")
+```
+
+## Code highlighting
+
+```yaml
+format: 
+  html:
+    highlight-style: dracula
+    code-block-border-left: "#4f6952"
+```
+
+![](images/dracula.png)
+
+## Code highlighting
+
+```yaml
+format: 
+  html:
+    highlight-style: github
+    code-block-border-left: "#4f6952"
+    code-block-bg: true
+```
+
+![](images/github.png)
+
+## Code linking with [`downlit`](https://downlit.r-lib.org/)
+
+> The goal of `downlit` is to provide syntax highlighting and automatic linking of R code
+
+```yaml
+format:
+  html:
+    code-link: true
+```
+
+# Aesthetics {background-image="images/howard-gentleman.jpg" background-size="contain" background-position="right" background-color="black"}
+
+## HTML Appearance
+
+- Core Quarto (YAML, Markdown/Text, Code)
+- CSS/SCSS (styling and appearance) 
+- 25 bootswatch themes
+- https://quarto.org/docs/output-formats/html-themes.html
+- https://quarto.org/docs/output-formats/html-themes-more.html
+
+## CSS vs SCSS/SASS
+
+- Think code vs a reusable function
+
+## `format: PDF`
+
+TIP!
+- pandoc divs/spans are generally transferrable
+- CSS is _not_ transferrable
+- Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX
+
+## Output options

@@ -1,0 +1,6 @@
+---
+title: "&nbsp;"
+format: html
+---
+
+For example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?

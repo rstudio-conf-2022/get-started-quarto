@@ -1,0 +1,314 @@
+---
+title: "Visual Editor for Quarto"
+author: "Thomas Mock"
+date: "`r Sys.Date()`"
+format: html
+bibliography: references.bib
+editor_options:
+  markdown:
+    wrap: sentence
+    canonical: true
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+# Intro {#intro}
+
+RStudio 1.4 added support for the `Visual Mode` of editing markdown files!
+
+This is a [`WYSIWYM`](https://simple.wikipedia.org/wiki/WYSIWYM) editor, meaning:
+
+> **WYSIWYM** is an [acronym](https://simple.wikipedia.org/wiki/Acronym "Acronym") that stands for **What you see is what you mean**.
+> This was positioned to not be confused with [WYSIWYG](https://simple.wikipedia.org/wiki/WYSIWYG "WYSIWYG") (**what you see is what you get**).
+> The idea behind WYSIWYG is to display text on screen in much the *exact same* way as they will appear when printed on paper.\
+>
+> \
+> WYSIWYM means that it can be translated differently, (where) the *same* content can lead to *different* output formats .
+
+The **Visual Markdown** mode in RStudio allows for editing in plain text or visual mode, along with a visual representation of what it will actually look like while maintaining the ability to output to HTML or PDF.
+
+[Full guide](https://rstudio.github.io/visual-markdown-editing/#/) guide from the RStudio dev team that covers all the major topics and sub topics of the new features.
+
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| OS                    | Download                                                                                                                                           | Size      | SHA-256  |
++=======================+====================================================================================================================================================+===========+==========+
+| Windows 10/11         | [ RStudio-2022.07.0-548.exe(opens in a new tab)](https://download1.rstudio.org/desktop/windows/RStudio-2022.07.0-548.exe)\                         | 190.14 MB | 7bfd6825 |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| macOS 10.15+          | [ RStudio-2022.07.0-548.dmg(opens in a new tab)](https://download1.rstudio.org/desktop/macos/RStudio-2022.07.0-548.dmg)\                           | 222.07 MB | 52cf91ff |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| Ubuntu 18+/Debian 10+ | [ rstudio-2022.07.0-548-amd64.deb(opens in a new tab)](https://download1.rstudio.org/desktop/bionic/amd64/rstudio-2022.07.0-548-amd64.deb)\        | 132.89 MB | 9722278c |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| Ubuntu 22             | [ rstudio-2022.07.0-548-amd64.deb(opens in a new tab)](https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.0-548-amd64.deb)\         | 145.42 MB | c5888d29 |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| Fedora 19/Red Hat 7   | [ rstudio-2022.07.0-548-x86_64.rpm(opens in a new tab)](https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2022.07.0-548-x86_64.rpm)\    | 103.30 MB | c0cdc1b5 |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| Fedora 34/Red Hat 8   | [ rstudio-2022.07.0-548-x86_64.rpm(opens in a new tab)](https://download1.rstudio.org/desktop/rhel8/x86_64/rstudio-2022.07.0-548-x86_64.rpm)\      | 149.77 MB | 45002042 |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+| OpenSUSE 15           | [ rstudio-2022.07.0-548-x86_64.rpm(opens in a new tab)](https://download1.rstudio.org/desktop/opensuse15/x86_64/rstudio-2022.07.0-548-x86_64.rpm)\ | 133.75 MB | d95f04d2 |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+
+
+\
+
+### Enabling Visual Mode {#enabling-visual-mode}
+
+Markdown documents can be edited in either source or visual button at the top-right of the document toolbar (or alternatively the `⌘ + ⇧ + F4` keyboard shortcut):
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing.png){width="450"}
+
+### YAML/Editor Options
+
+Please see long section of the [guide](https://quarto.org/docs/visual-editor/).
+
+### Canonical Mode
+
+If you have a workflow that involves editing in both visual and source mode, you may want to ensure that the same markdown is written no matter which mode edits originate from.
+You can accomplish this using the `canonical` option.
+For example:
+
+``` yaml
+---
+title: "My Document"
+editor_options:
+  markdown:
+    wrap: 72
+    references: 
+      location: block
+    canonical: true
+---
+```
+
+### Editor Toolbar {#editor-toolbar}
+
+The editor toolbar includes buttons for the most commonly used formatting commands:
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-toolbar.png)
+
+Additional commands are available on the **Format**, **Insert**, and **Table** menus:
+
+::: {style="display: flex;"}
+<div>
+
+### Format
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-format-menu.png)
+
+</div>
+
+<div>
+
+### Insert
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-insert-menu.png)
+
+</div>
+
+<div>
+
+### Table
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-table-menu.png)
+
+</div>
+:::
+
+### Insert Anything {#insert-anything}
+
+| Command      | Keyboard Shortcut | Markdown Shortcut |
+|:-------------|-------------------|:------------------|
+| Bold         | `⌘ B`             | `**bold**`        |
+| Italic       | `⌘ I`             | `*italic*`        |
+| Code         | `⌘ D`             | `` `code` ``      |
+| Link         | `⌘ K`             | `<href>`          |
+| Heading 1    | `⌥⌘ 1`            | `#`               |
+| Heading 2    | `⌥⌘ 2`            | `##`              |
+| Heading 3    | `⌥⌘ 3`            | `###`             |
+| R Code Chunk | `⌥⌘ I`            | ```` ```{r} ````  |
+
+You can also use the catch-all `⌘/` shortcut to insert just about anything.
+Just execute the shortcut then type what you want to insert.
+For example:
+
+Use the `bullet`
+
+-   Output
+
+Or `numbered`
+
+1.  Number list!
+
+Here's a link - how to turn into an image?
+
+### DEMO of the ⌘ {#demo-1 .color style="color: red;"}
+
+EXAMPLE LINK: [`https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png`](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-omni-list.png)
+
+# Technical Writing
+
+## Equations {#equations}
+
+LaTeX equations are authored using standard Pandoc markdown syntax (the editor will automatically recognize the syntax and treat the equation as math).
+When you aren't directly editing an equation it will appear as rendered math:
+
+$$
+P(E) = {n \choose k} p^k (2-p)^{n-k}
+$$
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-math.png)
+
+### Footnotes {#footnotes}
+
+------------------------------------------------------------------------
+
+You can include footnotes using the **Insert -\> Footnote** command (or the `⇧ ⌘ F7` keyboard shortcut).
+Footnote editing occurs in a pane immediately below the main document:[^1] \<- **NOTE THE FOOTMARK**
+
+[^1]: Very fancy footnote to this portion
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-footnote.png)
+
+# Content Editing {#content-editing}
+
+### Comments {#comments}
+
+When reviewing an Quarto document you often want to provide inline comments with suggested revisions.
+This is possible in Quarto using HTML comments (which are ignored by all output formats).
+Visual mode includes a command for inserting HTML comments as well as special highlighting treatment to easily parse out editing comments from surrounding text.
+
+<!--# DEMO INSERTING A COMMENT -->
+
+<!--# Note that RStudio 1.3 added real time spell check -->
+
+### Tables {#tables}
+
+You can insert table using the **Table** menu.
+You can then use either the main menu or a context menu to insert and delete table rows and columns:
+
+![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-table-context.png)
+
+### Lists {#lists}
+
+you can create a new list by just typing `-` or `1.` at the beginning of an empty paragraph.
+To add items to the list, just press **Enter** within a list item.
+To exit the list, press **Enter** within an empty list item.
+
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Empty Item** (*enter to exit list*)                                                      | **Tab** (*add sublist*)                                                                       | **Backspace** (*add block*)                                                                 |
++:===========================================================================================+:==============================================================================================+:============================================================================================+
+| ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-item.png) | ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-sublist.png) | ![](https://rstudio.github.io/visual-markdown-editing/images/visual-editing-list-block.png) |
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+### Special Characters {#special-characters}
+
+Can use either `:grinning:` 😀 or `Insert -> Special Characters -> Emoji ...`
+
+Unicode can also be inserted w/ `Insert -> Special Characters -> Unicode ...`
+
+# Bibliographies {#bibliographies}
+
+Quarto supports bibliographies in a wide variety of formats including BibTeX and CSL.
+Add a bibliography to your document using the `bibliography` YAML metadata field.
+For example:
+
+    ---
+    title: "My Document"
+    bibliography: references.bib
+    link-citations: true
+    ---
+
+## Inserting Citations {#inserting-citations}
+
+You insert citations by either using the **Insert -\> Citation** command or by using markdown syntax directly (e.g. `[@cite]`).
+
+Citations go inside square brackets and are separated by semicolons.
+Each citation must have a key, composed of '\@' + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix.
+The citation key must begin with a letter, digit, or `_`, and may contain alphanumerics, `_`, and internal punctuation characters (`:.#$%&-+?<>~/`).
+Here are some examples:
+
+![](https://quarto.org/docs/visual-editor/images/visual-editing-citations.png)
+
+[@rottman-sagebiel2018]
+
+#### **DEMO OF CITATION WITH INSERT** {#demo-of-citation-with-insert style="color: red;"}
+
+## Embedded Code {#embedded-code}
+
+Source code which you include in an Quarto document can either by for display only or can be executed by knitr as part of rendering.
+Code can furthermore be either inline or block (e.g. an Rmd code chunk).
+
+### Displaying Code {#displaying-code}
+
+To display but not execute code, either use the **Insert -\> Code Block** menu item, or start a new line and type either:
+
+1.  ```` ``` ```` (for a plain code block); or
+
+2.  ```` ```<lang> ```` (where \<lang\> is a language) for a code block with syntax highlighting.
+
+Then press the **Enter** key.
+To display code inline, simply surround text with backticks (`` `code` ``), or use the **Format -\> Code** menu item.
+
+    library(tidyverse)
+    library(palmerpenguins)
+
+    penguins %>% 
+      ggplot(aes(x = body_weight_g, y = flipper_length_mm, color = species)) +
+      geom_point()
+
+### Code Chunks {#code-chunks}
+
+To insert an executable code chunk, use the **Insert -\> Code Chunk** menu item, or start a new line and type:
+
+```` ```{r} ````
+
+Then press the **Enter** key.
+Note that `r` could be another language supported by knitr (e.g. `python` or `sql`) and you can also include a chunk label and other chunk options.
+
+To include inline R code, you just create normal inline code (e.g. by using backticks or the ⌘ D shortcut) but preface it with `r`.
+For example, this inline code will be executed by knitr: `` `r Sys.Date()` ``.
+Note that when the code displays in visual mode it won't have the backticks (but they will still appear in source mode).
+
+```{r penguins-plot, message=FALSE}
+penguin_plot <- penguins %>% 
+  na.omit() %>% 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(aes(color = species)) +
+  labs(title = "Important Penguins") +
+  geom_smooth(method = "lm", color = "black")
+
+penguin_plot
+```
+
+### R generated Tables
+
+```{r}
+library(gt)
+
+penguins %>% 
+  na.omit() %>% 
+  select(species, bill_length_mm, body_mass_g) %>% 
+  head() %>% 
+  gt()
+```
+
+```{r}
+library(reactable)
+penguins %>% 
+  filter(species == "Adelie") %>% 
+  na.omit() %>% 
+  select(species, bill_length_mm, body_mass_g) %>% 
+  reactable(defaultPageSize = 5)
+```
+
+```{r}
+penguins %>% 
+  select(1:4) %>% 
+  DT::datatable()
+```
+
+```{r}
+plotly::ggplotly(penguin_plot)
+```

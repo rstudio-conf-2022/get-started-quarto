@@ -1,0 +1,11 @@
+---
+format: revealjs
+title: Hello Quarto
+subtitle: Slides with revealjs
+author: <a href="https://themockup.blog">Tom Mock</a>
+date: 2022-07-11
+institute: RStudio
+title-slide-attributes:
+    data-background-image: images/paper-texture.jpg
+    data-background-size: cover
+---

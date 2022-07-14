@@ -1,0 +1,21 @@
+---
+format: html
+---
+
+```
+::: {layout="[[40,-20,40], [100]]"}
+![Howard on a couch](../../materials/images/howard-comfy.png)
+
+![Howard sleeping](../../materials/images/howard-glamour.jpg)
+
+![Howard in a table](../../materials/images/howard-table.png)
+:::
+```
+
+::: {layout="[[40,-20,40], [100]]"}
+![Howard on a couch](../../materials/images/howard-comfy.png)
+
+![Howard sleeping](../../materials/images/howard-glamour.jpg)
+
+![Howard in a table](../../materials/images/howard-table.png)
+:::
