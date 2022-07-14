@@ -15,7 +15,7 @@ editor_options:
     canonical: true
 ---
 
-# Advanced Quarto + `knitr`
+# 08 - Advanced Quarto + `knitr`
 
 ## Parameters
 

@@ -385,7 +385,7 @@
 
 <section id="section" class="title-slide slide level1 center" data-background-color="black" data-background-image="images/calculations.jpeg">
 <h1></h1>
-<p><span style="color: white; font-size: 250px;">Code and Editors</span></p>
+<p><span style="color: white; font-size: 250px;">03 - Code and Editors</span></p>
 </section>
 
 <section>
@@ -704,14 +704,6 @@ fig.dpi vs fig-dpi</code></pre>
 </div>
 </div>
 </div>
-<div class="fragment">
-<p><br></p>
-<p>Note the differences between:</p>
-<ul>
-<li><code>one.two</code> vs <code>one-two</code></li>
-<li><code>one.two = FALSE</code> vs <code>one-two: false</code></li>
-</ul>
-</div>
 </section>
 <section id="quarto-chunk-options-1" class="slide level2">
 <h2>Quarto chunk options</h2>
@@ -727,7 +719,7 @@ fig.dpi vs fig-dpi</code></pre>
 </section>
 <section id="setup-chunk" class="slide level2">
 <h2>Setup Chunk</h2>
-<p>A special chunk! This sets up the default values for the <strong>entire document</strong>.</p>
+<p>A special chunk! There can ONLY be one chunk named <code>setup</code>. It typically is used to set up the default values for the <strong>entire document</strong> with <code>knitr::opts_chunk$set()</code></p>
 <div class="fragment">
 <div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
@@ -736,13 +728,22 @@ fig.dpi vs fig-dpi</code></pre>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
+<p>Quarto also introduces some of these as options for <code>execute:</code> in YAML.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1"></a><span class="pp">---</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="knitropts_chunk-defaults" class="slide level2">
 <h2><code>knitr::opts_chunk</code> defaults</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">str</span>(knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">get</span>()[<span class="dv">1</span><span class="sc">:</span><span class="dv">27</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">str</span>(knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">get</span>()[<span class="dv">1</span><span class="sc">:</span><span class="dv">27</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 27
  $ eval         : logi TRUE
@@ -776,7 +777,7 @@ fig.dpi vs fig-dpi</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">str</span>(knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">get</span>()[<span class="dv">28</span><span class="sc">:</span><span class="dv">53</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">str</span>(knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">get</span>()[<span class="dv">28</span><span class="sc">:</span><span class="dv">53</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 26
  $ fig.width : int 10
@@ -926,20 +927,20 @@ List of 2
 <h2>Named chunks can be re-used!</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1"></a><span class="in">```{r myPlt}</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, </span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r myPlt}</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, </span>
+<span id="cb32-4"><a href="#cb32-4"></a>    <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that you when using <strong>named chunks</strong> you can’t alter the internal code, only the chunk options. This is necessary because you are referencing the initially defined code in that chunk.</p>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r myPlt}</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="co">#| eval: true</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="co">#| dpi: 300</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="in">```{r myPlt}</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="co">#| eval: true</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co">#| dpi: 300</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="co">#| fig-width: 4</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.dim="[6,4]">
 <div class="cell-output-display">
 <p><img data-src="03-computation-editors_files/figure-revealjs/coolPlot-1.png" width="1800"></p>
@@ -951,8 +952,8 @@ List of 2
 <section id="working-with-code" class="slide level2">
 <h2>Working with code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -967,17 +968,17 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="working-with-code-1" class="slide level2">
 <h2>Working with code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="working-with-code-2" class="slide level2">
 <h2>Working with code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
-<span id="cb36-3"><a href="#cb36-3"></a></span>
-<span id="cb36-4"><a href="#cb36-4"></a>mpg_cars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a></span>
+<span id="cb37-4"><a href="#cb37-4"></a>mpg_cars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -992,21 +993,21 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="working-with-code-3" class="slide level2">
 <h2>Working with code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1"></a><span class="in">```{r mpg-cars}</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
-<span id="cb38-5"><a href="#cb38-5"></a></span>
-<span id="cb38-6"><a href="#cb38-6"></a>mpg_cars</span>
-<span id="cb38-7"><a href="#cb38-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1"></a><span class="in">```{r mpg-cars}</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#| eval: false</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
+<span id="cb39-5"><a href="#cb39-5"></a></span>
+<span id="cb39-6"><a href="#cb39-6"></a>mpg_cars</span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="working-with-code-4" class="slide level2">
 <h2>Working with code</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mpg-cars}</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mpg-cars}</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
@@ -1034,21 +1035,18 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 </ul>
 <div class="fragment">
 <p>You should <em>always</em> be using a recent release of the RStudio IDE - especially for the Quarto features.</p>
-<p>RStudio <code>2022.07</code> and beyond come bundled with a production-stable release of Quarto, no additional install needed!</p>
+<p>RStudio <code>2022.07</code> and beyond comes bundled with a production-stable release of Quarto, no additional install needed!</p>
 </div>
-</section>
-<section id="rstudio-quarto" class="slide level2">
-<h2>RStudio + Quarto</h2>
 </section>
 <section id="yaml-auto-completion" class="slide level2">
 <h2>YAML Auto-completion</h2>
 <p>Quarto + RStudio provides a rich YAML auto-completion based on text.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb41-1"><a href="#cb41-1"></a><span class="pp">---</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a><span class="co">    #toc-location: body</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb42-1"><a href="#cb42-1"></a><span class="pp">---</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="co">    #toc-location: body</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><img data-src="images/yaml-autocomplete.gif" style="height:50.0%"></p>
 </div>
@@ -1082,24 +1080,28 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <img data-src="https://quarto.org/docs/tools/images/rstudio-render.png" class="r-stretch"><ul>
 <li>Starts a background job and previews the output</li>
 </ul>
+<div class="fragment">
 <ol start="2" type="1">
 <li>System shell via <code>quarto render</code></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1"></a><span class="ex">quarto</span> render document.qmd <span class="co"># defaults to html</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> pdf</span>
-<span id="cb42-3"><a href="#cb42-3"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1"></a><span class="ex">quarto</span> render document.qmd <span class="co"># defaults to html</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> pdf</span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Renders via terminal</li>
 </ul>
+</div>
+<div class="fragment">
 <ol start="3" type="1">
 <li>R console via <code>quarto</code> R package</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">library</span>(quarto)</span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">library</span>(quarto)</span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section></section>
 <section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">

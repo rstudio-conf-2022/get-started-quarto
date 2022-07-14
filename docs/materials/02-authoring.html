@@ -548,8 +548,8 @@
 <ol type="1">
 <li>Render in RStudio</li>
 </ol>
-
-<img data-src="https://quarto.org/docs/tools/images/rstudio-render.png" class="r-stretch"><ol start="2" type="1">
+<p><img data-src="https://quarto.org/docs/tools/images/rstudio-render.png"> . . .</p>
+<ol start="2" type="1">
 <li>System shell via <code>quarto render</code></li>
 </ol>
 <div class="cell">
@@ -557,6 +557,7 @@
 <span id="cb11-2"><a href="#cb11-2"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> pdf</span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="ex">quarto</span> render document.qmd <span class="at">--to</span> docx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="fragment">
 <ol start="3" type="1">
 <li>R console via <code>quarto</code> R package</li>
 </ol>
@@ -564,6 +565,7 @@
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">library</span>(quarto)</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>) <span class="co"># defaults to html</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="fu">quarto_render</span>(<span class="st">"document.qmd"</span>, <span class="at">output_format =</span> <span class="st">"pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section></section>
 <section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
@@ -1375,7 +1377,7 @@ type the note.]</code></pre>
 <pre><code>See @fig-elephant for an illustration.</code></pre>
 </div>
 <div class="fragment">
-<p><img data-src="https://quarto.org/docs/authoring/images/crossref-figure.png"></p>
+<p><img data-src="https://quarto.org/docs/authoring/images/crossref-figure.png" width="800"></p>
 
 <p><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo"></p>
 <div class="footer footer-default">

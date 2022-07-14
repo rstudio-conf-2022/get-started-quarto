@@ -15,7 +15,7 @@ editor_options:
     canonical: true
 ---
 
-# Plots, Graphics, and tables {background-color="#4f6952"}
+# 07 - Plots, Graphics, and tables {background-color="#4f6952"}
 
 ## Layout
 
@@ -333,6 +333,8 @@ mass_flipper
 
 ## `ggiraph`
 
+Example from [Claus Wilke](https://github.com/wilkelab/SDS375/blob/31609013bf4a4c0f34f991fa32474b8371f8873b/worksheets/interactive-plots.Rmd#L484-L514)
+
 ```{r}
 library(tidyverse)
 library(sf)
@@ -355,8 +357,6 @@ texas_counties <- left_join(texas_income, tx_census, by = "FIPS")
 ```
 
 ## `ggiraph`
-
-Example from https://github.com/wilkelab/SDS375/blob/31609013bf4a4c0f34f991fa32474b8371f8873b/worksheets/interactive-plots.Rmd#L484-L514
 
 ```{r}
 texas_scatter <- texas_counties %>%

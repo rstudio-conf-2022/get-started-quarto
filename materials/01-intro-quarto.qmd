@@ -23,10 +23,10 @@ library(gtsummary)
 ```
 
 
-<h1> Performing magic </h1>
+<h1> 01 - Performing magic </h1>
 <h1> with Quarto </h1>
 
-<h3> Tom Mock, Customer Enablement Lead </h3>
+<h3> Tom Mock, RStudio PBC </h3>
 
 <h3> 2022-06-25 </h3>
 <br>
@@ -70,13 +70,9 @@ Find me at:
 
 ## Your TAs
 
-::: {style = "position: absolute; top: 25px;"}
-
-:::
-
 Carlos Scheidegger - RStudio + Quarto
 
-Tan Ho - 
+Tan Ho - Data Developer at ABIC
 
 Katie Masiello - RStudio + Solutions Engineering
 

@@ -15,7 +15,7 @@ editor: source
 
 # {background-color="black" background-image="images/calculations.jpeg"}
 
-[Code and Editors]{style="color: white; font-size: 250px;"}
+[03 - Code and Editors]{style="color: white; font-size: 250px;"}
 
 # {background-color="#6a9c42"}
 
@@ -386,15 +386,6 @@ mtcars |>
   ggplot(aes(x = disp, y = mpg)) + geom_point()
 ```
 
-. . .
-
-<br>
-
-Note the differences between:
-
-- `one.two` vs `one-two`
-- `one.two = FALSE` vs `one-two: false`
-
 ## Quarto chunk options
 
 ::: note
@@ -412,7 +403,7 @@ Note that if you prefer it is still possible to include chunk options on the fir
 
 ## Setup Chunk
 
-A special chunk! This sets up the default values for the **entire document**.
+A special chunk! There can ONLY be one chunk named `setup`. It typically is used to set up the default values for the **entire document** with `knitr::opts_chunk$set()`
 
 . . .
 
@@ -424,6 +415,19 @@ knitr::opts_chunk$set(
 )
 ```
 ````
+
+. . .
+
+Quarto also introduces some of these as options for `execute:` in YAML.
+
+```yaml
+---
+format: html
+execute:
+  echo: false
+  warning: false
+---
+```
 
 ## `knitr::opts_chunk` defaults
 
@@ -638,9 +642,7 @@ RStudio has deep integration with R, `knitr` and Quarto
 
 You should _always_ be using a recent release of the RStudio IDE - especially for the Quarto features. 
 
-RStudio `2022.07` and beyond come bundled with a production-stable release of Quarto, no additional install needed!
-
-## RStudio + Quarto
+RStudio `2022.07` and beyond comes bundled with a production-stable release of Quarto, no additional install needed!
 
 ## YAML Auto-completion
 
@@ -686,6 +688,8 @@ Running Quarto Render will call Quarto render in a background job - this will pr
 
 - Starts a background job and previews the output
 
+. . .
+
 2. System shell via `quarto render`
 
 ```{bash}
@@ -697,6 +701,8 @@ quarto render document.qmd --to docx
 ```
 
 - Renders via terminal
+
+. . .
 
 3. R console via `quarto` R package
 

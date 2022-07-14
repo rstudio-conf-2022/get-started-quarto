@@ -385,7 +385,7 @@
 
 <section>
 <section id="static-quarto-documents" class="title-slide slide level1 center" data-background-image="images/write-something.jpg" data-background-size="cover" data-background-color="black">
-<h1>Static Quarto Documents</h1>
+<h1>04 - Static Quarto Documents</h1>
 
 </section>
 <section id="html-workhorse" class="slide level2">
@@ -491,9 +491,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <section id="footnotes" class="slide level2">
 <h2>Footnotes</h2>
 <p>You can create inline footnotes like so: <code>some inline text with a^[footnote]</code></p>
+<div class="fragment">
 <p>Pandoc also supports numbering and formatting footnotes using the following syntax:</p>
 <iframe src="../../materials/static/fancy-footnotes.html" height="800" width="1200">
 </iframe>
+</div>
 </section>
 <section id="cross-references" class="slide level2">
 <h2>Cross-references</h2>
@@ -706,11 +708,145 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <li><p>https://quarto.org/docs/output-formats/html-themes-more.html</p></li>
 </ul>
 </section>
-<section id="css-vs-scsssass" class="slide level2">
-<h2>CSS vs SCSS/SASS</h2>
+<section id="css" class="slide level2">
+<h2>CSS</h2>
+<p>CSS = Cascading Style Sheets:</p>
+<blockquote>
+<p>CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS">mdn web docs</a></p>
+</blockquote>
+<div class="fragment">
+<p>HTML structures the page, CSS styles it</p>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color: red; font-size: 100px;"</span><span class="kw">&gt;</span>Some text<span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div style="color: red; font-size: 35px;">
+Some text
+</div>
+</div>
+<div class="fragment">
+<p>CSS can also bring in additional resources, like new fonts!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Fira+Mono&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+</style>
+</div>
+</div>
+</section>
+<section id="inline-css" class="slide level2">
+<h2>Inline css</h2>
+<pre><code>:::{style="color: white; font-size: 150px; background-color:#d3d3d3;"}
+Text
+:::</code></pre>
+<div class="fragment">
+<div style="color: white; font-size: 150px; background-color:#d3d3d3;">
+<p>Text</p>
+</div>
+</div>
+<div class="fragment">
+<pre><code>Some text with [dplyr code]{style="font-family: 'Fira Mono !important'; background-color:#d3d3d3;"} and more text.</code></pre>
+</div>
+<div class="fragment">
+<p>Some text with <span style="font-family: 'Fira Mono'; background-color:#d3d3d3;">code</span> and more text.</p>
+</div>
+</section>
+<section id="css-class" class="slide level2">
+<h2>CSS Class</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">.big-text</span> {</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="kw">font-size</span>: <span class="dv">150</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="kw">color</span>: <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+.big-text {
+  font-size: 150px;
+  color: blue;
+}
+</style>
+</div>
+<pre><code>::: {.big-text}
+- Big text
+- Still big
+:::
+
+- Smol text</code></pre>
+<div class="big-text">
 <ul>
-<li>Think code vs a reusable function</li>
+<li>Big text</li>
+<li>Still big</li>
 </ul>
+</div>
+<ul>
+<li>Smol text</li>
+</ul>
+</section>
+<section id="class-spans" class="slide level2">
+<h2>Class + spans</h2>
+<pre><code>Here is some [big text]{.big-text} and some small text.</code></pre>
+<p>Here is some <span class="big-text">big text</span> and some small text.</p>
+</section>
+<section id="css-id" class="slide level2">
+<h2>CSS Id</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1"></a><span class="pp">#blue</span> {</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">background-color</span>: <span class="cn">#3c6f9a</span><span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="kw">color</span>: <span class="cn">#fa551b</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<style type="text/css">
+#blue {
+  background-color: #3c6f9a;
+  color: #fa551b;
+}
+</style>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a>::: {#blue}</span>
+<span id="cb32-2"><a href="#cb32-2"></a>Some content</span>
+<span id="cb32-3"><a href="#cb32-3"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="blue">
+<p>Some content</p>
+</div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a>Some <span class="co">[</span><span class="ot">text</span><span class="co">]</span>{#blue}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some <span id="blue">text</span></p>
+</div>
+</section>
+<section id="scsssass" class="slide level2">
+<h2>SCSS/SASS</h2>
+<blockquote>
+<p>SASS (Syntactically Awesome Style Sheets) is a pre-processor scripting language that will be compiled or interpreted into CSS. SassScript is itself a scripting language whereas SCSS is the main syntax for the SASS which builds on top of the existing CSS syntax</p>
+</blockquote>
+<div class="fragment">
+<p>Sass reduces repetition of CSS and therefore saves time - think of it like manually changing code vs using functions in R.</p>
+</div>
+<div class="fragment">
+<p>Color palette: <span style="background-color: #404042;"><code>#404042</code></span> <span style="background-color: #3c6f9a;"><code>#3c6f9a</code></span> <span style="background-color: #fa551b;"><code>#fa551b</code></span></p>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb34-1"><a href="#cb34-1"></a>$primary_1<span class="in">: #a2b9bc</span>;</span>
+<span id="cb34-2"><a href="#cb34-2"></a>$primary_2<span class="in">: #b2ad7f</span>;</span>
+<span id="cb34-3"><a href="#cb34-3"></a>$primary_3<span class="in">: #878f99;</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="co">/* use the variables */</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a><span class="fu">.main-header</span> {</span>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="kw">background-color</span>: $primary_1<span class="op">;</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>}</span>
+<span id="cb34-9"><a href="#cb34-9"></a></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="fu">.menu-left</span> {</span>
+<span id="cb34-11"><a href="#cb34-11"></a>  <span class="kw">background-color</span>: $primary_2<span class="op">;</span></span>
+<span id="cb34-12"><a href="#cb34-12"></a>}</span>
+<span id="cb34-13"><a href="#cb34-13"></a></span>
+<span id="cb34-14"><a href="#cb34-14"></a><span class="fu">.menu-right</span> {</span>
+<span id="cb34-15"><a href="#cb34-15"></a>  <span class="kw">background-color</span>: $primary_3<span class="op">;</span></span>
+<span id="cb34-16"><a href="#cb34-16"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sass-variables-quarto" class="slide level2">
+<h2>SASS variables + Quarto</h2>
+<iframe src="https://quarto.org/docs/output-formats/html-themes.html#sass-variables" height="800" width="1200">
 </section>
 <section id="format-pdf" class="slide level2">
 <h2><code>format: PDF</code></h2>
@@ -718,9 +854,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </section>
 <section id="output-options" class="slide level2">
 <h2>Output options</h2>
-
-
-<img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metasitename">Hello Quarto</span></p>
+</div>
+<p><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo" /></p>
+<div class="footer footer-default">
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
 </section></section>
@@ -747,17 +885,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'smaller': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
- 
+      Reveal.initialize({ 
         // Display controls in the bottom right corner
         controls: false,
 
@@ -776,7 +904,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: c/t,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -926,8 +1054,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
-
+        plugins: [
           RevealMath,
           RevealNotes,
           RevealSearch,
@@ -977,7 +1104,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
       })();
     </script>
 
-    <script id="quarto-html-after-body" type="application/javascript">
+    <script id = "quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
         const mode = bsSheetEl.getAttribute("data-mode");
@@ -1069,6 +1196,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
       }
     });
     </script>
-    
-
-</body></html>
+    </body>
+</html>
+</iframe></section></section></div></div></body></html>

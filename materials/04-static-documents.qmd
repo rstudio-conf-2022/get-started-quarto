@@ -12,7 +12,7 @@ format:
 editor: source
 ---
 
-# Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black"}
+# 04 - Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black"}
 
 ## HTML Workhorse
 

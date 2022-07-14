@@ -12,7 +12,7 @@ format:
 editor: source
 ---
 
-# Presentations {background-image="images/presenter.png" background-size="cover" background-color="#4f6952"}
+# 05 - Presentations {background-image="images/presenter.png" background-size="cover" background-color="#4f6952"}
 
 <h2>Making Slides with Code</h2>
 

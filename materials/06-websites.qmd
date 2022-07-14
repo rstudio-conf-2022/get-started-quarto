@@ -16,7 +16,7 @@ editor_options:
     canonical: true
 ---
 
-# Websites {background-image="images/website.png" background-size="cover" background-color="black"}
+# 06 - Websites {background-image="images/website.png" background-size="cover" background-color="black"}
 
 <h2>Building with Quarto</h2>
 
