@@ -1932,6 +1932,13 @@
     "text": "Install Flow\nthomasmock$ quarto install extension quarto-ext/fontawesome\n\n\nQuarto extensions may execute code when documents are rendered. If you do not \ntrust the authors of the extension, we recommend that you do not install or \nuse the extension.\n ? Do you trust the authors of this extension (Y/n) › Yes\n[✓] Downloading\n[✓] Unzipping\n    Found 1 extension.\n\n\n\nThe following changes will be made:\nFont Awesome support   [Install]   0.0.1 (shortcode)\n ? Would you like to continue (Y/n) › Yes\n\n[✓] Extension installation complete.\nLearn more about this extension at https://github.com/quarto-ext/fontawesome\n\n\n\n\n```{bash}\nquarto list extensions\n```\n\nId                        Version    Contributes\nquarto-ext/fontawesome    0.0.1      shortcodes \nquarto-ext/lightbox       0.0.1      filters"
   },
   {
+    "objectID": "materials/08-advanced-knitr.html#check-fontawesome",
+    "href": "materials/08-advanced-knitr.html#check-fontawesome",
+    "title": "Get Started with Quarto",
+    "section": "Check fontawesome",
+    "text": "Check fontawesome\nThere once was a  who was lost at \nHe was rescued by a  and a \n\n\nThere once was a {{< fa dog >}} who was lost at {{< fa water >}}\n\nHe was rescued by a {{< fa sailboat >}} and a {{< fa life-ring >}}"
+  },
+  {
     "objectID": "materials/08-advanced-knitr.html#lightbox-extension",
     "href": "materials/08-advanced-knitr.html#lightbox-extension",
     "title": "Get Started with Quarto",
@@ -2028,12 +2035,5 @@
     "title": "Get Started with Quarto",
     "section": "",
     "text": "(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
-  },
-  {
-    "objectID": "materials/08-advanced-knitr.html#check-fontawesome",
-    "href": "materials/08-advanced-knitr.html#check-fontawesome",
-    "title": "Get Started with Quarto",
-    "section": "Check fontawesome",
-    "text": "Check fontawesome\nThere once was a  who was lost at \nHe was rescued by a  and a \n\n\nThere once was a {{< fa dog >}} who was lost at {{< fa water >}}\n\nHe was rescued by a {{< fa sailboat >}} and a {{< fa life-ring >}}"
   }
 ]
