@@ -13,8 +13,6 @@ editor: source
 editor_options:
   markdown:
     canonical: true
-filters:
-   - fontawesome
 ---
 
 # 08 - Advanced<br>Quarto +`knitr` {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
@@ -280,7 +278,19 @@ quarto list extensions
 
 ## Check `fontawesome`
 
-There once was a {{< fa dog >}} who was lost at sea {{< fa water >}}
+There once was a {{< fa dog >}} who was lost at {{< fa water >}}
+
+He was rescued by a {{< fa sailboat >}} and a {{< fa life-ring >}}
+
+<br>
+
+. . .
+
+``` code
+There once was a {{{< fa dog >}}} who was lost at {{{< fa water >}}}
+
+He was rescued by a {{{< fa sailboat >}}} and a {{{< fa life-ring >}}}
+```
 
 ## Lightbox extension
 

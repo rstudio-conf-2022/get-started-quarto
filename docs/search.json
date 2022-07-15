@@ -2028,5 +2028,12 @@
     "title": "Get Started with Quarto",
     "section": "",
     "text": "(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
+  },
+  {
+    "objectID": "materials/08-advanced-knitr.html#check-fontawesome",
+    "href": "materials/08-advanced-knitr.html#check-fontawesome",
+    "title": "Get Started with Quarto",
+    "section": "Check fontawesome",
+    "text": "Check fontawesome\nThere once was a  who was lost at \nHe was rescued by a  and a \n\n\nThere once was a {{< fa dog >}} who was lost at {{< fa water >}}\n\nHe was rescued by a {{< fa sailboat >}} and a {{< fa life-ring >}}"
   }
 ]
