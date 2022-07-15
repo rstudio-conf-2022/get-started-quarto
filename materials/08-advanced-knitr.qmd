@@ -13,6 +13,8 @@ editor: source
 editor_options:
   markdown:
     canonical: true
+filters:
+   - fontawesome
 ---
 
 # 08 - Advanced<br>Quarto +`knitr` {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
@@ -230,7 +232,9 @@ quarto update extension quarto-ext/fontawesome # update specific extension
 quarto remove extension quarto-ext/fontawesome # remove specific extension
 ```
 
-<br> . . .
+<br>
+
+. . .
 
 ### Extensions + Version control
 
@@ -273,6 +277,10 @@ thomasmock$ quarto install extension quarto-ext/fontawesome
 #| echo: fenced
 quarto list extensions
 ```
+
+## Check `fontawesome`
+
+There once was a {{< fa dog >}} who was lost at sea {{< fa water >}}
 
 ## Lightbox extension
 
