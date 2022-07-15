@@ -15,9 +15,175 @@ editor_options:
     canonical: true
 ---
 
-# 08 - Advanced Quarto + `knitr`
+# 08 - Advanced<br>Quarto +`knitr` {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(palmerpenguins)
+```
 
 ## Parameters
+
+You may have a set of parameters that are used to create different variations of a report. For example:
+
+-   Showing results for a specific geographic location.
+-   Running a report that covers a specific time period.
+-   Running a single analysis multiple times for different assumptions.
+
+## `knitr` parameters
+
+``` yaml
+---
+title: "My Document"
+params:
+  alpha: 0.1
+  ratio: 0.1
+---
+```
+
+. . .
+
+``` bash
+quarto render file.qmd -P alpha:0.2 -P ratio:0.3
+```
+
+. . .
+
+```{r}
+#| eval: false
+quarto::quarto_render(execute_params = list(alpha = 0.2, ratio = 0.3))
+```
+
+## Accessing parameters
+
+Parameters are accessed as `params$NAME` in the document.
+
+. . .
+
+```{r}
+#| eval: false
+params$alpha # returns 0.1
+params$ratio # returns 0.1
+```
+
+. . .
+
+Or in inline code `r knitr::inline_expr("params$NAME")`
+
+## Paramaterized report
+
+``` yaml
+---
+title: "Penguins"
+date: 2020-08-11
+format: html
+params:
+  species: Adelie
+---
+```
+
+    ```{{r setup}}
+    #| inclue: false
+    library(tidyverse)
+    library(palmerpenguins)
+    smaller <- penguins |> 
+      filter(species == params$species, 
+             !is.na(body_mass_g))
+    ```
+
+    We have data about `r knitr::inline_expr("nrow(penguins)")` penguins. 
+    The distribution of the 
+    `r knitr::inline_expr("params$species")` penguins are shown below:
+
+    ```{{r}}
+    #| echo: false
+    smaller |> 
+      ggplot(aes(body_mass_g)) + 
+      geom_histogram(binwidth = 100)
+    ```
+
+## Rendering
+
+```{r}
+#| eval: false
+quarto::quarto_render(
+  "penguin-params.qmd",
+  execute_params = list(species = "Chinstrap"),
+  output_file = "choose-chinstrap.html"
+)
+```
+
+. . .
+
+<br> Directory matters!
+
+```{r}
+#| eval: false
+render_fun <- function(penguin){
+  quarto::quarto_render(
+    "materials/workshop/08-knitr/penguin-params.qmd",
+    execute_params = list(species = penguin),
+    output_file = glue::glue(
+      "materials/workshop/08-knitr/{penguin}-report.html"
+      )
+  )
+}
+```
+
+. . .
+
+<br> Use `purrr` to iterate across the distinct species
+
+```{r}
+penguin_names <- 
+  distinct(penguins, species) |> 
+  pull() |> 
+  as.character() 
+penguin_names
+```
+
+```{r}
+#| eval: false
+penguin_names |> 
+  purrr::walk(render_fun) # or lapply(penguin_names, render_fun)
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/08-knitr/penguin-params.qmd`
+-   Open `materials/workshop/08-knitr/render-params.R`
+
+## Commenting
+
+This page has commenting with Hypothes.is enabled via the following YAML option:
+
+    comments:
+      hypothesis: true
+
+<iframe src="https://quarto.org/docs/output-formats/html-basics.html#commenting" height="800px" width="1400px">
+
+</iframe>
+
+## Conditional content
+
+``` markdown
+::: {.content-visible when-format="html"}
+
+Will only appear in HTML.
+
+:::
+```
+
+. . .
+
+``` markdown
+::: {.content-visible unless-format="pdf"}
+
+Will not appear in PDF.
+
+:::
+```
 
 ## Quarto Extensions
 
@@ -35,17 +201,128 @@ Note that you *have* to use at least version Quarto `v1.0.15` to use extensions
 
 Available extensions can be found at: <https://github.com/quarto-ext/>
 
-. . .
+## Extensions
+
+Extensions are project-specific installs, installed into `_extensions` directory in your Quarto Project (or any directory where you want to affect `quarto render`).
+
+The Quarto team will develop extensions and host at `quarto-ext`, but you can also download extensions from the community.
+
+::: callout-caution
+## Extension Trust
+
+It's important to note that Quarto extensions may execute code when documents are rendered. If you do not trust the authors of an extension, we recommend that you do not install or use the extension.
+:::
+
+## Managing extensions
 
 You can install extensions directly from Quarto!
 
 ``` bash
+cd MyQuartoProject # or any directory
 quarto install extension quarto-ext/lightbox
 ```
 
-## Commenting
+. . .
 
-This page has commenting with Hypothes.is enabled via the following YAML option:
+``` bash
+quarto list extensions # list all installed extensions
+quarto update extension quarto-ext/fontawesome # update specific extension
+quarto remove extension quarto-ext/fontawesome # remove specific extension
+```
 
-    comments:
-      hypothesis: true
+<br> . . .
+
+### Extensions + Version control
+
+> If you are using version control you should check the \_extensions directory in to your repo along with your other code. Installed extensions are treated as source code for your project to ensure very long term reproducibility---your project doesn't need to rely on the availability of an external package manager (or the maintenance of older extension versions) to successfully render now and far into the future.
+
+## Install Flow
+
+``` bash
+thomasmock$ quarto install extension quarto-ext/fontawesome
+```
+
+<br>
+
+. . .
+
+    Quarto extensions may execute code when documents are rendered. If you do not 
+    trust the authors of the extension, we recommend that you do not install or 
+    use the extension.
+     ? Do you trust the authors of this extension (Y/n) › Yes
+    [✓] Downloading
+    [✓] Unzipping
+        Found 1 extension.
+
+<br>
+
+. . .
+
+    The following changes will be made:
+    Font Awesome support   [Install]   0.0.1 (shortcode)
+     ? Would you like to continue (Y/n) › Yes
+
+    [✓] Extension installation complete.
+    Learn more about this extension at https://github.com/quarto-ext/fontawesome
+
+<br>
+
+. . .
+
+```{bash}
+#| echo: fenced
+quarto list extensions
+```
+
+## Lightbox extension
+
+``` code
+---
+title: Simple GLightbox Example
+filters:
+   - glightbox
+lightbox: auto
+---
+
+![A Lovely Image](mv-1.jpg)
+```
+
+. . .
+
+``` code
+![Don't lightbox me!](mv-1.jpg){.nolightbox}
+```
+
+<br>
+
+. . .
+
+``` code
+---
+title: Simple Lightbox Example
+filters:
+   - lightbox
+---
+
+![A Lovely Image](mv-1.jpg){.lightbox}
+```
+
+## Lightbox position + groups
+
+| **Option**      | **Description**                                                                                                                     |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `desc-position` | The position of the title and description when displaying a lightbox. One of `top`, `bottom`, `left`, `right`. Defaults to `bottom` |
+
+. . .
+
+``` code
+![A Lovely Image](mv-1.jpg){group="my-gallery"
+
+![Another Lovely Image](mv-2.jpg){group="my-gallery"
+
+![The Last Lovely Image](mv-3.jpg){group="my-gallery"}
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/08-knitr/lightbox-extension.qmd`

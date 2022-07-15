@@ -1,5 +1,5 @@
 ---
-title: "&nbsp;"
+title: "reactable example"
 author: Tom Mock
 output: html_document
 ---

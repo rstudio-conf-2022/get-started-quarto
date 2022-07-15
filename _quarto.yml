@@ -6,8 +6,10 @@ project:
     - "!materials/workshop/"
 
 website:
-  title: "Hello Quarto"
+  title: "Get Started with Quarto"
   twitter-card:
+    card-style: summary_large_image
+    description: "rstudio::conf-2022 2 day workshop on getting started with Quarto"
     image: "preview.png"
   navbar:
     background: "#447099"

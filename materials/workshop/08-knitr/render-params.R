@@ -63,7 +63,7 @@ penguin_names %>%
   purrr::walk(render_fun)
 
 # we can then see if all 3 reports were generated
-output_files <- fs::dir_ls("docs/materials/workshop/08-knitr/", glob = "*report.html")
+output_files <- fs::dir_ls("materials/workshop/08-knitr/", glob = "*report.html")
 
 # then compare the time now to the time the files were generated
 # should be within a few seconds as long as you 

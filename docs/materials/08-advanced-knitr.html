@@ -7,9 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.11">
+  <meta name="generator" content="quarto-1.0.27">
 
-  <title>Hello Quarto – advanced-knitr</title>
+  <title>Get Started with Quarto – advanced-knitr</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -378,18 +378,155 @@
     }
   </style>
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 
 <section>
-<section id="advanced-quarto-knitr" class="title-slide slide level1 center">
-<h1>08 - Advanced Quarto + <code>knitr</code></h1>
+<section id="advanced-quarto-knitr" class="title-slide slide level1 center" data-background-image="images/watermelon.jpg" data-background-position="right" data-background-size="contain" data-background-color="#447098">
+<h1>08 - Advanced<br>Quarto +<code>knitr</code></h1>
 
 </section>
 <section id="parameters" class="slide level2">
 <h2>Parameters</h2>
+<p>You may have a set of parameters that are used to create different variations of a report. For example:</p>
+<ul>
+<li>Showing results for a specific geographic location.</li>
+<li>Running a report that covers a specific time period.</li>
+<li>Running a single analysis multiple times for different assumptions.</li>
+</ul>
+</section>
+<section id="knitr-parameters" class="slide level2">
+<h2><code>knitr</code> parameters</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="at">  </span><span class="fu">alpha</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.1</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="at">  </span><span class="fu">ratio</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.1</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">quarto</span> render file.qmd <span class="at">-P</span> alpha:0.2 <span class="at">-P</span> ratio:0.3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="at">execute_params =</span> <span class="fu">list</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">ratio =</span> <span class="fl">0.3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="accessing-parameters" class="slide level2">
+<h2>Accessing parameters</h2>
+<p>Parameters are accessed as <code>params$NAME</code> in the document.</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>params<span class="sc">$</span>alpha <span class="co"># returns 0.1</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>params<span class="sc">$</span>ratio <span class="co"># returns 0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>Or in inline code <code>r params$NAME</code></p>
+</div>
+</section>
+<section id="paramaterized-report" class="slide level2">
+<h2>Paramaterized report</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Penguins"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2020-08-11</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="at">  </span><span class="fu">species</span><span class="kw">:</span><span class="at"> Adelie</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| inclue: false</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>smaller <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> params<span class="sc">$</span>species, </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(body_mass_g))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>We have data about <span class="in">`r nrow(penguins)`</span> penguins. </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>The distribution of the </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="in">`r params$species`</span> penguins are shown below:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>smaller <span class="sc">|&gt;</span> </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(body_mass_g)) <span class="sc">+</span> </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">100</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rendering" class="slide level2">
+<h2>Rendering</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="st">"penguin-params.qmd"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="at">execute_params =</span> <span class="fu">list</span>(<span class="at">species =</span> <span class="st">"Chinstrap"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="at">output_file =</span> <span class="st">"choose-chinstrap.html"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><br> Directory matters!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>render_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(penguin){</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="st">"materials/workshop/08-knitr/penguin-params.qmd"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="at">execute_params =</span> <span class="fu">list</span>(<span class="at">species =</span> penguin),</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="at">output_file =</span> glue<span class="sc">::</span><span class="fu">glue</span>(</span>
+<span id="cb8-6"><a href="#cb8-6"></a>      <span class="st">"materials/workshop/08-knitr/{penguin}-report.html"</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>      )</span>
+<span id="cb8-8"><a href="#cb8-8"></a>  )</span>
+<span id="cb8-9"><a href="#cb8-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p><br> Use <code>purrr</code> to iterate across the distinct species</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>penguin_names <span class="ot">&lt;-</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">distinct</span>(penguins, species) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">pull</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">as.character</span>() </span>
+<span id="cb9-5"><a href="#cb9-5"></a>penguin_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Adelie"    "Gentoo"    "Chinstrap"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>penguin_names <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  purrr<span class="sc">::</span><span class="fu">walk</span>(render_fun) <span class="co"># or lapply(penguin_names, render_fun)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open <code>materials/workshop/08-knitr/penguin-params.qmd</code></li>
+<li>Open <code>materials/workshop/08-knitr/render-params.R</code></li>
+</ul>
+</section>
+<section id="commenting" class="slide level2">
+<h2>Commenting</h2>
+<p>This page has commenting with Hypothes.is enabled via the following YAML option:</p>
+<pre><code>comments:
+  hypothesis: true</code></pre>
+<iframe src="https://quarto.org/docs/output-formats/html-basics.html#commenting" height="800px" width="1400px">
+</iframe>
+</section>
+<section id="conditional-content" class="slide level2">
+<h2>Conditional content</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>Will only appear in HTML.</span>
+<span id="cb13-4"><a href="#cb13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>::: {.content-visible unless-format="pdf"}</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>Will not appear in PDF.</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="quarto-extensions" class="slide level2">
 <h2>Quarto Extensions</h2>
@@ -406,22 +543,140 @@
 <div class="fragment">
 <p>Available extensions can be found at: <a href="https://github.com/quarto-ext/" class="uri">https://github.com/quarto-ext/</a></p>
 </div>
-<div class="fragment">
-<p>You can install extensions directly from Quarto!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">quarto</span> install extension quarto-ext/lightbox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="extensions" class="slide level2">
+<h2>Extensions</h2>
+<p>Extensions are project-specific installs, installed into <code>_extensions</code> directory in your Quarto Project (or any directory where you want to affect <code>quarto render</code>).</p>
+<p>The Quarto team will develop extensions and host at <code>quarto-ext</code>, but you can also download extensions from the community.</p>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Extension Trust</strong></p>
+</div>
+<div class="callout-content">
+<p>It’s important to note that Quarto extensions may execute code when documents are rendered. If you do not trust the authors of an extension, we recommend that you do not install or use the extension.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="commenting" class="slide level2">
-<h2>Commenting</h2>
-<p>This page has commenting with Hypothes.is enabled via the following YAML option:</p>
-<pre><code>comments:
-  hypothesis: true</code></pre>
+<section id="managing-extensions" class="slide level2">
+<h2>Managing extensions</h2>
+<p>You can install extensions directly from Quarto!</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">cd</span> MyQuartoProject <span class="co"># or any directory</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">quarto</span> install extension quarto-ext/lightbox</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">quarto</span> list extensions <span class="co"># list all installed extensions</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">quarto</span> update extension quarto-ext/fontawesome <span class="co"># update specific extension</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="ex">quarto</span> remove extension quarto-ext/fontawesome <span class="co"># remove specific extension</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br> . . .</p>
+<h3 id="extensions-version-control">Extensions + Version control</h3>
+<blockquote>
+<p>If you are using version control you should check the _extensions directory in to your repo along with your other code. Installed extensions are treated as source code for your project to ensure very long term reproducibility—your project doesn’t need to rely on the availability of an external package manager (or the maintenance of older extension versions) to successfully render now and far into the future.</p>
+</blockquote>
+</div>
+</section>
+<section id="install-flow" class="slide level2">
+<h2>Install Flow</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">thomasmock$</span> quarto install extension quarto-ext/fontawesome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+<div class="fragment">
+<pre><code>Quarto extensions may execute code when documents are rendered. If you do not 
+trust the authors of the extension, we recommend that you do not install or 
+use the extension.
+ ? Do you trust the authors of this extension (Y/n) › Yes
+[✓] Downloading
+[✓] Unzipping
+    Found 1 extension.</code></pre>
+<p><br></p>
+</div>
+<div class="fragment">
+<pre><code>The following changes will be made:
+Font Awesome support   [Install]   0.0.1 (shortcode)
+ ? Would you like to continue (Y/n) › Yes
+
+[✓] Extension installation complete.
+Learn more about this extension at https://github.com/quarto-ext/fontawesome</code></pre>
+<p><br></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="in">```{bash}</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="ex">quarto</span> list extensions</span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Id                        Version    Contributes
+quarto-ext/fontawesome    0.0.1      shortcodes 
+quarto-ext/lightbox       0.0.1      filters    </code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="lightbox-extension" class="slide level2">
+<h2>Lightbox extension</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1"><a href="#cb22-1"></a>---</span>
+<span id="cb22-2"><a href="#cb22-2"></a>title: Simple GLightbox Example</span>
+<span id="cb22-3"><a href="#cb22-3"></a>filters:</span>
+<span id="cb22-4"><a href="#cb22-4"></a>   - glightbox</span>
+<span id="cb22-5"><a href="#cb22-5"></a>lightbox: auto</span>
+<span id="cb22-6"><a href="#cb22-6"></a>---</span>
+<span id="cb22-7"><a href="#cb22-7"></a></span>
+<span id="cb22-8"><a href="#cb22-8"></a>![A Lovely Image](mv-1.jpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb23-1"><a href="#cb23-1"></a>![Don't lightbox me!](mv-1.jpg){.nolightbox}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br></p>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb24-1"><a href="#cb24-1"></a>---</span>
+<span id="cb24-2"><a href="#cb24-2"></a>title: Simple Lightbox Example</span>
+<span id="cb24-3"><a href="#cb24-3"></a>filters:</span>
+<span id="cb24-4"><a href="#cb24-4"></a>   - lightbox</span>
+<span id="cb24-5"><a href="#cb24-5"></a>---</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a>![A Lovely Image](mv-1.jpg){.lightbox}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="lightbox-position-groups" class="slide level2">
+<h2>Lightbox position + groups</h2>
+<table>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Option</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>desc-position</code></td>
+<td>The position of the title and description when displaying a lightbox. One of <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>. Defaults to <code>bottom</code></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb25-1"><a href="#cb25-1"></a>![A Lovely Image](mv-1.jpg){group="my-gallery"</span>
+<span id="cb25-2"><a href="#cb25-2"></a></span>
+<span id="cb25-3"><a href="#cb25-3"></a>![Another Lovely Image](mv-2.jpg){group="my-gallery"</span>
+<span id="cb25-4"><a href="#cb25-4"></a></span>
+<span id="cb25-5"><a href="#cb25-5"></a>![The Last Lovely Image](mv-3.jpg){group="my-gallery"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open <code>materials/workshop/08-knitr/lightbox-extension.qmd</code></li>
+</ul>
 
 
 <img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -633,6 +888,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -647,8 +944,12 @@
         }
       }
       const toggleBodyColorPrimary = () => {
-        toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);

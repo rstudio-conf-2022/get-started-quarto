@@ -324,6 +324,12 @@ The radius of the circle is $radius.
 
 :::
 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/03-authoring/inline-code.qmd`
+- Look through the source code, and then render it
+- Check out the 
+
 ## Code chunks options
 
 All code chunk options at [yihui.org/knitr/options/](https://yihui.org/knitr/options/)
@@ -403,7 +409,7 @@ Note that if you prefer it is still possible to include chunk options on the fir
 
 ## Setup Chunk
 
-A special chunk! There can ONLY be one chunk named `setup`. It typically is used to set up the default values for the **entire document** with `knitr::opts_chunk$set()`
+A special chunk! There can ONLY be one chunk named `setup`. It typically is used to set up the default values for the **entire document** with `knitr::opts_chunk$set()` and loading global R packages.
 
 . . .
 

@@ -16,6 +16,8 @@ penguins <- na.omit(penguins)
 
 ## `ggplot2`
 
+Credit to [Alison Hill + Allison Horst](https://allisonhorst.github.io/palmerpenguins/articles/intro.html)
+
 ```{r}
 mass_flipper <- ggplot(data = penguins, 
                        aes(x = flipper_length_mm,

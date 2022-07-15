@@ -7,11 +7,11 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.11">
+  <meta name="generator" content="quarto-1.0.27">
 
   <meta name="author" content="Tom Mock">
   <meta name="dcterms.date" content="2022-07-11">
-  <title>Hello Quarto</title>
+  <title>Get Started with Quarto - Hello Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -314,12 +314,12 @@
       margin-right: 0; 
     }
   </style>
-<meta name="twitter:title" content="Hello Quarto">
+<meta name="twitter:title" content="Get Started with Quarto - Hello Quarto">
 <meta name="twitter:description" content="Slides with revealjs">
 <meta name="twitter:image" content="../preview.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -563,8 +563,12 @@
         }
       }
       const toggleBodyColorPrimary = () => {
-        toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);

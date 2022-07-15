@@ -15,7 +15,7 @@ editor_options:
     canonical: true
 ---
 
-# 07 - Plots, Graphics, and tables {background-color="#4f6952"}
+# 07 - Plots, Graphics, and tables {background-color="#4f6952" background-image="images/outdoor-patio.jpg" background-size="cover"}
 
 ## Layout
 

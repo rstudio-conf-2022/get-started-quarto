@@ -1,6 +1,7 @@
 ---
 format: 
   revealjs:
+    self-contained: true
     slide-number: c/t
     width: 1920
     height: 1080
@@ -134,7 +135,7 @@ You can create inline footnotes like so: `some inline text with a^[footnote]`
 
 Pandoc also supports numbering and formatting footnotes using the following syntax:
 
-<iframe src="../../materials/static/fancy-footnotes.html" height="800" width="1200"></iframe>
+<iframe src="https://rstudio-conf-2022.github.io/get-started-quarto/materials/static/fancy-footnotes.html" height="800" width="1200"></iframe>
 
 ## Cross-references
 
@@ -144,7 +145,11 @@ Pandoc also supports numbering and formatting footnotes using the following synt
 
 . . .
 
-![Howard is glamorous](images/howard-glamour.jpg){#fig-glamour}
+![Howard is glamorous](images/howard-glamour.jpg){#fig-glamour fig-align="left"}
+
+. . .
+
+@fig-glamour is a great glamour shot of Howard
 
 ## Reference popups
 

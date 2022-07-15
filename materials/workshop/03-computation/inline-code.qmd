@@ -1,0 +1,51 @@
+---
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+The dataset contains `r nrow(penguins)` penguin size measurements from `r unique(penguins$species)` species across `r unique(penguins$island)` islands..
+
+## What about formatting?
+
+```{r}
+pen_summary <- penguins |> 
+  group_by(species) |> 
+  summarize(avg_mass = mean(body_mass_g, na.rm = TRUE))
+```
+
+The average body mass by species is `r pen_summary$avg_mass`.
+
+We can do better!
+
+```{r}
+body_mass <- scales::label_number(big.mark = ",", accuracy = 0.1, suffix = "g")(pull(pen_summary, avg_mass))
+
+body_mass
+```
+
+The average body mass by species is `r body_mass`.
+
+We can still do better!
+
+```{r}
+mass_reporter <- glue::glue_collapse(body_mass, sep = ", ", last = ", and ")
+```
+
+The average body mass by species is `r mass_reporter`.
+
+## Reporting with lists
+
+[Credit to TJ Mahr](https://www.tjmahr.com/lists-knitr-secret-weapon/)
+
+```{r}
+knitted <- list(
+  when = format(Sys.Date()),
+  with = system("quarto --version", intern = TRUE)
+)
+```
+
+Reported prepared on `r knitted$when` with quarto version `r knitted$with`.

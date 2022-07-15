@@ -7,9 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.11">
+  <meta name="generator" content="quarto-1.0.27">
 
-  <title>Hello Quarto – intro-quarto</title>
+  <title>Get Started with Quarto – intro-quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -378,7 +378,7 @@
     }
   </style>
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -1069,7 +1069,7 @@ Ease of Use VS Full Details
 <div id="fig-airquality" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="01-intro-quarto_files/figure-revealjs/fig-airquality-1.png" width="960"></p>
-<p></p><figcaption aria-hidden="true">Figure 1: Temperature and ozone level.</figcaption><p></p>
+<p></p><figcaption>Figure 1: Temperature and ozone level.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -1401,8 +1401,12 @@ Ease of Use VS Full Details
         }
       }
       const toggleBodyColorPrimary = () => {
-        toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);

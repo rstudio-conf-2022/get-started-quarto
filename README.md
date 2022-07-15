@@ -21,12 +21,13 @@ by Tom Mock
 
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
 - Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.15` or greater)
+- Ideally upgrade to R 4.2 (I'm showing base R pipe as `|>`)
 - Install R packages:
 
 ```r
 pkg_list <- c(
   "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto",
-  "rmarkdown", "gtsummary", "palmerpenguins"
+  "rmarkdown", "gtsummary", "palmerpenguins", "fs"
   )
 install.packages(pkg_list)
 ```
@@ -110,7 +111,7 @@ questions:
 ```r
 pkg_list <- c(
   "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto",
-  "rmarkdown", "gtsummary", "palmerpenguins"
+  "rmarkdown", "gtsummary", "palmerpenguins", "fs"
   )
 install.packages(pkg_list)
 ```
@@ -148,7 +149,9 @@ On Sunday July 24th - clone/pull this repo (to get latest version)!
 | 12:30 - 13:30 | *Lunch break*                    |
 | 13:30 - 15:00 | [Advanced plots, tables, and more](../../materials/07-plots-tables.html)  |
 | 15:00 - 15:30 | *Coffee break*                   |
-| 15:30 - 17:00 | [Going further with Quarto + `knitr`](../../materials/08-advanced-knitr.html)  |
+| 15:30 - 16:00 | [Going further with Quarto + `knitr`](../../materials/08-advanced-knitr.html)  |
+| 16:00 - 16:30 | Q/A with Quarto Dev team  |
+| 16:30 - 17:00 | [Going further with Quarto + `knitr`](../../materials/08-advanced-knitr.html)  |
 
 ## Instructor
 
