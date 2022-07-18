@@ -194,7 +194,15 @@ format:
 
 ## Quarto YAML Intelligence 
 
+RStudio + VSCode provide rich tab-completion - start a word and tab to complete, or <kbd>`Ctrl + space`</kbd> to see all available options.
+
 ![](images/quarto-tab-complete.png)
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open a new Quarto document in RStudio
+- Try <kbd>`Ctrl + space`</kbd> to see the available YAML options
+- Try out the tab-completion of any options you remember
 
 ## HTML options
 
@@ -234,10 +242,11 @@ quarto_render("document.qmd", output_format = "pdf")
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 - Use RStudio to create a new default Quarto document
-- Add a random title and your name as the author
-- Change theme to sketchy
+- Add a title and your name as the author
+- Change theme to `sketchy`
 - Add toc and swap toc location to left
 - Make all code sections fold
+- Render it with RStudio button, then try with the R package and terminal
 
 You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) if needed.
 
@@ -521,8 +530,6 @@ This content can be styled with a border
  This content can be styled with a border
 :::
 
-. . .
-
 
 ```
 This is text with [special]{style="color:red;"} formatting.
@@ -531,6 +538,29 @@ This is text with [special]{style="color:red;"} formatting.
 . . .
 
 This is text with [special]{style="color:red;"} formatting.
+
+### Divs and Spans
+
+- You can think of a `:::` div as a HTML `<div>` but it can also apply in specific situations to content in PDF for example
+- Similarily, `[text]{.class}` Spans can be thought of a `<span .class>Text</span>` but again are a bit more transferable.
+
+. . .
+
+The following, if specifying a Quarto class can often apply between formats.
+
+```code
+::: {.unnumbered .unlisted}
+Text
+:::
+```
+
+. . .
+
+While the following is hard-coded as HTML.
+
+```html
+<div style="font-size: 200px;">Text</div>
+```
 
 ## Callout Blocks
 
@@ -604,6 +634,12 @@ This is an example of a 'folded' caution callout that can be expanded by the use
 :::
 ```
 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/02-authoring/callout-boxes.qmd`
+- Try changing the types of callouts/remove them from code boxes and then render
+- Open `materials/workshop/02-authoring/callout-pdf.qmd` and render it as well
+
 ## Figures
 
 Basic markdown syntax:
@@ -667,6 +703,14 @@ Two states of Howard
 ## Subfigures
 
 <iframe src="sub-figure.html" height="800px" width="1200px"></iframe>
+
+## Paths
+
+Quarto documents reference from their existing directory!
+
+. . .
+
+To reference folders in other directory
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 

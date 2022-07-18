@@ -7,7 +7,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.27">
+  <meta name="generator" content="quarto-1.0.32">
 
   <title>Get Started with Quarto – authoring</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -535,8 +535,18 @@
 </section>
 <section id="quarto-yaml-intelligence" class="slide level2">
 <h2>Quarto YAML Intelligence</h2>
+<p>RStudio + VSCode provide rich tab-completion - start a word and tab to complete, or <kbd><code>Ctrl + space</code></kbd> to see all available options.</p>
 
-<img data-src="images/quarto-tab-complete.png" class="r-stretch"></section>
+<img data-src="images/quarto-tab-complete.png" class="r-stretch"></section></section>
+<section>
+<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open a new Quarto document in RStudio</li>
+<li>Try <kbd><code>Ctrl + space</code></kbd> to see the available YAML options</li>
+<li>Try out the tab-completion of any options you remember</li>
+</ul>
+</section>
 <section id="html-options" class="slide level2">
 <h2>HTML options</h2>
 <p><a href="https://quarto.org/docs/reference/formats/html.html">quarto.org/docs/reference/formats/html</a></p>
@@ -568,14 +578,15 @@
 </div>
 </div>
 </section></section>
-<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Use RStudio to create a new default Quarto document</li>
-<li>Add a random title and your name as the author</li>
-<li>Change theme to sketchy</li>
+<li>Add a title and your name as the author</li>
+<li>Change theme to <code>sketchy</code></li>
 <li>Add toc and swap toc location to left</li>
 <li>Make all code sections fold</li>
+<li>Render it with RStudio button, then try with the R package and terminal</li>
 </ul>
 <p>You can use the <a href="https://quarto.org/docs/reference/formats/html.html">HTML reference</a> if needed.</p>
 </section>
@@ -742,7 +753,7 @@ continues after
 </table>
 </section></section>
 <section>
-<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
+<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/02-authoring/markdown-syntax.qmd</code></li>
@@ -1071,12 +1082,25 @@ This content can be styled with a border
 <div style="border-left:10px solid red">
 <p>This content can be styled with a border</p>
 </div>
-</div>
-<div class="fragment">
 <pre><code>This is text with [special]{style="color:red;"} formatting.</code></pre>
 </div>
 <div class="fragment">
 <p>This is text with <span style="color:red;">special</span> formatting.</p>
+<h3 id="divs-and-spans-1">Divs and Spans</h3>
+<ul>
+<li>You can think of a <code>:::</code> div as a HTML <code>&lt;div&gt;</code> but it can also apply in specific situations to content in PDF for example</li>
+<li>Similarily, <code>[text]{.class}</code> Spans can be thought of a <code>&lt;span .class&gt;Text&lt;/span&gt;</code> but again are a bit more transferable.</li>
+</ul>
+<div class="fragment">
+<p>The following, if specifying a Quarto class can often apply between formats.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb44-1"><a href="#cb44-1"></a>::: {.unnumbered .unlisted}</span>
+<span id="cb44-2"><a href="#cb44-2"></a>Text</span>
+<span id="cb44-3"><a href="#cb44-3"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>While the following is hard-coded as HTML.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">"font-size: 200px;"</span><span class="kw">&gt;</span>Text<span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </section>
 <section id="callout-blocks" class="slide level2">
@@ -1170,6 +1194,15 @@ This is an example of a callout with a caption.
 
 This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
 :::</code></pre>
+</section></section>
+<section>
+<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open <code>materials/workshop/02-authoring/callout-boxes.qmd</code></li>
+<li>Try changing the types of callouts/remove them from code boxes and then render</li>
+<li>Open <code>materials/workshop/02-authoring/callout-pdf.qmd</code> and render it as well</li>
+</ul>
 </section>
 <section id="figures" class="slide level2">
 <h2>Figures</h2>
@@ -1235,9 +1268,16 @@ Two states of Howard
 <h2>Subfigures</h2>
 <iframe src="sub-figure.html" height="800px" width="1200px">
 </iframe>
+</section>
+<section id="paths" class="slide level2">
+<h2>Paths</h2>
+<p>Quarto documents reference from their existing directory!</p>
+<div class="fragment">
+<p>To reference folders in other directory</p>
+</div>
 </section></section>
 <section>
-<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">
+<section id="your-turn-4" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/02-authoring/figure-layout.qmd</code></li>
@@ -1348,7 +1388,7 @@ Two states of Howard, twice
 </div>
 </section></section>
 <section>
-<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099">
+<section id="your-turn-5" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/02-authoring/figure-layout-2.qmd</code></li>

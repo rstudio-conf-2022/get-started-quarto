@@ -2,15 +2,22 @@
 format: html
 ---
 
+## Directory
+
+```{r}
+fs::dir_ls(here::here("materials/images"))
+```
+
+
 ## Figures
 
 Basic markdown syntax:
 
 ```
-![Boston Terrier](images/boston-terrier.png)
+![Boston Terrier](materials/images/boston-terrier.png)
 ```
 
-![Boston Terrier](images/boston-terrier.png)
+![Boston Terrier](../../images/boston-terrier.png)
 
 ## Fragments
 

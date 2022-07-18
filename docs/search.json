@@ -403,7 +403,7 @@
     "href": "materials/02-authoring.html#quarto-yaml-intelligence",
     "title": "Get Started with Quarto",
     "section": "Quarto YAML Intelligence",
-    "text": "Quarto YAML Intelligence"
+    "text": "Quarto YAML Intelligence\nRStudio + VSCode provide rich tab-completion - start a word and tab to complete, or Ctrl + space to see all available options."
   },
   {
     "objectID": "materials/02-authoring.html#html-options",
@@ -501,7 +501,7 @@
     "href": "materials/02-authoring.html#divs-and-spans",
     "title": "Get Started with Quarto",
     "section": "Divs and Spans",
-    "text": "Divs and Spans\nPandoc and therefore Quarto can parse “fenced Div blocks”\n\n::: {.border}\nThis content can be styled with a border\n:::\n\n\n\nThis content can be styled with a border\n\n\n\nThis is text with [special]{style=\"color:red;\"} formatting.\n\n\nThis is text with special formatting."
+    "text": "Divs and Spans\nPandoc and therefore Quarto can parse “fenced Div blocks”\n\n::: {.border}\nThis content can be styled with a border\n:::\n\n\n\nThis content can be styled with a border\n\nThis is text with [special]{style=\"color:red;\"} formatting.\n\n\nThis is text with special formatting.\nDivs and Spans\n\nYou can think of a ::: div as a HTML <div> but it can also apply in specific situations to content in PDF for example\nSimilarily, [text]{.class} Spans can be thought of a <span .class>Text</span> but again are a bit more transferable.\n\n\nThe following, if specifying a Quarto class can often apply between formats.\n::: {.unnumbered .unlisted}\nText\n:::\n\n\nWhile the following is hard-coded as HTML.\n<div style=\"font-size: 200px;\">Text</div>"
   },
   {
     "objectID": "materials/02-authoring.html#callout-blocks",
@@ -551,6 +551,13 @@
     "title": "Get Started with Quarto",
     "section": "Subfigures",
     "text": "Subfigures"
+  },
+  {
+    "objectID": "materials/02-authoring.html#paths",
+    "href": "materials/02-authoring.html#paths",
+    "title": "Get Started with Quarto",
+    "section": "Paths",
+    "text": "Paths\nQuarto documents reference from their existing directory!\n\nTo reference folders in other directory"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-3",

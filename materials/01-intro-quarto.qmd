@@ -321,6 +321,10 @@ RStudio IDE > Render button
 - Better accessibility and richer features out of the box
 - More enhancements overtime - RMarkdown still maintained, but majority of new features built into Quarto
 
+. . .
+
+Collaboration with other colleagues in other languages - shared format, choose your editor and your native language
+
 ## Why Quarto
 
 1.  Reproducibility
