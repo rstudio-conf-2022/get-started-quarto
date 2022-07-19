@@ -404,7 +404,7 @@ format:
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-- Create a Quarto document and try out some themes!
+- Open `materials/workshop/04-static/bootswatch-themed.qmd` and try out some themes!
 
 - Core Quarto (YAML, Markdown/Text, Code)
 - CSS/SCSS (styling and appearance) 

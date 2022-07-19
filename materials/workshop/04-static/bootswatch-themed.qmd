@@ -1,0 +1,74 @@
+---
+title: "Bootswatch Themed QMD"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    theme: yeti
+engine: knitr
+---
+
+```{r setup, include = FALSE}
+library(dplyr)
+library(ggplot2)
+library(gt)
+library(palmerpenguins)
+
+penguins <- palmerpenguins::penguins
+```
+
+### Plots
+
+This is the world's most amazing plot. Everyone loves penguins. 
+
+Penguins are fancy.
+
+There are `r nrow(penguins)` in the dataset of interest.
+
+```{r penguin plot, warning=FALSE}
+penguins %>% 
+  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +
+  geom_point()
+```
+
+You can also include tables. Tables are super cool. I love tables and I love penguins. I am subject to oversight by the penguin overlords. The eternals are friends with the penguins.
+
+```{r, message=FALSE}
+penguins %>% 
+  na.omit() %>% 
+  group_by(species, sex) %>% 
+  rename(
+    body_mass = body_mass_g, bill_length = bill_length_mm, 
+    bill_depth = bill_depth_mm
+    ) %>% 
+  summarise(
+    n = n(),
+    across(
+      .cols = c(body_mass, bill_length, bill_depth),
+      .fns = list(mean = mean, sd = sd)
+    ),
+    .groups = "drop"
+  ) %>% 
+  gt(rowname_col = "sex") %>% 
+  cols_label(
+    n = "N", body_mass_mean = "Mean", body_mass_sd = "SD", 
+    bill_length_mean= "Mean", bill_length_sd = "SD",
+    bill_depth_mean = "Mean", bill_depth_sd = "SD"
+    ) %>% 
+  gt::tab_spanner(
+    label = "Body Mass (g)",
+    columns = 4:5
+  ) %>% 
+  gt::tab_spanner(
+    label = "Bill Length (mm)",
+    columns = 6:7
+  ) %>% 
+  gt::tab_spanner(
+    label = "Bill Depth (mm)",
+    columns = 8:9
+  ) %>% 
+  fmt_number(
+    columns = c(where(is.numeric), -n)
+  )
+```
+
