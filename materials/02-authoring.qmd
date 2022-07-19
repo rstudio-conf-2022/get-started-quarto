@@ -642,7 +642,7 @@ Two states of Howard
 
 ## Subfigures
 
-<iframe src="sub-figure.html" height="800px" width="1200px">
+<iframe src="static/sub-figure.html" height="800px" width="1200px">
 
 </iframe>
 
@@ -803,7 +803,7 @@ Note that the last paragraph in the div block is used as the figure caption.
 ```code
 ::: {#fig-dog}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iWR9gwxW-4k"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U-WQ277UZtY"></iframe>
 
 Funny boston terrier videos
 :::
@@ -811,7 +811,7 @@ Funny boston terrier videos
 
 ::: {#fig-dog-youtube}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iWR9gwxW-4k"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U-WQ277UZtY"></iframe>
 
 Funny boston terrier videos
 :::

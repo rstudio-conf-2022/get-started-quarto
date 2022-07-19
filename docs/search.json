@@ -2212,6 +2212,13 @@
     "text": "Footnotes\n\n\nSpecifically he is a Boston Terrier, although sometimes he acts like a cat↩︎"
   },
   {
+    "objectID": "materials/static/sub-figure.html",
+    "href": "materials/static/sub-figure.html",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
+  },
+  {
     "objectID": "materials/static/toc-1.html",
     "href": "materials/static/toc-1.html",
     "title": "Get Started with Quarto",
@@ -2224,12 +2231,5 @@
     "title": "Get Started with Quarto",
     "section": "",
     "text": "Howard on a couch\n\n\n\n\n \n\n\n\n\n\nHoward sleeping\n\n\n\n\n\n\n\n\n\nHoward in a table"
-  },
-  {
-    "objectID": "materials/sub-figure.html",
-    "href": "materials/sub-figure.html",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
   }
 ]
