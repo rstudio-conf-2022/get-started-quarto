@@ -401,6 +401,10 @@
 </div>
 <div class="fragment">
 <p>Quarto can <em>also</em> use the Jupyter engine to natively execute Julia, Python, or other languages that Jupyter supports.</p>
+<div class="r-stack">
+<p><img data-src="images/qmd-knitr.jpg"></p>
+<p><img data-src="images/qmd-jupyter.png"></p>
+</div>
 </div>
 </section>
 <section id="choose-your-engine" class="slide level2">
@@ -557,18 +561,24 @@
 <h2>Create code chunks</h2>
 <ul>
 <li>You can manually type out code chunks: <code>```{r}</code></li>
-<li>the keyboard shortcut <code>Ctrl + Alt + I</code> (OS X: <code>Cmd + Option + I</code>)</li>
+<li>the keyboard shortcut <kbd><code>Ctrl + Alt + I</code></kbd> (OS X: <kbd><code>Cmd + Option + I</code></kbd>)</li>
 <li>the Add Chunk command in the editor toolbar</li>
 </ul>
 <div class="fragment">
-<p>Or use the Command Palette: <code>Cmd + Shift + P</code>/<code>Ctrl + Shift + P</code></p>
+<p>Or use the Command Palette: <kbd><code>Cmd + Shift + P</code></kbd>/<kbd><code>Ctrl + Shift + P</code></kbd></p>
 </div>
 </section></section>
 <section>
 <section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>In a blank Quarto doc, insert a code chunk, load <code>tidyverse</code> and <code>palmerpenguins</code> and populate with some <code>tidyverse</code> code to evaluate the good ole <code>palmerpenguins::penguins</code> dataset!</li>
+<li>In a blank Quarto doc:
+<ul>
+<li>Insert a code chunk</li>
+<li>Load <code>tidyverse</code> and <code>palmerpenguins</code></li>
+<li>Use some <code>tidyverse</code> code to explore the <code>palmerpenguins::penguins</code> dataset!</li>
+<li>Render it!</li>
+</ul></li>
 </ul>
 </section>
 <section id="inline-code" class="slide level2">
@@ -587,8 +597,8 @@
 <div class="cell">
 
 </div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>fmt_mean &lt;- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))</span>
-<span id="cb14-2"><a href="#cb14-2"></a>The mtcars dataset has an average miles/per gallon of <span class="in">`r fmt_mean`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>fmt_mean &lt;- scales::number_format(accuracy = 0.1, suffix = " mpg")(mean(mtcars$mpg))</span>
+<span id="cb14-2"><a href="#cb14-2"></a>The mtcars dataset has an fuel efficiency of <span class="in">`r fmt_mean`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>The mtcars dataset has an average miles/per gallon of 20.1</p>
@@ -628,6 +638,8 @@
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/03-authoring/inline-code.qmd</code></li>
+<li>Look through the source code, and then render it</li>
+<li>Check out the</li>
 </ul>
 </section>
 <section id="code-chunks-options" class="slide level2">
@@ -696,6 +708,9 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <pre><code>fig.align vs fig-align
 fig.dpi vs fig-dpi</code></pre>
 <div class="fragment">
+<p>This syntax is preferred because it aligns with Pandoc, which uses <code>word1-word2</code> style</p>
+</div>
+<div class="fragment">
 <div class="cell" data-layout-align="left" data-fig.dpi="350">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="in">```{r fig.align = "left"}</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="co">#| fig-dpi: 350</span></span>
@@ -714,8 +729,18 @@ fig.dpi vs fig-dpi</code></pre>
 </section>
 <section id="quarto-chunk-options-1" class="slide level2">
 <h2>Quarto chunk options</h2>
-<div class="note">
-<p>Note that if you prefer it is still possible to include chunk options on the first line (e.g.&nbsp;<code>```{r, echo = FALSE}</code>). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines.</p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Note that if you prefer it is still possible to include chunk options on the first line (e.g.&nbsp;<code>```{r, echo = FALSE}</code>). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines as that syntax only works for backwards compatability with R/RMarkdown.</p>
+</div>
+</div>
 </div>
 <div class="fragment">
 <blockquote>
@@ -726,7 +751,7 @@ fig.dpi vs fig-dpi</code></pre>
 </section>
 <section id="setup-chunk" class="slide level2">
 <h2>Setup Chunk</h2>
-<p>A special chunk! There can ONLY be one chunk named <code>setup</code>. It typically is used to set up the default values for the <strong>entire document</strong> with <code>knitr::opts_chunk$set()</code></p>
+<p>A special chunk! There can ONLY be one chunk named <code>setup</code>. It typically is used to set up the default values for the <strong>entire document</strong> with <code>knitr::opts_chunk$set()</code> and loading global R packages.</p>
 <div class="fragment">
 <div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
@@ -736,7 +761,7 @@ fig.dpi vs fig-dpi</code></pre>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p>Quarto also introduces some of these as options for <code>execute:</code> in YAML.</p>
+<p>Quarto also introduces some of these as options for <code>execute:</code> in YAML, for similar concepts in other languages.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1"></a><span class="pp">---</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb26-3"><a href="#cb26-3"></a><span class="fu">execute</span><span class="kw">:</span></span>
@@ -904,10 +929,19 @@ List of 2
 </div>
 </div>
 </section></section>
-<section>
 <section id="demo-navigating-within-rstudio" class="title-slide slide level1 center" data-background-color="black">
 <h1>Demo: Navigating within RStudio</h1>
 
+</section>
+
+<section>
+<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open RStudio and <code>materials/workshop/visual-editor.qmd</code></li>
+<li>Explore the navigation options</li>
+<li>Render the document and find the broken code, then fix it and render again!</li>
+</ul>
 </section>
 <section id="chunk-names-good-and-bad" class="slide level2">
 <h2>Chunk names, good and bad</h2>
@@ -1055,7 +1089,9 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <span id="cb42-5"><a href="#cb42-5"></a><span class="co">    #toc-location: body</span></span>
 <span id="cb42-6"><a href="#cb42-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p><img data-src="images/yaml-autocomplete.gif" style="height:50.0%"></p>
+<p><img data-src="images/yaml-autocomplete.gif" style="height:50.0%"> ## YAML Auto-completion</p>
+<p>To find all the available options for a YAML section, you can use <kbd><code>Ctrl + Space</code></kbd></p>
+<p><img data-src="images/yaml-ctrl.gif"></p>
 </div>
 </section>
 <section id="knitr-auto-completion" class="slide level2">
@@ -1068,10 +1104,11 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 
 <img data-src="https://quarto.org/docs/visual-editor/images/visual-editing.png" class="r-stretch"></section></section>
 <section>
-<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099">
+<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/03-authoring/visual-editor.qmd</code></li>
+<li>Explore the UI elements and visual editor mode</li>
 </ul>
 </section>
 <section id="quarto-workflow" class="slide level2">
@@ -1111,17 +1148,44 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 </div>
 </div>
 </section></section>
-<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099">
+<section>
+<section id="your-turn-4" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Compare behavior of rendering from RStudio &gt; Render, using the CLI with <code>quarto render</code>, and in R console via <code>quarto::quarto_render()</code></li>
 </ul>
+</section>
+<section id="vs-code" class="slide level2">
+<h2>VS Code</h2>
 
+<img data-src="https://quarto.org/docs/tools/images/vscode-render.png" class="r-stretch"></section>
+<section id="vs-code-yaml" class="slide level2">
+<h2>VS Code YAML</h2>
 
-<img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img data-src="https://quarto.org/docs/tools/images/vscode-raw.png" class="r-stretch"></section>
+<section id="vs-code-yaml-intelligence" class="slide level2">
+<h2>VS Code, YAML Intelligence</h2>
+
+<img data-src="https://quarto.org/docs/tools/images/vscode-yaml-completion.png" class="r-stretch"></section>
+<section id="jupyterjupyter-lab" class="slide level2">
+<h2>Jupyter/Jupyter Lab</h2>
+
+<img data-src="https://quarto.org/docs/tools/images/jupyter-lab.png" class="r-stretch"></section>
+<section id="jupyter" class="slide level2">
+<h2>Jupyter</h2>
+<p><code>quarto preview notebook.ipynb --to html</code></p>
+
+<img data-src="https://quarto.org/docs/tools/images/jupyterlab-preview.png" class="r-stretch"></section>
+<section id="jupyter-yaml" class="slide level2">
+<h2>Jupyter YAML</h2>
+<p>Treat YAML as a “raw cell” in Jupyter - Jupyter doesn’t care about YAML, but it’s needed/used by Quarto</p>
+<p><img data-src="https://quarto.org/docs/tools/images/jupyter-lab-yaml.png"></p>
+
+<p><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

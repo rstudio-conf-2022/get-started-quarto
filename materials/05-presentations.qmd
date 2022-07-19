@@ -142,7 +142,7 @@ format:
 ---
 format:
   revealjs:
-    slide-number: c/t
+    slide-number: c/t #< collapsed/total
 ---
 ```
 
@@ -378,7 +378,10 @@ Appears second
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
--   Open `materials/workshop/05-presentations/reveal-prez.qmd`
+-   Open `materials/workshop/05-presentations/revealjs-penguins.qmd`
+-   Explore the code
+-   Add a new slide
+-   Render it!
 
 ## Column layout
 
@@ -503,6 +506,8 @@ mtcars |>
 :::
 
 ## Stack layout
+
+Incremental reveal of images/content
 
 ::: r-stack
 ![](images/howard-table.png){.fragment width="450"}
@@ -705,19 +710,73 @@ For example, did you know that Howard is a dog[^1]?
 
 He also likes to sleep[^2]
 
-[^2]: He sleeps a LOT during the day
+[^2]: He sleeps a LOT during the day... like a cat 🤔
 
 ## Asides
 
-Asides are like footnotes, but don't have numbers.
+Asides are like footnotes, but don't have numbers[^3].
+
+[^3]: Unlike feet that at least have like a shoe size or something?
+
+. . .
 
     ::: aside
     They are placed above footnotes if footnotes are present on the page
     :::
 
-# Code
+::: aside
+    They are placed above footnotes if footnotes are present on the page
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Create a new `revealjs` presentation
+-   Add several slides, each one should have *one* element:
+    -   Aside/footnote
+    -   Tabset with code and output (two options on how!)
+    -   Code highlighting walking through at least two lines
+    -   A slide with an image as the background
+- Render it!
+
+# Code {background-image="https://data.nssmag.com/images/galleries/18043/code-matrix.jpg" background-size="cover"}
 
 ## Code line-highlighting
+
+Use `#| code-line-numbers: "3"` syntax - will highlight line and fade other lines
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| code-line-numbers: "3"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Code line-highlighting
+
+Sometimes you want to make a point though...
+
+```{r}
+#| echo: fenced
+#| output-location: column
+#| code-line-numbers: "|3"
+
+library(ggplot2)
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "loess", formula = "y~x")
+```
+
+## Code line-highlighting
+
+And I often want to "walk through" a set of code!
 
 ```{r}
 #| echo: fenced
@@ -738,4 +797,86 @@ mtcars |>
 
 -   Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
 
-## Random HTML + Position absolute
+## Arbitrary HTML + Position absolute
+
+## Position = absolute
+
+    ![](image1.png){.absolute top=200 left=0 width="350" height="300"}
+
+    ![](image2.png){.absolute top=50 right=50 width="450" height="250"}
+
+    ![](image3.png){.absolute bottom=0 right=50 width="300" height="300"}
+
+## Position = `.absolute`
+
+![](images/boston-sleep.png){.absolute top="200" left="0" width="350"}
+
+. . .
+
+![](images/boston-terrier.png){.absolute top="50" right="50" height="250"}
+
+. . .
+
+![](images/lost-howard.jpeg){.absolute bottom="0" right="50" width="300"}
+
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Automatically animate matching elements across slides with Auto-Animate.
+
+::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Automatically animate matching elements across slides with Auto-Animate.
+
+::: r-stack
+::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+:::
+
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+:::
+
+::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+:::
+:::
+
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {style="font-size: 160px; text-align: center;"}
+IMPORTANT POINT!
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {style="font-size: 25px;"}
+Ok, not that important!
+:::
+
+## 
+
+``` code
+## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {style="font-size: 160px; text-align: center;"}
+
+IMPORTANT POINT!
+
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {style="font-size: 25px;"}
+
+Ok, not that important!
+
+:::
+```

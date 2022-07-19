@@ -385,7 +385,7 @@
 
 <section>
 <section id="presentations" class="title-slide slide level1 center" data-background-image="images/presenter.png" data-background-size="cover" data-background-color="#4f6952">
-<h1>Presentations</h1>
+<h1>05 - Presentations</h1>
 <h2>
 Making Slides with Code
 </h2>
@@ -458,8 +458,8 @@ format:
 <h2>Transitions</h2>
 <table>
 <colgroup>
-<col style="width: 14%">
-<col style="width: 85%">
+<col style="width: 16%">
+<col style="width: 83%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -514,13 +514,13 @@ format:
 <thead>
 <tr class="header">
 <th style="text-align: left;"><code>width</code></th>
-<th style="text-align: left;">The "normal" width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</th>
+<th style="text-align: left;">The “normal” width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><code>height</code></td>
-<td style="text-align: left;">The "normal" height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</td>
+<td style="text-align: left;">The “normal” height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.</td>
 </tr>
 </tbody>
 </table>
@@ -558,7 +558,7 @@ format:
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> c/t</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> c/t</span><span class="co"> #&lt; collapsed/total</span></span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -599,6 +599,11 @@ format:
 <p>If you loved <code>xaringan</code>, you’ll love <code>revealjs</code>!</p>
 </div>
 </section>
+<section id="presentation-visual-editor" class="slide level2">
+<h2>Presentation Visual Editor</h2>
+<p>Unlike <code>xaringan</code>, Quarto + <code>revealjs</code> can be edited with the RStudio Visual Editor!</p>
+
+<img data-src="images/reveal-visual-editor.jpeg" class="r-stretch"></section>
 <section id="separate-slides" class="slide level2">
 <h2>Separate slides</h2>
 <ul>
@@ -788,7 +793,10 @@ Appears second
 <section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>Open <code>materials/workshop/05-presentations/reveal-prez.qmd</code></li>
+<li>Open <code>materials/workshop/05-presentations/revealjs-penguins.qmd</code></li>
+<li>Explore the code</li>
+<li>Add a new slide</li>
+<li>Render it!</li>
 </ul>
 </section>
 <section id="column-layout" class="slide level2">
@@ -950,6 +958,7 @@ $ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1
 </section>
 <section id="stack-layout" class="slide level2">
 <h2>Stack layout</h2>
+<p>Incremental reveal of images/content</p>
 <div class="r-stack">
 <p><img data-src="images/howard-table.png" class="fragment" width="450"></p>
 <p><img data-src="images/boston-sleep.png" class="fragment" width="400"></p>
@@ -1170,11 +1179,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>Specifically he is a Boston Terrier, although sometimes he acts like a cat</p></li><li id="fn2" role="doc-endnote"><p>He sleeps a LOT during the day</p></li></ol></aside></section>
 <section id="asides" class="slide level2">
 <h2>Asides</h2>
-<p>Asides are like footnotes, but don’t have numbers.</p>
+<p>Asides are like footnotes, but don’t have numbers<sup>1</sup>.</p>
+<div class="fragment">
 <pre><code>::: aside
 They are placed above footnotes if footnotes are present on the page
 :::</code></pre>
-</section></section>
+
+</div>
+<aside><div>
+<pre><code>They are placed above footnotes if footnotes are present on the page</code></pre>
+</div><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>Unlike feet that at least have like a shoe size or something?</p></li></ol></aside></section></section>
 <section>
 <section id="code-1" class="title-slide slide level1 center">
 <h1>Code</h1>
@@ -1182,22 +1196,69 @@ They are placed above footnotes if footnotes are present on the page
 </section>
 <section id="code-line-highlighting" class="slide level2">
 <h2>Code line-highlighting</h2>
+<p>Use <code>#| code-line-numbers: "3"</code> syntax - will highlight line and fade other lines</p>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="|3|5|8|10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="co">#| output-location: column</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="co">#| code-line-numbers: "|3|5|8|10"</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a></span>
-<span id="cb43-5"><a href="#cb43-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb43-6"><a href="#cb43-6"></a></span>
-<span id="cb43-7"><a href="#cb43-7"></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb43-8"><a href="#cb43-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb43-9"><a href="#cb43-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb43-10"><a href="#cb43-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
-<span id="cb43-11"><a href="#cb43-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb44-1"><a href="#cb44-1"></a><span class="in">```{r}</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="co">#| code-line-numbers: "3"</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a></span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb44-6"><a href="#cb44-6"></a></span>
+<span id="cb44-7"><a href="#cb44-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb44-8"><a href="#cb44-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb44-9"><a href="#cb44-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb44-10"><a href="#cb44-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb44-11"><a href="#cb44-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="code-line-highlighting-1" class="slide level2">
+<h2>Code line-highlighting</h2>
+<p>Sometimes you want to make a point though…</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="|3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="co">#| code-line-numbers: "|3"</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a></span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb45-6"><a href="#cb45-6"></a></span>
+<span id="cb45-7"><a href="#cb45-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb45-8"><a href="#cb45-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="code-line-highlighting-2" class="slide level2">
+<h2>Code line-highlighting</h2>
+<p>And I often want to “walk through” a set of code!</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="|3|5|8|10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1"></a><span class="in">```{r}</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="co">#| output-location: column</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="co">#| code-line-numbers: "|3|5|8|10"</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb46-6"><a href="#cb46-6"></a></span>
+<span id="cb46-7"><a href="#cb46-7"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb46-8"><a href="#cb46-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb46-9"><a href="#cb46-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">formula =</span> <span class="st">"y~x"</span>)</span>
+<span id="cb46-11"><a href="#cb46-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="05-presentations_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1209,8 +1270,68 @@ They are placed above footnotes if footnotes are present on the page
 <li><p>Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables</p></li>
 </ul>
 </section>
-<section id="random-html-position-absolute" class="slide level2">
-<h2>Random HTML + Position absolute</h2>
+<section id="arbitrary-html-position-absolute" class="slide level2">
+<h2>Arbitrary HTML + Position absolute</h2>
+</section>
+<section id="position-absolute" class="slide level2">
+<h2>Position = absolute</h2>
+<pre><code>![](image1.png){.absolute top=200 left=0 width="350" height="300"}
+
+![](image2.png){.absolute top=50 right=50 width="450" height="250"}
+
+![](image3.png){.absolute bottom=0 right=50 width="300" height="300"}</code></pre>
+</section>
+<section id="position-.absolute" class="slide level2">
+<h2>Position = <code>.absolute</code></h2>
+<p><img data-src="images/boston-sleep.png" class="absolute" style="top: 200px; left: 0px; width: 350px; "></p>
+<div class="fragment">
+<p><img data-src="images/boston-terrier.png" class="absolute" style="top: 50px; right: 50px; height: 250px; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="images/lost-howard.jpeg" class="absolute" style="bottom: 0px; right: 50px; width: 300px; "></p>
+</div>
+</section>
+<section id="auto-animate" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Auto-Animate</h2>
+<p>Automatically animate matching elements across slides with Auto-Animate.</p>
+<div class="r-hstack">
+<div data-id="box1" data-auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+</div>
+</section>
+<section id="auto-animate-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Auto-Animate</h2>
+<p>Automatically animate matching elements across slides with Auto-Animate.</p>
+<div class="r-stack">
+<div data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;">
+
+</div>
+<div data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;">
+
+</div>
+<div data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;">
+
+</div>
+</div>
+</section>
+<section id="auto-animate-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Auto-Animate</h2>
+<div style="font-size: 120px; text-align: center;">
+<p>IMPORTANT POINT!</p>
+</div>
+</section>
+<section id="section-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<div style="font-size: 20px;">
+<p>IMPORTANT POINT!</p>
+</div>
 
 
 <img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">

@@ -37,6 +37,14 @@ Quarto uses the `{knitr}` engine just like RMarkdown to execute R code natively,
 
 Quarto can _also_ use the Jupyter engine to natively execute Julia, Python, or other languages that Jupyter supports.
 
+::: {.r-stack}
+
+![](images/qmd-knitr.jpg)
+
+![](images/qmd-jupyter.png)
+
+:::
+
 ## Choose your engine
 
 :::: {.columns}
@@ -241,16 +249,20 @@ plt.show()
 ## Create code chunks
 
 - You can manually type out code chunks: ```` ```{r} ````
-- the keyboard shortcut `Ctrl + Alt + I` (OS X: `Cmd + Option + I`)
+- the keyboard shortcut <kbd>`Ctrl + Alt + I`</kbd> (OS X: <kbd>`Cmd + Option + I`</kbd>)
 - the Add Chunk command in the editor toolbar
 
 . . .
 
-Or use the Command Palette: `Cmd + Shift + P`/`Ctrl + Shift + P`
+Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`</kbd>
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
-- In a blank Quarto doc, insert a code chunk, load `tidyverse` and `palmerpenguins` and populate with some `tidyverse` code to evaluate the good ole `palmerpenguins::penguins` dataset!
+- In a blank Quarto doc:
+  - Insert a code chunk
+  - Load `tidyverse` and `palmerpenguins`
+  - Use some `tidyverse` code to explore the `palmerpenguins::penguins` dataset!
+  - Render it!
 
 ## Inline code
 
@@ -280,8 +292,8 @@ fmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))
 
 
 ```{verbatim, lang = "markdown"}
-fmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))
-The mtcars dataset has an average miles/per gallon of `r fmt_mean`
+fmt_mean <- scales::number_format(accuracy = 0.1, suffix = " mpg")(mean(mtcars$mpg))
+The mtcars dataset has an fuel efficiency of `r fmt_mean`
 ```
 
 . . .
@@ -385,6 +397,10 @@ fig.dpi vs fig-dpi
 
 . . .
 
+This syntax is preferred because it aligns with Pandoc, which uses `word1-word2` style
+
+. . .
+
 ```{r fig.align = "left"}
 #| echo: fenced
 #| fig-dpi: 350
@@ -394,8 +410,9 @@ mtcars |>
 
 ## Quarto chunk options
 
-::: note
-Note that if you prefer it is still possible to include chunk options on the first line (e.g. ```` ```{r, echo = FALSE} ````). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines.
+::: {.callout-note}
+
+Note that if you prefer it is still possible to include chunk options on the first line (e.g. ```` ```{r, echo = FALSE} ````). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines as that syntax only works for backwards compatability with R/RMarkdown.
 
 :::
 
@@ -406,6 +423,8 @@ Note that if you prefer it is still possible to include chunk options on the fir
 ```
 #| fig-cap: !expr paste("Air", "Quality")
 ```
+
+. . .
 
 ## Setup Chunk
 
@@ -424,7 +443,7 @@ knitr::opts_chunk$set(
 
 . . .
 
-Quarto also introduces some of these as options for `execute:` in YAML.
+Quarto also introduces some of these as options for `execute:` in YAML, for similar concepts in other languages.
 
 ```yaml
 ---
@@ -515,6 +534,13 @@ List of 2
 ::::
 
 # Demo: Navigating within RStudio {background-color="black"}
+
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open RStudio and `materials/workshop/visual-editor.qmd`
+- Explore the navigation options
+- Render the document and find the broken code, then fix it and render again!
 
 ## Chunk names, good and bad
 
@@ -667,6 +693,11 @@ format:
 . . .
 
 ![](images/yaml-autocomplete.gif){height=50%}
+## YAML Auto-completion
+
+To find all the available options for a YAML section, you can use <kbd>`Ctrl + Space`</kbd>
+
+![](images/yaml-ctrl.gif)
 
 ## `knitr` auto-completion
 
@@ -681,6 +712,7 @@ You can use tab-completion inside `knitr` chunk options for RMarkdown style or Q
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 - Open `materials/workshop/03-authoring/visual-editor.qmd`
+- Explore the UI elements and visual editor mode
 
 ## Quarto workflow
 
@@ -723,3 +755,31 @@ quarto_render("document.qmd", output_format = "pdf")
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 - Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
+
+## VS Code
+
+![](https://quarto.org/docs/tools/images/vscode-render.png)
+
+## VS Code YAML
+
+![](https://quarto.org/docs/tools/images/vscode-raw.png)
+
+## VS Code, YAML Intelligence
+
+![](https://quarto.org/docs/tools/images/vscode-yaml-completion.png)
+
+## Jupyter/Jupyter Lab
+
+![](https://quarto.org/docs/tools/images/jupyter-lab.png)
+
+## Jupyter
+
+`quarto preview notebook.ipynb --to html`
+
+![](https://quarto.org/docs/tools/images/jupyterlab-preview.png)
+
+## Jupyter YAML
+
+Treat YAML as a "raw cell" in Jupyter - Jupyter doesn't care about YAML, but it's needed/used by Quarto
+
+![](https://quarto.org/docs/tools/images/jupyter-lab-yaml.png)

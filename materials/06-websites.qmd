@@ -16,11 +16,9 @@ editor_options:
     canonical: true
 ---
 
-# 06 - Websites {background-image="images/website.png" background-size="cover" background-color="black"}
+# 06 - Websites {background-image="images/website.png" background-size="cover" background-color="black" style="font-size: 120px"}
 
 <h2>Building with Quarto</h2>
-
-<h3>Tom Mock \| 2022-07-25</h3>
 
 ## Websites
 
@@ -43,9 +41,11 @@ editor_options:
 
 -   Huge benefits of static websites compared to dynamic websites
 
-    -   all static files, no PHP or databases, no login/password, work everywhere (even offline)
+-   all static files, no PHP or databases, no login/password, work everywhere (even offline)
 
-    -   typically fast to visit (no computation needed on the server side), and easy to speed up via CDN
+-   typically fast to visit (no computation needed on the server side), and easy to speed up via CDN
+
+## 
 
 ### Create a website
 
@@ -105,12 +105,12 @@ RStudio \> New Project \> New Quarto Blog
 
 ## Core blog workflow
 
--   Create a new folder under `/posts` - this folder will be the "slug" URL
+-   Create a new folder under `/posts` - this folder will be the "slug" URL (like `themockup.blog/2022-07-25-new-post/`)
 -   Create a new `index.qmd` within the new folder
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
--   Create a new RStudio project and select Quarto blog
+-   Create a new RStudio project (in a separate RStudio session) and select Quarto blog
 -   Give it a name
 -   Explore the directory
 
@@ -461,21 +461,34 @@ listing:
 
 </iframe>
 
+<!-- # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"} -->
+
+<!-- -   Go to <https://www.netlify.com/> and signup or sign-in (I like using GitHub login) -->
+
+<!-- -   Got to: <https://app.netlify.com/drop> -->
+
+<!-- -   Drag and drop the `_site` folder to deploy -->
+
+<!-- -   Explore your site! -->
+
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
--   Go to <https://www.netlify.com/> and signup or sign-in (I like using GitHub login)
--   Got to: <https://app.netlify.com/drop>
--   Drag and drop the `_site` folder to deploy
--   Explore your site!
-
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+In your blog project:
 
 ``` bash
-quarto publish netlify _site
+quarto publish quarto-pub
 ```
 
--   Authenticate with Netlify
--   Explore your new site!
+-   Choose a username and/or authenticate with `quartopub.com`
+-   Enjoy your new blog/site!
+
+## Websites
+
+Similar to blog, but less of a focus on listing/posts and more focus on individual pages and overall navigation.
+
+<iframe src="https://github.com/rstudio-conf-2022/get-started-quarto/blob/main/_quarto.yml#L8-L38" height="900px" width="1200px">
+
+</iframe>
 
 ## Quarto Project
 
@@ -491,7 +504,7 @@ toc: true
 number-sections: true
 bibliography: references.bib  
   
-format:
+format: #< default format inherited by other documents
   html:
     css: styles.css
 ```
@@ -509,32 +522,37 @@ format:
 
 . . .
 
-A typical project is used to: - Aggregate content (website/blog/book) - Share metadata (YAML config) across multiple files - Render an entire directory together or redirect output to another directory - Freeze computation across a project or team
+A typical project is used to:
+
+-   Aggregate content (website/blog/book)\
+-   Share metadata (YAML config) across multiple files\
+-   Render an entire directory together or redirect output to another directory\
+-   Freeze computation across a project or team
 
 ## Books
 
-    project:
-      type: book
+``` code
+project:
+  type: book
+book:
+  title: "mybook"
+  author: "Jane Doe"
+  date: "8/18/2021"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+bibliography: references.bib
 
-    book:
-      title: "mybook"
-      author: "Jane Doe"
-      date: "8/18/2021"
-      chapters:
-        - index.qmd
-        - intro.qmd
-        - summary.qmd
-        - references.qmd
-
-    bibliography: references.bib
-
-    format:
-      html:
-        theme: cosmo
-      pdf:
-        documentclass: scrreport
-      epub:
-        cover-image: cover.png
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreport
+  epub:
+    cover-image: cover.png
+```
 
 ## Book structure
 

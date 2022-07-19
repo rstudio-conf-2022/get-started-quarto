@@ -384,14 +384,11 @@
 
 
 <section>
-<section id="websites" class="title-slide slide level1 center" data-background-image="images/website.png" data-background-size="cover" data-background-color="black">
+<section id="websites" class="title-slide slide level1 center" data-background-image="images/website.png" data-background-size="cover" data-background-color="black" style="font-size: 120px">
 <h1>06 - Websites</h1>
 <h2>
 Building with Quarto
 </h2>
-<h3>
-Tom Mock | 2022-07-25
-</h3>
 </section>
 <section id="websites-1" class="slide level2">
 <h2>Websites</h2>
@@ -414,12 +411,13 @@ Tom Mock | 2022-07-25
 <h2>Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?<sup>1</sup></h2>
 <ul>
 <li><p>No R Markdown support (even math support is often nonexistent or awkward)</p></li>
-<li><p>Huge benefits of static websites compared to dynamic websites</p>
-<ul>
+<li><p>Huge benefits of static websites compared to dynamic websites</p></li>
 <li><p>all static files, no PHP or databases, no login/password, work everywhere (even offline)</p></li>
 <li><p>typically fast to visit (no computation needed on the server side), and easy to speed up via CDN</p></li>
-</ul></li>
 </ul>
+<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>From Yihui: <a href="https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36" class="uri">https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36</a></p></li></ol></aside></section>
+<section id="section" class="slide level2">
+<h2></h2>
 <h3 id="create-a-website">Create a website</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">quarto</span> create-project MySiteName <span class="at">--type</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="create-a-blog">Create a blog</h3>
@@ -428,7 +426,7 @@ Tom Mock | 2022-07-25
 <p>RStudio &gt; New Project &gt; New Quarto Blog</p>
 <p><img src="images/quarto-blog.png" width="800px"></p>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1" role="doc-endnote"><p>From Yihui: <a href="https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36" class="uri">https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36</a></p></li></ol></aside></section>
+</section>
 <section id="creating-a-blog" class="slide level2">
 <h2>Creating a blog</h2>
 <pre><code>$ quarto create-project MyBlogName --type website:blog
@@ -487,7 +485,7 @@ Creating project at myblog:
 <li>Can build custom listings in several ways</li>
 </ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <iframe src="https://themockup.blog" height="800" width="1200">
 </iframe>
@@ -495,7 +493,7 @@ Creating project at myblog:
 <section id="core-blog-workflow" class="slide level2">
 <h2>Core blog workflow</h2>
 <ul>
-<li>Create a new folder under <code>/posts</code> - this folder will be the “slug” URL</li>
+<li>Create a new folder under <code>/posts</code> - this folder will be the “slug” URL (like <code>themockup.blog/2022-07-25-new-post/</code>)</li>
 <li>Create a new <code>index.qmd</code> within the new folder</li>
 </ul>
 </section></section>
@@ -503,7 +501,7 @@ Creating project at myblog:
 <section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>Create a new RStudio project and select Quarto blog</li>
+<li>Create a new RStudio project (in a separate RStudio session) and select Quarto blog</li>
 <li>Give it a name</li>
 <li>Explore the directory</li>
 </ul>
@@ -878,25 +876,27 @@ about:
 <h2>Netlify</h2>
 <iframe src="https://www.netlify.com/" height="800" width="1200">
 </iframe>
+<!-- # `<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"/></svg>`{=html} Your Turn {background-color="#447099"} -->
+<!-- -   Go to <https://www.netlify.com/> and signup or sign-in (I like using GitHub login) -->
+<!-- -   Got to: <https://app.netlify.com/drop> -->
+<!-- -   Drag and drop the `_site` folder to deploy -->
+<!-- -   Explore your site! -->
 </section></section>
+<section>
 <section id="your-turn-6" class="title-slide slide level1 center" data-background-color="#447099">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<p>In your blog project:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">quarto</span> publish quarto-pub</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Go to <a href="https://www.netlify.com/" class="uri">https://www.netlify.com/</a> and signup or sign-in (I like using GitHub login)</li>
-<li>Got to: <a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a></li>
-<li>Drag and drop the <code>_site</code> folder to deploy</li>
-<li>Explore your site!</li>
+<li>Choose a username and/or authenticate with <code>quartopub.com</code></li>
+<li>Enjoy your new blog/site!</li>
 </ul>
 </section>
-
-<section>
-<section id="your-turn-7" class="title-slide slide level1 center" data-background-color="#447099">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">quarto</span> publish netlify _site</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Authenticate with Netlify</li>
-<li>Explore your new site!</li>
-</ul>
+<section id="websites-2" class="slide level2">
+<h2>Websites</h2>
+<p>Similar to blog, but less of a focus on listing/posts and more focus on individual pages and overall navigation.</p>
+<iframe src="https://github.com/rstudio-conf-2022/get-started-quarto/blob/main/_quarto.yml#L8-L38" height="900px" width="1200px">
+</iframe>
 </section>
 <section id="quarto-project" class="slide level2">
 <h2>Quarto Project</h2>
@@ -913,7 +913,7 @@ about:
 <span id="cb19-5"><a href="#cb19-5"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb19-6"><a href="#cb19-6"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib  </span></span>
 <span id="cb19-7"><a href="#cb19-7"></a><span class="at">  </span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="fu">format</span><span class="kw">:</span><span class="co"> #&lt; default format inherited by other documents</span></span>
 <span id="cb19-9"><a href="#cb19-9"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
@@ -929,33 +929,40 @@ about:
 <li>A project is a directory (and can have sub-directories)</li>
 </ul>
 <div class="fragment">
-<p>A typical project is used to: - Aggregate content (website/blog/book) - Share metadata (YAML config) across multiple files - Render an entire directory together or redirect output to another directory - Freeze computation across a project or team</p>
+<p>A typical project is used to:</p>
+<ul>
+<li>Aggregate content (website/blog/book)<br>
+</li>
+<li>Share metadata (YAML config) across multiple files<br>
+</li>
+<li>Render an entire directory together or redirect output to another directory<br>
+</li>
+<li>Freeze computation across a project or team</li>
+</ul>
 </div>
 </section>
 <section id="books" class="slide level2">
 <h2>Books</h2>
-<pre><code>project:
-  type: book
-
-book:
-  title: "mybook"
-  author: "Jane Doe"
-  date: "8/18/2021"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
-
-format:
-  html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreport
-  epub:
-    cover-image: cover.png</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb20-1"><a href="#cb20-1"></a>project:</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  type: book</span>
+<span id="cb20-3"><a href="#cb20-3"></a>book:</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  title: "mybook"</span>
+<span id="cb20-5"><a href="#cb20-5"></a>  author: "Jane Doe"</span>
+<span id="cb20-6"><a href="#cb20-6"></a>  date: "8/18/2021"</span>
+<span id="cb20-7"><a href="#cb20-7"></a>  chapters:</span>
+<span id="cb20-8"><a href="#cb20-8"></a>    - index.qmd</span>
+<span id="cb20-9"><a href="#cb20-9"></a>    - intro.qmd</span>
+<span id="cb20-10"><a href="#cb20-10"></a>    - summary.qmd</span>
+<span id="cb20-11"><a href="#cb20-11"></a>    - references.qmd</span>
+<span id="cb20-12"><a href="#cb20-12"></a>bibliography: references.bib</span>
+<span id="cb20-13"><a href="#cb20-13"></a></span>
+<span id="cb20-14"><a href="#cb20-14"></a>format:</span>
+<span id="cb20-15"><a href="#cb20-15"></a>  html:</span>
+<span id="cb20-16"><a href="#cb20-16"></a>    theme: cosmo</span>
+<span id="cb20-17"><a href="#cb20-17"></a>  pdf:</span>
+<span id="cb20-18"><a href="#cb20-18"></a>    documentclass: scrreport</span>
+<span id="cb20-19"><a href="#cb20-19"></a>  epub:</span>
+<span id="cb20-20"><a href="#cb20-20"></a>    cover-image: cover.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="book-structure" class="slide level2">
 <h2>Book structure</h2>

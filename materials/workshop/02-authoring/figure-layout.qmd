@@ -5,6 +5,13 @@ format: html
 ## Directory
 
 ```{r}
+# returns a tibble of the files
+fs::dir_info(here::here("materials/images"))
+```
+
+
+```{r}
+# returns paths/files
 fs::dir_ls(here::here("materials/images"))
 ```
 

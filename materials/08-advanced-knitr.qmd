@@ -15,12 +15,20 @@ editor_options:
     canonical: true
 ---
 
-# 08 - Advanced<br>Quarto +`knitr` {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
+#  {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
+
+::: {style="font-size: 100px;"}
+08 - Advanced<br>Quarto +`knitr`
+:::
 
 ```{r setup}
 #| include: false
 library(tidyverse)
 library(palmerpenguins)
+library(ggiraph)
+library(gt)
+library(gtExtras)
+library(gtsummary)
 ```
 
 ## Parameters
@@ -153,6 +161,7 @@ penguin_names |>
 
 -   Open `materials/workshop/08-knitr/penguin-params.qmd`
 -   Open `materials/workshop/08-knitr/render-params.R`
+-   Follow the instructions in `render-params.R`
 
 ## Commenting
 
@@ -344,3 +353,4 @@ filters:
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 -   Open `materials/workshop/08-knitr/lightbox-extension.qmd`
+-   Explore and render it!

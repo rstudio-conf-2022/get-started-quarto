@@ -342,11 +342,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Install/Update Chromium with <code>quarto install tool chromium</code></li>
 <li>Install R packages:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span>, <span class="st">"gt"</span>, <span class="st">"gtExtras"</span>, <span class="st">"reactable"</span>, <span class="st">"ggiraph"</span>, <span class="st">"here"</span>, <span class="st">"quarto"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"fs"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"fs"</span>, <span class="st">"skimr"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkg_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -411,16 +413,22 @@ Workshop Materials
 </section>
 <section id="prework" class="level2">
 <h2 class="anchored" data-anchor-id="prework">Prework</h2>
+<p>If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!</p>
 <ul>
 <li>Install latest version of RStudio, <a href="https://www.rstudio.com/products/rstudio/download/#download"><code>v2022.07.0-548</code> or later</a></li>
-<li>Install <a href="https://quarto.org/docs/get-started/">latest version of Quarto</a> (<code>v1.0.15</code> or greater)</li>
+<li>Install <a href="https://quarto.org/docs/get-started/">latest version of Quarto</a> (<code>v1.0.32</code> or greater)</li>
+<li>Ideally upgrade to R 4.1 or R 4.2 (I’m showing base R pipe as <code>|&gt;</code>)</li>
+<li>Install/Update <code>TinyTeX</code> for PDF with <code>quarto install tool tinytex</code></li>
+<li>Install/Update Chromium with <code>quarto install tool chromium</code></li>
 <li>Install R packages:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span>, <span class="st">"gt"</span>, <span class="st">"gtExtras"</span>, <span class="st">"reactable"</span>, <span class="st">"ggiraph"</span>, <span class="st">"here"</span>, <span class="st">"quarto"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"fs"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"fs"</span>, <span class="st">"skimr"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkg_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

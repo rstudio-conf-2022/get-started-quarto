@@ -17,6 +17,16 @@ editor_options:
 
 # 07 - Plots, Graphics, and tables {background-color="#4f6952" background-image="images/outdoor-patio.jpg" background-size="cover"}
 
+```{r setup}
+#| include: false
+library(tidyverse)
+library(palmerpenguins)
+library(ggiraph)
+library(gt)
+library(gtExtras)
+library(gtsummary)
+```
+
 ## Layout
 
     ::: {#fig-dogs layout-ncol=2}
@@ -80,7 +90,7 @@ Elephant
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
--   Open `materials/workshop/04-static/figure-layout`
+-   Open `materials/workshop/07-static/figure-layout`
 -   Swap between row and col layout
 
 ## Custom Layouts
@@ -180,58 +190,109 @@ Row: 25
 :::
 :::
 
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/07-visuals/figure-layout2.qmd`
+
 ## Figure layout
+
+::: panel-tabset
+## Code
 
 ```{r}
 #| echo: fenced
-#| output-location: column
+#| eval: false
 #| layout-ncol: 2
 #| fig-cap: 
 #|   - "Speed and Stopping Distances of Cars"
-#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+#|   - "Engine displacement and fuel efficiency in Cars"
 
-plot(cars)
-plot(pressure)
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
 ```
+
+## Image
+
+![](images/plot-layout-ncol.jpeg)
+:::
 
 ## Figure layout, subcaptions
 
+::: panel-tabset
+## Code
+
 ```{r}
 #| echo: fenced
-#| output-location: column
+#| eval: false
 #| label: fig-charts
 #| fig-cap: Charts
 #| fig-subcap: 
 #|   - "Cars"
-#|   - "Pressure"
+#|   - "mtcars"
 #| layout-ncol: 2
 
-plot(cars)
-plot(pressure)
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
 ```
+
+## Output
+
+![](images/plot-subcaptions.jpeg)
+:::
 
 ## Figure layout, custom
 
+::: panel-tabset
+## Code
+
 ```{r}
 #| echo: fenced
-#| output-location: column
+#| eval: false
 #| layout: [[45,-10, 45], [100]]
 
-plot(cars)
-plot(pressure)
-plot(mtcars)
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +
+  geom_boxplot() +
+  geom_jitter()
 ```
+
+## Output
+
+![](images/figure-layout-custom.jpeg)
+:::
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/07-visuals/plot-layout.qmd`
 
 ## Block layout, arbitrary content
 
     ::: {layout-ncol=2}
-    ### List One
+    ## List One
 
     - Item A
     - Item B
     - Item C
 
-    ### List Two
+    ## List Two
 
     - Item X
     - Item Y
@@ -240,13 +301,70 @@ plot(mtcars)
 
 ## Block layout, arbitrary content
 
-    ::: {layout-ncol=2}
-    - Item X
-    - Item Y
-    - Item Z
+::: {layout-ncol="2"}
+## List One
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. 
-    :::
+-   Item A
+-   Item B
+-   Item C
+
+## List Two
+
+-   Item X
+-   Item Y
+-   Item Z
+:::
+
+## Block layout, arbitrary content
+
+``` code
+::: {layout-ncol=2}
+- Item X
+- Item Y
+- Item Z
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. 
+:::
+```
+
+## Block layout, arbitrary content
+
+::: {layout-ncol="2"}
+-   Item X
+-   Item Y
+-   Item Z
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa.
+:::
+
+## Article Layout
+
+Quarto supports a variety of page layout options that enable you to author content that:
+
+-   Fills the main content region `.column-body`
+-   Overflows the content region `.column-body-outset`
+-   Spans the entire page `.column-page`
+-   Occupies the document margin `.column-margin`
+
+. . .
+
+Put it in a div, and assign a specific class
+
+``` code
+:::{.column-body-outset}
+Outset content...
+:::
+```
+
+``` code
+:::{.column-margin}
+Margin/aside figure
+:::
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/07-visuals/plots.qmd`
 
 ## `ggplot2`
 
@@ -331,6 +449,81 @@ mass_flipper
 mass_flipper
 ```
 
+## Interactivity
+
+Quarto supports JupyterWidgets (with Jupyter) or `htmlwidgets` in R/knitr
+
+```{r}
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-77.0168, lat=38.7814, popup="You are here - in Maryland!")
+```
+
+## Observable.js
+
+> Quarto includes native support for Observable JS, a set of enhancements to vanilla JavaScript created by Mike Bostock (also the author of D3). Observable JS is distinguished by its reactive runtime, which is especially well suited for interactive data exploration and analysis.
+
+```{ojs}
+//| panel: input
+//| echo: false
+viewof bill_length_min = Inputs.range(
+  [32, 50], 
+  {value: 35, step: 1, label: "Bill length (min):"}
+)
+viewof islands = Inputs.checkbox(
+  ["Torgersen", "Biscoe", "Dream"], 
+  { value: ["Torgersen", "Biscoe"], 
+    label: "Islands:"
+  }
+)
+```
+
+::: panel-tabset
+## Plot
+
+```{ojs}
+//| echo: false
+Plot.rectY(filtered, 
+  Plot.binX(
+    {y: "count"}, 
+    {x: "body_mass", fill: "species", thresholds: 20}
+  ))
+  .plot({
+    facet: {
+      data: filtered,
+      x: "sex",
+      y: "species",
+      marginRight: 80
+    },
+    marks: [
+      Plot.frame(),
+    ]
+  }
+)
+```
+
+## Data
+
+```{ojs}
+//| echo: false
+Inputs.table(filtered)
+```
+:::
+
+```{ojs}
+//| echo: false
+data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+```
+
+```{ojs}
+//| echo: false
+filtered = data.filter(function(penguin) {
+  return bill_length_min < penguin.bill_length &&
+         islands.includes(penguin.island);
+})
+```
+
 ## `ggiraph`
 
 Example from [Claus Wilke](https://github.com/wilkelab/SDS375/blob/31609013bf4a4c0f34f991fa32474b8371f8873b/worksheets/interactive-plots.Rmd#L484-L514)
@@ -403,12 +596,6 @@ girafe(
 )
 ```
 
-## `plotly`
-
-## Reminder about layout
-
-## YOUR TURN
-
 ## `gt` + `gtExtras`
 
 > With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
@@ -421,13 +608,29 @@ girafe(
 
 ![](https://gt.rstudio.com/reference/figures/gt_parts_of_a_table.svg){.r-stretch fig-align="center"}
 
-## Load libraries
+## `gt`
 
 ```{r}
 library(dplyr, warn.conflicts = FALSE)
 library(gt)
 library(gtExtras)
 
+head(mtcars) |> 
+  gt() |> 
+  tab_options(
+    table.font.size = px(40),
+    column_labels.font.size = px(45)
+  )
+```
+
+. . .
+
+-   `gtExtras` provides additional helper functions to `gt`
+-   `gtsummary` extends `gt` to descriptive statistics and statistical summaries of models
+
+## Load libraries
+
+```{r}
 penguins <- palmerpenguins::penguins
 
 penguin_sum <- penguins |>
@@ -472,13 +675,15 @@ gt(penguin_sum) |>
   text_transform(
     cells_body(sex),
     fn = function(x){
-      ifelse(x == "male", "mars", "venus")
-                 }) %>% 
-  gt_fa_column(
-    column = sex,
-    palette = c("#af8dc3", "#7fbf7b")
-    ) |> 
-  gt_theme_nytimes() |> 
+      sex_planet <- ifelse(x == "male", "mars", "venus")
+      
+      purrr::map(
+        sex_planet, 
+        ~fontawesome::fa(
+          .x, height = "45px",
+          fill = ifelse(.x =="mars", "#af8dc3", "#7fbf7b")))
+                 }) |>
+  gt_theme_nytimes() |>
   tab_options(data_row.padding = px(2),
               table.font.size = px(40),
               column_labels.font.size = px(35))
@@ -488,7 +693,16 @@ gt(penguin_sum) |>
 
 ```{r}
 penguins |> 
-  gt_plt_summary()
+  gt_plt_summary() |> 
+  tab_options(
+    table.font.size = px(40),
+    column_labels.font.size = px(45),
+    heading.title.font.size = px(80)
+  )
 ```
 
-## `reactable`
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+-   Open `materials/workshop/07-static/gt-summary.qmd`
+-   Open `materials/workshop/07-static/stat-html.qmd`
+-   Explore and render

@@ -13,7 +13,7 @@ format:
 editor: source
 ---
 
-# 04 - Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black"}
+# 04 - Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black" style="font-size: 90px;"}
 
 ## HTML Workhorse
 
@@ -70,7 +70,12 @@ format:
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
 
 - Open `materials/workshop/04-static/old-rmarkdown.rmd`
+- Render via Quarto CLI
 
+## Static documents
+
+- A static document is your "daily driver" - has the power for a complex table of contents, figure alignment, control of ouptut/code, and other niceties
+- Useful as a lab notebook, scratchpad, or the final output for your team
 
 ## Table of contents and Sections
 
@@ -88,11 +93,19 @@ or
 toc-depth: 2
 ```
 
+. . .
+
+<iframe src = "https://rstudio-conf-2022.github.io/get-started-quarto/materials/static/toc-1.html" height="500" width="1200" ></iframe>
+
+
 ## Table of Contents and Section
 
-<iframe src = "https://rstudio-conf-2022.github.io/get-started-quarto/materials/static/toc-1.html" height="800" width="1200" ></iframe>
+<iframe src="https://rstudio-conf-2022.github.io/get-started-quarto/#getting-started-with-quarto" width="1300px" height="900px"></iframe>
+
 
 ## Tabsets
+
+Split up and flip between sections of a page, alternative to just two columns
 
 ```
 ::: {.panel-tabset}
@@ -126,6 +139,32 @@ head(mtcars)
 ```
 
 :::
+
+## Tabsets
+
+````
+
+::: {.panel-tabset}
+
+## Code
+
+```{{r}}
+#| echo: fenced
+#| eval: false
+head(mtcars)
+```
+
+
+## Output
+
+```{{r}}
+#| eval: true
+#| echo: false
+head(mtcars)
+```
+
+:::
+````
 
 ## Footnotes
 
@@ -172,7 +211,7 @@ For example, did you know that Howard is a dog^[Specifically he is a Boston Terr
 
 . . .
 
-<iframe src="../../materials/static/footnote.html" height="600" width = "1000"></iframe>
+<iframe src="static/footnote.html" height="600" width = "1000"></iframe>
 
 # Code {background-color="#4f6952"}
 
@@ -252,6 +291,13 @@ format:
     code-tools:
       source: https://github.com/quarto-dev/quarto-web/blob/main/index.md
 ```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+
+- Open `materials/workshop/04-static/penguin-report.qmd`
+- Explore the document as a concept of literate programming or a "lab notebook"
+- Change the code to all fold, render
+- Change the code to source and toggle
 
 # Code appearance {background-color="#4f6952"}
 

@@ -385,9 +385,11 @@
 
 
 <section>
-<section id="advanced-quarto-knitr" class="title-slide slide level1 center" data-background-image="images/watermelon.jpg" data-background-position="right" data-background-size="contain" data-background-color="#447098">
-<h1>08 - Advanced<br>Quarto +<code>knitr</code></h1>
-
+<section id="section" class="title-slide slide level1 center" data-background-image="images/watermelon.jpg" data-background-position="right" data-background-size="contain" data-background-color="#447098">
+<h1></h1>
+<div style="font-size: 100px;">
+<p>08 - Advanced<br>Quarto +<code>knitr</code></p>
+</div>
 </section>
 <section id="parameters" class="slide level2">
 <h2>Parameters</h2>
@@ -504,6 +506,7 @@
 <ul>
 <li>Open <code>materials/workshop/08-knitr/penguin-params.qmd</code></li>
 <li>Open <code>materials/workshop/08-knitr/render-params.R</code></li>
+<li>Follow the instructions in <code>render-params.R</code></li>
 </ul>
 </section>
 <section id="commenting" class="slide level2">
@@ -610,9 +613,10 @@ Learn more about this extension at https://github.com/quarto-ext/fontawesome</co
 <span id="cb20-2"><a href="#cb20-2"></a><span class="ex">quarto</span> list extensions</span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Id                        Version    Contributes
-quarto-ext/fontawesome    0.0.1      shortcodes 
-quarto-ext/lightbox       0.0.1      filters    </code></pre>
+<pre><code>Id                            Version    Contributes
+quarto-ext/fontawesome        0.0.1      shortcodes 
+quarto-ext/lightbox           0.0.1      filters    
+quarto-ext/grouped-tabsets    0.0.1      filters    </code></pre>
 </div>
 </div>
 </div>
@@ -620,12 +624,12 @@ quarto-ext/lightbox       0.0.1      filters    </code></pre>
 <section id="check-fontawesome" class="slide level2">
 <h2>Check <code>fontawesome</code></h2>
 <p>There once was a <i class="fa-solid fa-dog"></i> who was lost at <i class="fa-solid fa-water"></i></p>
-<p>He was rescued by a <i class="fa-solid fa-sailboat"></i> and a <i class="fa-solid fa-life-ring"></i></p>
+<p>He was rescued by a <i class="fa-solid fa-sailboat"></i> and a wee <i class="fa-solid fa-life-ring"></i></p>
 <p><br></p>
 <div class="fragment">
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1"><a href="#cb22-1"></a>There once was a {{&lt; fa dog &gt;}} who was lost at {{&lt; fa water &gt;}}</span>
 <span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a>He was rescued by a {{&lt; fa sailboat &gt;}} and a {{&lt; fa life-ring &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3"></a>He was rescued by a {{&lt; fa sailboat &gt;}} and a wee {{&lt; fa life-ring &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="lightbox-extension" class="slide level2">
@@ -684,6 +688,7 @@ quarto-ext/lightbox       0.0.1      filters    </code></pre>
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Open <code>materials/workshop/08-knitr/lightbox-extension.qmd</code></li>
+<li>Explore and render it!</li>
 </ul>
 
 

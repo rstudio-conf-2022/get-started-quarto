@@ -1,4 +1,6 @@
 ---
+format: html
+engine: knitr
 editor_options: 
   markdown: 
     wrap: 72
@@ -28,10 +30,11 @@ If you are a workshop attendee and have any trouble with installation locally, p
 - Install/Update Chromium with `quarto install tool chromium`
 - Install R packages:
 
-```r
+```{r pkg-list}
+#| eval: false
 pkg_list <- c(
   "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto",
-  "rmarkdown", "gtsummary", "palmerpenguins", "fs"
+  "rmarkdown", "gtsummary", "palmerpenguins", "fs", "skimr"
   )
 install.packages(pkg_list)
 ```
@@ -107,16 +110,17 @@ questions:
 
 ## Prework
 
+If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!
+
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
-- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.15` or greater)
+- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.32` or greater)
+- Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
+- Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
+- Install/Update Chromium with `quarto install tool chromium`
 - Install R packages:
 
-```r
-pkg_list <- c(
-  "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto",
-  "rmarkdown", "gtsummary", "palmerpenguins", "fs"
-  )
-install.packages(pkg_list)
+```{r pkg-list}
+#| eval: false
 ```
 
 :::{.callout-tip}

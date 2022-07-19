@@ -25,7 +25,7 @@
     "href": "index.html#prework",
     "title": "rstudio::conf 2022 Workshop",
     "section": "Prework",
-    "text": "Prework\n\nInstall latest version of RStudio, v2022.07.0-548 or later\nInstall latest version of Quarto (v1.0.15 or greater)\nInstall R packages:\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\"\n  )\ninstall.packages(pkg_list)\n\n\n\n\n\n\nWorkshop Materials\n\n\n\nOn Sunday July 24th - clone/pull this repo (to get latest version)! https://github.com/rstudio-conf-2022/get-started-quarto"
+    "text": "Prework\nIf you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!\n\nInstall latest version of RStudio, v2022.07.0-548 or later\nInstall latest version of Quarto (v1.0.32 or greater)\nIdeally upgrade to R 4.1 or R 4.2 (I’m showing base R pipe as |>)\nInstall/Update TinyTeX for PDF with quarto install tool tinytex\nInstall/Update Chromium with quarto install tool chromium\nInstall R packages:\n\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\n\n\n\n\n\n\nWorkshop Materials\n\n\n\nOn Sunday July 24th - clone/pull this repo (to get latest version)! https://github.com/rstudio-conf-2022/get-started-quarto"
   },
   {
     "objectID": "index.html#schedule",
@@ -466,7 +466,7 @@
     "href": "materials/02-authoring.html#tables-from-code",
     "title": "Get Started with Quarto",
     "section": "Tables from code",
-    "text": "Tables from code\nknitr itself can turn R dataframes into tables with knitr::kable()\n\nA very simple table generator, and it is simple by design. It is not intended to replace any other R packages for making tables. . . .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
+    "text": "Tables from code\nknitr itself can turn R dataframes into tables with knitr::kable()\n\nA very simple table generator, and it is simple by design. It is not intended to replace any other R packages for making tables. . . .\n\n\nhead(mtcars) |> \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
   },
   {
     "objectID": "materials/02-authoring.html#code",
@@ -557,28 +557,63 @@
     "href": "materials/02-authoring.html#paths",
     "title": "Get Started with Quarto",
     "section": "Paths",
-    "text": "Paths\nQuarto documents reference from their existing directory!\n\nTo reference folders in other directory"
+    "text": "Paths\nQuarto documents reference from their existing folder/directory.\n\nYou can reference sub-directories/folders easily:\n![](images/image.png)\n\n\nBut what about going “backwards” i.e. to a parent directory?\nThis workshop is at \"get-started-quarto/materials/\"\n\n\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\nhere() always starts at the top-level directory of a RProject"
+  },
+  {
+    "objectID": "materials/02-authoring.html#absolute-vs-relative",
+    "href": "materials/02-authoring.html#absolute-vs-relative",
+    "title": "Get Started with Quarto",
+    "section": "Absolute vs Relative:",
+    "text": "Absolute vs Relative:\nIn other situations, like markdown, YAML or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\n\n\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth - /.. or / = start from root directory\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\n\n\nor: \"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\""
+  },
+  {
+    "objectID": "materials/02-authoring.html#navigating-in-the-terminal",
+    "href": "materials/02-authoring.html#navigating-in-the-terminal",
+    "title": "Get Started with Quarto",
+    "section": "Navigating in the terminal",
+    "text": "Navigating in the terminal\nBecause Quarto is a command line interface (CLI), there are times you’ll need to use it via the terminal. A great overview of using the command line and navigating files/directories is available via the Data Carpentries or a great interactive tool for understanding commands: https://tldr.ostera.io\n\n\n\n\n\n\n\n\nCommand\nAction\n\n\n\n\npwd\nPrint name of current working directory\n\n\ncd\nChange current working directory\n\n\nls\nList directory contents\n\n\nquarto --help\nReturn quarto help docs\n\n\nmkdir howdy\nMake a new folder/directory called “howdy”\n\n\nrm howdy/some-file.qmd | Remove\na file called some-file.qmd from the “howdy” folder"
+  },
+  {
+    "objectID": "materials/02-authoring.html#tldr-tool",
+    "href": "materials/02-authoring.html#tldr-tool",
+    "title": "Get Started with Quarto",
+    "section": "tldr tool",
+    "text": "tldr tool"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-3",
     "href": "materials/02-authoring.html#subfigures-3",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n::: {#fig-bostons layout-nrow=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\nTwo states of Howard, twice\n\n:::"
+    "text": "Subfigures\n::: {#fig-bostons layout-nrow=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n:::"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-4",
     "href": "materials/02-authoring.html#subfigures-4",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n\n\n\n\n\n\n\n(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\n\n\n\n\n\n(c) Still Excited\n\n\n\n\n\n\n\n(d) Still sleeping\n\n\n\n\nFigure 2: Two states of Howard, twice"
+    "text": "Subfigures\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\nTwo states of Howard, twice"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-5",
     "href": "materials/02-authoring.html#subfigures-5",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n\n\n\n\n\n\n\n(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\n\n\n\n\n\n(c) Still Excited\n\n\n\n\n\n\n\n(d) Still sleeping\n\n\n\n\nFigure 3: Two states of Howard, twice"
+    "text": "Subfigures\n::: {layout-ncol=\"2\"}\n![Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){width=\"250px\"}\n\nTwo states of Howard, twice\n:::\n\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\n\nTwo states of Howard, twice"
+  },
+  {
+    "objectID": "materials/02-authoring.html#figure-divs",
+    "href": "materials/02-authoring.html#figure-divs",
+    "title": "Get Started with Quarto",
+    "section": "Figure Divs",
+    "text": "Figure Divs\nNote that the last paragraph in the div block is used as the figure caption.\n::: {#fig-dog}\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/iWR9gwxW-4k\"></iframe>\n\nFunny boston terrier videos\n:::\n\n\n\n\nFigure 2: Funny boston terrier videos"
+  },
+  {
+    "objectID": "materials/02-authoring.html#figure-divs-1",
+    "href": "materials/02-authoring.html#figure-divs-1",
+    "title": "Get Started with Quarto",
+    "section": "Figure Divs",
+    "text": "Figure Divs\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nFigure 3: Funny boston terrier videos"
   },
   {
     "objectID": "materials/02-authoring.html#footnotes",
@@ -669,7 +704,7 @@
     "href": "materials/03-computation-editors.html#inline-code",
     "title": "Get Started with Quarto",
     "section": "Inline code",
-    "text": "Inline code\nThe mtcars dataset has `r nrow(mtcars)` rows\n\nThe mtcars dataset has 32 rows\n\n\nThe mtcars dataset has an average miles/per gallon of `r mean(mtcars$mpg)`\n\n\nThe mtcars dataset has an average miles/per gallon of 20.090625\n\n\n\n\n\nfmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))\nThe mtcars dataset has an average miles/per gallon of `r fmt_mean`\n\n\nThe mtcars dataset has an average miles/per gallon of 20.1"
+    "text": "Inline code\nThe mtcars dataset has `r nrow(mtcars)` rows\n\nThe mtcars dataset has 32 rows\n\n\nThe mtcars dataset has an average miles/per gallon of `r mean(mtcars$mpg)`\n\n\nThe mtcars dataset has an average miles/per gallon of 20.090625\n\n\n\n\n\nfmt_mean <- scales::number_format(accuracy = 0.1, suffix = \" mpg\")(mean(mtcars$mpg))\nThe mtcars dataset has an fuel efficiency of `r fmt_mean`\n\n\nThe mtcars dataset has an average miles/per gallon of 20.1"
   },
   {
     "objectID": "materials/03-computation-editors.html#inline-code-with-jupyter",
@@ -704,21 +739,21 @@
     "href": "materials/03-computation-editors.html#rmarkdown-vs-quarto",
     "title": "Get Started with Quarto",
     "section": "RMarkdown vs Quarto",
-    "text": "RMarkdown vs Quarto\nYou can mix and match or use only R Markdown or Quarto style knitr options. However, note the difference between ‘naming’ of the chunk options, typically one.two vs one-two. The one.two exists for backwards compatibility and you should focus on one-two syntax.\nfig.align vs fig-align\nfig.dpi vs fig-dpi\n\n\n```{r fig.align = \"left\"}\n#| fig-dpi: 350\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) + geom_point()\n```"
+    "text": "RMarkdown vs Quarto\nYou can mix and match or use only R Markdown or Quarto style knitr options. However, note the difference between ‘naming’ of the chunk options, typically one.two vs one-two. The one.two exists for backwards compatibility and you should focus on one-two syntax.\nfig.align vs fig-align\nfig.dpi vs fig-dpi\n\nThis syntax is preferred because it aligns with Pandoc, which uses word1-word2 style\n\n\n\n```{r fig.align = \"left\"}\n#| fig-dpi: 350\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) + geom_point()\n```"
   },
   {
     "objectID": "materials/03-computation-editors.html#quarto-chunk-options-1",
     "href": "materials/03-computation-editors.html#quarto-chunk-options-1",
     "title": "Get Started with Quarto",
     "section": "Quarto chunk options",
-    "text": "Quarto chunk options\n\nNote that if you prefer it is still possible to include chunk options on the first line (e.g. ```{r, echo = FALSE}). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines.\n\n\n\nChunk options included this way use YAML syntax rather than R syntax for consistency with options provided in YAML front matter. You can still however use R code for option values by prefacing them with !expr. For example:\n\n#| fig-cap: !expr paste(\"Air\", \"Quality\")"
+    "text": "Quarto chunk options\n\n\n\n\n\n\nNote\n\n\nNote that if you prefer it is still possible to include chunk options on the first line (e.g. ```{r, echo = FALSE}). That said, we recommend using the comment-based syntax to make documents more portable and consistent across execution engines as that syntax only works for backwards compatability with R/RMarkdown.\n\n\n\n\n\nChunk options included this way use YAML syntax rather than R syntax for consistency with options provided in YAML front matter. You can still however use R code for option values by prefacing them with !expr. For example:\n\n#| fig-cap: !expr paste(\"Air\", \"Quality\")"
   },
   {
     "objectID": "materials/03-computation-editors.html#setup-chunk",
     "href": "materials/03-computation-editors.html#setup-chunk",
     "title": "Get Started with Quarto",
     "section": "Setup Chunk",
-    "text": "Setup Chunk\nA special chunk! There can ONLY be one chunk named setup. It typically is used to set up the default values for the entire document with knitr::opts_chunk$set()\n\n```{r setup}\n#| include: false\nknitr::opts_chunk$set(\n  comment = '#>', fig.width = 6, fig.height = 6\n)\n```\n\n\nQuarto also introduces some of these as options for execute: in YAML.\n---\nformat: html\nexecute:\n  echo: false\n  warning: false\n---"
+    "text": "Setup Chunk\nA special chunk! There can ONLY be one chunk named setup. It typically is used to set up the default values for the entire document with knitr::opts_chunk$set() and loading global R packages.\n\n```{r setup}\n#| include: false\nknitr::opts_chunk$set(\n  comment = '#>', fig.width = 6, fig.height = 6\n)\n```\n\n\nQuarto also introduces some of these as options for execute: in YAML, for similar concepts in other languages.\n---\nformat: html\nexecute:\n  echo: false\n  warning: false\n---"
   },
   {
     "objectID": "materials/03-computation-editors.html#knitropts_chunk-defaults",
@@ -809,7 +844,7 @@
     "href": "materials/03-computation-editors.html#yaml-auto-completion",
     "title": "Get Started with Quarto",
     "section": "YAML Auto-completion",
-    "text": "YAML Auto-completion\nQuarto + RStudio provides a rich YAML auto-completion based on text.\n---\nformat: \n  html:\n    toc-depth: 3\n    #toc-location: body\n---"
+    "text": "YAML Auto-completion\nQuarto + RStudio provides a rich YAML auto-completion based on text.\n---\nformat: \n  html:\n    toc-depth: 3\n    #toc-location: body\n---\n\n ## YAML Auto-completion\nTo find all the available options for a YAML section, you can use Ctrl + Space"
   },
   {
     "objectID": "materials/03-computation-editors.html#knitr-auto-completion",
@@ -840,6 +875,48 @@
     "text": "Rendering\n\nRender in RStudio\n\n\n\nStarts a background job and previews the output\n\n\n\nSystem shell via quarto render\n\n\nquarto render document.qmd # defaults to html\nquarto render document.qmd --to pdf\nquarto render document.qmd --to docx\n\n\nRenders via terminal\n\n\n\n\nR console via quarto R package\n\n\nlibrary(quarto)\nquarto_render(\"document.qmd\") # defaults to html\nquarto_render(\"document.qmd\", output_format = \"pdf\")"
   },
   {
+    "objectID": "materials/03-computation-editors.html#vs-code",
+    "href": "materials/03-computation-editors.html#vs-code",
+    "title": "Get Started with Quarto",
+    "section": "VS Code",
+    "text": "VS Code"
+  },
+  {
+    "objectID": "materials/03-computation-editors.html#vs-code-yaml",
+    "href": "materials/03-computation-editors.html#vs-code-yaml",
+    "title": "Get Started with Quarto",
+    "section": "VS Code YAML",
+    "text": "VS Code YAML"
+  },
+  {
+    "objectID": "materials/03-computation-editors.html#vs-code-yaml-intelligence",
+    "href": "materials/03-computation-editors.html#vs-code-yaml-intelligence",
+    "title": "Get Started with Quarto",
+    "section": "VS Code, YAML Intelligence",
+    "text": "VS Code, YAML Intelligence"
+  },
+  {
+    "objectID": "materials/03-computation-editors.html#jupyterjupyter-lab",
+    "href": "materials/03-computation-editors.html#jupyterjupyter-lab",
+    "title": "Get Started with Quarto",
+    "section": "Jupyter/Jupyter Lab",
+    "text": "Jupyter/Jupyter Lab"
+  },
+  {
+    "objectID": "materials/03-computation-editors.html#jupyter",
+    "href": "materials/03-computation-editors.html#jupyter",
+    "title": "Get Started with Quarto",
+    "section": "Jupyter",
+    "text": "Jupyter\nquarto preview notebook.ipynb --to html"
+  },
+  {
+    "objectID": "materials/03-computation-editors.html#jupyter-yaml",
+    "href": "materials/03-computation-editors.html#jupyter-yaml",
+    "title": "Get Started with Quarto",
+    "section": "Jupyter YAML",
+    "text": "Jupyter YAML\nTreat YAML as a “raw cell” in Jupyter - Jupyter doesn’t care about YAML, but it’s needed/used by Quarto\n\n\n\n\nGet started with Quarto"
+  },
+  {
     "objectID": "materials/04-static-documents.html#html-workhorse",
     "href": "materials/04-static-documents.html#html-workhorse",
     "title": "Get Started with Quarto",
@@ -852,6 +929,13 @@
     "title": "Get Started with Quarto",
     "section": "Quarto and RMarkdown",
     "text": "Quarto and RMarkdown\n\nBasic RMarkdown documents that render to static HTML and PDF are the most transferable directly to Quarto\n\n\n\n\nR Markdown\ntitle: \"My Document\"\noutput:\n  html_document:\n    toc: true\n    number_sections: true\n    css: styles.css\n\nQuarto\ntitle: \"My Document\"\nformat:\n  html:\n    toc: true\n    number-sections: true\n    css: styles.css\n\n\n\n\n\n\nOne source of the difference in syntax is that Quarto is more closely aligned with Pandoc format names and options (thus the use of - as a word separator rather than _)."
+  },
+  {
+    "objectID": "materials/04-static-documents.html#static-documents",
+    "href": "materials/04-static-documents.html#static-documents",
+    "title": "Get Started with Quarto",
+    "section": "Static documents",
+    "text": "Static documents\n\nA static document is your “daily driver” - has the power for a complex table of contents, figure alignment, control of ouptut/code, and other niceties\nUseful as a lab notebook, scratchpad, or the final output for your team"
   },
   {
     "objectID": "materials/04-static-documents.html#table-of-contents-and-sections",
@@ -872,7 +956,7 @@
     "href": "materials/04-static-documents.html#tabsets",
     "title": "Get Started with Quarto",
     "section": "Tabsets",
-    "text": "Tabsets\n::: {.panel-tabset}\n\n## Element 1\n\n## Element 2\n\n:::"
+    "text": "Tabsets\nSplit up and flip between sections of a page, alternative to just two columns\n::: {.panel-tabset}\n\n## Element 1\n\n## Element 2\n\n:::"
   },
   {
     "objectID": "materials/04-static-documents.html#tabsets-1",
@@ -880,6 +964,20 @@
     "title": "Get Started with Quarto",
     "section": "Tabsets",
     "text": "Tabsets\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\nhead(mtcars)\n```\n\n\n\n\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "materials/04-static-documents.html#tabsets-2",
+    "href": "materials/04-static-documents.html#tabsets-2",
+    "title": "Get Started with Quarto",
+    "section": "Tabsets",
+    "text": "Tabsets\n::: {.panel-tabset}"
+  },
+  {
+    "objectID": "materials/04-static-documents.html#code-1",
+    "href": "materials/04-static-documents.html#code-1",
+    "title": "Get Started with Quarto",
+    "section": "Code",
+    "text": "Code\n```{r}\n#| echo: fenced\n#| eval: false\nhead(mtcars)\n```\n\n\n## Output\n\n```{r}\n#| eval: true\n#| echo: false\nhead(mtcars)\n```\n\n:::"
   },
   {
     "objectID": "materials/04-static-documents.html#footnotes",
@@ -1110,14 +1208,14 @@
     "href": "materials/05-presentations.html#sizing",
     "title": "Get Started with Quarto",
     "section": "Sizing",
-    "text": "Sizing\n\n\n\n\n\n\n\nwidth\nThe \"normal\" width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\n\nheight\nThe \"normal\" height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\nformat:\n  revealjs:\n    height: 1080\n    width: 1920"
+    "text": "Sizing\n\n\n\n\n\n\n\nwidth\nThe “normal” width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\n\nheight\nThe “normal” height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\nformat:\n  revealjs:\n    height: 1080\n    width: 1920"
   },
   {
     "objectID": "materials/05-presentations.html#slide-numbering",
     "href": "materials/05-presentations.html#slide-numbering",
     "title": "Get Started with Quarto",
     "section": "Slide numbering",
-    "text": "Slide numbering\n\n\n\n\n\n\n\nslide-number\nDisplay the page number of the current slide\n\ntrue: Show slide number\nfalse: Hide slide number\n\nCan optionally be set as a string that specifies the number formatting:\n\nh.v: Horizontal . vertical slide number\nh/v: Horizontal / vertical slide number\nc: Flattened slide number\nc/t: Flattened slide number / total slides (default)\n\n\n\n\n\n---\nformat:\n  revealjs:\n    slide-number: c/t\n---"
+    "text": "Slide numbering\n\n\n\n\n\n\n\nslide-number\nDisplay the page number of the current slide\n\ntrue: Show slide number\nfalse: Hide slide number\n\nCan optionally be set as a string that specifies the number formatting:\n\nh.v: Horizontal . vertical slide number\nh/v: Horizontal / vertical slide number\nc: Flattened slide number\nc/t: Flattened slide number / total slides (default)\n\n\n\n\n\n---\nformat:\n  revealjs:\n    slide-number: c/t #< collapsed/total\n---"
   },
   {
     "objectID": "materials/05-presentations.html#presentation-preview",
@@ -1132,6 +1230,13 @@
     "title": "Get Started with Quarto",
     "section": "revealjs vs xaringan",
     "text": "revealjs vs xaringan\n\nxaringan for RMarkdown uses only knitr and remark.js, without Pandoc and with some Pandoc-incompatabilities\nrevealjs was a lesser known RMarkdown package, but is the primary HTML slide generator for Quarto\n\n\nIf you loved xaringan, you’ll love revealjs!"
+  },
+  {
+    "objectID": "materials/05-presentations.html#presentation-visual-editor",
+    "href": "materials/05-presentations.html#presentation-visual-editor",
+    "title": "Get Started with Quarto",
+    "section": "Presentation Visual Editor",
+    "text": "Presentation Visual Editor\nUnlike xaringan, Quarto + revealjs can be edited with the RStudio Visual Editor!"
   },
   {
     "objectID": "materials/05-presentations.html#separate-slides",
@@ -1285,7 +1390,7 @@
     "href": "materials/05-presentations.html#stack-layout",
     "title": "Get Started with Quarto",
     "section": "Stack layout",
-    "text": "Stack layout"
+    "text": "Stack layout\nIncremental reveal of images/content"
   },
   {
     "objectID": "materials/05-presentations.html#stack-layout-1",
@@ -1397,14 +1502,28 @@
     "href": "materials/05-presentations.html#asides",
     "title": "Get Started with Quarto",
     "section": "Asides",
-    "text": "Asides\nAsides are like footnotes, but don’t have numbers.\n::: aside\nThey are placed above footnotes if footnotes are present on the page\n:::"
+    "text": "Asides\nAsides are like footnotes, but don’t have numbers1.\n\n::: aside\nThey are placed above footnotes if footnotes are present on the page\n:::\n\n\n\nThey are placed above footnotes if footnotes are present on the page\nUnlike feet that at least have like a shoe size or something?"
   },
   {
     "objectID": "materials/05-presentations.html#code-line-highlighting",
     "href": "materials/05-presentations.html#code-line-highlighting",
     "title": "Get Started with Quarto",
     "section": "Code line-highlighting",
-    "text": "Code line-highlighting\n\n\n```{r}\n#| output-location: column\n#| code-line-numbers: \"|3|5|8|10\"\n\nlibrary(ggplot2)\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")\n```"
+    "text": "Code line-highlighting\nUse #| code-line-numbers: \"3\" syntax - will highlight line and fade other lines\n\n\n```{r}\n#| output-location: column\n#| code-line-numbers: \"3\"\n\nlibrary(ggplot2)\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")\n```"
+  },
+  {
+    "objectID": "materials/05-presentations.html#code-line-highlighting-1",
+    "href": "materials/05-presentations.html#code-line-highlighting-1",
+    "title": "Get Started with Quarto",
+    "section": "Code line-highlighting",
+    "text": "Code line-highlighting\nSometimes you want to make a point though…\n\n\n```{r}\n#| output-location: column\n#| code-line-numbers: \"|3\"\n\nlibrary(ggplot2)\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")\n```"
+  },
+  {
+    "objectID": "materials/05-presentations.html#code-line-highlighting-2",
+    "href": "materials/05-presentations.html#code-line-highlighting-2",
+    "title": "Get Started with Quarto",
+    "section": "Code line-highlighting",
+    "text": "Code line-highlighting\nAnd I often want to “walk through” a set of code!\n\n\n```{r}\n#| output-location: column\n#| code-line-numbers: \"|3|5|8|10\"\n\nlibrary(ggplot2)\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", formula = \"y~x\")\n```"
   },
   {
     "objectID": "materials/05-presentations.html#themesappearance",
@@ -1414,11 +1533,53 @@
     "text": "Themes/Appearance\n\nhttps://quarto.org/docs/presentations/revealjs/themes.html\nSass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables"
   },
   {
-    "objectID": "materials/05-presentations.html#random-html-position-absolute",
-    "href": "materials/05-presentations.html#random-html-position-absolute",
+    "objectID": "materials/05-presentations.html#arbitrary-html-position-absolute",
+    "href": "materials/05-presentations.html#arbitrary-html-position-absolute",
     "title": "Get Started with Quarto",
-    "section": "Random HTML + Position absolute",
-    "text": "Random HTML + Position absolute\n\n\n\nGet started with Quarto"
+    "section": "Arbitrary HTML + Position absolute",
+    "text": "Arbitrary HTML + Position absolute"
+  },
+  {
+    "objectID": "materials/05-presentations.html#position-absolute",
+    "href": "materials/05-presentations.html#position-absolute",
+    "title": "Get Started with Quarto",
+    "section": "Position = absolute",
+    "text": "Position = absolute\n![](image1.png){.absolute top=200 left=0 width=\"350\" height=\"300\"}\n\n![](image2.png){.absolute top=50 right=50 width=\"450\" height=\"250\"}\n\n![](image3.png){.absolute bottom=0 right=50 width=\"300\" height=\"300\"}"
+  },
+  {
+    "objectID": "materials/05-presentations.html#position-.absolute",
+    "href": "materials/05-presentations.html#position-.absolute",
+    "title": "Get Started with Quarto",
+    "section": "Position = .absolute",
+    "text": "Position = .absolute"
+  },
+  {
+    "objectID": "materials/05-presentations.html#auto-animate",
+    "href": "materials/05-presentations.html#auto-animate",
+    "title": "Get Started with Quarto",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate."
+  },
+  {
+    "objectID": "materials/05-presentations.html#auto-animate-1",
+    "href": "materials/05-presentations.html#auto-animate-1",
+    "title": "Get Started with Quarto",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\nAutomatically animate matching elements across slides with Auto-Animate."
+  },
+  {
+    "objectID": "materials/05-presentations.html#auto-animate-2",
+    "href": "materials/05-presentations.html#auto-animate-2",
+    "title": "Get Started with Quarto",
+    "section": "Auto-Animate",
+    "text": "Auto-Animate\n\nIMPORTANT POINT!"
+  },
+  {
+    "objectID": "materials/05-presentations.html#section-3",
+    "href": "materials/05-presentations.html#section-3",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "IMPORTANT POINT!\n\n\n\n\nGet started with Quarto"
   },
   {
     "objectID": "materials/06-websites.html#websites-1",
@@ -1432,7 +1593,14 @@
     "href": "materials/06-websites.html#why-not-wordpress-tumblr-medium.com-blogger.com-etc1",
     "title": "Get Started with Quarto",
     "section": "Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?1",
-    "text": "Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?1\n\nNo R Markdown support (even math support is often nonexistent or awkward)\nHuge benefits of static websites compared to dynamic websites\n\nall static files, no PHP or databases, no login/password, work everywhere (even offline)\ntypically fast to visit (no computation needed on the server side), and easy to speed up via CDN\n\n\nCreate a website\nquarto create-project MySiteName --type website\nCreate a blog\nquarto create-project MyBlogName --type website:blog\n\nRStudio > New Project > New Quarto Blog\n\n\nFrom Yihui: https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36"
+    "text": "Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?1\n\nNo R Markdown support (even math support is often nonexistent or awkward)\nHuge benefits of static websites compared to dynamic websites\nall static files, no PHP or databases, no login/password, work everywhere (even offline)\ntypically fast to visit (no computation needed on the server side), and easy to speed up via CDN\n\nFrom Yihui: https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36"
+  },
+  {
+    "objectID": "materials/06-websites.html#section",
+    "href": "materials/06-websites.html#section",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Create a website\nquarto create-project MySiteName --type website\nCreate a blog\nquarto create-project MyBlogName --type website:blog\n\nRStudio > New Project > New Quarto Blog"
   },
   {
     "objectID": "materials/06-websites.html#creating-a-blog",
@@ -1460,7 +1628,7 @@
     "href": "materials/06-websites.html#core-blog-workflow",
     "title": "Get Started with Quarto",
     "section": "Core blog workflow",
-    "text": "Core blog workflow\n\nCreate a new folder under /posts - this folder will be the “slug” URL\nCreate a new index.qmd within the new folder"
+    "text": "Core blog workflow\n\nCreate a new folder under /posts - this folder will be the “slug” URL (like themockup.blog/2022-07-25-new-post/)\nCreate a new index.qmd within the new folder"
   },
   {
     "objectID": "materials/06-websites.html#rendering-posts",
@@ -1582,11 +1750,18 @@
     "text": "Netlify"
   },
   {
+    "objectID": "materials/06-websites.html#websites-2",
+    "href": "materials/06-websites.html#websites-2",
+    "title": "Get Started with Quarto",
+    "section": "Websites",
+    "text": "Websites\nSimilar to blog, but less of a focus on listing/posts and more focus on individual pages and overall navigation."
+  },
+  {
     "objectID": "materials/06-websites.html#quarto-project",
     "href": "materials/06-websites.html#quarto-project",
     "title": "Get Started with Quarto",
     "section": "Quarto Project",
-    "text": "Quarto Project\n\nhttps://quarto.org/docs/projects/quarto-projects.html\n\n\nWhen you create a project, a _quarto.yml config file is created. Here is an example of what the _quarto.yml looks like:\n\nproject:\n  output-dir: _output\n\ntoc: true\nnumber-sections: true\nbibliography: references.bib  \n  \nformat:\n  html:\n    css: styles.css"
+    "text": "Quarto Project\n\nhttps://quarto.org/docs/projects/quarto-projects.html\n\n\nWhen you create a project, a _quarto.yml config file is created. Here is an example of what the _quarto.yml looks like:\n\nproject:\n  output-dir: _output\n\ntoc: true\nnumber-sections: true\nbibliography: references.bib  \n  \nformat: #< default format inherited by other documents\n  html:\n    css: styles.css"
   },
   {
     "objectID": "materials/06-websites.html#more-complex-example",
@@ -1600,14 +1775,14 @@
     "href": "materials/06-websites.html#quarto-projects",
     "title": "Get Started with Quarto",
     "section": "Quarto Projects",
-    "text": "Quarto Projects\n\nMinimal project has at least 1x file and 1x _quarto.yml\nA project is a directory (and can have sub-directories)\n\n\nA typical project is used to: - Aggregate content (website/blog/book) - Share metadata (YAML config) across multiple files - Render an entire directory together or redirect output to another directory - Freeze computation across a project or team"
+    "text": "Quarto Projects\n\nMinimal project has at least 1x file and 1x _quarto.yml\nA project is a directory (and can have sub-directories)\n\n\nA typical project is used to:\n\nAggregate content (website/blog/book)\n\nShare metadata (YAML config) across multiple files\n\nRender an entire directory together or redirect output to another directory\n\nFreeze computation across a project or team"
   },
   {
     "objectID": "materials/06-websites.html#books",
     "href": "materials/06-websites.html#books",
     "title": "Get Started with Quarto",
     "section": "Books",
-    "text": "Books\nproject:\n  type: book\n\nbook:\n  title: \"mybook\"\n  author: \"Jane Doe\"\n  date: \"8/18/2021\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\n\nbibliography: references.bib\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png"
+    "text": "Books\nproject:\n  type: book\nbook:\n  title: \"mybook\"\n  author: \"Jane Doe\"\n  date: \"8/18/2021\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\nbibliography: references.bib\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png"
   },
   {
     "objectID": "materials/06-websites.html#book-structure",
@@ -1691,35 +1866,56 @@
     "href": "materials/07-plots-tables.html#figure-layout",
     "title": "Get Started with Quarto",
     "section": "Figure layout",
-    "text": "Figure layout\n\n\n\n```{r}\n#| output-location: column\n#| layout-ncol: 2\n#| fig-cap:\n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\nSpeed and Stopping Distances of Cars\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature"
+    "text": "Figure layout\n\nCodeImage\n\n\n\n```{r}\n#| eval: false\n#| layout-ncol: 2\n#| fig-cap:\n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Engine displacement and fuel efficiency in Cars\"\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n```"
   },
   {
     "objectID": "materials/07-plots-tables.html#figure-layout-subcaptions",
     "href": "materials/07-plots-tables.html#figure-layout-subcaptions",
     "title": "Get Started with Quarto",
     "section": "Figure layout, subcaptions",
-    "text": "Figure layout, subcaptions\n\n\n\n```{r}\n#| output-location: column\n#| label: fig-charts\n#| fig-cap: Charts\n#| fig-subcap:\n#|   - \"Cars\"\n#|   - \"Pressure\"\n#| layout-ncol: 2\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\n(a) Cars\n\n\n\n\n\n\n\n(b) Pressure\n\n\n\nCharts\n\nFigure 3: ?(caption)"
+    "text": "Figure layout, subcaptions\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| label: fig-charts\n#| fig-cap: Charts\n#| fig-subcap:\n#|   - \"Cars\"\n#|   - \"mtcars\"\n#| layout-ncol: 2\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n```\n\n\nFigure 3: Charts"
   },
   {
     "objectID": "materials/07-plots-tables.html#figure-layout-custom",
     "href": "materials/07-plots-tables.html#figure-layout-custom",
     "title": "Get Started with Quarto",
     "section": "Figure layout, custom",
-    "text": "Figure layout, custom\n\n\n\n```{r}\n#| output-location: column\n#| layout: [[45,-10, 45], [100]]\n\nplot(cars)\nplot(pressure)\nplot(mtcars)\n```"
+    "text": "Figure layout, custom\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| layout: [[45,-10, 45], [100]]\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +\n  geom_boxplot() +\n  geom_jitter()\n```"
   },
   {
     "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content",
     "href": "materials/07-plots-tables.html#block-layout-arbitrary-content",
     "title": "Get Started with Quarto",
     "section": "Block layout, arbitrary content",
-    "text": "Block layout, arbitrary content\n::: {layout-ncol=2}\n### List One\n\n- Item A\n- Item B\n- Item C\n\n### List Two\n\n- Item X\n- Item Y\n- Item Z\n:::"
+    "text": "Block layout, arbitrary content\n::: {layout-ncol=2}\n## List One\n\n- Item A\n- Item B\n- Item C\n\n## List Two\n\n- Item X\n- Item Y\n- Item Z\n:::"
   },
   {
     "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content-1",
     "href": "materials/07-plots-tables.html#block-layout-arbitrary-content-1",
     "title": "Get Started with Quarto",
     "section": "Block layout, arbitrary content",
+    "text": "Block layout, arbitrary content\n\n\n\nList One\n\nItem A\nItem B\nItem C\n\n\n\nList Two\n\nItem X\nItem Y\nItem Z"
+  },
+  {
+    "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content-2",
+    "href": "materials/07-plots-tables.html#block-layout-arbitrary-content-2",
+    "title": "Get Started with Quarto",
+    "section": "Block layout, arbitrary content",
     "text": "Block layout, arbitrary content\n::: {layout-ncol=2}\n- Item X\n- Item Y\n- Item Z\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. \n:::"
+  },
+  {
+    "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content-3",
+    "href": "materials/07-plots-tables.html#block-layout-arbitrary-content-3",
+    "title": "Get Started with Quarto",
+    "section": "Block layout, arbitrary content",
+    "text": "Block layout, arbitrary content\n\n\n\n\nItem X\nItem Y\nItem Z\n\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa."
+  },
+  {
+    "objectID": "materials/07-plots-tables.html#article-layout",
+    "href": "materials/07-plots-tables.html#article-layout",
+    "title": "Get Started with Quarto",
+    "section": "Article Layout",
+    "text": "Article Layout\nQuarto supports a variety of page layout options that enable you to author content that:\n\nFills the main content region .column-body\nOverflows the content region .column-body-outset\nSpans the entire page .column-page\nOccupies the document margin .column-margin\n\n\nPut it in a div, and assign a specific class\n:::{.column-body-outset}\nOutset content...\n:::\n:::{.column-margin}\nMargin/aside figure\n:::"
   },
   {
     "objectID": "materials/07-plots-tables.html#ggplot2",
@@ -1778,6 +1974,20 @@
     "text": "ggplot2\n\n```{r}\n#| fig-align: center\nmass_flipper\n```"
   },
   {
+    "objectID": "materials/07-plots-tables.html#interactivity",
+    "href": "materials/07-plots-tables.html#interactivity",
+    "title": "Get Started with Quarto",
+    "section": "Interactivity",
+    "text": "Interactivity\nQuarto supports JupyterWidgets (with Jupyter) or htmlwidgets in R/knitr\n\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=-77.0168, lat=38.7814, popup=\"You are here - in Maryland!\")"
+  },
+  {
+    "objectID": "materials/07-plots-tables.html#observable.js",
+    "href": "materials/07-plots-tables.html#observable.js",
+    "title": "Get Started with Quarto",
+    "section": "Observable.js",
+    "text": "Observable.js\n\nQuarto includes native support for Observable JS, a set of enhancements to vanilla JavaScript created by Mike Bostock (also the author of D3). Observable JS is distinguished by its reactive runtime, which is especially well suited for interactive data exploration and analysis.\n\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlotData\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)\n\n\n\n\n\n\n\n\n\nInputs.table(filtered)\n\n\n\n\n\n\n\n\n\n\ndata = FileAttachment(\"palmer-penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min < penguin.bill_length &&\n         islands.includes(penguin.island);\n})"
+  },
+  {
     "objectID": "materials/07-plots-tables.html#ggiraph",
     "href": "materials/07-plots-tables.html#ggiraph",
     "title": "Get Started with Quarto",
@@ -1799,27 +2009,6 @@
     "text": "ggiraph"
   },
   {
-    "objectID": "materials/07-plots-tables.html#plotly",
-    "href": "materials/07-plots-tables.html#plotly",
-    "title": "Get Started with Quarto",
-    "section": "plotly",
-    "text": "plotly"
-  },
-  {
-    "objectID": "materials/07-plots-tables.html#reminder-about-layout",
-    "href": "materials/07-plots-tables.html#reminder-about-layout",
-    "title": "Get Started with Quarto",
-    "section": "Reminder about layout",
-    "text": "Reminder about layout"
-  },
-  {
-    "objectID": "materials/07-plots-tables.html#your-turn-1",
-    "href": "materials/07-plots-tables.html#your-turn-1",
-    "title": "Get Started with Quarto",
-    "section": "YOUR TURN",
-    "text": "YOUR TURN"
-  },
-  {
     "objectID": "materials/07-plots-tables.html#gt-gtextras",
     "href": "materials/07-plots-tables.html#gt-gtextras",
     "title": "Get Started with Quarto",
@@ -1827,39 +2016,39 @@
     "text": "gt + gtExtras\n\nWith the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer."
   },
   {
+    "objectID": "materials/07-plots-tables.html#gt",
+    "href": "materials/07-plots-tables.html#gt",
+    "title": "Get Started with Quarto",
+    "section": "gt",
+    "text": "gt\n\nlibrary(dplyr, warn.conflicts = FALSE)\nlibrary(gt)\nlibrary(gtExtras)\n\nhead(mtcars) |> \n  gt() |> \n  tab_options(\n    table.font.size = px(40),\n    column_labels.font.size = px(45)\n  )\n\n\n\n\n\n  \n  \n    \n      mpg\n      cyl\n      disp\n      hp\n      drat\n      wt\n      qsec\n      vs\n      am\n      gear\n      carb\n    \n  \n  \n    21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n    21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n    22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n    21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n    18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n    18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1\n  \n  \n  \n\n\n\n\n\n\ngtExtras provides additional helper functions to gt\ngtsummary extends gt to descriptive statistics and statistical summaries of models"
+  },
+  {
     "objectID": "materials/07-plots-tables.html#load-libraries",
     "href": "materials/07-plots-tables.html#load-libraries",
     "title": "Get Started with Quarto",
     "section": "Load libraries",
-    "text": "Load libraries\n\nlibrary(dplyr, warn.conflicts = FALSE)\nlibrary(gt)\nlibrary(gtExtras)\n\npenguins <- palmerpenguins::penguins\n\npenguin_sum <- penguins |>\n  na.omit() |>\n  group_by(species, sex) |>\n  summarise(\n    n = n(),\n    bill_len = mean(bill_length_mm),\n    plt_bill = list(bill_length_mm),\n    mass = mean(body_mass_g),\n    plt_mass = list(body_mass_g),\n    .groups = \"drop\"\n  ) |> \n  arrange(species, desc(bill_len))\n\npenguin_sum\n\n# A tibble: 6 × 7\n  species   sex        n bill_len plt_bill    mass plt_mass  \n  <fct>     <fct>  <int>    <dbl> <list>     <dbl> <list>    \n1 Adelie    male      73     40.4 <dbl [73]> 4043. <int [73]>\n2 Adelie    female    73     37.3 <dbl [73]> 3369. <int [73]>\n3 Chinstrap male      34     51.1 <dbl [34]> 3939. <int [34]>\n4 Chinstrap female    34     46.6 <dbl [34]> 3527. <int [34]>\n5 Gentoo    male      61     49.5 <dbl [61]> 5485. <int [61]>\n6 Gentoo    female    58     45.6 <dbl [58]> 4680. <int [58]>"
+    "text": "Load libraries\n\npenguins <- palmerpenguins::penguins\n\npenguin_sum <- penguins |>\n  na.omit() |>\n  group_by(species, sex) |>\n  summarise(\n    n = n(),\n    bill_len = mean(bill_length_mm),\n    plt_bill = list(bill_length_mm),\n    mass = mean(body_mass_g),\n    plt_mass = list(body_mass_g),\n    .groups = \"drop\"\n  ) |> \n  arrange(species, desc(bill_len))\n\npenguin_sum\n\n# A tibble: 6 × 7\n  species   sex        n bill_len plt_bill    mass plt_mass  \n  <fct>     <fct>  <int>    <dbl> <list>     <dbl> <list>    \n1 Adelie    male      73     40.4 <dbl [73]> 4043. <int [73]>\n2 Adelie    female    73     37.3 <dbl [73]> 3369. <int [73]>\n3 Chinstrap male      34     51.1 <dbl [34]> 3939. <int [34]>\n4 Chinstrap female    34     46.6 <dbl [34]> 3527. <int [34]>\n5 Gentoo    male      61     49.5 <dbl [61]> 5485. <int [61]>\n6 Gentoo    female    58     45.6 <dbl [58]> 4680. <int [58]>"
   },
   {
     "objectID": "materials/07-plots-tables.html#gtextras",
     "href": "materials/07-plots-tables.html#gtextras",
     "title": "Get Started with Quarto",
     "section": "gtExtras",
-    "text": "gtExtras\n\n```{r}\n#| output-location: slide\n#| fig-width: 10\ngt(penguin_sum) |>\n  gt_plt_dist(\n    plt_bill, \n    line_color = \"#447099\", \n    fill = \"#75aadb\",\n    fig_dim = c(15, 50)\n    ) |> \n  gt_plt_dist(\n    plt_mass, \n    line_color = \"#447099\", \n    fill = \"#75aadb\"\n    ) |> \n  gt_add_divider(\n    c(bill_len, mass), \"left\", \n    weight = px(1), color = \"#d3d3d3\"\n    ) |> \n  cols_align(\"left\", species) |> \n  text_transform(\n    cells_body(sex),\n    fn = function(x){\n      ifelse(x == \"male\", \"mars\", \"venus\")\n                 }) %>% \n  gt_fa_column(\n    column = sex,\n    palette = c(\"#af8dc3\", \"#7fbf7b\")\n    ) |> \n  gt_theme_nytimes() |> \n  tab_options(data_row.padding = px(2),\n              table.font.size = px(40),\n              column_labels.font.size = px(35))\n```"
+    "text": "gtExtras\n\n```{r}\n#| output-location: slide\n#| fig-width: 10\ngt(penguin_sum) |>\n  gt_plt_dist(\n    plt_bill, \n    line_color = \"#447099\", \n    fill = \"#75aadb\",\n    fig_dim = c(15, 50)\n    ) |> \n  gt_plt_dist(\n    plt_mass, \n    line_color = \"#447099\", \n    fill = \"#75aadb\"\n    ) |> \n  gt_add_divider(\n    c(bill_len, mass), \"left\", \n    weight = px(1), color = \"#d3d3d3\"\n    ) |> \n  cols_align(\"left\", species) |> \n  text_transform(\n    cells_body(sex),\n    fn = function(x){\n      sex_planet <- ifelse(x == \"male\", \"mars\", \"venus\")\n      \n      purrr::map(\n        sex_planet, \n        ~fontawesome::fa(\n          .x, height = \"45px\",\n          fill = ifelse(.x ==\"mars\", \"#af8dc3\", \"#7fbf7b\")))\n                 }) |>\n  gt_theme_nytimes() |>\n  tab_options(data_row.padding = px(2),\n              table.font.size = px(40),\n              column_labels.font.size = px(35))\n```"
   },
   {
     "objectID": "materials/07-plots-tables.html#gtextras-output",
     "href": "materials/07-plots-tables.html#gtextras-output",
     "title": "Get Started with Quarto",
     "section": "gtExtras",
-    "text": "gtExtras\n\n\n\n\n\n  \n  \n    \n      species\n      sex\n      n\n      bill_len\n      plt_bill\n      mass\n      plt_mass\n    \n  \n  \n    Adelie\nMars\n73\n40.39041\n          \n4043.493\n          \n    Adelie\nVenus\n73\n37.25753\n          \n3368.836\n          \n    Chinstrap\nMars\n34\n51.09412\n          \n3938.971\n          \n    Chinstrap\nVenus\n34\n46.57353\n          \n3527.206\n          \n    Gentoo\nMars\n61\n49.47377\n          \n5484.836\n          \n    Gentoo\nVenus\n58\n45.56379\n          \n4679.741"
+    "text": "gtExtras\n\n\n\n\n\n  \n  \n    \n      species\n      sex\n      n\n      bill_len\n      plt_bill\n      mass\n      plt_mass\n    \n  \n  \n    Adelie\n\n73\n40.39041\n          \n4043.493\n          \n    Adelie\n\n73\n37.25753\n          \n3368.836\n          \n    Chinstrap\n\n34\n51.09412\n          \n3938.971\n          \n    Chinstrap\n\n34\n46.57353\n          \n3527.206\n          \n    Gentoo\n\n61\n49.47377\n          \n5484.836\n          \n    Gentoo\n\n58\n45.56379\n          \n4679.741"
   },
   {
     "objectID": "materials/07-plots-tables.html#gtextras-1",
     "href": "materials/07-plots-tables.html#gtextras-1",
     "title": "Get Started with Quarto",
     "section": "gtExtras",
-    "text": "gtExtras\n\npenguins |> \n  gt_plt_summary()\n\n\n\n\n\n  \n    \n      penguins\n    \n    \n      344 rows x 8 cols\n    \n  \n  \n    \n      \n      Column\n      Plot Overview\n      Missing\n      Mean\n      Median\n      SD\n    \n  \n  \n    \nspecies\n                  3 categories\n0.0%\n—\n—\n—\n    \nisland\n                  3 categories\n0.0%\n—\n—\n—\n    \nbill_length_mm\n                  3260\n0.6%\n43.9\n44.5\n5.5\n    \nbill_depth_mm\n                  13.121.5\n0.6%\n17.2\n17.3\n2.0\n    \nflipper_length_mm\n                  172231\n0.6%\n200.9\n197.0\n14.1\n    \nbody_mass_g\n                  2.7K6.3K\n0.6%\n4,201.8\n4,050.0\n802.0\n    \nsex\n                  2 categories\n3.2%\n—\n—\n—\n    \nyear\n                  2.007K2.009K\n0.0%\n2,008.0\n2,008.0\n0.8"
-  },
-  {
-    "objectID": "materials/07-plots-tables.html#reactable",
-    "href": "materials/07-plots-tables.html#reactable",
-    "title": "Get Started with Quarto",
-    "section": "reactable",
-    "text": "reactable\n\n\n\nGet started with Quarto"
+    "text": "gtExtras\n\npenguins |> \n  gt_plt_summary() |> \n  tab_options(\n    table.font.size = px(40),\n    column_labels.font.size = px(45),\n    heading.title.font.size = px(80)\n  )\n\n\n\n\n\n  \n    \n      penguins\n    \n    \n      344 rows x 8 cols\n    \n  \n  \n    \n      \n      Column\n      Plot Overview\n      Missing\n      Mean\n      Median\n      SD\n    \n  \n  \n    \nspecies\n                  3 categories\n0.0%\n—\n—\n—\n    \nisland\n                  3 categories\n0.0%\n—\n—\n—\n    \nbill_length_mm\n                  3260\n0.6%\n43.9\n44.5\n5.5\n    \nbill_depth_mm\n                  13.121.5\n0.6%\n17.2\n17.3\n2.0\n    \nflipper_length_mm\n                  172231\n0.6%\n200.9\n197.0\n14.1\n    \nbody_mass_g\n                  2.7K6.3K\n0.6%\n4,201.8\n4,050.0\n802.0\n    \nsex\n                  2 categories\n3.2%\n—\n—\n—\n    \nyear\n                  2.007K2.009K\n0.0%\n2,008.0\n2,008.0\n0.8"
   },
   {
     "objectID": "materials/08-advanced-knitr.html#parameters",
@@ -1936,14 +2125,14 @@
     "href": "materials/08-advanced-knitr.html#install-flow",
     "title": "Get Started with Quarto",
     "section": "Install Flow",
-    "text": "Install Flow\nthomasmock$ quarto install extension quarto-ext/fontawesome\n\n\nQuarto extensions may execute code when documents are rendered. If you do not \ntrust the authors of the extension, we recommend that you do not install or \nuse the extension.\n ? Do you trust the authors of this extension (Y/n) › Yes\n[✓] Downloading\n[✓] Unzipping\n    Found 1 extension.\n\n\n\nThe following changes will be made:\nFont Awesome support   [Install]   0.0.1 (shortcode)\n ? Would you like to continue (Y/n) › Yes\n\n[✓] Extension installation complete.\nLearn more about this extension at https://github.com/quarto-ext/fontawesome\n\n\n\n\n```{bash}\nquarto list extensions\n```\n\nId                        Version    Contributes\nquarto-ext/fontawesome    0.0.1      shortcodes \nquarto-ext/lightbox       0.0.1      filters"
+    "text": "Install Flow\nthomasmock$ quarto install extension quarto-ext/fontawesome\n\n\nQuarto extensions may execute code when documents are rendered. If you do not \ntrust the authors of the extension, we recommend that you do not install or \nuse the extension.\n ? Do you trust the authors of this extension (Y/n) › Yes\n[✓] Downloading\n[✓] Unzipping\n    Found 1 extension.\n\n\n\nThe following changes will be made:\nFont Awesome support   [Install]   0.0.1 (shortcode)\n ? Would you like to continue (Y/n) › Yes\n\n[✓] Extension installation complete.\nLearn more about this extension at https://github.com/quarto-ext/fontawesome\n\n\n\n\n```{bash}\nquarto list extensions\n```\n\nId                            Version    Contributes\nquarto-ext/fontawesome        0.0.1      shortcodes \nquarto-ext/lightbox           0.0.1      filters    \nquarto-ext/grouped-tabsets    0.0.1      filters"
   },
   {
     "objectID": "materials/08-advanced-knitr.html#check-fontawesome",
     "href": "materials/08-advanced-knitr.html#check-fontawesome",
     "title": "Get Started with Quarto",
     "section": "Check fontawesome",
-    "text": "Check fontawesome\nThere once was a  who was lost at \nHe was rescued by a  and a \n\n\nThere once was a {{< fa dog >}} who was lost at {{< fa water >}}\n\nHe was rescued by a {{< fa sailboat >}} and a {{< fa life-ring >}}"
+    "text": "Check fontawesome\nThere once was a  who was lost at \nHe was rescued by a  and a wee \n\n\nThere once was a {{< fa dog >}} who was lost at {{< fa water >}}\n\nHe was rescued by a {{< fa sailboat >}} and a wee {{< fa life-ring >}}"
   },
   {
     "objectID": "materials/08-advanced-knitr.html#lightbox-extension",

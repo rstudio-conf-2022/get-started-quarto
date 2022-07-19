@@ -1,0 +1,69 @@
+---
+output: html
+execute: 
+  eval: true
+---
+
+```{r}
+library(ggplot2)
+```
+
+
+## Figure layout, ncol
+
+```{r}
+#| echo: fenced
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Engine displacement and fuel efficiency in Cars"
+
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
+```
+
+
+## Subcaptions:
+
+```{r}
+#| echo: fenced
+#| label: fig-charts
+#| fig-cap: Charts
+#| fig-subcap: 
+#|   - "Cars"
+#|   - "mtcars"
+#| layout-ncol: 2
+
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
+```
+
+## Figure layout, custom
+
+```{r}
+#| echo: fenced
+#| layout: [[45,-10, 45], [100]]
+
+cars |> 
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = disp, y = mpg)) +
+  geom_point()
+
+mtcars |> 
+  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +
+  geom_boxplot() +
+  geom_jitter()
+```
