@@ -194,7 +194,7 @@ RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
 
 ![](images/quarto-tab-complete.png)
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open a new Quarto document in RStudio
 -   Try <kbd>`Ctrl + space`</kbd> to see the available YAML options
@@ -236,7 +236,7 @@ quarto_render("document.qmd") # defaults to html
 quarto_render("document.qmd", output_format = "pdf")
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Use RStudio to create a new default Quarto document
 -   Add a title and your name as the author
@@ -317,9 +317,10 @@ You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.
 |     ###### Header 6 | ###### Header 6 |
 +---------------------+-----------------+
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
+- Explore, break, discuss with your neighbor
 
 ## Tables
 
@@ -588,7 +589,7 @@ Here is something under construction
     This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
     :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/callout-boxes.qmd`
 -   Try changing the types of callouts/remove them from code boxes and then render
@@ -728,7 +729,11 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 
 <iframe src="https://tldr.ostera.io/" height="800px" width="1200px"></iframe>
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+
+- Navigate to a file with the "cheat code" <kbd>Ctrl + I</kbd> and then type 
+
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/figure-layout.qmd`
 
@@ -835,7 +840,7 @@ Funny boston terrier videos
 
 ::::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/figure-layout-2.qmd`
 - Try out the various types of subfigures, chahing the nrow/ncol

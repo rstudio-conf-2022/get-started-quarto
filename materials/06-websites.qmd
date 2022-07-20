@@ -108,7 +108,7 @@ RStudio \> New Project \> New Quarto Blog
 -   Create a new folder under `/posts` - this folder will be the "slug" URL (like `themockup.blog/2022-07-25-new-post/`)
 -   Create a new `index.qmd` within the new folder
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Create a new RStudio project (in a separate RStudio session) and select Quarto blog
 -   Give it a name
@@ -129,7 +129,7 @@ These will preview the entire website
 
 When you render the website, it will re-execute code in older posts. Not ideal in many situations!
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Let's render the `index.qmd` together!
 -   Now, let's try Build \> Render Website
@@ -171,7 +171,7 @@ execute:
 
 I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a `tidymodels` workshop with grid-tuning.
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Add a `_metadata.yml` to the `/posts/` directory
 -   Add the freeze code to `_metadata.yml`
@@ -188,7 +188,7 @@ I typically use cache throughout various types of outputs when I have computatio
 
 -   Marvel at the "beautiful" JSON - it's not for you, it's for the machine
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Create a new folder in `/posts/` - title it `2022-07-26-my-first-post`
 -   Create a new blank `index.qmd` in that folder, add a `format: html` YAML header
@@ -244,7 +244,7 @@ about:
 ![](https://quarto.org/docs/websites/images/about-broadside.png)
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open your about page (`about.qmd`)
 -   Change some of the details, add more details and choose a specific template (jolla, trestles, solana, marquee, broadside)
@@ -284,7 +284,7 @@ about:
 <img src="https://quarto.org/docs/websites/images/listing-table.png" height="400px"/>
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open your existing Quarto blog from before
 -   Let's change the listing type of our blog - change from default to `grid`
@@ -471,7 +471,7 @@ listing:
 
 <!-- -   Explore your site! -->
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 In your blog project:
 

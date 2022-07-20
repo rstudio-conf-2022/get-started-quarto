@@ -10,6 +10,12 @@ editor_options:
 
 by Tom Mock
 
+:::{.callout-warning}
+This page is under construction and will be updated continuously until the workshop date. If you are a workshop attendee - please clone this repository via RStudio on evening of July 24th or morning of July 25th.
+:::
+
+Please go to the workshop homepage for full instructions: <https://rstudio-conf-2022.github.io/get-started-quarto/>
+
 ------------------------------------------------------------------------
 
 🗓️ July 25 and 26, 2022\
@@ -42,8 +48,22 @@ install.packages(pkg_list)
 
 ## Workshop Materials
 
-On Sunday July 24th - clone this repo!
-<https://github.com/rstudio-conf-2022/get-started-quarto>
+On Sunday July 24th - clone this repo in RStudio!
+<https://github.com/rstudio-conf-2022/get-started-quarto.git>
+
+:::
+
+:::{.callout-caution collapse="true"}
+
+## How to clone a Github repo
+
+1. Navigate to <https://github.com/rstudio-conf-2022/get-started-quarto>
+
+1. Click on the green "Code" button and copy the url under the HTTPS tab <https://github.com/rstudio-conf-2022/get-started-quarto.git>
+
+1. In RStudio, use File > New Project > Version Control > From Git > and then paste the URL into the source repo box and then click enter!
+
+![](materials/images/clone-repo.gif)
 
 :::
 

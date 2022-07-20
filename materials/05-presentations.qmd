@@ -154,7 +154,7 @@ format:
 
 ![](images/presentation-tab.png){height="800px"}
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Using RStudio, create a new `revealjs` Quarto presentation
 -   Change YAML:
@@ -376,7 +376,7 @@ Appears second
     Appears second
     :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/05-presentations/revealjs-penguins.qmd`
 -   Explore the code
@@ -728,7 +728,7 @@ Asides are like footnotes, but don't have numbers[^3].
     They are placed above footnotes if footnotes are present on the page
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Create a new `revealjs` presentation
 -   Add several slides, each one should have *one* element:

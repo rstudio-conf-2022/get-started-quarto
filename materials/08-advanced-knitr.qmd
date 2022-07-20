@@ -157,7 +157,7 @@ penguin_names |>
   purrr::walk(render_fun) # or lapply(penguin_names, render_fun)
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/08-knitr/penguin-params.qmd`
 -   Open `materials/workshop/08-knitr/render-params.R`
@@ -350,7 +350,7 @@ filters:
 ![The Last Lovely Image](mv-3.jpg){group="my-gallery"}
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/08-knitr/lightbox-extension.qmd`
 -   Explore and render it!

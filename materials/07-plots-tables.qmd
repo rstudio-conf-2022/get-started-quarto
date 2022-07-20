@@ -88,7 +88,7 @@ The two states of Howard.
 Elephant
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-static/figure-layout`
 -   Swap between row and col layout
@@ -190,7 +190,7 @@ Row: 25
 :::
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-visuals/figure-layout2.qmd`
 
@@ -279,7 +279,7 @@ mtcars |>
 ![](images/figure-layout-custom.jpeg)
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-visuals/plot-layout.qmd`
 
@@ -362,7 +362,7 @@ Margin/aside figure
 :::
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-visuals/plots.qmd`
 
@@ -701,7 +701,7 @@ penguins |>
   )
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-static/gt-summary.qmd`
 -   Open `materials/workshop/07-static/stat-html.qmd`

@@ -256,7 +256,7 @@ plt.show()
 
 Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`</kbd>
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - In a blank Quarto doc:
   - Insert a code chunk
@@ -336,7 +336,7 @@ The radius of the circle is $radius.
 
 :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - Open `materials/workshop/03-authoring/inline-code.qmd`
 - Look through the source code, and then render it
@@ -536,10 +536,11 @@ List of 2
 # Demo: Navigating within RStudio {background-color="black"}
 
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - Open RStudio and `materials/workshop/visual-editor.qmd`
 - Explore the navigation options
+- Turn Visual Editor mode on/off and explore the sections
 - Render the document and find the broken code, then fix it and render again!
 
 ## Chunk names, good and bad
@@ -709,7 +710,7 @@ You can use tab-completion inside `knitr` chunk options for RMarkdown style or Q
 
 ![](https://quarto.org/docs/visual-editor/images/visual-editing.png)
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - Open `materials/workshop/03-authoring/visual-editor.qmd`
 - Explore the UI elements and visual editor mode
@@ -752,7 +753,7 @@ quarto_render("document.qmd") # defaults to html
 quarto_render("document.qmd", output_format = "pdf")
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"}
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
 

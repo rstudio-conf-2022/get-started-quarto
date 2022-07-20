@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "rstudio::conf 2022 Workshop",
     "section": "",
-    "text": "by Tom Mock\n\n🗓️ July 25 and 26, 2022\n⏰ 09:00 - 17:00\n🏨 TODO ADD ROOM\n✍️ rstd.io/get-started-quarto"
+    "text": "by Tom Mock\n\n\n\n\n\n\nWarning\n\n\n\nThis page is under construction and will be updated continuously until the workshop date. If you are a workshop attendee - please clone this repository via RStudio on evening of July 24th or morning of July 25th.\n\n\nPlease go to the workshop homepage for full instructions: https://rstudio-conf-2022.github.io/get-started-quarto/\n\n🗓️ July 25 and 26, 2022\n⏰ 09:00 - 17:00\n🏨 TODO ADD ROOM\n✍️ rstd.io/get-started-quarto"
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -67,14 +67,21 @@
     "href": "materials/01-intro-quarto.html#your-tas",
     "title": "Get Started with Quarto",
     "section": "Your TAs",
-    "text": "Your TAs\nCarlos Scheidegger - RStudio + Quarto\nTan Ho - Data Developer at ABIC\nKatie Masiello - RStudio + Solutions Engineering\nIsabel Zimmerman - RStudio + TidyModels"
+    "text": "Your TAs\n\n\n\nCarlos Scheidegger - RStudio + Quarto\n\n\n\nIsabel Zimmerman - RStudio + TidyModels\n\n\n\n\n\nKatie Masiello - RStudio + Solutions Engineering\n\n\n\nTan Ho - ML Engineer at Zelus Analytics"
   },
   {
     "objectID": "materials/01-intro-quarto.html#workshop-prep",
     "href": "materials/01-intro-quarto.html#workshop-prep",
     "title": "Get Started with Quarto",
     "section": "Workshop Prep",
-    "text": "Workshop Prep\n\nAre you on the latest version of RStudio i.e. v2022.07.0-548 or later?\nAre you on the latest version of Quarto (v1.0.15 or greater)?\nHave you cloned the GitHub repo from https://github.com/rstudio-conf-2022/get-started-quarto?\nInstalled the necessary packages?\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\"\n  )\ninstall.packages(pkg_list)\n\nGreat, let’s get started!"
+    "text": "Workshop Prep\n\nAre you on the latest version of RStudio i.e. v2022.07.0-548 or later?\nAre you on the latest version of Quarto (preview v1.0.32 or v1.0)?\nHave you cloned the GitHub repo from https://github.com/rstudio-conf-2022/get-started-quarto?\nInstalled the necessary packages?\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\nGreat, let’s get started!"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#structure-of-the-workshop",
+    "href": "materials/01-intro-quarto.html#structure-of-the-workshop",
+    "title": "Get Started with Quarto",
+    "section": "Structure of the workshop",
+    "text": "Structure of the workshop\n\nLecture\n“Your turn” or “Our Turn”\nBreaks"
   },
   {
     "objectID": "materials/01-intro-quarto.html#hello-quarto",
@@ -200,7 +207,7 @@
     "href": "materials/01-intro-quarto.html#why-quarto-instead-of-rmarkdown",
     "title": "Get Started with Quarto",
     "section": "Why Quarto, instead of RMarkdown",
-    "text": "Why Quarto, instead of RMarkdown\n\nBatteries included, shared syntax\nChoose your own editor and your preferred data science language\nBetter accessibility and richer features out of the box\nMore enhancements overtime - RMarkdown still maintained, but majority of new features built into Quarto"
+    "text": "Why Quarto, instead of RMarkdown\n\nBatteries included, shared syntax\nChoose your own editor and your preferred data science language\nBetter accessibility and richer features out of the box\nMore enhancements overtime - RMarkdown still maintained, but majority of new features built into Quarto\n\n\nCollaboration with other colleagues in other languages - shared format, choose your editor and your native language"
   },
   {
     "objectID": "materials/01-intro-quarto.html#why-quarto-1",
@@ -557,14 +564,14 @@
     "href": "materials/02-authoring.html#paths",
     "title": "Get Started with Quarto",
     "section": "Paths",
-    "text": "Paths\nQuarto documents reference from their existing folder/directory.\n\nYou can reference sub-directories/folders easily:\n![](images/image.png)\n\n\nBut what about going “backwards” i.e. to a parent directory?\nThis workshop is at \"get-started-quarto/materials/\"\n\n\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\nhere() always starts at the top-level directory of a RProject"
+    "text": "Paths\nQuarto documents reference from their existing folder/directory.\n\nYou can reference sub-directories/folders easily:\n![](images/image.png)\n\n\nBut what about going “backwards” i.e. to a parent directory?\nThis workshop is at \"get-started-quarto/materials/\"\n\n\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\nhere() always starts at the top-level directory of a RProject"
   },
   {
     "objectID": "materials/02-authoring.html#absolute-vs-relative",
     "href": "materials/02-authoring.html#absolute-vs-relative",
     "title": "Get Started with Quarto",
     "section": "Absolute vs Relative:",
-    "text": "Absolute vs Relative:\nIn other situations, like markdown, YAML or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\n\n\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth - /.. or / = start from root directory\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\"\n\n\n\n\nor: \"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"_site\"                   \n [5] \"404.qmd\"                  \"choose-chinstrap.html\"   \n [7] \"docs\"                     \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.png\"             \n[13] \"README.md\"                \"workshop-conf-2022.Rproj\""
+    "text": "Absolute vs Relative:\nIn other situations, like markdown, YAML or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\n\n\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth - /.. or / = start from root directory\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\n\n\nor: \"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\""
   },
   {
     "objectID": "materials/02-authoring.html#navigating-in-the-terminal",
@@ -606,7 +613,7 @@
     "href": "materials/02-authoring.html#figure-divs",
     "title": "Get Started with Quarto",
     "section": "Figure Divs",
-    "text": "Figure Divs\nNote that the last paragraph in the div block is used as the figure caption.\n::: {#fig-dog}\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/iWR9gwxW-4k\"></iframe>\n\nFunny boston terrier videos\n:::\n\n\n\n\nFigure 2: Funny boston terrier videos"
+    "text": "Figure Divs\nNote that the last paragraph in the div block is used as the figure caption.\n::: {#fig-dog}\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/U-WQ277UZtY\"></iframe>\n\nFunny boston terrier videos\n:::\n\n\n\n\nFigure 2: Funny boston terrier videos"
   },
   {
     "objectID": "materials/02-authoring.html#figure-divs-1",

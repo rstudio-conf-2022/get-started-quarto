@@ -426,27 +426,53 @@ We’ll teach you
 </section>
 <section id="your-tas" class="slide level2">
 <h2>Your TAs</h2>
-<p>Carlos Scheidegger - RStudio + Quarto</p>
-<p>Tan Ho - Data Developer at ABIC</p>
-<p>Katie Masiello - RStudio + Solutions Engineering</p>
-<p>Isabel Zimmerman - RStudio + TidyModels</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Carlos Scheidegger - RStudio + Quarto</strong></p>
+<p><img data-src="images/carlos.jpeg" style="height: 300px;"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Isabel Zimmerman - RStudio + TidyModels</strong></p>
+<p><img data-src="images/isabel.png" style="height: 300px;"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Katie Masiello - RStudio + Solutions Engineering</strong></p>
+<p><img data-src="images/katie.png" style="height: 300px;"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><strong>Tan Ho - ML Engineer at Zelus Analytics</strong></p>
+<p><img data-src="images/tan.jpeg" style="height: 300px;"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="workshop-prep" class="slide level2">
 <h2>Workshop Prep</h2>
 <ul>
 <li>Are you on the latest version of RStudio i.e.&nbsp;<a href="https://www.rstudio.com/products/rstudio/download/#download"><code>v2022.07.0-548</code> or later</a>?</li>
-<li>Are you on the <a href="https://quarto.org/docs/get-started/">latest version of Quarto</a> (<code>v1.0.15</code> or greater)?</li>
+<li>Are you on the <a href="https://quarto.org/docs/get-started/">latest version of Quarto</a> (preview <code>v1.0.32</code> or <code>v1.0</code>)?</li>
 <li>Have you cloned the GitHub repo from <a href="https://github.com/rstudio-conf-2022/get-started-quarto" class="uri">https://github.com/rstudio-conf-2022/get-started-quarto</a>?</li>
 <li>Installed the necessary packages?</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pkg_list <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="st">"tidyverse"</span>, <span class="st">"gt"</span>, <span class="st">"gtExtras"</span>, <span class="st">"reactable"</span>, <span class="st">"ggiraph"</span>, <span class="st">"here"</span>, <span class="st">"quarto"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="st">"rmarkdown"</span>, <span class="st">"gtsummary"</span>, <span class="st">"palmerpenguins"</span>, <span class="st">"fs"</span>, <span class="st">"skimr"</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a>  )</span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">install.packages</span>(pkg_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><span class="r-fit-text">Great, let’s get started!</span></p>
 </div>
+</section>
+<section id="structure-of-the-workshop" class="slide level2">
+<h2>Structure of the workshop</h2>
+<ul>
+<li>Lecture</li>
+<li>“Your turn” or “Our Turn”</li>
+<li>Breaks</li>
+</ul>
 </section>
 <section id="hello-quarto" class="slide level2">
 <h2>Hello Quarto</h2>
@@ -626,8 +652,8 @@ We’ll teach you
 </div>
 </section>
 <section>
-<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<section id="our-turn" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Our Turn</h1>
 <ul>
 <li>Open RStudio</li>
 <li>At the top left, click the new file button and create a new Quarto document</li>
@@ -658,6 +684,9 @@ We’ll teach you
 <li>Better accessibility and richer features out of the box</li>
 <li>More enhancements overtime - RMarkdown still maintained, but majority of new features built into Quarto</li>
 </ul>
+<div class="fragment">
+<p>Collaboration with other colleagues in other languages - shared format, choose your editor and your native language</p>
+</div>
 </section>
 <section id="why-quarto-1" class="slide level2">
 <h2>Why Quarto</h2>
@@ -1110,10 +1139,11 @@ Ease of Use VS Full Details
 
 <img data-src="images/quarto-cli-help.png" alt="A screenshot of a Visual and Source Quarto document" width="1200" class="r-stretch quarto-figure-center"></section></section>
 <section>
-<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<section id="our-turn-1" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Our Turn</h1>
 <ul>
-<li>In RStudio, open the Terminal:</li>
+<li>In RStudio, create a new blank document via the File Pane</li>
+<li>In RStudio, open the integrated Terminal:</li>
 </ul>
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">quarto</span> <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
