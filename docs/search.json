@@ -2245,5 +2245,12 @@
     "title": "Get Started with Quarto",
     "section": "",
     "text": "Howard on a couch\n\n\n\n\n \n\n\n\n\n\nHoward sleeping\n\n\n\n\n\n\n\n\n\nHoward in a table"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Day 2\n\n\n\nTime\nActivity\n\n\n\n\n09:00 - 10:30\nPresentations\n\n\n10:30 - 11:00\nCoffee break\n\n\n11:00 - 12:30\nWebsites\n\n\n12:30 - 13:30\nLunch break\n\n\n13:30 - 15:00\nAdvanced plots, tables, and more\n\n\n15:00 - 15:30\nCoffee break\n\n\n15:30 - 16:00\nGoing further with Quarto + knitr\n\n\n16:00 - 16:30\nQ/A with Quarto Dev team\n\n\n16:30 - 17:00\nGoing further with Quarto + knitr"
   }
 ]

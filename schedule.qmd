@@ -1,0 +1,29 @@
+---
+title: "Schedule"
+---
+
+### Day 1
+
+| Time          | Activity                                              |
+|:--------------|:------------------------------------------------------|
+| 09:00 - 10:30 | [Understanding magic with Quarto](../materials/01-intro-quarto.html) |
+| 10:30 - 11:00 | *Coffee break*                                        |
+| 11:00 - 12:30 | [Authoring with Markdown and more](../materials/02-authoring.html)  |
+| 12:30 - 13:30 | *Lunch break*                                         |
+| 13:30 - 15:00 | [Computation and Editors](../materials/03-computation-editors.html)                                |
+| 15:00 - 15:30 | *Coffee break*                                        |
+| 15:30 - 17:00 | [Static reports and documents](../materials/04-static-documents.html)                           |
+
+### Day 2
+
+| Time          | Activity                         |
+|:--------------|:---------------------------------|
+| 09:00 - 10:30 | [Presentations](../materials/05-presentations.html)                     |
+| 10:30 - 11:00 | *Coffee break*                   |
+| 11:00 - 12:30 | [Websites](../materials/06-websites.html)                          |
+| 12:30 - 13:30 | *Lunch break*                    |
+| 13:30 - 15:00 | [Advanced plots, tables, and more](../materials/07-plots-tables.html)  |
+| 15:00 - 15:30 | *Coffee break*                   |
+| 15:30 - 16:00 | [Going further with Quarto + `knitr`](../materials/08-advanced-knitr.html)  |
+| 16:00 - 16:30 | Q/A with Quarto Dev team  |
+| 16:30 - 17:00 | [Going further with Quarto + `knitr`](../materials/08-advanced-knitr.html)  |

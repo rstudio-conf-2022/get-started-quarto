@@ -15,7 +15,7 @@ website:
     background: "#447099"
     left:
       - href: index.qmd
-        text: readme
+        text: Home
       - text: Day 1
         menu: 
           - href: materials/01-intro-quarto.qmd
@@ -36,6 +36,10 @@ website:
             text: "Plots & Tables"
           - href: materials/08-advanced-knitr.qmd
             text: "Advanced Quarto"
+      - href: schedule.qmd
+        text: "Schedule"
+      - href: "https://quarto.org/"
+        text: "Quarto Docs"
     right: 
       - icon: github
         href: https://github.com/rstudio-conf-2022/get-started-quarto
