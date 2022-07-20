@@ -80,7 +80,7 @@ Even more R along the way!
 
 <section style="text-align: right;">
 
-![](https://themockup.blog/images/profile-preview.png){height="650px"}
+![](images/tom-howard.png){height="450px"}
 
 Find me at:
 
@@ -143,11 +143,11 @@ install.packages(pkg_list)
 
 In-between:
 
--   Red = Tom isn't explaining it well enough or I need time
+-   Pink post-it = Tom isn't explaining it well enough or I need time
 
--   Green = I have completed the "Our Turn"
+-   Green post-it = I have completed the "Our Turn"
 
--   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on need
+-   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a "general question" or I'm running into a code error.
 
 ## Hello Quarto
 
