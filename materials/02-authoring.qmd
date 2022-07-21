@@ -134,8 +134,6 @@ format:
 
 ## YAML for `format: html`
 
-<iframe src="https://quarto.org/docs/reference/formats/html.html" title="Quarto HTML reference" height="900px" width="1300px">
-
 </iframe>
 
 ## YAML is sensitive
@@ -203,10 +201,6 @@ RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
 ## HTML options
 
 [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
-
-<iframe src="https://quarto.org/docs/reference/formats/html.html" height="800" width="1000">
-
-</iframe>
 
 ## Rendering
 
@@ -320,7 +314,7 @@ You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
-- Explore, break, discuss with your neighbor
+-   Explore, break, discuss with your neighbor
 
 ## Tables
 
@@ -709,39 +703,39 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 
 . . .
 
-+----------------------------------+--------------------------------------------+
-| Command                          | Action                                     |
-+==================================+============================================+
-| `pwd`                            | Print name of current working directory    |
-+----------------------------------+--------------------------------------------+
-| `cd`                             | Change current working directory           |
-+----------------------------------+--------------------------------------------+
-| `ls`                             | List directory contents                    |
-+----------------------------------+--------------------------------------------+
-| `quarto --help`                  | Return `quarto` help docs                  |
-+----------------------------------+--------------------------------------------+
-| `mkdir howdy`                    | Make a new folder/directory called "howdy" |
-+----------------------------------+--------------------------------------------+
-| `rm howdy/some-file.qmd` |  Remove a file called `some-file.qmd` from the "howdy" folder |
-+----------------------------------+--------------------------------------------+
-
-## `tldr` tool
-
-<iframe src="https://tldr.ostera.io/" height="800px" width="1200px"></iframe>
++------------------------------------+-------------------------------------------------------+
+| Command                            | Action                                                |
++====================================+=======================================================+
+| `pwd`                              | Print name of current working directory               |
++------------------------------------+-------------------------------------------------------+
+| `cd`                               | Change current working directory                      |
++------------------------------------+-------------------------------------------------------+
+| `ls`                               | List directory contents                               |
++------------------------------------+-------------------------------------------------------+
+| `quarto --help`                    | Return `quarto` help docs                             |
++------------------------------------+-------------------------------------------------------+
+| `mkdir howdy`                      | Make a new folder/directory called "howdy"            |
++------------------------------------+-------------------------------------------------------+
+| `rm howdy/some-file.qmd` \| Remove | a file called `some-file.qmd` from the "howdy" folder |
++------------------------------------+-------------------------------------------------------+
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
-- Navigate to a file with the "cheat code" <kbd>Ctrl + I</kbd> and then type 
+-   Navigate to a file with the "cheat code" <kbd>Ctrl + I</kbd> and then type
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/figure-layout.qmd`
 
 -   To reference other directories:
-  - Correct the image links:
-  -   Use `here::here("path/to/content")` in code
-  -   Use `[](~/ProjectDir/path/to/content)` in markdown
-  -   Use `../../path/to/content` in YAML or in Markdown
+
+-   Correct the image links:
+
+-   Use `here::here("path/to/content")` in code
+
+-   Use `[](~/ProjectDir/path/to/content)` in markdown
+
+-   Use `../../path/to/content` in YAML or in Markdown
 
 ## Subfigures
 
@@ -767,27 +761,23 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 ![Still Excited](images/boston-terrier.png){width="250px"}
 
 ![Still sleeping](images/boston-sleep.png){width="250px"}
-
 :::
 
 Two states of Howard, twice
 
 ## Subfigures
 
-```
-::: {layout-ncol="2"}
-![Excited](images/boston-terrier.png){width="250px"}
+    ::: {layout-ncol="2"}
+    ![Excited](images/boston-terrier.png){width="250px"}
 
-![Sleeping](images/boston-sleep.png){width="250px"}
+    ![Sleeping](images/boston-sleep.png){width="250px"}
 
-![Still Excited](images/boston-terrier.png){width="250px"}
+    ![Still Excited](images/boston-terrier.png){width="250px"}
 
-![Still sleeping](images/boston-sleep.png){width="250px"}
+    ![Still sleeping](images/boston-sleep.png){width="250px"}
 
-Two states of Howard, twice
-:::
-
-```
+    Two states of Howard, twice
+    :::
 
 ::: {layout-ncol="2"}
 ![Excited](images/boston-terrier.png){width="250px"}
@@ -805,7 +795,7 @@ Two states of Howard, twice
 
 Note that the last paragraph in the div block is used as the figure caption.
 
-```code
+``` code
 ::: {#fig-dog}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U-WQ277UZtY"></iframe>
@@ -815,16 +805,16 @@ Funny boston terrier videos
 ```
 
 ::: {#fig-dog-youtube}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U-WQ277UZtY">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U-WQ277UZtY"></iframe>
+</iframe>
 
 Funny boston terrier videos
 :::
 
 ## Figure Divs
 
-:::: {layout-nrow="2"}
-
+::: {layout-nrow="2"}
 ![Excited](images/boston-terrier.png){width="250px"}
 
 ![Sleeping](images/boston-sleep.png){width="250px"}
@@ -832,18 +822,18 @@ Funny boston terrier videos
 ![Still Excited](images/boston-terrier.png){width="250px"}
 
 ::: {#fig-dog-embed}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iWR9gwxW-4k">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iWR9gwxW-4k"></iframe>
+</iframe>
 
 Funny boston terrier videos
 :::
-
-::::
+:::
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/figure-layout-2.qmd`
-- Try out the various types of subfigures, chahing the nrow/ncol
+-   Try out the various types of subfigures, chahing the nrow/ncol
 
 ## Footnotes
 

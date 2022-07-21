@@ -30,7 +30,7 @@ Please go to the workshop homepage for full instructions: <https://rstudio-conf-
 If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!
 
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
-- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.32` or greater)
+- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.35` or greater)
 - Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
 - Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
 - Install/Update Chromium with `quarto install tool chromium`
@@ -133,7 +133,7 @@ questions:
 If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!
 
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
-- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.32` or greater)
+- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.35` or greater)
 - Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
 - Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
 - Install/Update Chromium with `quarto install tool chromium`

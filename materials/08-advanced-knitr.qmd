@@ -15,7 +15,7 @@ editor_options:
     canonical: true
 ---
 
-#  {background-image="images/watermelon.jpg" background-position="right" background-size="contain" background-color="#447098"}
+#  {background-image="images/howard-gentleman.jpeg" background-position="right" background-size="contain" background-color="#447098"}
 
 ::: {style="font-size: 100px;"}
 08 - Advanced<br>Quarto +`knitr`

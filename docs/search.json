@@ -46,7 +46,7 @@
     "href": "materials/01-intro-quarto.html#section",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "01 - Performing magic\n\n\nwith Quarto\n\n\nTom Mock, RStudio PBC\n\n\n2022-06-25"
+    "text": "01 - Performing magic\n\n\nwith Quarto\n\n\nTom Mock, RStudio PBC\n\n\n2022-07-25"
   },
   {
     "objectID": "materials/01-intro-quarto.html#code-of-conduct",
@@ -88,7 +88,7 @@
     "href": "materials/01-intro-quarto.html#structure-of-the-workshop",
     "title": "Get Started with Quarto",
     "section": "Structure of the workshop",
-    "text": "Structure of the workshop\n\nLecture - 🤠\n“Your turn” or “Our Turn” - 💻\nBreaks - ☕\n\n\nIn-between:\n\nPink post-it = Tom isn’t explaining it well enough or I need time\nGreen post-it = I have completed the “Our Turn”\nRaised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a “general question” or I’m running into a code error."
+    "text": "Structure of the workshop\n\nLecture - 🤠\n“Your turn” or “Our Turn” - 💻\nBreaks - ☕\n\n\nIn-between:\n\nfa(\"square\", \"pink\") = Tom isn’t explaining it well enough or I need time\nfa(\"square\", \"green\") = I have completed the “Our Turn”\nRaised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a “general question” or I’m running into a code error."
   },
   {
     "objectID": "materials/01-intro-quarto.html#hello-quarto",
@@ -1894,7 +1894,7 @@
     "href": "materials/07-plots-tables.html#figure-layout-custom",
     "title": "Get Started with Quarto",
     "section": "Figure layout, custom",
-    "text": "Figure layout, custom\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| layout: [[45,-10, 45], [100]]\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +\n  geom_boxplot() +\n  geom_jitter()\n```"
+    "text": "Figure layout, custom\nlayout: [[45,-10, 45], [100]] - think of it as 45% item 1, 10% blank, 45% item 2, new row: 100% item 3\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| layout: [[45,-10, 45], [100]]\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +\n  geom_boxplot() +\n  geom_jitter()\n```"
   },
   {
     "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content",
@@ -2224,13 +2224,6 @@
     "title": " ",
     "section": "",
     "text": "Footnotes\n\n\nSpecifically he is a Boston Terrier, although sometimes he acts like a cat↩︎"
-  },
-  {
-    "objectID": "materials/static/harbor-food.html",
-    "href": "materials/static/harbor-food.html",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "Thai Pavilion 38.78413423986099, -77.01564188222797"
   },
   {
     "objectID": "materials/static/sub-figure.html",

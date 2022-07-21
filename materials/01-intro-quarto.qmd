@@ -28,7 +28,7 @@ library(gtsummary)
 
 <h3>Tom Mock, RStudio PBC</h3>
 
-<h3>2022-06-25</h3>
+<h3>2022-07-25</h3>
 
 <br>
 
@@ -117,7 +117,7 @@ Find me at:
 ## Workshop Prep
 
 -   Are you on the latest version of RStudio i.e. [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)?
--   Are you on the [latest version of Quarto](https://quarto.org/docs/get-started/) (preview `v1.0.32` or `v1.0`)?
+-   Are you on the [latest version of Quarto](https://quarto.org/docs/get-started/) (preview `v1.0.35` or `v1.0`)?
 -   Have you cloned the GitHub repo from <https://github.com/rstudio-conf-2022/get-started-quarto>?
 -   Installed the necessary packages?
 
@@ -143,9 +143,9 @@ install.packages(pkg_list)
 
 In-between:
 
--   Pink post-it = Tom isn't explaining it well enough or I need time
+-   `r `fa("square", "pink")` = Tom isn't explaining it well enough or I need time
 
--   Green post-it = I have completed the "Our Turn"
+-   `r `fa("square", "green")` = I have completed the "Our Turn"
 
 -   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a "general question" or I'm running into a code error.
 
@@ -666,6 +666,7 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ::: columns
 ::: {.column width="50%"}
+
 ```` python
 ```{{python}}
 #| label: fig-polar
@@ -685,6 +686,7 @@ ax.grid(True)
 plt.show()
 ```
 ````
+
 :::
 
 ::: {.column width="50%"}
@@ -706,6 +708,8 @@ plt.show()
 ``` bash
 quarto --help
 ```
+
+- Render the new document via terminal with `quarto render DOCUMENT-NAME.QMD`
 
 ## Resources
 

@@ -163,9 +163,9 @@ engine: knitr
 
 ## `knitr` code cells
 
-[https://quarto.org/docs/reference/cells/cells-knitr.html](https://quarto.org/docs/reference/cells/cells-knitr.html)
+There's a lot of `knitr` options!
 
-<iframe src="https://quarto.org/docs/reference/cells/cells-knitr.html" width="1200px" height="800px"></iframe>
+[https://quarto.org/docs/reference/cells/cells-knitr.html](https://quarto.org/docs/reference/cells/cells-knitr.html)
 
 ## Anatomy of a code chunk
 
@@ -498,7 +498,6 @@ Some examples
 
 [https://quarto.org/docs/reference/cells/cells-knitr.html](https://quarto.org/docs/reference/cells/cells-knitr.html)
 
-<iframe src="https://quarto.org/docs/reference/cells/cells-knitr.html" height="800px" width="1200px"></iframe>
 
 ## Chunks can be named
 
@@ -722,6 +721,7 @@ Running Quarto Render will call Quarto render in a background job - this will pr
 ## Rendering
 
 1. Render in RStudio
+
 
 ![](https://quarto.org/docs/tools/images/rstudio-render.png)
 

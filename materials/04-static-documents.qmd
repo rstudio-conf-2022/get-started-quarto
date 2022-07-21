@@ -19,8 +19,6 @@ editor: source
 
 [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
 
-<iframe src="https://quarto.org/docs/reference/formats/html.html" height="850px" width="900px"></iframe>
-
 ## Quarto and RMarkdown
 
 - Basic RMarkdown documents that render to static HTML and PDF are the most transferable directly to Quarto
