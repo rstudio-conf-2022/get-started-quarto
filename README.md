@@ -34,7 +34,7 @@ If you are a workshop attendee and have any trouble with installation locally, p
 - Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
 - Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
 - Install/Update Chromium with `quarto install tool chromium`
-- Install R packages:
+- Install these R packages:
 
 ```{r pkg-list}
 #| eval: false
