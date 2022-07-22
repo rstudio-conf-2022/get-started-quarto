@@ -25,5 +25,5 @@ title: "Schedule"
 | 13:30 - 15:00 | [Advanced plots, tables, and more](materials/07-plots-tables.html)  |
 | 15:00 - 15:30 | *Coffee break*                   |
 | 15:30 - 16:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html)  |
-| 16:00 - 16:30 | Q/A with Quarto Dev team  |
+| 16:00 - 16:30 | Q/A with Quarto Dev team |
 | 16:30 - 17:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html)  |
