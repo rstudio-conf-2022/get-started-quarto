@@ -32,7 +32,7 @@ If you are a workshop attendee and have any trouble with installation locally, p
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
 - Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.36` or greater)
 - After installing Quarto, open the terminal in RStudio and:
-  - The terminal is located in the tab next to the R console pane
+  - See this [guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal
   - Install/Update `TinyTeX` for PDFs with `quarto install tool tinytex`
   - Install/Update Chromium with `quarto install tool chromium`
 - Ideally upgrade/use to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
