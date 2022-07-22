@@ -195,8 +195,8 @@ If you hover your mouse over the citation and footnote in this sentence you’ll
 ```
 format:
   html:
-    citations-hover: false
-    footnotes-hover: false
+    citations-hover: true
+    footnotes-hover: true
 ```
 
 . . .

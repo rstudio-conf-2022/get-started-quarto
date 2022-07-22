@@ -170,6 +170,34 @@ format:
     toc: true
 ```
 
+## Why YAML?
+
+To avoid manually typing out all the options, every time!
+
+. . .
+
+```bash
+quarto render document.qmd --to html
+```
+
+<br>
+
+. . .
+
+```bash
+quarto render document.qmd --to html -M code-fold:true
+```
+
+<br>
+
+. . .
+
+```bash
+quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
+```
+
+
+
 ## Quarto linting
 
 > Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. - [Lint](https://en.wikipedia.org/wiki/Lint_(software)#:~:text=Lint%2C%20or%20a%20linter%2C%20is,examined%20C%20language%20source%20code.)
@@ -201,43 +229,6 @@ RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
 ## HTML options
 
 [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
-
-## Rendering
-
-1.  Render in RStudio
-
-![](https://quarto.org/docs/tools/images/rstudio-render.png) . . .
-
-2.  System shell via `quarto render`
-
-```{bash}
-#| eval: false
-#| echo: true
-quarto render document.qmd # defaults to html
-quarto render document.qmd --to pdf
-quarto render document.qmd --to docx
-```
-
-. . .
-
-3.  R console via `quarto` R package
-
-```{r}
-#| eval: false
-#| echo: true
-library(quarto)
-quarto_render("document.qmd") # defaults to html
-quarto_render("document.qmd", output_format = "pdf")
-```
-
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Use RStudio to create a new default Quarto document
--   Add a title and your name as the author
--   Change theme to `sketchy`
--   Add toc and swap toc location to left
--   Make all code sections fold
--   Render it with RStudio button, then try with the R package and terminal
 
 You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) if needed.
 
@@ -311,10 +302,29 @@ You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.
 |     ###### Header 6 | ###### Header 6 |
 +---------------------+-----------------+
 
-# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+## Links
 
--   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
--   Explore, break, discuss with your neighbor
+- There are several types of "links" or hyperlinks.
+
+::: columns
+::: {.column width="50%"}
+#### Markdown
+```markdown
+You can embed [named hyperlinks](https://quarto.org/),
+direct urls like <https://quarto.org/>, and links to 
+[other places](#quarto-anatomy) in 
+the document. The syntax is similar for embedding an
+inline image: ![Boston terrier](images/howard-gentleman.jpeg).
+```
+:::
+::: {.column width="50%" .fragment}
+#### Output
+You can embed [named hyperlinks](https://quarto.org/),
+direct urls like <https://quarto.org/>, and links to  [other places](#quarto-anatomy) in 
+the document. The syntax is similar for embedding an inline image:  
+![Boston terrier](images/howard-gentleman.jpeg){style="width:250px;"}
+:::
+:::
 
 ## Tables
 
@@ -327,7 +337,7 @@ You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.
     |    1  |    1 |     1   |     1  |
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
 |    12 | 12   | 12      |   12   |
@@ -335,6 +345,11 @@ You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.
 |     1 | 1    | 1       |   1    |
 :::
 :::
+
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+
+-   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
+-   Explore, break, discuss with your neighbor
 
 ## Grid tables
 
@@ -389,6 +404,29 @@ Note that grid tables are quite awkward to write with a plain text editor (becau
 ```{r}
 head(mtcars) |> 
   knitr::kable()
+```
+
+
+## Quotes
+
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming ^["Literate Programming", The Computer Journal 27 (1984), p. 97. (Reprinted in Literate Programming, 1992, p. 99.) Literate Programming (1984)]
+
+. . .
+
+```markdown
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming
+```
+
+. . .
+
+> I like dogs
+> And I like cats
+
+. . .
+
+```markdown
+> I like dogs
+> And I like cats
 ```
 
 ## Code
@@ -503,10 +541,14 @@ This content can be styled with a border
 
 This is text with [special]{style="color:red;"} formatting.
 
+. . .
+
+You're not limited to HTML/CSS concepts - Pandoc and Quarto also have "attributes" that can be assigned in this way.
+
 ### Divs and Spans
 
--   You can think of a `:::` div as a HTML `<div>` but it can also apply in specific situations to content in PDF for example
--   Similarily, `[text]{.class}` Spans can be thought of a `<span .class>Text</span>` but again are a bit more transferable.
+-   You can think of a `:::` div as a HTML `<div>` but it can also apply in specific situations to content in PDF
+-   Similarly, `[text]{.class}` spans can be thought of a `<span .class>Text</span>` but again are a bit more transferable if using Pandoc/Quarto native attributes.
 
 . . .
 
@@ -597,7 +639,7 @@ Basic markdown syntax:
 
 ![Boston Terrier](images/boston-terrier.png)
 
-## Fragments
+## Fragments/spans
 
 ::: columns
 ::: {.column width="50%"}
@@ -613,7 +655,7 @@ Basic markdown syntax:
 :::
 :::
 
-## Subfigures
+## Subfigures fenced div class
 
     ::: {#fig-bostons layout-ncol=2}
 
@@ -721,9 +763,7 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
--   Navigate to a file with the "cheat code" <kbd>Ctrl + I</kbd> and then type
-
-# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+-   Navigate to a file with the "cheat code" <kbd>Ctrl + I</kbd> and then edit
 
 -   Open `materials/workshop/02-authoring/figure-layout.qmd`
 
@@ -845,13 +885,29 @@ Pandoc supports numbering and formatting footnotes.
     since you don't have to pick an identifier and move down to
     type the note.]
 
-Here is an inline note.[^1]
+Here is an inline note.^[Inlines notes are easier to write,
+since you don't have to pick an identifier and move down to
+type the note.]
 
-[^1]: Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+## Inline footnotes
+
+```
+Here is an footnore reference[^1]
+
+[^1]: This can be easy in some situations when you have a really long note or
+don't want to inline complex outputs.
+```
 
 . . .
 
-Notice that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
+Here is an footnore reference[^1]
+
+[^1]: This can be easy in some situations when you have a really long note or
+don't want to inline complex outputs.
+
+. . .
+
+Notice in both situations that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
 
 ## Cross References
 
@@ -868,3 +924,21 @@ The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this f
 . . .
 
 ![](https://quarto.org/docs/authoring/images/crossref-figure.png){width="800px"}
+
+## Diagrams w/ `mermaid`
+
+````
+```{{mermaid}}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+````
+
+![](images/mermaid.jpg)
+
+. . .
+
+[Mermaid example](https://mermaid.live/edit#pako:eNqVVFFvmzAQ_iuWo0ybBBWpRDbQFKkJSV86qUofSx8MPoIbYzNjllUk_72A44RFndqChM7ffff5fHemwamkgEO8UaTM0d06FuMxSjmpqgiyWFjLQHNeA0ollypEI98nfjZ1MsZ5OMom3etUWsktuDtGdR5el3-PQHgiS6HdHbBNrsNEcnq5wRroSZ9k3tQPjvrggQ_J__UN-VLu11ktDaaTwP9gtpb8Trb3RFCZnrbwgh9e4n0wYUO-VFwxbgs8mnz3_QDeytiW863o68-ExwK1z83XjIQZcVsquN04oKvfBf2G3Ct3huZNY7y9YyuYVl9EUpX953AwCnPDXQyEUKtgnAvjjJqmNPXaMZ3_TNTsriaopWpQlRWKkOvO9mgNpVR6j5aPg8xKmjnovB7a7k4q-jSUuFdQgdBEMyn2aPWo4A8Q_lz9E1XKHahSMqHRRbB8hlRXe3R7TGDDZdLWsrcTKbeoP_5TV8Hx-EG_cOjMvgno5nxXLDQ_TbdFFnZALRANR8qCS2d17qwFbwfNxg4uQBWE0fYKN90ZYqxzKCDGYWtSyEjNdYxjcWipdUmJhiVlWiocalWDg0mt5cOLSO3acCJG2h9CYcDDK9A0Zlk) and [Mermaid.js documentation](https://mermaid-js.github.io/mermaid/#/flowchart)

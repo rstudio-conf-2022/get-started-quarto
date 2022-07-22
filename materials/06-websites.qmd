@@ -174,14 +174,13 @@ I typically use cache throughout various types of outputs when I have computatio
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Add a `_metadata.yml` to the `/posts/` directory
+
 -   Add the freeze code to `_metadata.yml`
 
-<!-- -->
-
-    execute:
-      freeze: true
+    execute: freeze: true
 
 -   Render `index.qmd` and note the items that are built
+
 -   Explore the `_freeze` directory
 
 . . .
@@ -457,19 +456,29 @@ listing:
 
 ## Netlify
 
+-   Cheat code: Netlify drop
+
 <iframe src="https://www.netlify.com/" height="800" width="1200">
 
 </iframe>
 
-<!-- # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099"} -->
+## GitHub Pages
 
-<!-- -   Go to <https://www.netlify.com/> and signup or sign-in (I like using GitHub login) -->
+`{=html, echo=FALSE} <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
 
-<!-- -   Got to: <https://app.netlify.com/drop> -->
+-   Name your content `index.qmd` to generate `index.html` -\> Push to GitHub
 
-<!-- -   Drag and drop the `_site` folder to deploy -->
+<blockquote class="twitter-tweet">
 
-<!-- -   Explore your site! -->
+<p lang="en" dir="ltr">
+
+Step 2: Name your slides index.qmd <a href="https://t.co/wLXN43rUlZ">pic.twitter.com/wLXN43rUlZ</a>
+
+</p>
+
+--- Emil Hvitfeldt (@Emil_Hvitfeldt) <a href="https://twitter.com/Emil_Hvitfeldt/status/1550220074773929984?ref_src=twsrc%5Etfw">July 21, 2022</a>
+
+</blockquote>
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
@@ -531,7 +540,11 @@ A typical project is used to:
 
 ## Books
 
-``` code
+> The structure of a Quarto book can be as simple as a list of chapters, or can alternatively incorporate multiple parts and/or appendices. Quarto book chapters and sections are automatically numbered (for cross-referencing), however you can also specify that some parts of the book should remain unnumbered.
+
+## Book structure
+
+``` yaml
 project:
   type: book
 book:
@@ -543,8 +556,10 @@ book:
     - intro.qmd
     - summary.qmd
     - references.qmd
-bibliography: references.bib
+```
 
+``` yaml
+bibliography: references.bib
 format:
   html:
     theme: cosmo
@@ -554,6 +569,20 @@ format:
     cover-image: cover.png
 ```
 
-## Book structure
+## Book crossrefs
 
-## Book crossferfs
+> Quarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.
+
+. . .
+
+``` markdown
+See @fig-penginus-by-island for a breakdown by island.
+```
+
+. . .
+
+``` markdown
+# Introduction {#section-intro}
+```
+
+or: `See @sec-introduction for additional discussion.`

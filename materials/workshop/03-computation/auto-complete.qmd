@@ -1,14 +1,19 @@
 ---
-format: 
-  html:
-    theme: zenb
-title: "cool document"
-author: "Tom Mock"
 ---
 
+# In the above YAML section, try out tab-autocompletion.
+- We want format of html
+- add a theme
+- add a table of contents and position on left
+- Add a title and author
+
+# In the below code-chunk
+- Use the hashpipe
+- Add an echo with fenced code
+- Make the chunk not evaluate
+- Set the figure width to 6
+- Set the figure height to 4
+- Remember there is tab-completion AND `ctrl + space` for "search"
+
 ```{r}
-#| echo: fenced
-#| eval: true
-#| fig-width: 6
-#| fig-height: 4
 ```

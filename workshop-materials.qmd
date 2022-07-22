@@ -1,3 +1,34 @@
-# TO DO 
+---
+format: html
+title: "Workshop Materials"
+---
 
-Create a listing?
+```{r}
+#| label: setup
+#| include: false
+library(dplyr)
+library(purrr)
+work_files <- fs::dir_info("materials/workshop/", glob = "*.qmd", recurse = TRUE) |> 
+  mutate(file = fs::path_file(path),
+         folder = fs::path_dir(path)) |> 
+  # mutate(folder = gsub(x = folder, pattern = "materials/workshop/",  replacement = "")) |> 
+  select(folder, file) |> 
+  group_split(folder)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+for (i in 1:length(work_files)) {
+  folder_path <- gsub(
+    x = work_files[[i]]$folder, 
+    pattern = "materials/workshop/", 
+    replacement = "") |> unique()
+  cat(paste("##", folder_path))
+  print(knitr::kable(work_files[[i]]))
+  cat("\n")
+}
+
+```
+
+

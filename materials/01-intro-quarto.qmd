@@ -32,17 +32,34 @@ library(gtsummary)
 
 <br>
 
+## General Info
+
+### `r fontawesome::fa("wifi")` WiFi
+- Username: `conf22`
+- Password: `together!` [(at last!)]{.style="color: #d3d3d3;"}
+
+### `r fontawesome::fa("toilet")` Gender Neutral Bathrooms
+- River side of the Potomac Ballroom
+
+### Specialty Rooms
+- The meditation room is located at Potomac Dressing Room. Open 8am - 5pm, Monday - Thursday.
+- The lactation room is located at National Harbor 9. Open 8am - 5pm, Monday - Thursday. The hotel also has a dedicated room behind the reception.
+
+### Lanyards
+- Participants who do not wish to be photographed have red lanyards, please note everyone's lanyard colors befor taking a photo and respect their choices.
+
+
 ## Code of Conduct
 
-<https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/>
+Please read and review the entire Code of Conduct carefully: <https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/>
 
 ### COVID-19
 
 > RStudio requires that in-person attendees be fully vaccinated against COVID-19 prior to the start of the event.
 >
-> RStudio requires that you wear a mask that fully covers your mouth and nose at all times in all public spaces
+>  RStudio requires that you wear a mask that fully covers your mouth and nose at all times in all public spaces. We strongly recommend that you use a correctly fitted N95, KN95, or similar particulate filtering mask; we will have a limited supply available upon request.
 
--   You can remove your mask to briefly drink/eat during breaks but please refrain from removing your mask in the workshop room itself
+-   You can remove your mask to briefly drink/eat during breaks in the hall but please refrain from removing your mask in the workshop room itself
 
 ### Anti-Harassment
 
@@ -116,6 +133,7 @@ Find me at:
 
 ## Workshop Prep
 
+-   Short-code to content: <rstd.io/get-started-quarto>
 -   Are you on the latest version of RStudio i.e. [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)?
 -   Are you on the [latest version of Quarto](https://quarto.org/docs/get-started/) (preview `v1.0.35` or `v1.0`)?
 -   Have you cloned the GitHub repo from <https://github.com/rstudio-conf-2022/get-started-quarto>?
@@ -143,9 +161,9 @@ install.packages(pkg_list)
 
 In-between:
 
--   `r `fa("square", "pink")` = Tom isn't explaining it well enough or I need time
+-   `r fa("square", "pink")` = Tom isn't explaining it well enough or I need time
 
--   `r `fa("square", "green")` = I have completed the "Our Turn"
+-   `r fa("square", "green")` = I have completed the "Our Turn"
 
 -   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a "general question" or I'm running into a code error.
 
@@ -251,6 +269,10 @@ return {
 }
 ```
 
+. . .
+
+Lua filters written by R/Python/Julia developers should be interchangeable between formats - not language specific!
+
 ##  {background-image="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png" background-size="cover"}
 
 ![](images/quarto.png){.absolute bottom="50" left="575" width="250"}
@@ -333,17 +355,50 @@ quarto render my-favorite.ipynb --to html --execute
 
 Quarto comes out of the box with much better accessibility, better defaults, more options, and a much more consistent syntax.
 
-## Render
+## Summary of Quarto > RMarkdown
 
-``` bash
-quarto render FILE-NAME.qmd --to html
+- Easier to organize/structure document and document layout
+- Features largely cross-format
+- Better ability to integrate multiple languages in a PROJECT
+- Evaluate native language (R in knitr, Python/Julia in Jupyter)
+- HTML slides with `revealjs` are pandoc-compatible, so RStudio Visual Editor works with them
+
+## Rendering
+
+1.  Render in RStudio
+
+![](https://quarto.org/docs/tools/images/rstudio-render.png) . . .
+
+2.  System shell via `quarto render`
+
+```{bash}
+#| eval: false
+#| echo: true
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
 ```
 
 . . .
 
-RStudio IDE \> Render button
+3.  R console via `quarto` R package
 
-![](https://quarto.org/docs/tools/images/rstudio-preview.png){height="800px"}
+```{r}
+#| eval: false
+#| echo: true
+library(quarto)
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+-   Use RStudio to create a new default Quarto document
+-   Add a title and your name as the author
+-   Change theme to `sketchy`
+-   Add toc and swap toc location to left
+-   Make all code sections fold
+-   Render it with RStudio button, then try with the R package and terminal
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
@@ -702,14 +757,21 @@ plt.show()
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
--   In RStudio, create a new blank document via the File Pane
--   In RStudio, open the integrated Terminal:
+-   In RStudio, open `materials/workshop/01-intro/history.qmd`
+- Render with the RStudio > Render button
+- Look at it and compare to [Wikipedia source](https://en.wikipedia.org/wiki/Boston_Terrier)
+
+<br>
+
+- Move to the integrated terminal and execute:
 
 ``` bash
-quarto --help
+quarto render --help
 ```
+- 
 
-- Render the new document via terminal with `quarto render DOCUMENT-NAME.QMD`
+- Render via terminal with `quarto render history.qmd --to pdf`
+- Compare to the HTML version
 
 ## Resources
 
@@ -720,3 +782,5 @@ quarto --help
 ## 
 
 [Quarto questions?]{.r-fit-text}
+
+# RStudio Refresher 

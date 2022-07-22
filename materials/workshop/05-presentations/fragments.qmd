@@ -1,0 +1,30 @@
+---
+format: revealjs
+---
+
+## Make these columns appear in order
+
+::::: {.columns}
+
+:::: {.column width="50%"}
+
+### These appear first
+
+- Make
+- Your 
+- List
+
+::::
+
+:::: {.column width="50%"}
+
+### Then this
+
+```{r}
+#| echo: fenced
+head(mtcars)
+```
+
+::::
+
+:::::

@@ -262,7 +262,7 @@ Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`
   - Insert a code chunk
   - Load `tidyverse` and `palmerpenguins`
   - Use some `tidyverse` code to explore the `palmerpenguins::penguins` dataset!
-  - Render it!
+  - Render it with the Render button!
 
 ## Inline code
 
@@ -340,7 +340,7 @@ The radius of the circle is $radius.
 
 - Open `materials/workshop/03-authoring/inline-code.qmd`
 - Look through the source code, and then render it
-- Check out the 
+- Check out the appearance and building up of inline code -> inline output
 
 ## Code chunks options
 
@@ -704,6 +704,11 @@ To find all the available options for a YAML section, you can use <kbd>`Ctrl + S
 You can use tab-completion inside `knitr` chunk options for RMarkdown style or Quarto style as well.
 
 ![](images/knitr-autocomplete.gif)
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+- Open `auto-complete.qmd`
+- Follow instructions in the document
 
 ## RStudio Visual Editor
 

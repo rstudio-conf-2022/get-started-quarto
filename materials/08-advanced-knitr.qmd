@@ -354,3 +354,7 @@ filters:
 
 -   Open `materials/workshop/08-knitr/lightbox-extension.qmd`
 -   Explore and render it!
+
+## Feedback
+
+> Please go to \<rstd.io/conf-workshop-survey\>. Your feedback is crucial! Data from the survey informs curriculum and format decisions for future conf workshops and we really appreciate you taking the time to provide it.

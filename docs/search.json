@@ -49,11 +49,18 @@
     "text": "01 - Performing magic\n\n\nwith Quarto\n\n\nTom Mock, RStudio PBC\n\n\n2022-07-25"
   },
   {
+    "objectID": "materials/01-intro-quarto.html#general-info",
+    "href": "materials/01-intro-quarto.html#general-info",
+    "title": "Get Started with Quarto",
+    "section": "General Info",
+    "text": "General Info\n WiFi\n\nUsername: conf22\nPassword: together! [(at last!)]{.style=“color: #d3d3d3;”}\n\n Gender Neutral Bathrooms\n\nRiver side of the Potomac Ballroom\n\nSpecialty Rooms\n\nThe meditation room is located at Potomac Dressing Room. Open 8am - 5pm, Monday - Thursday.\nThe lactation room is located at National Harbor 9. Open 8am - 5pm, Monday - Thursday. The hotel also has a dedicated room behind the reception.\n\nLanyards\n\nParticipants who do not wish to be photographed have red lanyards, please note everyone’s lanyard colors befor taking a photo and respect their choices."
+  },
+  {
     "objectID": "materials/01-intro-quarto.html#code-of-conduct",
     "href": "materials/01-intro-quarto.html#code-of-conduct",
     "title": "Get Started with Quarto",
     "section": "Code of Conduct",
-    "text": "Code of Conduct\nhttps://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/\nCOVID-19\n\nRStudio requires that in-person attendees be fully vaccinated against COVID-19 prior to the start of the event.\nRStudio requires that you wear a mask that fully covers your mouth and nose at all times in all public spaces\n\n\nYou can remove your mask to briefly drink/eat during breaks but please refrain from removing your mask in the workshop room itself\n\nAnti-Harassment\n\nWe expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.\n\nReporting\nYou can make a personal report:\nIn person: Contact any rstudio::conf staff member, identifiable by their staff t-shirt shirt, or visit the conference registration desk.\nBy email: Send a message to conf@rstudio.com; event organizers will respond promptly.\nBy phone: Call 844-448-1212; this phone number will be monitored for the duration of the event."
+    "text": "Code of Conduct\nPlease read and review the entire Code of Conduct carefully: https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/\nCOVID-19\n\nRStudio requires that in-person attendees be fully vaccinated against COVID-19 prior to the start of the event.\nRStudio requires that you wear a mask that fully covers your mouth and nose at all times in all public spaces. We strongly recommend that you use a correctly fitted N95, KN95, or similar particulate filtering mask; we will have a limited supply available upon request.\n\n\nYou can remove your mask to briefly drink/eat during breaks in the hall but please refrain from removing your mask in the workshop room itself\n\nAnti-Harassment\n\nWe expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.\n\nReporting\nYou can make a personal report:\nIn person: Contact any rstudio::conf staff member, identifiable by their staff t-shirt shirt, or visit the conference registration desk.\nBy email: Send a message to conf@rstudio.com; event organizers will respond promptly.\nBy phone: Call 844-448-1212; this phone number will be monitored for the duration of the event."
   },
   {
     "objectID": "materials/01-intro-quarto.html#we-assume",
@@ -81,14 +88,14 @@
     "href": "materials/01-intro-quarto.html#workshop-prep",
     "title": "Get Started with Quarto",
     "section": "Workshop Prep",
-    "text": "Workshop Prep\n\nAre you on the latest version of RStudio i.e. v2022.07.0-548 or later?\nAre you on the latest version of Quarto (preview v1.0.32 or v1.0)?\nHave you cloned the GitHub repo from https://github.com/rstudio-conf-2022/get-started-quarto?\nInstalled the necessary packages?\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\nGreat, let’s get started!"
+    "text": "Workshop Prep\n\nShort-code to content: <rstd.io/get-started-quarto>\nAre you on the latest version of RStudio i.e. v2022.07.0-548 or later?\nAre you on the latest version of Quarto (preview v1.0.35 or v1.0)?\nHave you cloned the GitHub repo from https://github.com/rstudio-conf-2022/get-started-quarto?\nInstalled the necessary packages?\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\nGreat, let’s get started!"
   },
   {
     "objectID": "materials/01-intro-quarto.html#structure-of-the-workshop",
     "href": "materials/01-intro-quarto.html#structure-of-the-workshop",
     "title": "Get Started with Quarto",
     "section": "Structure of the workshop",
-    "text": "Structure of the workshop\n\nLecture - 🤠\n“Your turn” or “Our Turn” - 💻\nBreaks - ☕\n\n\nIn-between:\n\nfa(\"square\", \"pink\") = Tom isn’t explaining it well enough or I need time\nfa(\"square\", \"green\") = I have completed the “Our Turn”\nRaised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a “general question” or I’m running into a code error."
+    "text": "Structure of the workshop\n\nLecture - 🤠\n“Your turn” or “Our Turn” - 💻\nBreaks - ☕\n\n\nIn-between:\n\n = Tom isn’t explaining it well enough or I need time\n = I have completed the “Our Turn”\nRaised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a “general question” or I’m running into a code error."
   },
   {
     "objectID": "materials/01-intro-quarto.html#hello-quarto",
@@ -151,7 +158,7 @@
     "href": "materials/01-intro-quarto.html#quarto-more-internals",
     "title": "Get Started with Quarto",
     "section": "Quarto, more internals",
-    "text": "Quarto, more internals\n\nknitr or jupyter evaluates R/Python/Julia code and returns a .md file along with the evaluated code\n\n\n\nQuarto applies Lua filters + CSS/LaTeX which is then evaluated alongside the .md file by Pandoc and converted to a final ouput format\n\n\n\nHere is an example of a Lua filter that converts strong emphasis to small caps, from https://pandoc.org/lua-filters.html\nreturn {\n  {\n    Strong = function (elem)\n      return pandoc.SmallCaps(elem.c)\n    end,\n  }\n}"
+    "text": "Quarto, more internals\n\nknitr or jupyter evaluates R/Python/Julia code and returns a .md file along with the evaluated code\n\n\n\nQuarto applies Lua filters + CSS/LaTeX which is then evaluated alongside the .md file by Pandoc and converted to a final ouput format\n\n\n\nHere is an example of a Lua filter that converts strong emphasis to small caps, from https://pandoc.org/lua-filters.html\nreturn {\n  {\n    Strong = function (elem)\n      return pandoc.SmallCaps(elem.c)\n    end,\n  }\n}\n\n\nLua filters written by R/Python/Julia developers should be interchangeable between formats - not language specific!"
   },
   {
     "objectID": "materials/01-intro-quarto.html#section-4",
@@ -196,11 +203,18 @@
     "text": "What to do with my existing .Rmd or .ipynb?\nFor some of you - nothing changes! Keep using RMarkdown and Jupyter.\n\n\nHowever, most existing .rmd or .ipynb can be rendered as-is via Quarto\nquarto render my-favorite.rmd --to html\n\n\n\nSince Jupyter notebooks can either be treated as a linear document to be re-executed or an already evaluated document there are additional options like: --execute\nquarto render my-favorite.ipynb --to html --execute\n\n\nQuarto comes out of the box with much better accessibility, better defaults, more options, and a much more consistent syntax."
   },
   {
-    "objectID": "materials/01-intro-quarto.html#render",
-    "href": "materials/01-intro-quarto.html#render",
+    "objectID": "materials/01-intro-quarto.html#summary-of-quarto-rmarkdown",
+    "href": "materials/01-intro-quarto.html#summary-of-quarto-rmarkdown",
     "title": "Get Started with Quarto",
-    "section": "Render",
-    "text": "Render\nquarto render FILE-NAME.qmd --to html\n\nRStudio IDE > Render button"
+    "section": "Summary of Quarto > RMarkdown",
+    "text": "Summary of Quarto > RMarkdown\n\nEasier to organize/structure document and document layout\nFeatures largely cross-format\nBetter ability to integrate multiple languages in a PROJECT\nEvaluate native language (R in knitr, Python/Julia in Jupyter)\nHTML slides with revealjs are pandoc-compatible, so RStudio Visual Editor works with them"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#rendering",
+    "href": "materials/01-intro-quarto.html#rendering",
+    "title": "Get Started with Quarto",
+    "section": "Rendering",
+    "text": "Rendering\n\nRender in RStudio\n\n . . .\n\nSystem shell via quarto render\n\n\nquarto render document.qmd # defaults to html\nquarto render document.qmd --to pdf\nquarto render document.qmd --to docx\n\n\n\nR console via quarto R package\n\n\nlibrary(quarto)\nquarto_render(\"document.qmd\") # defaults to html\nquarto_render(\"document.qmd\", output_format = \"pdf\")"
   },
   {
     "objectID": "materials/01-intro-quarto.html#what-about-for-data-science-at-work",
@@ -361,7 +375,7 @@
     "href": "materials/01-intro-quarto.html#section-6",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "Quarto questions?\n\n\n\nGet started with Quarto"
+    "text": "Quarto questions?"
   },
   {
     "objectID": "materials/02-authoring.html#quarto-anatomy",
@@ -406,6 +420,13 @@
     "text": "YAML is sensitive\n---\nformat:html # invalid, no space between\n---\n\n---\nformat: # invalid, read as missing\nhtml\n---\n\n---\nformat: \n  html: # valid but needs next object\n---\n\nValid YAML can look a bit differently based on what all is needed\nformat: html # valid - there's a space\n\nformat:\n  html # valid - there's 2x spaces on a new line and no trailing :\n\n# valid - format = HTML with selections made\nformat: \n  html:\n    toc: true"
   },
   {
+    "objectID": "materials/02-authoring.html#why-yaml",
+    "href": "materials/02-authoring.html#why-yaml",
+    "title": "Get Started with Quarto",
+    "section": "Why YAML?",
+    "text": "Why YAML?\nTo avoid manually typing out all the options, every time!\n\nquarto render document.qmd --to html\n\n\n\nquarto render document.qmd --to html -M code-fold:true\n\n\n\nquarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3"
+  },
+  {
     "objectID": "materials/02-authoring.html#quarto-linting",
     "href": "materials/02-authoring.html#quarto-linting",
     "title": "Get Started with Quarto",
@@ -424,14 +445,7 @@
     "href": "materials/02-authoring.html#html-options",
     "title": "Get Started with Quarto",
     "section": "HTML options",
-    "text": "HTML options\nquarto.org/docs/reference/formats/html"
-  },
-  {
-    "objectID": "materials/02-authoring.html#rendering",
-    "href": "materials/02-authoring.html#rendering",
-    "title": "Get Started with Quarto",
-    "section": "Rendering",
-    "text": "Rendering\n\nRender in RStudio\n\n . . .\n\nSystem shell via quarto render\n\n\nquarto render document.qmd # defaults to html\nquarto render document.qmd --to pdf\nquarto render document.qmd --to docx\n\n\n\nR console via quarto R package\n\n\nlibrary(quarto)\nquarto_render(\"document.qmd\") # defaults to html\nquarto_render(\"document.qmd\", output_format = \"pdf\")"
+    "text": "HTML options\nquarto.org/docs/reference/formats/html\nYou can use the HTML reference if needed."
   },
   {
     "objectID": "materials/02-authoring.html#lists",
@@ -453,6 +467,13 @@
     "title": "Get Started with Quarto",
     "section": "Headings",
     "text": "Headings\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4\n\n\n##### Header 5\nHeader 5\n\n\n###### Header 6\nHeader 6"
+  },
+  {
+    "objectID": "materials/02-authoring.html#links",
+    "href": "materials/02-authoring.html#links",
+    "title": "Get Started with Quarto",
+    "section": "Links",
+    "text": "Links\n\nThere are several types of “links” or hyperlinks.\n\n\n\nMarkdown\nYou can embed [named hyperlinks](https://quarto.org/),\ndirect urls like <https://quarto.org/>, and links to \n[other places](#quarto-anatomy) in \nthe document. The syntax is similar for embedding an\ninline image: ![Boston terrier](images/howard-gentleman.jpeg).\n\n\nOutput\nYou can embed named hyperlinks, direct urls like https://quarto.org/, and links to other places in the document. The syntax is similar for embedding an inline image:"
   },
   {
     "objectID": "materials/02-authoring.html#tables",
@@ -481,6 +502,13 @@
     "title": "Get Started with Quarto",
     "section": "Tables from code",
     "text": "Tables from code\nknitr itself can turn R dataframes into tables with knitr::kable()\n\nA very simple table generator, and it is simple by design. It is not intended to replace any other R packages for making tables. . . .\n\n\nhead(mtcars) |> \n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
+  },
+  {
+    "objectID": "materials/02-authoring.html#quotes",
+    "href": "materials/02-authoring.html#quotes",
+    "title": "Get Started with Quarto",
+    "section": "Quotes",
+    "text": "Quotes\n\nLet us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming 1\n\n\n> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming\n\n\n\nI like dogs And I like cats\n\n\n\n> I like dogs\n> And I like cats\n\n“Literate Programming”, The Computer Journal 27 (1984), p. 97. (Reprinted in Literate Programming, 1992, p. 99.) Literate Programming (1984)"
   },
   {
     "objectID": "materials/02-authoring.html#code",
@@ -515,7 +543,7 @@
     "href": "materials/02-authoring.html#divs-and-spans",
     "title": "Get Started with Quarto",
     "section": "Divs and Spans",
-    "text": "Divs and Spans\nPandoc and therefore Quarto can parse “fenced Div blocks”\n\n::: {.border}\nThis content can be styled with a border\n:::\n\n\n\nThis content can be styled with a border\n\nThis is text with [special]{style=\"color:red;\"} formatting.\n\n\nThis is text with special formatting.\nDivs and Spans\n\nYou can think of a ::: div as a HTML <div> but it can also apply in specific situations to content in PDF for example\nSimilarily, [text]{.class} Spans can be thought of a <span .class>Text</span> but again are a bit more transferable.\n\n\nThe following, if specifying a Quarto class can often apply between formats.\n::: {.unnumbered .unlisted}\nText\n:::\n\n\nWhile the following is hard-coded as HTML.\n<div style=\"font-size: 200px;\">Text</div>"
+    "text": "Divs and Spans\nPandoc and therefore Quarto can parse “fenced Div blocks”\n\n::: {.border}\nThis content can be styled with a border\n:::\n\n\n\nThis content can be styled with a border\n\nThis is text with [special]{style=\"color:red;\"} formatting.\n\n\nThis is text with special formatting.\n\n\nYou’re not limited to HTML/CSS concepts - Pandoc and Quarto also have “attributes” that can be assigned in this way.\nDivs and Spans\n\nYou can think of a ::: div as a HTML <div> but it can also apply in specific situations to content in PDF\nSimilarly, [text]{.class} spans can be thought of a <span .class>Text</span> but again are a bit more transferable if using Pandoc/Quarto native attributes.\n\n\nThe following, if specifying a Quarto class can often apply between formats.\n::: {.unnumbered .unlisted}\nText\n:::\n\n\nWhile the following is hard-coded as HTML.\n<div style=\"font-size: 200px;\">Text</div>"
   },
   {
     "objectID": "materials/02-authoring.html#callout-blocks",
@@ -539,29 +567,29 @@
     "text": "Figures\nBasic markdown syntax:\n![Boston Terrier](images/boston-terrier.png)\n\nBoston Terrier"
   },
   {
-    "objectID": "materials/02-authoring.html#fragments",
-    "href": "materials/02-authoring.html#fragments",
+    "objectID": "materials/02-authoring.html#fragmentsspans",
+    "href": "materials/02-authoring.html#fragmentsspans",
     "title": "Get Started with Quarto",
-    "section": "Fragments",
-    "text": "Fragments\n\n\n![Boston terrier](images/boston-terrier.png){fig-align=\"left\"}\n\n\n![](images/boston-terrier.png){fig-align=\"right\" fig-alt=\"A photo a Boston Terrier.\"}"
+    "section": "Fragments/spans",
+    "text": "Fragments/spans\n\n\n![Boston terrier](images/boston-terrier.png){fig-align=\"left\"}\n\n\n![](images/boston-terrier.png){fig-align=\"right\" fig-alt=\"A photo a Boston Terrier.\"}"
+  },
+  {
+    "objectID": "materials/02-authoring.html#subfigures-fenced-div-class",
+    "href": "materials/02-authoring.html#subfigures-fenced-div-class",
+    "title": "Get Started with Quarto",
+    "section": "Subfigures fenced div class",
+    "text": "Subfigures fenced div class\n::: {#fig-bostons layout-ncol=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\nTwo states of Howard\n\n:::"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures",
     "href": "materials/02-authoring.html#subfigures",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n::: {#fig-bostons layout-ncol=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\nTwo states of Howard\n\n:::"
+    "text": "Subfigures\n\n\n\n\n\n\n\n(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-1",
     "href": "materials/02-authoring.html#subfigures-1",
-    "title": "Get Started with Quarto",
-    "section": "Subfigures",
-    "text": "Subfigures\n\n\n\n\n\n\n\n(a) Excited\n\n\n\n\n\n\n\n(b) Sleeping\n\n\n\n\nFigure 1: Two states of Howard"
-  },
-  {
-    "objectID": "materials/02-authoring.html#subfigures-2",
-    "href": "materials/02-authoring.html#subfigures-2",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
     "text": "Subfigures"
@@ -571,14 +599,14 @@
     "href": "materials/02-authoring.html#paths",
     "title": "Get Started with Quarto",
     "section": "Paths",
-    "text": "Paths\nQuarto documents reference from their existing folder/directory.\n\nYou can reference sub-directories/folders easily:\n![](images/image.png)\n\n\nBut what about going “backwards” i.e. to a parent directory?\nThis workshop is at \"get-started-quarto/materials/\"\n\n\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\nhere() always starts at the top-level directory of a RProject"
+    "text": "Paths\nQuarto documents reference from their existing folder/directory.\n\nYou can reference sub-directories/folders easily:\n![](images/image.png)\n\n\nBut what about going “backwards” i.e. to a parent directory?\nThis workshop is at \"get-started-quarto/materials/\"\n\n\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\"  \n\n\nhere() always starts at the top-level directory of a RProject"
   },
   {
     "objectID": "materials/02-authoring.html#absolute-vs-relative",
     "href": "materials/02-authoring.html#absolute-vs-relative",
     "title": "Get Started with Quarto",
     "section": "Absolute vs Relative:",
-    "text": "Absolute vs Relative:\nIn other situations, like markdown, YAML or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\n\n\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth - /.. or / = start from root directory\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\"\n\n\n\n\nor: \"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"workshop-conf-2022.Rproj\""
+    "text": "Absolute vs Relative:\nIn other situations, like markdown, YAML or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\"  \n\n\n\n\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth - /.. or / = start from root directory\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\"  \n\n\n\n\nor: \"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\""
   },
   {
     "objectID": "materials/02-authoring.html#navigating-in-the-terminal",
@@ -588,32 +616,25 @@
     "text": "Navigating in the terminal\nBecause Quarto is a command line interface (CLI), there are times you’ll need to use it via the terminal. A great overview of using the command line and navigating files/directories is available via the Data Carpentries or a great interactive tool for understanding commands: https://tldr.ostera.io\n\n\n\n\n\n\n\n\nCommand\nAction\n\n\n\n\npwd\nPrint name of current working directory\n\n\ncd\nChange current working directory\n\n\nls\nList directory contents\n\n\nquarto --help\nReturn quarto help docs\n\n\nmkdir howdy\nMake a new folder/directory called “howdy”\n\n\nrm howdy/some-file.qmd | Remove\na file called some-file.qmd from the “howdy” folder"
   },
   {
-    "objectID": "materials/02-authoring.html#tldr-tool",
-    "href": "materials/02-authoring.html#tldr-tool",
+    "objectID": "materials/02-authoring.html#subfigures-2",
+    "href": "materials/02-authoring.html#subfigures-2",
     "title": "Get Started with Quarto",
-    "section": "tldr tool",
-    "text": "tldr tool"
+    "section": "Subfigures",
+    "text": "Subfigures\n::: {#fig-bostons layout-nrow=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n:::"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-3",
     "href": "materials/02-authoring.html#subfigures-3",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n::: {#fig-bostons layout-nrow=2}\n\n![Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){#fig-boston width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){#fig-sleep width=\"250px\"}\n\n:::"
+    "text": "Subfigures\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\nTwo states of Howard, twice"
   },
   {
     "objectID": "materials/02-authoring.html#subfigures-4",
     "href": "materials/02-authoring.html#subfigures-4",
     "title": "Get Started with Quarto",
     "section": "Subfigures",
-    "text": "Subfigures\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\nTwo states of Howard, twice"
-  },
-  {
-    "objectID": "materials/02-authoring.html#subfigures-5",
-    "href": "materials/02-authoring.html#subfigures-5",
-    "title": "Get Started with Quarto",
-    "section": "Subfigures",
-    "text": "Subfigures\n::: {layout-ncol=\"2\"}\n![Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){width=\"250px\"}\n\nTwo states of Howard, twice\n:::\n\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\n\nTwo states of Howard, twice"
+    "text": "Subfigures\n::: {layout-ncol=\"2\"}\n![Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Sleeping](images/boston-sleep.png){width=\"250px\"}\n\n![Still Excited](images/boston-terrier.png){width=\"250px\"}\n\n![Still sleeping](images/boston-sleep.png){width=\"250px\"}\n\nTwo states of Howard, twice\n:::\n\n\n\n\n\n\nExcited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\n\nTwo states of Howard, twice"
   },
   {
     "objectID": "materials/02-authoring.html#figure-divs",
@@ -641,14 +662,28 @@
     "href": "materials/02-authoring.html#inline-footnotes",
     "title": "Get Started with Quarto",
     "section": "Inline footnotes",
-    "text": "Inline footnotes\nHere is an inline note.^[Inlines notes are easier to write,\nsince you don't have to pick an identifier and move down to\ntype the note.]\nHere is an inline note.1\n\nNotice that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.\n\nInlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note."
+    "text": "Inline footnotes\nHere is an inline note.^[Inlines notes are easier to write,\nsince you don't have to pick an identifier and move down to\ntype the note.]\nHere is an inline note.1\nInlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note."
+  },
+  {
+    "objectID": "materials/02-authoring.html#inline-footnotes-1",
+    "href": "materials/02-authoring.html#inline-footnotes-1",
+    "title": "Get Started with Quarto",
+    "section": "Inline footnotes",
+    "text": "Inline footnotes\nHere is an footnore reference[^1]\n\n[^1]: This can be easy in some situations when you have a really long note or\ndon't want to inline complex outputs.\n\nHere is an footnore reference1\n\n\nNotice in both situations that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.\n\nThis can be easy in some situations when you have a really long note or don’t want to inline complex outputs."
   },
   {
     "objectID": "materials/02-authoring.html#cross-references",
     "href": "materials/02-authoring.html#cross-references",
     "title": "Get Started with Quarto",
     "section": "Cross References",
-    "text": "Cross References\nCross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables.\n![Elephant](elephant.png){#fig-elephant}\n\nThe presence of the caption (Elephant) and label (#fig-elephant) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document:\nSee @fig-elephant for an illustration.\n\n\n\n\n\n\nGet started with Quarto"
+    "text": "Cross References\nCross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables.\n![Elephant](elephant.png){#fig-elephant}\n\nThe presence of the caption (Elephant) and label (#fig-elephant) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document:\nSee @fig-elephant for an illustration."
+  },
+  {
+    "objectID": "materials/02-authoring.html#diagrams-w-mermaid",
+    "href": "materials/02-authoring.html#diagrams-w-mermaid",
+    "title": "Get Started with Quarto",
+    "section": "Diagrams w/ mermaid",
+    "text": "Diagrams w/ mermaid\n```{mermaid}\nflowchart LR\n  A[Hard edge] --> B(Round edge)\n  B --> C{Decision}\n  C --> D[Result one]\n  C --> E[Result two]\n```\n\n\nMermaid example and Mermaid.js documentation\n\n\n\nGet started with Quarto"
   },
   {
     "objectID": "materials/03-computation-editors.html#execute-code",
@@ -683,7 +718,7 @@
     "href": "materials/03-computation-editors.html#knitr-code-cells",
     "title": "Get Started with Quarto",
     "section": "knitr code cells",
-    "text": "knitr code cells\nhttps://quarto.org/docs/reference/cells/cells-knitr.html"
+    "text": "knitr code cells\nThere’s a lot of knitr options!\nhttps://quarto.org/docs/reference/cells/cells-knitr.html"
   },
   {
     "objectID": "materials/03-computation-editors.html#anatomy-of-a-code-chunk",
@@ -984,14 +1019,7 @@
     "href": "materials/04-static-documents.html#tabsets-2",
     "title": "Get Started with Quarto",
     "section": "Tabsets",
-    "text": "Tabsets\n::: {.panel-tabset}"
-  },
-  {
-    "objectID": "materials/04-static-documents.html#code-1",
-    "href": "materials/04-static-documents.html#code-1",
-    "title": "Get Started with Quarto",
-    "section": "Code",
-    "text": "Code\n```{r}\n#| echo: fenced\n#| eval: false\nhead(mtcars)\n```\n\n\n## Output\n\n```{r}\n#| eval: true\n#| echo: false\nhead(mtcars)\n```\n\n:::"
+    "text": "Tabsets\n\n::: {.panel-tabset}\n\n## Code\n\n```{r}\n#| echo: fenced\n#| eval: false\nhead(mtcars)\n```\n\n\n## Output\n\n```{r}\n#| eval: true\n#| echo: false\nhead(mtcars)\n```\n\n:::"
   },
   {
     "objectID": "materials/04-static-documents.html#footnotes",
@@ -1012,7 +1040,7 @@
     "href": "materials/04-static-documents.html#reference-popups",
     "title": "Get Started with Quarto",
     "section": "Reference popups",
-    "text": "Reference popups\nIf you hover your mouse over the citation and footnote in this sentence you’ll see a popup displaying the reference contents:\nformat:\n  html:\n    citations-hover: false\n    footnotes-hover: false\n\n\nFor example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?"
+    "text": "Reference popups\nIf you hover your mouse over the citation and footnote in this sentence you’ll see a popup displaying the reference contents:\nformat:\n  html:\n    citations-hover: true\n    footnotes-hover: true\n\n\nFor example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?"
   },
   {
     "objectID": "materials/04-static-documents.html#hide-all-code",
@@ -1222,7 +1250,7 @@
     "href": "materials/05-presentations.html#sizing",
     "title": "Get Started with Quarto",
     "section": "Sizing",
-    "text": "Sizing\n\n\n\n\n\n\n\nwidth\nThe “normal” width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\n\nheight\nThe “normal” height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\nformat:\n  revealjs:\n    height: 1080\n    width: 1920"
+    "text": "Sizing\n\n\n\n\n\n\n\nwidth\nThe “normal” width of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\n\nheight\nThe “normal” height of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.\n\n\n\nformat:\n  revealjs:\n    height: 900\n    width: 1600"
   },
   {
     "objectID": "materials/05-presentations.html#slide-numbering",
@@ -1393,6 +1421,20 @@
     "text": "Output location, slide"
   },
   {
+    "objectID": "materials/05-presentations.html#column-layout-arbitrary-fragment",
+    "href": "materials/05-presentations.html#column-layout-arbitrary-fragment",
+    "title": "Get Started with Quarto",
+    "section": "Column Layout, arbitrary fragment",
+    "text": "Column Layout, arbitrary fragment\nIf you try . . . syntax WITH ::: {.columns} - it won’t be incremental… BUT:\n\n\n\n\nThese appear first\n\n\nMake\nYour\nList\n\n\n\n\n\n\nThen this\n\n```{r}\nhead(mtcars)\n```\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "materials/05-presentations.html#column-layout-arbitrary-fragment-1",
+    "href": "materials/05-presentations.html#column-layout-arbitrary-fragment-1",
+    "title": "Get Started with Quarto",
+    "section": "Column Layout, arbitrary fragment",
+    "text": "Column Layout, arbitrary fragment\nYou can nest .incremental + .fragment to get your expected behavior.\n## Column Layout, arbitrary fragment\n\n::::: {.columns}\n\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### These appear first\n\n::: {.incremental}\n- Make\n- Your \n- List\n:::\n\n:::\n\n::::\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### Then this\n\n```{r}\n#| echo: fenced\nhead(mtcars)\n```\n\n\n:::\n\n::::\n\n:::::"
+  },
+  {
     "objectID": "materials/05-presentations.html#images",
     "href": "materials/05-presentations.html#images",
     "title": "Get Started with Quarto",
@@ -1509,7 +1551,7 @@
     "href": "materials/05-presentations.html#footnote",
     "title": "Get Started with Quarto",
     "section": "Footnote",
-    "text": "Footnote\nFootnotes in presentations are placed at the bottom of the slide and numbered.\nFor example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?\n\nFor example, did you know that Howard is a dog1?\n\n\nHe also likes to sleep2\n\nSpecifically he is a Boston Terrier, although sometimes he acts like a catHe sleeps a LOT during the day"
+    "text": "Footnote\nFootnotes in presentations are placed at the bottom of the slide and numbered.\nFor example, did you know that Howard is a dog^[Specifically he is a Boston Terrier, although sometimes he acts like a cat]?\n\nFor example, did you know that Howard is a dog1?\n\n\nHe also likes to sleep2\n\nSpecifically he is a Boston Terrier, although sometimes he acts like a catHe sleeps a LOT during the day… like a cat 🤔"
   },
   {
     "objectID": "materials/05-presentations.html#asides",
@@ -1593,7 +1635,14 @@
     "href": "materials/05-presentations.html#section-3",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "IMPORTANT POINT!\n\n\n\n\nGet started with Quarto"
+    "text": "Ok, not that important!"
+  },
+  {
+    "objectID": "materials/05-presentations.html#section-4",
+    "href": "materials/05-presentations.html#section-4",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "## Auto-Animate {auto-animate=\"true\" auto-animate-easing=\"ease-in-out\"}\n\n::: {style=\"font-size: 160px; text-align: center;\"}\n\nIMPORTANT POINT!\n\n:::\n\n##  {auto-animate=\"true\" auto-animate-easing=\"ease-in-out\"}\n\n::: {style=\"font-size: 25px;\"}\n\nOk, not that important!\n\n:::\n\n\n\nGet started with Quarto"
   },
   {
     "objectID": "materials/06-websites.html#websites-1",
@@ -1761,7 +1810,14 @@
     "href": "materials/06-websites.html#netlify",
     "title": "Get Started with Quarto",
     "section": "Netlify",
-    "text": "Netlify"
+    "text": "Netlify\n\nCheat code: Netlify drop"
+  },
+  {
+    "objectID": "materials/06-websites.html#github-pages",
+    "href": "materials/06-websites.html#github-pages",
+    "title": "Get Started with Quarto",
+    "section": "GitHub Pages",
+    "text": "GitHub Pages\n{=html, echo=FALSE} <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n\nName your content index.qmd to generate index.html -> Push to GitHub\n\n\n\nStep 2: Name your slides index.qmd pic.twitter.com/wLXN43rUlZ\n\n— Emil Hvitfeldt (@Emil_Hvitfeldt) July 21, 2022"
   },
   {
     "objectID": "materials/06-websites.html#websites-2",
@@ -1796,21 +1852,21 @@
     "href": "materials/06-websites.html#books",
     "title": "Get Started with Quarto",
     "section": "Books",
-    "text": "Books\nproject:\n  type: book\nbook:\n  title: \"mybook\"\n  author: \"Jane Doe\"\n  date: \"8/18/2021\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\nbibliography: references.bib\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png"
+    "text": "Books\n\nThe structure of a Quarto book can be as simple as a list of chapters, or can alternatively incorporate multiple parts and/or appendices. Quarto book chapters and sections are automatically numbered (for cross-referencing), however you can also specify that some parts of the book should remain unnumbered."
   },
   {
     "objectID": "materials/06-websites.html#book-structure",
     "href": "materials/06-websites.html#book-structure",
     "title": "Get Started with Quarto",
     "section": "Book structure",
-    "text": "Book structure"
+    "text": "Book structure\nproject:\n  type: book\nbook:\n  title: \"mybook\"\n  author: \"Jane Doe\"\n  date: \"8/18/2021\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\nbibliography: references.bib\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png"
   },
   {
-    "objectID": "materials/06-websites.html#book-crossferfs",
-    "href": "materials/06-websites.html#book-crossferfs",
+    "objectID": "materials/06-websites.html#book-crossrefs",
+    "href": "materials/06-websites.html#book-crossrefs",
     "title": "Get Started with Quarto",
-    "section": "Book crossferfs",
-    "text": "Book crossferfs\n\n\n\nGet started with Quarto"
+    "section": "Book crossrefs",
+    "text": "Book crossrefs\n\nQuarto cross references provide automatic numbering and reference creation for figures, tables, equations, sections, listings, theorems, and proofs. In books, cross references work the same way except they can reach across chapters.\n\n\nSee @fig-penginus-by-island for a breakdown by island.\n\n\n# Introduction {#section-intro}\nor: See @sec-introduction for additional discussion.\n\n\n\nGet started with Quarto"
   },
   {
     "objectID": "materials/07-plots-tables.html#layout",
@@ -1894,7 +1950,7 @@
     "href": "materials/07-plots-tables.html#figure-layout-custom",
     "title": "Get Started with Quarto",
     "section": "Figure layout, custom",
-    "text": "Figure layout, custom\nlayout: [[45,-10, 45], [100]] - think of it as 45% item 1, 10% blank, 45% item 2, new row: 100% item 3\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| layout: [[45,-10, 45], [100]]\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +\n  geom_boxplot() +\n  geom_jitter()\n```"
+    "text": "Figure layout, custom\n\nCodeOutput\n\n\n\n```{r}\n#| eval: false\n#| layout: [[45,-10, 45], [100]]\n\ncars |> \n  ggplot(aes(x = speed, y = dist)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = disp, y = mpg)) +\n  geom_point()\n\nmtcars |> \n  ggplot(aes(x = cyl, y = mpg, group = cyl, color = factor(cyl))) +\n  geom_boxplot() +\n  geom_jitter()\n```"
   },
   {
     "objectID": "materials/07-plots-tables.html#block-layout-arbitrary-content",
@@ -2163,6 +2219,13 @@
     "text": "Lightbox position + groups\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\ndesc-position\nThe position of the title and description when displaying a lightbox. One of top, bottom, left, right. Defaults to bottom\n\n\n\n\n![A Lovely Image](mv-1.jpg){group=\"my-gallery\"\n\n![Another Lovely Image](mv-2.jpg){group=\"my-gallery\"\n\n![The Last Lovely Image](mv-3.jpg){group=\"my-gallery\"}"
   },
   {
+    "objectID": "materials/08-advanced-knitr.html#feedback",
+    "href": "materials/08-advanced-knitr.html#feedback",
+    "title": "Get Started with Quarto",
+    "section": "Feedback",
+    "text": "Feedback\n\nPlease go to <rstd.io/conf-workshop-survey>. Your feedback is crucial! Data from the survey informs curriculum and format decisions for future conf workshops and we really appreciate you taking the time to provide it.\n\n\n\n\nGet started with Quarto"
+  },
+  {
     "objectID": "materials/static/custom-layout.html",
     "href": "materials/static/custom-layout.html",
     "title": "Get Started with Quarto",
@@ -2256,8 +2319,50 @@
   {
     "objectID": "workshop-materials.html",
     "href": "workshop-materials.html",
-    "title": "Get Started with Quarto",
+    "title": "Workshop Materials",
     "section": "",
-    "text": "Create a listing?"
+    "text": "folder\nfile\n\n\n\n\nmaterials/workshop/01-intro\nhistory.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#authoring",
+    "href": "workshop-materials.html#authoring",
+    "title": "Workshop Materials",
+    "section": "02-authoring",
+    "text": "02-authoring\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/02-authoring\ncallout-boxes.qmd\n\n\nmaterials/workshop/02-authoring\ncallout-pdf.qmd\n\n\nmaterials/workshop/02-authoring\nfigure-layout-2.qmd\n\n\nmaterials/workshop/02-authoring\nfigure-layout.qmd\n\n\nmaterials/workshop/02-authoring\nmarkdown-syntax.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#computation",
+    "href": "workshop-materials.html#computation",
+    "title": "Workshop Materials",
+    "section": "03-computation",
+    "text": "03-computation\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/03-computation\nauto-complete.qmd\n\n\nmaterials/workshop/03-computation\nbroken-notebook.qmd\n\n\nmaterials/workshop/03-computation\ninline-code.qmd\n\n\nmaterials/workshop/03-computation\nvisual-editor.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#static",
+    "href": "workshop-materials.html#static",
+    "title": "Workshop Materials",
+    "section": "04-static",
+    "text": "04-static\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/04-static\nbootswatch-themed.qmd\n\n\nmaterials/workshop/04-static\npenguin-report.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#presentations",
+    "href": "workshop-materials.html#presentations",
+    "title": "Workshop Materials",
+    "section": "05-presentations",
+    "text": "05-presentations\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/05-presentations\nfragments.qmd\n\n\nmaterials/workshop/05-presentations\nrevealjs-penguins.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#visuals",
+    "href": "workshop-materials.html#visuals",
+    "title": "Workshop Materials",
+    "section": "07-visuals",
+    "text": "07-visuals\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/07-visuals\nfigure-layout-2.qmd\n\n\nmaterials/workshop/07-visuals\nfigure-layout.qmd\n\n\nmaterials/workshop/07-visuals\ngt-summary.qmd\n\n\nmaterials/workshop/07-visuals\nplot-layout.qmd\n\n\nmaterials/workshop/07-visuals\nplots.qmd\n\n\nmaterials/workshop/07-visuals\nstat-html.qmd"
+  },
+  {
+    "objectID": "workshop-materials.html#knitr",
+    "href": "workshop-materials.html#knitr",
+    "title": "Workshop Materials",
+    "section": "08-knitr",
+    "text": "08-knitr\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/08-knitr\nfa-example.qmd\n\n\nmaterials/workshop/08-knitr\nlightbox-extension.qmd\n\n\nmaterials/workshop/08-knitr\npenguin-params.qmd"
   }
 ]

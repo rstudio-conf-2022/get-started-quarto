@@ -112,8 +112,8 @@ format:
 ``` yaml
 format:
   revealjs:
-    height: 1080
-    width: 1920
+    height: 900
+    width: 1600
 ```
 
 ## Slide numbering
@@ -160,10 +160,10 @@ format:
 -   Change YAML:
     -   author for your name
     -   titled "My first Quarto Presentation!"
-    -   Add slide numbering
+    -   Add slide numbering (what do the different types mean?)
 -   Write out what you did this morning (woke up, ate breakfast, walked to this room, etc) in sub-sections
 -   New sections should have level 2 headers
--   Add some code to generate a basic plot
+-   Add some code to generate a basic plot using either the `palmerpenguins` dataset or `mtcars`
 -   Link out to an image with markdown syntax
 -   Render it!
 
@@ -380,7 +380,7 @@ Appears second
 
 -   Open `materials/workshop/05-presentations/revealjs-penguins.qmd`
 -   Explore the code
--   Add a new slide
+-   Add a new slide with a set of fragments
 -   Render it!
 
 ## Column layout
@@ -488,6 +488,96 @@ mtcars |>
   geom_point() +
   geom_smooth(method = "loess", formula = "y~x")
 ```
+
+## Column Layout, arbitrary fragment
+
+If you try `. . .` syntax WITH `::: {.columns}` - it won't be incremental... BUT:
+
+::::: {.columns}
+
+:::: {.column width="50%"}
+
+::: {.fragment}
+
+### These appear first
+
+::: {.incremental}
+- Make
+- Your 
+- List
+:::
+
+:::
+
+::::
+
+:::: {.column width="50%"}
+
+::: {.fragment}
+
+### Then this
+
+```{r}
+#| echo: fenced
+head(mtcars)
+```
+
+
+:::
+
+::::
+
+:::::
+
+## Column Layout, arbitrary fragment
+
+You _can_ nest `.incremental` + `.fragment` to get your expected behavior.
+
+```code
+## Column Layout, arbitrary fragment
+
+::::: {.columns}
+
+:::: {.column width="50%"}
+
+::: {.fragment}
+
+### These appear first
+
+::: {.incremental}
+- Make
+- Your 
+- List
+:::
+
+:::
+
+::::
+```
+````code
+:::: {.column width="50%"}
+
+::: {.fragment}
+
+### Then this
+
+```{{r}}
+#| echo: fenced
+head(mtcars)
+```
+
+
+:::
+
+::::
+
+:::::
+````
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+- Open `materials/workshop/05-presentation/fragments.qmd`
+- Make the portions appear in order: top -> bottom and left -> right
 
 ## Images
 

@@ -11,6 +11,8 @@ website:
     card-style: summary_large_image
     description: "rstudio::conf-2022 2 day workshop on getting started with Quarto"
     image: "https://raw.githubusercontent.com/rstudio-conf-2022/get-started-quarto/main/preview.jpeg"
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
   navbar:
     background: "#447099"
     left:
@@ -38,9 +40,11 @@ website:
             text: "Advanced Quarto"
       - href: schedule.qmd
         text: "Schedule"
+      - href: workshop-materials.qmd
+        text: Workshop
+    right: 
       - href: "https://quarto.org/"
         text: "Quarto Docs"
-    right: 
       - icon: github
         href: https://github.com/rstudio-conf-2022/get-started-quarto
       - icon: twitter
