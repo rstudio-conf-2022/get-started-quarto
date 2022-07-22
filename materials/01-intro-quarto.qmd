@@ -61,6 +61,10 @@ Please read and review the entire Code of Conduct carefully: <https://www.rstudi
 
 -   You can remove your mask to briefly drink/eat during breaks in the hall but please refrain from removing your mask in the workshop room itself
 
+## Code of Conduct
+
+Please read and review the entire Code of Conduct carefully: <https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/>
+
 ### Anti-Harassment
 
 > We expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.
@@ -118,7 +122,7 @@ Find me at:
 
 ![](images/carlos.jpeg){style="height: 300px;"}
 
-### Isabel Zimmerman - RStudio + TidyModels
+### Isabel Zimmerman - RStudio + Python/Vetiver
 
 ![](images/isabel.png){style="height: 300px;"}
 
@@ -135,7 +139,7 @@ Find me at:
 
 -   Short-code to content: <rstd.io/get-started-quarto>
 -   Are you on the latest version of RStudio i.e. [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)?
--   Are you on the [latest version of Quarto](https://quarto.org/docs/get-started/) (preview `v1.0.35` or `v1.0`)?
+-   Are you on the [latest version of Quarto](https://quarto.org/docs/get-started/) (preview `v1.0.35`)?
 -   Have you cloned the GitHub repo from <https://github.com/rstudio-conf-2022/get-started-quarto>?
 -   Installed the necessary packages?
 

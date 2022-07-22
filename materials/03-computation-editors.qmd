@@ -258,11 +258,12 @@ Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
-- In a blank Quarto doc:
-  - Insert a code chunk
-  - Load `tidyverse` and `palmerpenguins`
-  - Use some `tidyverse` code to explore the `palmerpenguins::penguins` dataset!
-  - Render it with the Render button!
+- Open `materials/workshop/03-computation/penguin-analysis.qmd`
+- Insert three total code chunks with the shortcut <kbd>`Ctrl + Alt + I`</kbd>
+  - Chunk 1: load `tidyverse` and `palmerpenguins` R packages and print the `penguins` dataset with `glimpse()`
+  - Chunk 2: Create a summary by sex/species of the average and median body weight and bill length
+  - Chunk 3: Create a plot of body mass (x) by bill length (y)
+  - Render it!
 
 ## Inline code
 
@@ -286,7 +287,8 @@ The mtcars dataset has an average miles/per gallon of `r mean(mtcars$mpg)`
 
 . . .
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
 fmt_mean <- scales::number_format(accuracy = 0.1)(mean(mtcars$mpg))
 ```
 

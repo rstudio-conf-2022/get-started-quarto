@@ -30,10 +30,12 @@ Please go to the workshop homepage for full instructions: <https://rstudio-conf-
 If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!
 
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
-- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.35` or greater)
-- Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
-- Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
-- Install/Update Chromium with `quarto install tool chromium`
+- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.36` or greater)
+- After installing Quarto, open the terminal in RStudio and:
+  - The terminal is located in the tab next to the R console pane
+  - Install/Update `TinyTeX` for PDFs with `quarto install tool tinytex`
+  - Install/Update Chromium with `quarto install tool chromium`
+- Ideally upgrade/use to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
 - Install these R packages:
 
 ```{r pkg-list}
@@ -133,11 +135,13 @@ questions:
 If you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!
 
 - Install latest version of RStudio, [`v2022.07.0-548` or later](https://www.rstudio.com/products/rstudio/download/#download)
-- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.35` or greater)
-- Ideally upgrade to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
-- Install/Update `TinyTeX` for PDF with `quarto install tool tinytex`
-- Install/Update Chromium with `quarto install tool chromium`
-- Install R packages:
+- Install [latest version of Quarto](https://quarto.org/docs/get-started/) (`v1.0.36` or greater)
+- After installing Quarto, open the terminal in RStudio:
+  - The terminal is located in the tab next to the R console pane in RStudio
+  - Install/Update `TinyTeX` for PDFs with `quarto install tool tinytex`
+  - Install/Update Chromium with `quarto install tool chromium`
+- Ideally upgrade/use to R 4.1 or R 4.2 (I'm showing base R pipe as `|>`)
+- Install these R packages:
 
 ```{r pkg-list}
 #| eval: false

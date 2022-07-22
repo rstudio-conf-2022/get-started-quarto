@@ -1,0 +1,9 @@
+---
+format: html
+---
+
+- Insert three total code chunks
+- Chunk 1: load `tidyverse` and `palmerpenguins` R packages and print the `penguins` dataset with `glimpse()`
+- Chunk 2: Create a summary by sex/species of the average and median body weight and bill length
+- Chunk 3: Create a plot of body mass (x) by bill length (y)
+- Render it!

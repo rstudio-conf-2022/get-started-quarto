@@ -595,6 +595,25 @@ head(mtcars)
 :::
 :::
 
+## Images
+
+
+```markdown
+::: columns
+::: {.column width="50%"}
+    ![](images/boston-sleep.png){fig-align="center"}
+
+![](images/boston-sleep.png){fig-align="center"}
+:::
+
+::: {.column width="50%"}
+    ![](images/boston-sleep.png)
+
+![](images/boston-sleep.png)
+:::
+:::
+```
+
 ## Stack layout
 
 Incremental reveal of images/content
@@ -883,11 +902,42 @@ mtcars |>
 
 ## Themes/Appearance
 
--   https://quarto.org/docs/presentations/revealjs/themes.html
+<https://quarto.org/docs/presentations/revealjs/themes.html>
 
--   Sass variables: https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables
+. . .
 
-## Arbitrary HTML + Position absolute
+```yaml
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: serif
+---
+```
+
+. . .
+
+```yaml
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: dark
+---
+```
+
+. . .
+
+```yaml
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+---
+```
+
+# Arbitrary HTML + Position absolute
 
 ## Position = absolute
 
@@ -908,6 +958,20 @@ mtcars |>
 . . .
 
 ![](images/lost-howard.jpeg){.absolute bottom="0" right="50" width="300"}
+
+## Position `.absolute`
+
+```code
+![](images/boston-sleep.png){.absolute top="200" left="0" width="350"}
+
+. . .
+
+![](images/boston-terrier.png){.absolute top="50" right="50" height="250"}
+
+. . .
+
+![](images/lost-howard.jpeg){.absolute bottom="0" right="50" width="300"}
+```
 
 ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
 
