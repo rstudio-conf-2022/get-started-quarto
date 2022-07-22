@@ -2,6 +2,10 @@
 title: "Schedule"
 ---
 
+::: {.callout-note}
+Depending on learner questions - the exact timing is subject to change.
+:::
+
 ### Day 1
 
 | Time          | Activity                                              |
@@ -27,3 +31,4 @@ title: "Schedule"
 | 15:30 - 16:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html)  |
 | 16:00 - 16:30 | Q/A with Quarto Dev team |
 | 16:30 - 17:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html)  |
+
