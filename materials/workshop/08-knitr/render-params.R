@@ -23,7 +23,7 @@ quarto::quarto_render(
 )
 
 # see the new chinstrap report
-rstudioapi::viewer("docs/choose-chinstrap.html")
+rstudioapi::viewer("choose-chinstrap.html")
 
 
 # Multi-render ------------------------------------------------------------

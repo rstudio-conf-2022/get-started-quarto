@@ -79,6 +79,3 @@ format:
       - litera
       - style.css
     toc: true
-    
-execute: 
-  freeze: true

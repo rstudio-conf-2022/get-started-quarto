@@ -36,7 +36,7 @@ library(gtsummary)
 
 ### `r fontawesome::fa("wifi")` WiFi
 - Username: `conf22`
-- Password: `together!` [(at last!)]{.style="color: #d3d3d3;"}
+- Password: `together!` [(at last!)]{style="color: #d3d3d3;"}
 
 ### `r fontawesome::fa("toilet")` Gender Neutral Bathrooms
 - River side of the Potomac Ballroom
@@ -179,13 +179,7 @@ In-between:
 
 > You can weave together narrative text and code to produce elegantly formatted output as documents, web pages, blog posts, books and more.
 
-## Why Quarto?
-
-. . .
-
-> We wanted to use a name that had meaning in the history of publishing and landed on Quarto, which is the format of a book or pamphlet produced from full sheets printed with eight pages of text, four to a side, then folded twice to produce four leaves. The earliest known European printed book is a Quarto, the Sibyllenbuch, believed to have been printed by Johannes Gutenberg in 1452--53.
-
-. . .
+## Why Quarto?^[We wanted to use a name that had meaning in the history of publishing and landed on Quarto, which is the format of a book or pamphlet produced from full sheets printed with eight pages of text, four to a side, then folded twice to produce four leaves. The earliest known European printed book is a Quarto, the Sibyllenbuch, believed to have been printed by Johannes Gutenberg in 1452--53.]
 
 Shakespeare's [Hamlet as a "Quarto"](https://www.folger.edu/publishing-shakespeare/diy-quarto)
 
@@ -297,7 +291,35 @@ Lua filters written by R/Python/Julia developers should be interchangeable betwe
 
 > Quarto is a command line interface (CLI) that renders plain text formats (`.qmd`, `.rmd`, `.md`) OR mixed formats (`.ipynb`/Jupyter notebook) into static PDF/Word/HTML reports, books, websites, presentations and more
 
-![](images/quarto-cli-help.png){width="1200px" fig-align="center" fig-alt="A screenshot of a Visual and Source Quarto document"}
+```{py}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1|4|10|14|15"
+thomasmock$ quarto --help
+
+  Usage:   quarto
+  Version: 1.0.36
+
+  Description:
+    Quarto CLI
+
+  Options:
+    -h, --help     - Show this help.                            
+    -V, --version  - Show the version number for this program.  
+
+  Commands:
+    render          [input] [args...]   - Render input file(s) to various document types.            
+    preview         [file] [args...]    - Render and preview a document or website project.          
+    serve           [input]             - Serve a Shiny interactive document.                        
+    create-project  [dir]               - Create a project for rendering multiple documents          
+    convert         <input>             - Convert documents to alternate representations.            
+    pandoc          [args...]           - Run the version of Pandoc embedded within Quarto.          
+    run             [script] [args...]  - Run a TypeScript, R, Python, or Lua script.                
+    install         <type> [target]     - Installs an extension or global dependency.                
+    publish         [provider] [path]   - Publish a document or project. Available providers include:
+    check           [target]            - Verify correct functioning of Quarto installation.         
+    help            [command]           - Show this help or the help of a sub-command.    
+```
 
 ## So what is Quarto? {background-color="black"}
 
@@ -369,11 +391,13 @@ Quarto comes out of the box with much better accessibility, better defaults, mor
 
 ## Rendering
 
-1.  Render in RStudio
+1.  Render in RStudio  
 
-![](https://quarto.org/docs/tools/images/rstudio-render.png) . . .
+![](https://quarto.org/docs/tools/images/rstudio-render.png) 
 
-2.  System shell via `quarto render`
+. . .
+
+2.  System shell via `quarto render`  
 
 ```{bash}
 #| eval: false
@@ -385,7 +409,7 @@ quarto render document.qmd --to docx
 
 . . .
 
-3.  R console via `quarto` R package
+3.  R console via `quarto` R package  
 
 ```{r}
 #| eval: false
@@ -788,3 +812,39 @@ quarto render --help
 [Quarto questions?]{.r-fit-text}
 
 # RStudio Refresher 
+
+<https://r4ds.had.co.nz/introduction.html#prerequisites>
+
+![](https://d33wubrfki0l68.cloudfront.net/9a23d664f0f49bc2ef8e78bed6277dd48bd2b96d/af132/diagrams/rstudio-console.png)
+
+## CLI Overview
+
+```{py}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1|4|10|14|15"
+thomasmock$ quarto --help
+
+  Usage:   quarto
+  Version: 1.0.36
+
+  Description:
+    Quarto CLI
+
+  Options:
+    -h, --help     - Show this help.                            
+    -V, --version  - Show the version number for this program.  
+
+  Commands:
+    render          [input] [args...]   - Render input file(s) to various document types.            
+    preview         [file] [args...]    - Render and preview a document or website project.          
+    serve           [input]             - Serve a Shiny interactive document.                        
+    create-project  [dir]               - Create a project for rendering multiple documents          
+    convert         <input>             - Convert documents to alternate representations.            
+    pandoc          [args...]           - Run the version of Pandoc embedded within Quarto.          
+    run             [script] [args...]  - Run a TypeScript, R, Python, or Lua script.                
+    install         <type> [target]     - Installs an extension or global dependency.                
+    publish         [provider] [path]   - Publish a document or project. Available providers include:
+    check           [target]            - Verify correct functioning of Quarto installation.         
+    help            [command]           - Show this help or the help of a sub-command.    
+```

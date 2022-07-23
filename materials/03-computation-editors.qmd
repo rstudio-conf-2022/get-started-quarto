@@ -23,7 +23,8 @@ editor: source
 
 ## Execute code
 
-```{r setup, include = FALSE}
+```{r}
+#| include: false
 library(tidyverse)
 ```
 
@@ -174,7 +175,8 @@ There's a lot of `knitr` options!
 ::: {.column width="50%"}
 
 ````md
-```{{r car-stuff}}
+```{{r}}
+#| label: car-cyl
 #| echo: false
 mtcars %>% 
   distinct(cyl)
@@ -186,7 +188,7 @@ mtcars %>%
 ::: {.column width="50%"}
 
 - Has 3x backticks on each end ```` ``` ````  
-- Place engine (`r` and chunk label `label`) between curly braces `{r label}`  
+- Place engine (`r`) between curly braces `{r}`  
 - Place options underneath, behind the `#|` (hashpipe): `#| option1: value`  
 
 :::
@@ -196,7 +198,8 @@ mtcars %>%
 
 ## Code
 
-```{r example-code-intro}
+```{r}
+# label: example-code-introduction
 #| echo: fenced
 #| output-location: column
 #| label: fig-airquality
@@ -217,9 +220,10 @@ ggplot(airquality, aes(Temp, Ozone)) +
 
 ::: {.column width="50%"}
 
-```{python example-code-python, eval = FALSE}
-#| echo: fenced
+```{python}
 #| label: fig-polar
+#| echo: fenced
+#| eval: false
 #| fig-cap: "A line plot on a polar axis"
 
 import numpy as np
@@ -508,7 +512,7 @@ Some examples
 ::: {.column width="50%"}
 
 ```{r, echo = FALSE, out.width="80%"}
-#| fig.alt="A screenshot of a RMarkdown document inside RStudio. The screenshot highlights the automatically generated document outline for each chunk name."
+#| fig-alt: "A screenshot of a RMarkdown document inside RStudio. The screenshot highlights the automatically generated document outline for each chunk name."
 knitr::include_graphics("images/qmd-outline.png")
 ```
 
@@ -637,7 +641,8 @@ mpg_cars
 
 ## Working with code
 
-```{r mpg-cars}
+```{r}
+#| label: mpg-cars
 #| echo: fenced
 #| eval: false
 mpg_cars <- mtcars |> 
@@ -663,6 +668,13 @@ mpg_cars
 # {background-color="#6a9c42"}
 
 [Editors]{style="color: white; font-size: 150px;"}
+
+## RStudio, quick intro
+
+- Use R Projects, i.e. a `.RProj` 
+- Overview of panes
+- Overview of R Console vs Terminal
+- Overview of Quarto, output inline vs output to pane
 
 ## RStudio
 
@@ -727,12 +739,9 @@ Running Quarto Render will call Quarto render in a background job - this will pr
 
 ## Rendering
 
-1. Render in RStudio
-
+1. Render in RStudio, starts a background job and previews the output  
 
 ![](https://quarto.org/docs/tools/images/rstudio-render.png)
-
-- Starts a background job and previews the output
 
 . . .
 
@@ -791,3 +800,37 @@ quarto_render("document.qmd", output_format = "pdf")
 Treat YAML as a "raw cell" in Jupyter - Jupyter doesn't care about YAML, but it's needed/used by Quarto
 
 ![](https://quarto.org/docs/tools/images/jupyter-lab-yaml.png)
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+```{py}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1|4|10|14|15"
+thomasmock$ quarto --help
+
+  Usage:   quarto
+  Version: 1.0.36
+
+  Description:
+    Quarto CLI
+
+  Options:
+    -h, --help     - Show this help.                            
+    -V, --version  - Show the version number for this program.  
+
+  Commands:
+    render          [input] [args...]   - Render input file(s) to various document types.            
+    preview         [file] [args...]    - Render and preview a document or website project.          
+    serve           [input]             - Serve a Shiny interactive document.                        
+    create-project  [dir]               - Create a project for rendering multiple documents          
+    convert         <input>             - Convert documents to alternate representations.            
+    pandoc          [args...]           - Run the version of Pandoc embedded within Quarto.          
+    run             [script] [args...]  - Run a TypeScript, R, Python, or Lua script.                
+    install         <type> [target]     - Installs an extension or global dependency.                
+    publish         [provider] [path]   - Publish a document or project. Available providers include:
+    check           [target]            - Verify correct functioning of Quarto installation.         
+    help            [command]           - Show this help or the help of a sub-command.    
+```
+
+

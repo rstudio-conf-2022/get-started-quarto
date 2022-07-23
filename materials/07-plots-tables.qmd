@@ -614,21 +614,54 @@ girafe(
 library(dplyr, warn.conflicts = FALSE)
 library(gt)
 library(gtExtras)
+library(gtsummary)
 
 head(mtcars) |> 
   gt() |> 
   tab_options(
-    table.font.size = px(40),
-    column_labels.font.size = px(45)
+    table.font.size = px(40), #< because I've made the slides a lot bigger
+    column_labels.font.size = px(45) #< normally don't have to increase this
   )
+```
+
+## `gt` extension packages
+
+::: columns
+::: column
+## `gtExtras`
+
+![](https://jthomasmock.github.io/gtExtras/logo.png)
+
+-   `gtExtras` provides additional helper functions to `gt`, mainly themes and inline plotting
+:::
+
+::: column
+![](https://www.danieldsjoberg.com/gtsummary/reference/figures/logo.png)
+
+-   `gtsummary` extends `gt` to descriptive statistics and statistical summaries of models
+:::
+:::
+
+## `gtsummary`
+
+-   Comes with built in example datasets like `trial`
+
+```{r}
+trial2 <- trial %>% dplyr::select(trt, age, grade)
+dplyr::glimpse(trial2)
 ```
 
 . . .
 
--   `gtExtras` provides additional helper functions to `gt`
--   `gtsummary` extends `gt` to descriptive statistics and statistical summaries of models
+```{r}
+trial2 %>% tbl_summary(by = trt) %>% add_p()
+```
 
-## Load libraries
+. . .
+
+![](images/gtsummary-trial2.jpeg)
+
+## Create a summary
 
 ```{r}
 penguins <- palmerpenguins::penguins
@@ -681,7 +714,7 @@ gt(penguin_sum) |>
         sex_planet, 
         ~fontawesome::fa(
           .x, height = "45px",
-          fill = ifelse(.x =="mars", "#af8dc3", "#7fbf7b")))
+          fill = ifelse(.x =="mars", "#7fbf7b", "#af8dc3")))
                  }) |>
   gt_theme_nytimes() |>
   tab_options(data_row.padding = px(2),
@@ -692,14 +725,22 @@ gt(penguin_sum) |>
 ## `gtExtras`
 
 ```{r}
-penguins |> 
-  gt_plt_summary() |> 
-  tab_options(
-    table.font.size = px(40),
-    column_labels.font.size = px(45),
-    heading.title.font.size = px(80)
-  )
+party_df <- tibble(
+  Party = c("SPD", "CDU/CSU", "Greens", "FDP", "AfD", "Left", "Other"),
+  Seats = c(206, 196, 118, 92, 83, 39, 1),
+  `% of 2nd Votes` = c(25.7, 24.1, 14.8, 11.5, 10.3, 4.9, 8.7)
+)
+
+minimal_table <- gt(party_df) %>% 
+  gt_plt_dot(column = Seats, category_column = Party,  max_value = 379,
+    palette = c("#ec323f", "black", "#63d64a", "#fff24e", "#4fabf7", "#e956ad", "grey")) %>% 
+  gtExtras::gt_theme_nytimes() %>% 
+  tab_header(title = "Results by Party in the Bundestag Election",
+             subtitle = "Seats and votes are based on provisional official results.") %>% 
+  cols_width(Party ~ px(300), 3 ~ px(30))
 ```
+
+![](https://user-images.githubusercontent.com/29187501/134953142-b3175f33-53f2-4e3d-aa5f-9509834263ee.png)
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 

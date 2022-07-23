@@ -357,4 +357,6 @@ filters:
 
 ## Feedback
 
-> Please go to \<rstd.io/conf-workshop-survey\>. Your feedback is crucial! Data from the survey informs curriculum and format decisions for future conf workshops and we really appreciate you taking the time to provide it.
+> Please complete the post-workshop survey. Your feedback is crucial! Data from the survey informs curriculum and format decisions for future conf workshops and we really appreciate you taking the time to provide it.
+
+\<rstd.io/conf-workshop-survey\>

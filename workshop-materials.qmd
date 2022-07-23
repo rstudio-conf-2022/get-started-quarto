@@ -27,6 +27,8 @@ for (i in 1:length(work_files)) {
   cat(paste("##", folder_path))
   print(knitr::kable(work_files[[i]]))
   cat("\n")
+  cat(': {tbl-colwidths="[60,40]"} \n')
+  cat("\n")
 }
 
 ```

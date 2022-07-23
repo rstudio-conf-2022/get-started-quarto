@@ -569,7 +569,7 @@ TIP!
 - CSS is _not_ transferrable
 - Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX
 
-## Output options
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
-text
-
+- Open `materials/workshop/01-intro/history.qmd`
+- Render as HTML and then render as PDF

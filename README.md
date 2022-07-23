@@ -20,7 +20,7 @@ Please go to the workshop homepage for full instructions: <https://rstudio-conf-
 
 🗓️ July 25 and 26, 2022\
 ⏰ 09:00 - 17:00\
-🏨 **TODO ADD ROOM**\
+🏨 Maryland 2
 ✍️ [rstd.io/get-started-quarto](https://rstd.io/get-started-quarto)
 
 ------------------------------------------------------------------------

@@ -483,16 +483,17 @@
 <h2>Anatomy of a code chunk</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="in">```{r car-stuff}</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#| echo: false</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">distinct</span>(cyl)</span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#| label: car-cyl</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">distinct</span>(cyl)</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:50%;">
 <ul>
 <li>Has 3x backticks on each end <code>```</code><br>
 </li>
-<li>Place engine (<code>r</code> and chunk label <code>label</code>) between curly braces <code>{r label}</code><br>
+<li>Place engine (<code>r</code>) between curly braces <code>{r}</code><br>
 </li>
 <li>Place options underneath, behind the <code>#|</code> (hashpipe): <code>#| option1: value</code></li>
 </ul>
@@ -501,55 +502,46 @@
 </section>
 <section id="code" class="slide level2">
 <h2>Code</h2>
-<div class="cell columns column-output-location">
-<div class="column">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="in">```{r example-code-intro}</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="co">#| output-location: column</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#| label: fig-airquality</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co">#| fig-cap: Temperature and ozone level.</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="co">#| warning: false</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
-<span id="cb10-10"><a href="#cb10-10"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb10-11"><a href="#cb10-11"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a>)</span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column">
-<div class="cell-output-display">
-<div id="fig-airquality" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="03-computation-editors_files/figure-revealjs/fig-airquality-1.png" width="960"></p>
-<p></p><figcaption>Figure 1: Temperature and ozone level.</figcaption><p></p>
-</figure>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># label: example-code-introduction</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co">#| echo: fenced</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#| output-location: column</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co">#| label: fig-airquality</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co">#| fig-cap: Temperature and ozone level.</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co">#| warning: false</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb10-11"><a href="#cb10-11"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-</div>
-</div>
-</div>
-</section>
+<img data-src="03-computation-editors_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="code-more-than-just-r" class="slide level2">
 <h2>Code, more than just R</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="in">```{python example-code-python, eval = FALSE}</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="in">```{python}</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="co">#| label: fig-polar</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-7"><a href="#cb11-7"></a></span>
-<span id="cb11-8"><a href="#cb11-8"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb11-9"><a href="#cb11-9"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb11-10"><a href="#cb11-10"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
-<span id="cb11-11"><a href="#cb11-11"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
-<span id="cb11-12"><a href="#cb11-12"></a>)</span>
-<span id="cb11-13"><a href="#cb11-13"></a>ax.plot(theta, r)</span>
-<span id="cb11-14"><a href="#cb11-14"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb11-15"><a href="#cb11-15"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb11-16"><a href="#cb11-16"></a>plt.show()</span>
-<span id="cb11-17"><a href="#cb11-17"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">#| fig-cap: "A line plot on a polar axis"</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb11-10"><a href="#cb11-10"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb11-11"><a href="#cb11-11"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb11-12"><a href="#cb11-12"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb11-13"><a href="#cb11-13"></a>)</span>
+<span id="cb11-14"><a href="#cb11-14"></a>ax.plot(theta, r)</span>
+<span id="cb11-15"><a href="#cb11-15"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb11-16"><a href="#cb11-16"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb11-17"><a href="#cb11-17"></a>plt.show()</span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/polar-axis.png" width="650"></p>
@@ -571,12 +563,13 @@
 <section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>In a blank Quarto doc:
+<li>Open <code>materials/workshop/03-computation/penguin-analysis.qmd</code></li>
+<li>Insert three total code chunks with the shortcut <kbd><code>Ctrl + Alt + I</code></kbd>
 <ul>
-<li>Insert a code chunk</li>
-<li>Load <code>tidyverse</code> and <code>palmerpenguins</code></li>
-<li>Use some <code>tidyverse</code> code to explore the <code>palmerpenguins::penguins</code> dataset!</li>
-<li>Render it with the Render button!</li>
+<li>Chunk 1: load <code>tidyverse</code> and <code>palmerpenguins</code> R packages and print the <code>penguins</code> dataset with <code>glimpse()</code></li>
+<li>Chunk 2: Create a summary by sex/species of the average and median body weight and bill length</li>
+<li>Chunk 3: Create a plot of body mass (x) by bill length (y)</li>
+<li>Render it!</li>
 </ul></li>
 </ul>
 </section>
@@ -700,7 +693,7 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <span id="cb21-10"><a href="#cb21-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="03-computation-editors_files/figure-revealjs/unnamed-chunk-7-1.png" alt="A ggplot2 with temperature by ozone levels along with a trend line indicating the increase in temperature with increasing ozone levels." width="960" class="r-stretch quarto-figure-center"><p class="caption">Air Quality</p></section>
+<img data-src="03-computation-editors_files/figure-revealjs/unnamed-chunk-10-1.png" alt="A ggplot2 with temperature by ozone levels along with a trend line indicating the increase in temperature with increasing ozone levels." width="960" class="r-stretch quarto-figure-center"><p class="caption">Air Quality</p></section>
 <section id="rmarkdown-vs-quarto" class="slide level2">
 <h2>RMarkdown vs Quarto</h2>
 <p>You <em>can</em> mix and match or use only R Markdown or Quarto style <code>knitr</code> options. However, note the difference between ‘naming’ of the chunk options, typically <code>one.two</code> vs <code>one-two</code>. The <code>one.two</code> exists for backwards compatibility and you should focus on <code>one-two</code> syntax.</p>
@@ -719,7 +712,7 @@ fig.dpi vs fig-dpi</code></pre>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p><img data-src="03-computation-editors_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="03-computation-editors_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1032,13 +1025,14 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="working-with-code-3" class="slide level2">
 <h2>Working with code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1"></a><span class="in">```{r mpg-cars}</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
-<span id="cb39-5"><a href="#cb39-5"></a></span>
-<span id="cb39-6"><a href="#cb39-6"></a>mpg_cars</span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1"></a><span class="in">```{r}</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#| label: mpg-cars</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="co">#| eval: false</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>mpg_cars <span class="ot">&lt;-</span> mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb39-5"><a href="#cb39-5"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
+<span id="cb39-6"><a href="#cb39-6"></a></span>
+<span id="cb39-7"><a href="#cb39-7"></a>mpg_cars</span>
+<span id="cb39-8"><a href="#cb39-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="working-with-code-4" class="slide level2">
@@ -1063,6 +1057,15 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="section-2" class="title-slide slide level1 center" data-background-color="#6a9c42">
 <h1></h1>
 <p><span style="color: white; font-size: 150px;">Editors</span></p>
+</section>
+<section id="rstudio-quick-intro" class="slide level2">
+<h2>RStudio, quick intro</h2>
+<ul>
+<li>Use R Projects, i.e.&nbsp;a <code>.RProj</code></li>
+<li>Overview of panes</li>
+<li>Overview of R Console vs Terminal</li>
+<li>Overview of Quarto, output inline vs output to pane</li>
+</ul>
 </section>
 <section id="rstudio" class="slide level2">
 <h2>RStudio</h2>
@@ -1124,13 +1127,10 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="rendering" class="slide level2">
 <h2>Rendering</h2>
 <ol type="1">
-<li>Render in RStudio</li>
+<li>Render in RStudio, starts a background job and previews the output</li>
 </ol>
 
-<img data-src="https://quarto.org/docs/tools/images/rstudio-render.png" class="r-stretch"><ul>
-<li>Starts a background job and previews the output</li>
-</ul>
-<div class="fragment">
+<img data-src="https://quarto.org/docs/tools/images/rstudio-render.png" class="r-stretch"><div class="fragment">
 <ol start="2" type="1">
 <li>System shell via <code>quarto render</code></li>
 </ol>
@@ -1185,13 +1185,42 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 <section id="jupyter-yaml" class="slide level2">
 <h2>Jupyter YAML</h2>
 <p>Treat YAML as a “raw cell” in Jupyter - Jupyter doesn’t care about YAML, but it’s needed/used by Quarto</p>
-<p><img data-src="https://quarto.org/docs/tools/images/jupyter-lab-yaml.png"></p>
 
-<p><img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img data-src="https://quarto.org/docs/tools/images/jupyter-lab-yaml.png" class="r-stretch"></section></section>
+<section id="your-turn-6" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="|1|4|10|14|15"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>thomasmock$ quarto <span class="op">--</span><span class="bu">help</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a></span>
+<span id="cb45-3"><a href="#cb45-3"></a>  Usage:   quarto</span>
+<span id="cb45-4"><a href="#cb45-4"></a>  Version: <span class="fl">1.0.36</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  Description:</span>
+<span id="cb45-7"><a href="#cb45-7"></a>    Quarto CLI</span>
+<span id="cb45-8"><a href="#cb45-8"></a></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  Options:</span>
+<span id="cb45-10"><a href="#cb45-10"></a>    <span class="op">-</span>h, <span class="op">--</span><span class="bu">help</span>     <span class="op">-</span> Show this <span class="bu">help</span>.                            </span>
+<span id="cb45-11"><a href="#cb45-11"></a>    <span class="op">-</span>V, <span class="op">--</span>version  <span class="op">-</span> Show the version number <span class="cf">for</span> this program.  </span>
+<span id="cb45-12"><a href="#cb45-12"></a></span>
+<span id="cb45-13"><a href="#cb45-13"></a>  Commands:</span>
+<span id="cb45-14"><a href="#cb45-14"></a>    render          [<span class="bu">input</span>] [args...]   <span class="op">-</span> Render <span class="bu">input</span> <span class="bu">file</span>(s) to various document types.            </span>
+<span id="cb45-15"><a href="#cb45-15"></a>    preview         [<span class="bu">file</span>] [args...]    <span class="op">-</span> Render <span class="kw">and</span> preview a document <span class="kw">or</span> website project.          </span>
+<span id="cb45-16"><a href="#cb45-16"></a>    serve           [<span class="bu">input</span>]             <span class="op">-</span> Serve a Shiny interactive document.                        </span>
+<span id="cb45-17"><a href="#cb45-17"></a>    create<span class="op">-</span>project  [<span class="bu">dir</span>]               <span class="op">-</span> Create a project <span class="cf">for</span> rendering multiple documents          </span>
+<span id="cb45-18"><a href="#cb45-18"></a>    convert         <span class="op">&lt;</span><span class="bu">input</span><span class="op">&gt;</span>             <span class="op">-</span> Convert documents to alternate representations.            </span>
+<span id="cb45-19"><a href="#cb45-19"></a>    pandoc          [args...]           <span class="op">-</span> Run the version of Pandoc embedded within Quarto.          </span>
+<span id="cb45-20"><a href="#cb45-20"></a>    run             [script] [args...]  <span class="op">-</span> Run a TypeScript, R, Python, <span class="kw">or</span> Lua script.                </span>
+<span id="cb45-21"><a href="#cb45-21"></a>    install         <span class="op">&lt;</span><span class="bu">type</span><span class="op">&gt;</span> [target]     <span class="op">-</span> Installs an extension <span class="kw">or</span> <span class="kw">global</span> dependency.                </span>
+<span id="cb45-22"><a href="#cb45-22"></a>    publish         [provider] [path]   <span class="op">-</span> Publish a document <span class="kw">or</span> project. Available providers include:</span>
+<span id="cb45-23"><a href="#cb45-23"></a>    check           [target]            <span class="op">-</span> Verify correct functioning of Quarto installation.         </span>
+<span id="cb45-24"><a href="#cb45-24"></a>    <span class="bu">help</span>            [command]           <span class="op">-</span> Show this <span class="bu">help</span> <span class="kw">or</span> the <span class="bu">help</span> of a sub<span class="op">-</span>command.    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+<img src="https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Get started with Quarto</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

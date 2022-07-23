@@ -650,13 +650,13 @@ ATTENTION
 
 ## Stretch images `{.r-stretch}`
 
-Fit to the remaining space.
+Fit to the remaining space - this is the default behavior in `revealjs`
 
     ![](images/howard-glamour.jpg){.r-stretch}
 
 . . .
 
-![](images/howard-glamour.jpg){.r-stretch}
+![](images/howard-glamour.jpg)
 
 ## Title Slide, YAML edition
 
@@ -676,13 +676,13 @@ title-slide-attributes:
 
 . . .
 
-<iframe src="../../materials/title-slide.html" width="1280px" height="720px">
+<iframe src="../../materials/static/title-slide.html" width="1280px" height="720px">
 
 </iframe>
 
 ## Title Slide, DIY
 
-<iframe src="../../materials/title-slide2.html" width="1280px" height="720px">
+<iframe src="../../materials/static/title-slide2.html" width="1280px" height="720px">
 
 </iframe>
 

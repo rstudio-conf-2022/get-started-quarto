@@ -123,7 +123,7 @@ These will preview the entire website
 
 . . .
 
--   Render with `quarto render` on a specific post - this will just render that specific post
+-   Render via termianl with `quarto render` on a specific post - this will just render that specific post
 
 . . .
 
@@ -177,9 +177,12 @@ I typically use cache throughout various types of outputs when I have computatio
 
 -   Add the freeze code to `_metadata.yml`
 
-    execute: freeze: true
+``` yaml
+execute: 
+  freeze: true
+```
 
--   Render `index.qmd` and note the items that are built
+-   Render `index.qmd` in the project directory and note the items that are built
 
 -   Explore the `_freeze` directory
 
@@ -187,8 +190,35 @@ I typically use cache throughout various types of outputs when I have computatio
 
 -   Marvel at the "beautiful" JSON - it's not for you, it's for the machine
 
+## Themes
+
+<https://quarto.org/docs/websites/website-blog.html#themes>
+
+[default](https://bootswatch.com/default/), [cerulean](https://bootswatch.com/cerulean/), [cosmo](https://bootswatch.com/cosmo/), [cyborg](https://bootswatch.com/cyborg/), [darkly](https://bootswatch.com/darkly/), [flatly](https://bootswatch.com/flatly/), [journal](https://bootswatch.com/journal/), [litera](https://bootswatch.com/litera/), [lumen](https://bootswatch.com/lumen/), [lux](https://bootswatch.com/lux/), [materia](https://bootswatch.com/materia/), [minty](https://bootswatch.com/minty/), [morph](https://bootswatch.com/morph/), [pulse](https://bootswatch.com/pulse/), [quartz](https://bootswatch.com/quartz/), [sandstone](https://bootswatch.com/sandstone/), [simplex](https://bootswatch.com/simplex/), [sketchy](https://bootswatch.com/sketchy/), [slate](https://bootswatch.com/slate/), [solar](https://bootswatch.com/solar/), [spacelab](https://bootswatch.com/spacelab/), [superhero](https://bootswatch.com/superhero/), [united](https://bootswatch.com/united/), [vapor](https://bootswatch.com/vapor/), [yeti](https://bootswatch.com/yeti/), [zephyr](https://bootswatch.com/zephyr/)
+
+. . .
+
+To change theme:
+
+``` yaml
+format:
+  html:
+    theme: cosmo
+```
+
+## Themes
+
+::: r-stack
+![`litera`](https://quarto.org/docs/websites/images/theme-litera.png)
+
+![solar](https://quarto.org/docs/websites/images/theme-solar.png)
+
+![morph](https://quarto.org/docs/websites/images/theme-morph.png)
+:::
+
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
+-   Open `_quarto.yml` and change the theme to one of the support Bootswatch themes
 -   Create a new folder in `/posts/` - title it `2022-07-26-my-first-post`
 -   Create a new blank `index.qmd` in that folder, add a `format: html` YAML header
 -   Add some text and a markdown image: `![]()`, along with maybe some code :laptop:
@@ -248,6 +278,33 @@ about:
 -   Open your about page (`about.qmd`)
 -   Change some of the details, add more details and choose a specific template (jolla, trestles, solana, marquee, broadside)
 -   Render it!
+
+## Landing page
+
+-   The landing page for your website defaults to the blog/listings page
+-   `your-proj/index.qmd` becomes your "home page"
+
+. . .
+
+-   `blogdown` users might be used to/prefer your landing page being your "about me" page
+-   This is easy to do with renaming your `index.qmd` -\> `blog.qmd` and `about.qmd` -\> `index.qmd`
+
+. . .
+
+-   Re-structuring your website also requires modifying your `_quarto.yml`
+
+``` yaml
+website:
+  title: "My blog name"
+  site-url: "https://MyBlogSiteUrl.com"
+  navbar:
+    right:
+     - blog.qmd
+     - icon: twitter
+       href: "https://twitter.com/my_user_name"
+```
+
+Example: <https://www.ericekholm.com/posts/demo-quarto-site/>
 
 ## Listings
 

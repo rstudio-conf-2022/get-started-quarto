@@ -28,6 +28,11 @@ execute:
 
 Add it all together, and you have beautiful, powerful, and useful outputs!
 
+```{r include=FALSE}
+library(tidyverse)
+```
+
+
 ## Literate programming
 
 > Literate programming is writing out the program logic in a human language with included (separated by a primitive markup) code snippets and macros. - [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
@@ -419,7 +424,7 @@ head(mtcars) |>
 
 . . .
 
-> I like dogs
+> I like dogs  
 > And I like cats
 
 . . .
@@ -428,6 +433,35 @@ head(mtcars) |>
 > I like dogs
 > And I like cats
 ```
+
+# Code
+
+## Anatomy of a code chunk
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+````md
+```{{r}}
+#| label: car-stuff
+#| echo: false
+mtcars %>% 
+  distinct(cyl)
+```
+````
+
+:::
+
+::: {.column width="50%" .fragment}
+
+- Has 3x backticks on each end ```` ``` ````  
+- Indicate engine (`r`) between curly braces `{r}`  
+- Place options underneath, behind the `#|` (hashpipe): `#| option1: value`  
+
+:::
+
+::::
 
 ## Code
 
@@ -639,6 +673,16 @@ Basic markdown syntax:
 
 ![Boston Terrier](images/boston-terrier.png)
 
+## Figures w/ code
+
+```{r}
+#| echo: fenced
+#| fig-width: 4
+#| fig-align: right
+
+knitr::include_graphics("images/howard-gentleman.jpeg")
+```
+
 ## Fragments/spans
 
 ::: columns
@@ -697,23 +741,16 @@ You can reference sub-directories/folders easily:
 
 But what about going "backwards" i.e. to a parent directory?
 
-This workshop is at `"get-started-quarto/materials/"`
+This specific slide-deck is at `"get-started-quarto/materials/02-authoring.qmd"`
 
 . . .
 
-In code you can use `here::here()`:
+How to reference a image/file in parent directory i.e. `"materials/`?
 
-> The goal of the `here` package is to enable easy file referencing in project-oriented workflows
-
-```{r}
-list.files(here::here())
-```
-
-`here()` always starts at the top-level directory of a RProject
 
 ## Absolute vs Relative:
 
-In other situations, like markdown, YAML or the command line/shell/terminal you'll need to use absolute or relative file paths:
+In places like markdown, YAML, or the command line/shell/terminal you'll need to use absolute or relative file paths:
 
 . . .
 
@@ -723,9 +760,11 @@ Absolute = BAD: `"/Users/thomasmock/get-started-quarto"` - who's computer will t
 list.files("/Users/thomasmock/get-started-quarto")
 ```
 
-. . .
+## Relative file paths
 
-Better, HTML style relative paths: `"../` = up one directory - `../../` = up two directories and so forth - `/..` or `/` = start from `root` directory
+Better, HTML style relative paths: `"../` = up one directory - `../../` = up two directories and so forth 
+
+- `/..` or `/` = start from `root` directory of your current computer
 
 ```{r}
 list.files("../")
@@ -733,11 +772,84 @@ list.files("../")
 
 . . .
 
-or: `"~/get-started-quarto/"` where "\~" is a shortcut for your home directory (like `thomasmock` on my computer)
+`"~/get-started-quarto/"` where "\~" is a shortcut for your home directory (like `thomasmock` on my computer)
 
 ```{r}
 list.files("~/get-started-quarto/")
 ```
+
+## Mental Model
+
+Working left to right (parent to child)
+
+```{r}
+list.files("~/get-started-quarto/materials")
+```
+
+. . .
+
+Working right to left (child to parent)
+
+```{r}
+list.files("../materials")
+```
+
+
+## Referencing paths in R code
+
+In code you can use `here::here()`:
+
+> The goal of the `here` package is to enable easy file referencing in project-oriented workflows
+
+```{r}
+list.files(here::here())
+```
+
+`here()` always starts at the top-level directory of a `.RProj`
+
+## `here::here()`
+
+```{r}
+here::here()
+```
+
+. . .
+
+```{r}
+list.files(here::here())
+```
+
+
+## `here::here()`
+
+```{r}
+fs::file_info("preview.jpeg") |>  select(1:3)
+```
+
+. . .
+
+```{r}
+fs::file_info(here::here("preview.jpeg")) |>  select(1:3)
+```
+
+. . .
+
+<br>
+
+
+```{r}
+fs::file_info(here::here("materials/images/howard-gentleman.jpeg")) |>  select(1:3)
+```
+
+<br>
+
+```{r}
+# this also works
+fs::file_info(here::here("materials", "images", "howard-gentleman.jpeg")) |>  select(1:3)
+
+```
+
+
 
 ## Navigating in the terminal
 
