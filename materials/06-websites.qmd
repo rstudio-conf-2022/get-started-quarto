@@ -195,7 +195,7 @@ execute:
 
 . . .
 
-To change theme:
+To change theme, modify the bottom of your website's `_quarto.yml`
 
 ``` yaml
 format:

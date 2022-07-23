@@ -1789,7 +1789,7 @@
     "href": "materials/06-websites.html#themes",
     "title": "Get Started with Quarto",
     "section": "Themes",
-    "text": "Themes\nhttps://quarto.org/docs/websites/website-blog.html#themes\ndefault, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr\n\nTo change theme:\nformat:\n  html:\n    theme: cosmo"
+    "text": "Themes\nhttps://quarto.org/docs/websites/website-blog.html#themes\ndefault, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr\n\nTo change theme, modify the bottom of your website’s _quarto.yml\nformat:\n  html:\n    theme: cosmo"
   },
   {
     "objectID": "materials/06-websites.html#themes-1",
