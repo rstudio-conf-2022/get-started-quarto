@@ -32,11 +32,20 @@ library(gtsummary)
 
 <br>
 
-## General Info
+## 
 
 ### `r fontawesome::fa("wifi")` WiFi
 - Username: `conf22`
 - Password: `together!` [(at last!)]{style="color: #d3d3d3;"}
+
+
+### Sli.do
+
+- Anonymous questions for real-time feedback
+- Got to <https://slido.com> and use code: `#start-quarto`
+- Or use this direct link <https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN>
+
+## General Info
 
 ### `r fontawesome::fa("toilet")` Gender Neutral Bathrooms
 - River side of the Potomac Ballroom
@@ -47,7 +56,6 @@ library(gtsummary)
 
 ### Lanyards
 - Participants who do not wish to be photographed have red lanyards, please note everyone's lanyard colors befor taking a photo and respect their choices.
-
 
 ## Code of Conduct
 
@@ -73,11 +81,32 @@ Please read and review the entire Code of Conduct carefully: <https://www.rstudi
 
 You can make a personal report:
 
-**In person:** Contact any rstudio::conf staff member, identifiable by their staff t-shirt shirt, or visit the conference registration desk.
+**In person:** Contact any rstudio::conf staff member, identifiable by their **orange** staff t-shirt shirt, or visit the conference registration desk.
 
 **By email:** Send a message to conf\@rstudio.com; event organizers will respond promptly.
 
 **By phone:** Call 844-448-1212; this phone number will be monitored for the duration of the event.
+
+## General Info
+
+- rstudio::conf 2022 schedule: <https://www.rstudio.com/conference/2022/schedule/>
+- Join or chat for rstudio::conf 2022 virtually: <https://www.rstudio.com/blog/rstudio-conf-2022-virtual/>
+- Watch live stream of talks on day of conference: <https://www.rstudio.com/conference/>
+- The "Lounge" - a friendly place to talk with Open Source team, Academy/RStudio Cloud, or talk "Data Science at Work"
+- Conference registration desk - a general catch-all for guidance
+
+[Need help?]{.fragment} 
+
+[Look for orange shirts!]{.r-fit-text .fragment style="color: #EE6331;"}
+
+# {background-color="#447099"}
+
+[Hello Quarto]{.r-fit-text}
+
+## Hello Learners
+
+- Go to <https://slido.com> and use code: `#start-quarto`
+- Or use this direct link <https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN>
 
 ## We assume
 
@@ -85,7 +114,7 @@ You can make a personal report:
 
 `r fa("markdown")` You know a little bit of Markdown
 
- <img src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/favicon.png" style="display: inline-block; margin: 0; margin-bottom: -2px; height: 35px;"/>   You want to learn about Quarto, the next-generation of RMarkdown
+ <img src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/favicon.png" style="display: inline-block; margin: 0; margin-bottom: -2px; height: 35px;"></img>  You want to learn about Quarto, the next-generation of RMarkdown
 
 . . .
 
@@ -99,7 +128,7 @@ Even more R along the way!
 
 ## 
 
-<section style="text-align: right;">
+:::{style="text-align: right;"}
 
 ![](images/tom-howard.png){height="450px"}
 
@@ -113,7 +142,7 @@ Find me at:
 
 `r fa("envelope")` [thomas\@rstudio.com](mailto:thomas@rstudio.com)
 
-</section>
+:::
 
 ## Your TAs
 
@@ -155,6 +184,7 @@ install.packages(pkg_list)
 
 [Great, let's get started!]{.r-fit-text}
 
+
 ## Structure of the workshop
 
 -   Lecture - 🤠
@@ -170,6 +200,11 @@ In-between:
 -   `r fa("square", "green")` = I have completed the "Our Turn"
 
 -   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a "general question" or I'm running into a code error.
+
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+
+- Open ~~Sesame~~ RStudio
+- Open the `quarto-workshop` RProject
 
 ## Hello Quarto
 
@@ -419,7 +454,7 @@ quarto_render("document.qmd") # defaults to html
 quarto_render("document.qmd", output_format = "pdf")
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Use RStudio to create a new default Quarto document
 -   Add a title and your name as the author
@@ -427,12 +462,6 @@ quarto_render("document.qmd", output_format = "pdf")
 -   Add toc and swap toc location to left
 -   Make all code sections fold
 -   Render it with RStudio button, then try with the R package and terminal
-
-# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
-
--   Open RStudio
--   At the top left, click the new file button and create a new Quarto document
--   Add some text, insert some code, and then click the Render button
 
 ## What about for Data Science at Work?
 

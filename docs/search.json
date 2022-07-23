@@ -53,7 +53,7 @@
     "href": "materials/01-intro-quarto.html#general-info",
     "title": "Get Started with Quarto",
     "section": "General Info",
-    "text": "General Info\n WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\n Gender Neutral Bathrooms\n\nRiver side of the Potomac Ballroom\n\nSpecialty Rooms\n\nThe meditation room is located at Potomac Dressing Room. Open 8am - 5pm, Monday - Thursday.\nThe lactation room is located at National Harbor 9. Open 8am - 5pm, Monday - Thursday. The hotel also has a dedicated room behind the reception.\n\nLanyards\n\nParticipants who do not wish to be photographed have red lanyards, please note everyone’s lanyard colors befor taking a photo and respect their choices."
+    "text": "General Info\n Gender Neutral Bathrooms\n\nRiver side of the Potomac Ballroom\n\nSpecialty Rooms\n\nThe meditation room is located at Potomac Dressing Room. Open 8am - 5pm, Monday - Thursday.\nThe lactation room is located at National Harbor 9. Open 8am - 5pm, Monday - Thursday. The hotel also has a dedicated room behind the reception.\n\nLanyards\n\nParticipants who do not wish to be photographed have red lanyards, please note everyone’s lanyard colors befor taking a photo and respect their choices."
   },
   {
     "objectID": "materials/01-intro-quarto.html#code-of-conduct",
@@ -67,21 +67,21 @@
     "href": "materials/01-intro-quarto.html#code-of-conduct-1",
     "title": "Get Started with Quarto",
     "section": "Code of Conduct",
-    "text": "Code of Conduct\nPlease read and review the entire Code of Conduct carefully: https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/\nAnti-Harassment\n\nWe expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.\n\nReporting\nYou can make a personal report:\nIn person: Contact any rstudio::conf staff member, identifiable by their staff t-shirt shirt, or visit the conference registration desk.\nBy email: Send a message to conf@rstudio.com; event organizers will respond promptly.\nBy phone: Call 844-448-1212; this phone number will be monitored for the duration of the event."
+    "text": "Code of Conduct\nPlease read and review the entire Code of Conduct carefully: https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/\nAnti-Harassment\n\nWe expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.\n\nReporting\nYou can make a personal report:\nIn person: Contact any rstudio::conf staff member, identifiable by their orange staff t-shirt shirt, or visit the conference registration desk.\nBy email: Send a message to conf@rstudio.com; event organizers will respond promptly.\nBy phone: Call 844-448-1212; this phone number will be monitored for the duration of the event."
   },
   {
     "objectID": "materials/01-intro-quarto.html#we-assume",
     "href": "materials/01-intro-quarto.html#we-assume",
     "title": "Get Started with Quarto",
     "section": "We assume",
-    "text": "We assume\n You know R\n You know a little bit of Markdown\n    You want to learn about Quarto, the next-generation of RMarkdown\n\n\nWe’ll teach you\n\nQuarto syntax and formats\nMore Markdown\nEven more R along the way!"
+    "text": "We assume\n You know R\n You know a little bit of Markdown\n You want to learn about Quarto, the next-generation of RMarkdown\n\n\nWe’ll teach you\n\nQuarto syntax and formats\nMore Markdown\nEven more R along the way!"
   },
   {
     "objectID": "materials/01-intro-quarto.html#section-1",
     "href": "materials/01-intro-quarto.html#section-1",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
+    "text": "WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\nSli.do\n\nAnonymous questions for real-time feedback\nGot to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
   },
   {
     "objectID": "materials/01-intro-quarto.html#your-tas",
@@ -277,7 +277,7 @@
     "href": "materials/01-intro-quarto.html#section-5",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "Ease of Use VS Full Details"
+    "text": "So what is Quarto?\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc"
   },
   {
     "objectID": "materials/01-intro-quarto.html#pouring-milk",
@@ -382,7 +382,7 @@
     "href": "materials/01-intro-quarto.html#section-6",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "Quarto questions?"
+    "text": "So what is Quarto?\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc"
   },
   {
     "objectID": "materials/01-intro-quarto.html#cli-overview",
@@ -1782,7 +1782,7 @@
     "href": "materials/06-websites.html#cache",
     "title": "Get Started with Quarto",
     "section": "Cache",
-    "text": "Cache\nCache on the other hand, stores the results of computations for a specific file.\n\nNote that cache invalidation is triggered by changes in chunk source code (or other cache attributes you’ve defined).\n\nexecute:\n  cache: true\n\nI typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a tidymodels workshop with grid-tuning."
+    "text": "Cache\nCache on the other hand, stores the results of computations for a specific file.\n\nNote that cache invalidation is triggered by changes in chunk source code (or other cache attributes you’ve defined).\n\nexecute:\n  cache: true\n\nI typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a tidymodels workshop website that is demo’ing with grid-tuning."
   },
   {
     "objectID": "materials/06-websites.html#themes",
@@ -2476,5 +2476,61 @@
     "title": "Workshop Materials",
     "section": "08-knitr",
     "text": "08-knitr\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/08-knitr\nfa-example.qmd\n\n\nmaterials/workshop/08-knitr\nlightbox-extension.qmd\n\n\nmaterials/workshop/08-knitr\npenguin-params.qmd"
+  },
+  {
+    "objectID": "materials/06-websites.html#personal-blog",
+    "href": "materials/06-websites.html#personal-blog",
+    "title": "Get Started with Quarto",
+    "section": "Personal blog:",
+    "text": "Personal blog:\nLimited and gated at Medium.com\nhttps://medium.com/towards-data-science/a-gentle-guide-to-statistics-in-r-ccb91cc1177e\nvs\nFull control at on my own page\nhttps://themockup.blog/posts/2018-12-10-a-gentle-guide-to-tidy-statistics-in-r/"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#general-workshop-info",
+    "href": "materials/01-intro-quarto.html#general-workshop-info",
+    "title": "Get Started with Quarto",
+    "section": "General Workshop Info",
+    "text": "General Workshop Info\n WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\nSli.do\n\nAnonymous questions for real-time feedback\nGot to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#general-info-1",
+    "href": "materials/01-intro-quarto.html#general-info-1",
+    "title": "Get Started with Quarto",
+    "section": "General Info",
+    "text": "General Info\n\nrstudio::conf 2022 schedule: https://www.rstudio.com/conference/2022/schedule/\nJoin or chat for rstudio::conf 2022 virtually: https://www.rstudio.com/blog/rstudio-conf-2022-virtual/\nWatch live stream of talks on day of conference: https://www.rstudio.com/conference/\nThe “Lounge” - a friendly place to talk with Open Source team, Academy/RStudio Cloud, or talk “Data Science at Work”\nConference registration desk - a general catch-all for guidance\n\nNeed help?\nLook for orange shirts!"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#hello-learners",
+    "href": "materials/01-intro-quarto.html#hello-learners",
+    "title": "Get Started with Quarto",
+    "section": "Hello Learners",
+    "text": "Hello Learners\n\nGo to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#section-2",
+    "href": "materials/01-intro-quarto.html#section-2",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#section-7",
+    "href": "materials/01-intro-quarto.html#section-7",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Ease of Use VS Full Details"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#section-3",
+    "href": "materials/01-intro-quarto.html#section-3",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#section-8",
+    "href": "materials/01-intro-quarto.html#section-8",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Quarto questions?"
   }
 ]

@@ -365,6 +365,7 @@ Margin/aside figure
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-visuals/plots.qmd`
+-   Try modifying the layout with `::: {.column-???}` syntax
 
 ## `ggplot2`
 
@@ -596,6 +597,8 @@ girafe(
 )
 ```
 
+# Tables {background-image="images/outdoor-patio.jpg" background-size="cover"}
+
 ## `gt` + `gtExtras`
 
 > With the gt package, anyone can make wonderful-looking tables using the R programming language. The gt philosophy: we can construct a wide variety of useful tables with a cohesive set of table parts. These include the table header, the stub, the column labels and spanner column labels, the table body, and the table footer.
@@ -724,6 +727,8 @@ gt(penguin_sum) |>
 
 ## `gtExtras`
 
+Original: <https://twitter.com/thomas_mock/status/1442541043019390982?s=20&t=0JewnMHkYrfPrYosfE2XIg>
+
 ```{r}
 party_df <- tibble(
   Party = c("SPD", "CDU/CSU", "Greens", "FDP", "AfD", "Left", "Other"),
@@ -732,13 +737,15 @@ party_df <- tibble(
 )
 
 minimal_table <- gt(party_df) %>% 
-  gt_plt_dot(column = Seats, category_column = Party,  max_value = 379,
+  gtExtras::gt_plt_dot(column = Seats, category_column = Party,  max_value = 379,
     palette = c("#ec323f", "black", "#63d64a", "#fff24e", "#4fabf7", "#e956ad", "grey")) %>% 
   gtExtras::gt_theme_nytimes() %>% 
-  tab_header(title = "Results by Party in the Bundestag Election",
+  gt::tab_header(title = "Results by Party in the Bundestag Election",
              subtitle = "Seats and votes are based on provisional official results.") %>% 
-  cols_width(Party ~ px(300), 3 ~ px(30))
+  gt::cols_width(Party ~ px(300), 3 ~ px(30))
 ```
+
+. . .
 
 ![](https://user-images.githubusercontent.com/29187501/134953142-b3175f33-53f2-4e3d-aa5f-9509834263ee.png)
 

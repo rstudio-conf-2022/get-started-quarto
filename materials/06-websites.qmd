@@ -42,6 +42,19 @@ editor: source
 
 -   typically fast to visit (no computation needed on the server side), and easy to speed up via CDN
 
+## Personal blog:
+
+Limited and gated at Medium.com
+
+<https://medium.com/towards-data-science/a-gentle-guide-to-statistics-in-r-ccb91cc1177e>
+
+vs
+
+Full control at on my own page
+
+<https://themockup.blog/posts/2018-12-10-a-gentle-guide-to-tidy-statistics-in-r/>
+
+
 ## 
 
 ### Create a website
@@ -166,7 +179,7 @@ execute:
 
 . . .
 
-I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a `tidymodels` workshop with grid-tuning.
+I typically use cache throughout various types of outputs when I have computationally expensive chunks. Think a `tidymodels` workshop website that is demo'ing with grid-tuning.
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
