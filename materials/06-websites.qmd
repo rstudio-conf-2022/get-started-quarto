@@ -11,9 +11,6 @@ format:
     theme: simple
     echo: true
 editor: source
-editor_options:
-  markdown:
-    canonical: true
 ---
 
 # 06 - Websites {background-image="images/website.png" background-size="cover" background-color="black" style="font-size: 120px"}
@@ -208,12 +205,14 @@ format:
 
 ## Themes
 
-::: r-stack
-![`litera`](https://quarto.org/docs/websites/images/theme-litera.png)
+::: {.r-stack}
 
-![solar](https://quarto.org/docs/websites/images/theme-solar.png)
+![](https://quarto.org/docs/websites/images/theme-litera.png){.fragment}
 
-![morph](https://quarto.org/docs/websites/images/theme-morph.png)
+![](https://quarto.org/docs/websites/images/theme-solar.png){.fragment}
+
+![](https://quarto.org/docs/websites/images/theme-morph.png){.fragment}
+
 :::
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
