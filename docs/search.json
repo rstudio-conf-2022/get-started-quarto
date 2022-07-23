@@ -49,6 +49,13 @@
     "text": "01 - Performing magic\n\n\nwith Quarto\n\n\nTom Mock, RStudio PBC\n\n\n2022-07-25"
   },
   {
+    "objectID": "materials/01-intro-quarto.html#section-1",
+    "href": "materials/01-intro-quarto.html#section-1",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\nSli.do\n\nAnonymous questions for real-time feedback\nGot to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
+  },
+  {
     "objectID": "materials/01-intro-quarto.html#general-info",
     "href": "materials/01-intro-quarto.html#general-info",
     "title": "Get Started with Quarto",
@@ -70,6 +77,20 @@
     "text": "Code of Conduct\nPlease read and review the entire Code of Conduct carefully: https://www.rstudio.com/conference/2022/2022-conf-code-of-conduct/\nAnti-Harassment\n\nWe expect everyone at rstudio::conf, whether attending in-person or virtually, to contribute to a welcoming, safe, and tolerant environment.\n\nReporting\nYou can make a personal report:\nIn person: Contact any rstudio::conf staff member, identifiable by their orange staff t-shirt shirt, or visit the conference registration desk.\nBy email: Send a message to conf@rstudio.com; event organizers will respond promptly.\nBy phone: Call 844-448-1212; this phone number will be monitored for the duration of the event."
   },
   {
+    "objectID": "materials/01-intro-quarto.html#general-info-1",
+    "href": "materials/01-intro-quarto.html#general-info-1",
+    "title": "Get Started with Quarto",
+    "section": "General Info",
+    "text": "General Info\n\nrstudio::conf 2022 schedule: https://www.rstudio.com/conference/2022/schedule/\nJoin or chat for rstudio::conf 2022 virtually: https://www.rstudio.com/blog/rstudio-conf-2022-virtual/\nWatch live stream of talks on day of conference: https://www.rstudio.com/conference/\nThe “Lounge” - a friendly place to talk with Open Source team, Academy/RStudio Cloud, or talk “Data Science at Work”\nConference registration desk - a general catch-all for guidance\n\nNeed help?\nLook for orange shirts!"
+  },
+  {
+    "objectID": "materials/01-intro-quarto.html#hello-learners",
+    "href": "materials/01-intro-quarto.html#hello-learners",
+    "title": "Get Started with Quarto",
+    "section": "Hello Learners",
+    "text": "Hello Learners\n\nGo to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
+  },
+  {
     "objectID": "materials/01-intro-quarto.html#we-assume",
     "href": "materials/01-intro-quarto.html#we-assume",
     "title": "Get Started with Quarto",
@@ -77,11 +98,11 @@
     "text": "We assume\n You know R\n You know a little bit of Markdown\n You want to learn about Quarto, the next-generation of RMarkdown\n\n\nWe’ll teach you\n\nQuarto syntax and formats\nMore Markdown\nEven more R along the way!"
   },
   {
-    "objectID": "materials/01-intro-quarto.html#section-1",
-    "href": "materials/01-intro-quarto.html#section-1",
+    "objectID": "materials/01-intro-quarto.html#section-3",
+    "href": "materials/01-intro-quarto.html#section-3",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\nSli.do\n\nAnonymous questions for real-time feedback\nGot to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
+    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
   },
   {
     "objectID": "materials/01-intro-quarto.html#your-tas",
@@ -168,8 +189,8 @@
     "text": "Quarto, more internals\n\nknitr or jupyter evaluates R/Python/Julia code and returns a .md file along with the evaluated code\n\n\n\nQuarto applies Lua filters + CSS/LaTeX which is then evaluated alongside the .md file by Pandoc and converted to a final ouput format\n\n\n\nHere is an example of a Lua filter that converts strong emphasis to small caps, from https://pandoc.org/lua-filters.html\nreturn {\n  {\n    Strong = function (elem)\n      return pandoc.SmallCaps(elem.c)\n    end,\n  }\n}\n\n\nLua filters written by R/Python/Julia developers should be interchangeable between formats - not language specific!"
   },
   {
-    "objectID": "materials/01-intro-quarto.html#section-4",
-    "href": "materials/01-intro-quarto.html#section-4",
+    "objectID": "materials/01-intro-quarto.html#section-6",
+    "href": "materials/01-intro-quarto.html#section-6",
     "title": "Get Started with Quarto",
     "section": "",
     "text": "So what is Quarto?\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc"
@@ -273,11 +294,11 @@
     "text": "Quarto\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc. You can weave together narrative text and code to produce elegantly formatted output as documents, web pages, blog posts, books and more.\n\n\nNo more copy-paste, no more manually rebuilding analyses from disparate components, no more dread when the data is updated and you need to run an analysis."
   },
   {
-    "objectID": "materials/01-intro-quarto.html#section-5",
-    "href": "materials/01-intro-quarto.html#section-5",
+    "objectID": "materials/01-intro-quarto.html#section-7",
+    "href": "materials/01-intro-quarto.html#section-7",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "So what is Quarto?\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc"
+    "text": "Ease of Use VS Full Details"
   },
   {
     "objectID": "materials/01-intro-quarto.html#pouring-milk",
@@ -378,11 +399,11 @@
     "text": "Resources\n\nhttps://quarto.org/\nQuarto FAQ\nQuarto Discussions"
   },
   {
-    "objectID": "materials/01-intro-quarto.html#section-6",
-    "href": "materials/01-intro-quarto.html#section-6",
+    "objectID": "materials/01-intro-quarto.html#section-8",
+    "href": "materials/01-intro-quarto.html#section-8",
     "title": "Get Started with Quarto",
     "section": "",
-    "text": "So what is Quarto?\n\nQuarto® is an open-source scientific and technical publishing system built on Pandoc"
+    "text": "Quarto questions?"
   },
   {
     "objectID": "materials/01-intro-quarto.html#cli-overview",
@@ -1729,6 +1750,13 @@
     "text": "Why not WordPress, Tumblr, Medium.com, Blogger.com, etc?1\n\nNo R Markdown support (even math support is often nonexistent or awkward)\nHuge benefits of static websites compared to dynamic websites\nall static files, no PHP or databases, no login/password, work everywhere (even offline)\ntypically fast to visit (no computation needed on the server side), and easy to speed up via CDN\n\nFrom Yihui: https://slides.yihui.name/2017-rmarkdown-UNL-Yihui-Xie.html#36"
   },
   {
+    "objectID": "materials/06-websites.html#personal-blog",
+    "href": "materials/06-websites.html#personal-blog",
+    "title": "Get Started with Quarto",
+    "section": "Personal blog:",
+    "text": "Personal blog:\nLimited and gated at Medium.com\nhttps://medium.com/towards-data-science/a-gentle-guide-to-statistics-in-r-ccb91cc1177e\nvs\nFull control at on my own page\nhttps://themockup.blog/posts/2018-12-10-a-gentle-guide-to-tidy-statistics-in-r/"
+  },
+  {
     "objectID": "materials/06-websites.html#section",
     "href": "materials/06-websites.html#section",
     "title": "Get Started with Quarto",
@@ -2230,7 +2258,7 @@
     "href": "materials/07-plots-tables.html#gtextras-2",
     "title": "Get Started with Quarto",
     "section": "gtExtras",
-    "text": "gtExtras\n\nparty_df <- tibble(\n  Party = c(\"SPD\", \"CDU/CSU\", \"Greens\", \"FDP\", \"AfD\", \"Left\", \"Other\"),\n  Seats = c(206, 196, 118, 92, 83, 39, 1),\n  `% of 2nd Votes` = c(25.7, 24.1, 14.8, 11.5, 10.3, 4.9, 8.7)\n)\n\nminimal_table <- gt(party_df) %>% \n  gt_plt_dot(column = Seats, category_column = Party,  max_value = 379,\n    palette = c(\"#ec323f\", \"black\", \"#63d64a\", \"#fff24e\", \"#4fabf7\", \"#e956ad\", \"grey\")) %>% \n  gtExtras::gt_theme_nytimes() %>% \n  tab_header(title = \"Results by Party in the Bundestag Election\",\n             subtitle = \"Seats and votes are based on provisional official results.\") %>% \n  cols_width(Party ~ px(300), 3 ~ px(30))"
+    "text": "gtExtras\nOriginal: https://twitter.com/thomas_mock/status/1442541043019390982?s=20&t=0JewnMHkYrfPrYosfE2XIg\n\nparty_df <- tibble(\n  Party = c(\"SPD\", \"CDU/CSU\", \"Greens\", \"FDP\", \"AfD\", \"Left\", \"Other\"),\n  Seats = c(206, 196, 118, 92, 83, 39, 1),\n  `% of 2nd Votes` = c(25.7, 24.1, 14.8, 11.5, 10.3, 4.9, 8.7)\n)\n\nminimal_table <- gt(party_df) %>% \n  gtExtras::gt_plt_dot(column = Seats, category_column = Party,  max_value = 379,\n    palette = c(\"#ec323f\", \"black\", \"#63d64a\", \"#fff24e\", \"#4fabf7\", \"#e956ad\", \"grey\")) %>% \n  gtExtras::gt_theme_nytimes() %>% \n  gt::tab_header(title = \"Results by Party in the Bundestag Election\",\n             subtitle = \"Seats and votes are based on provisional official results.\") %>% \n  gt::cols_width(Party ~ px(300), 3 ~ px(30))"
   },
   {
     "objectID": "materials/08-advanced-knitr.html#parameters",
@@ -2476,61 +2504,5 @@
     "title": "Workshop Materials",
     "section": "08-knitr",
     "text": "08-knitr\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/08-knitr\nfa-example.qmd\n\n\nmaterials/workshop/08-knitr\nlightbox-extension.qmd\n\n\nmaterials/workshop/08-knitr\npenguin-params.qmd"
-  },
-  {
-    "objectID": "materials/06-websites.html#personal-blog",
-    "href": "materials/06-websites.html#personal-blog",
-    "title": "Get Started with Quarto",
-    "section": "Personal blog:",
-    "text": "Personal blog:\nLimited and gated at Medium.com\nhttps://medium.com/towards-data-science/a-gentle-guide-to-statistics-in-r-ccb91cc1177e\nvs\nFull control at on my own page\nhttps://themockup.blog/posts/2018-12-10-a-gentle-guide-to-tidy-statistics-in-r/"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#general-workshop-info",
-    "href": "materials/01-intro-quarto.html#general-workshop-info",
-    "title": "Get Started with Quarto",
-    "section": "General Workshop Info",
-    "text": "General Workshop Info\n WiFi\n\nUsername: conf22\nPassword: together! (at last!)\n\nSli.do\n\nAnonymous questions for real-time feedback\nGot to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#general-info-1",
-    "href": "materials/01-intro-quarto.html#general-info-1",
-    "title": "Get Started with Quarto",
-    "section": "General Info",
-    "text": "General Info\n\nrstudio::conf 2022 schedule: https://www.rstudio.com/conference/2022/schedule/\nJoin or chat for rstudio::conf 2022 virtually: https://www.rstudio.com/blog/rstudio-conf-2022-virtual/\nWatch live stream of talks on day of conference: https://www.rstudio.com/conference/\nThe “Lounge” - a friendly place to talk with Open Source team, Academy/RStudio Cloud, or talk “Data Science at Work”\nConference registration desk - a general catch-all for guidance\n\nNeed help?\nLook for orange shirts!"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#hello-learners",
-    "href": "materials/01-intro-quarto.html#hello-learners",
-    "title": "Get Started with Quarto",
-    "section": "Hello Learners",
-    "text": "Hello Learners\n\nGo to https://slido.com and use code: #start-quarto\nOr use this direct link https://app.sli.do/event/8QAGYPG5wgYFJBEtktoeFN"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#section-2",
-    "href": "materials/01-intro-quarto.html#section-2",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#section-7",
-    "href": "materials/01-intro-quarto.html#section-7",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "Ease of Use VS Full Details"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#section-3",
-    "href": "materials/01-intro-quarto.html#section-3",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "Find me at:\n @thomas_mock\n @jthomasmock\n themockup.blog\n thomas@rstudio.com"
-  },
-  {
-    "objectID": "materials/01-intro-quarto.html#section-8",
-    "href": "materials/01-intro-quarto.html#section-8",
-    "title": "Get Started with Quarto",
-    "section": "",
-    "text": "Quarto questions?"
   }
 ]
