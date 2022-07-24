@@ -10,9 +10,6 @@ format:
     theme: simple
     echo: true
 editor: source
-editor_options:
-  markdown:
-    canonical: true
 ---
 
 # 07 - Plots, Graphics, and tables {background-color="#4f6952" background-image="images/outdoor-patio.jpg" background-size="cover"}
@@ -629,17 +626,21 @@ head(mtcars) |>
 
 ## `gt` extension packages
 
-::: columns
-::: column
-## `gtExtras`
+::: {.columns}
+::: {.column .fragment}
 
-![](https://jthomasmock.github.io/gtExtras/logo.png)
+### `gtExtras`
+
+![](https://jthomasmock.github.io/gtExtras/logo.png){style="width: 200px;"}
 
 -   `gtExtras` provides additional helper functions to `gt`, mainly themes and inline plotting
 :::
 
-::: column
-![](https://www.danieldsjoberg.com/gtsummary/reference/figures/logo.png)
+::: {.column .fragment}
+
+### `gtsummary`
+
+![](https://www.danieldsjoberg.com/gtsummary/reference/figures/logo.png){style="width: 220px;"}
 
 -   `gtsummary` extends `gt` to descriptive statistics and statistical summaries of models
 :::
@@ -657,12 +658,9 @@ dplyr::glimpse(trial2)
 . . .
 
 ```{r}
+#| fig-align: left
 trial2 %>% tbl_summary(by = trt) %>% add_p()
 ```
-
-. . .
-
-![](images/gtsummary-trial2.jpeg)
 
 ## Create a summary
 
@@ -745,7 +743,7 @@ minimal_table <- gt(party_df) %>%
   gt::cols_width(Party ~ px(300), 3 ~ px(30))
 ```
 
-. . .
+## `gtExtras`
 
 ![](https://user-images.githubusercontent.com/29187501/134953142-b3175f33-53f2-4e3d-aa5f-9509834263ee.png)
 

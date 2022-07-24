@@ -2216,14 +2216,14 @@
     "href": "materials/07-plots-tables.html#gt-extension-packages",
     "title": "Get Started with Quarto",
     "section": "gt extension packages",
-    "text": "gt extension packages"
+    "text": "gt extension packages\n\n\ngtExtras\n\n\ngtExtras provides additional helper functions to gt, mainly themes and inline plotting\n\n\ngtsummary\n\n\ngtsummary extends gt to descriptive statistics and statistical summaries of models"
   },
   {
     "objectID": "materials/07-plots-tables.html#gtextras",
     "href": "materials/07-plots-tables.html#gtextras",
     "title": "Get Started with Quarto",
     "section": "gtExtras",
-    "text": "gtExtras\n\n\ngtExtras provides additional helper functions to gt, mainly themes and inline plotting"
+    "text": "gtExtras\n\n\n\n\n\n\ngtExtras provides additional helper functions to gt, mainly themes and inline plotting"
   },
   {
     "objectID": "materials/07-plots-tables.html#gtsummary",
@@ -2504,5 +2504,12 @@
     "title": "Workshop Materials",
     "section": "08-knitr",
     "text": "08-knitr\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/08-knitr\nfa-example.qmd\n\n\nmaterials/workshop/08-knitr\nlightbox-extension.qmd\n\n\nmaterials/workshop/08-knitr\npenguin-params.qmd"
+  },
+  {
+    "objectID": "materials/07-plots-tables.html#gtsummary-1",
+    "href": "materials/07-plots-tables.html#gtsummary-1",
+    "title": "Get Started with Quarto",
+    "section": "gtsummary",
+    "text": "gtsummary\n\nComes with built in example datasets like trial\n\n\ntrial2 <- trial %>% dplyr::select(trt, age, grade)\ndplyr::glimpse(trial2)\n\nRows: 200\nColumns: 3\n$ trt   <chr> \"Drug A\", \"Drug B\", \"Drug A\", \"Drug A\", \"Drug A\", \"Drug B\", \"Dru…\n$ age   <dbl> 23, 9, 31, NA, 51, 39, 37, 32, 31, 34, 42, 63, 54, 21, 48, 71, 3…\n$ grade <fct> II, I, II, III, III, I, II, I, II, I, III, I, III, I, I, III, II…\n\n\n\n\ntrial2 %>% tbl_summary(by = trt) %>% add_p()\n\n\n\n\n\n  \n  \n    \n      Characteristic\n      Drug A, N = 981\n      Drug B, N = 1021\n      p-value2\n    \n  \n  \n    Age\n46 (37, 59)\n48 (39, 56)\n0.7\n    Unknown\n7\n4\n\n    Grade\n\n\n0.9\n    I\n35 (36%)\n33 (32%)\n\n    II\n32 (33%)\n36 (35%)\n\n    III\n31 (32%)\n33 (32%)\n\n  \n  \n  \n    \n      1 Median (IQR); n (%)\n    \n    \n      2 Wilcoxon rank sum test; Pearson's Chi-squared test"
   }
 ]

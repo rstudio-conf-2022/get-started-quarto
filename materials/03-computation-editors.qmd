@@ -670,7 +670,7 @@ mpg_cars
 #| eval: true
 ```
 
-# {background-color="#6a9c42"}
+# {background-image="https://d33wubrfki0l68.cloudfront.net/e798975ba0fc742c8e682a62edb0d41e8bf090ac/c620e/blog/rstudio-conf-2022-virtual/thumbnail_hu31b0245616fb8a6872183a9ec865f49c_657330_2220x0_resize_q75_box.jpg" background-size="cover"}
 
 [Editors]{style="color: white; font-size: 150px;"}
 

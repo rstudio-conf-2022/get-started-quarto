@@ -846,6 +846,31 @@ quarto render --help
 
 ![](https://d33wubrfki0l68.cloudfront.net/9a23d664f0f49bc2ef8e78bed6277dd48bd2b96d/af132/diagrams/rstudio-console.png)
 
+## RStudio Tips
+
+- Access command palette via: <kbd>`Cmd + Shift + P`</kbd> or <kbd>`Ctrl + Shift + P`</kbd>: more shortcuts in the [RStudio IDE cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf) or [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE)
+
+. . .
+
+- Search for and open file with <kbd>`Ctrl + I`</kbd>
+
+. . .
+
+- RStudio pane and Pane Layout
+
+. . .
+
+- R console vs [`terminal`](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)
+
+. . .
+
+- RStudio [Background jobs](https://www.rstudio.com/blog/rstudio-1-2-jobs/)
+
+. . .
+
+- RStudio [Visual Editor](https://quarto.org/docs/visual-editor/) mode
+
+
 ## CLI Overview
 
 ```{py}
