@@ -745,12 +745,13 @@ fig.dpi vs fig-dpi</code></pre>
 <h2>Setup Chunk</h2>
 <p>A special chunk! There can ONLY be one chunk named <code>setup</code>. It typically is used to set up the default values for the <strong>entire document</strong> with <code>knitr::opts_chunk$set()</code> and loading global R packages.</p>
 <div class="fragment">
-<div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">comment =</span> <span class="st">'#&gt;'</span>, <span class="at">fig.width =</span> <span class="dv">6</span>, <span class="at">fig.height =</span> <span class="dv">6</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">comment =</span> <span class="st">'#&gt;'</span>, <span class="at">fig.width =</span> <span class="dv">6</span>, <span class="at">fig.height =</span> <span class="dv">6</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Quarto also introduces some of these as options for <code>execute:</code> in YAML, for similar concepts in other languages.</p>
@@ -959,20 +960,22 @@ List of 2
 <h2>Named chunks can be re-used!</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r myPlt}</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="co">#| eval: false</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, </span>
-<span id="cb32-4"><a href="#cb32-4"></a>    <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="co">#| label: myPlt</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="co">#| eval: false</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, </span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that you when using <strong>named chunks</strong> you can’t alter the internal code, only the chunk options. This is necessary because you are referencing the initially defined code in that chunk.</p>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="in">```{r myPlt}</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="co">#| eval: true</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="co">#| dpi: 300</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="co">#| label: myPlt</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co">#| eval: true</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="co">#| dpi: 300</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="co">#| fig-height: 6</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="co">#| fig-width: 4</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-fig.dim="[6,4]">
 <div class="cell-output-display">
 <p><img data-src="03-computation-editors_files/figure-revealjs/coolPlot-1.png" width="1800"></p>
@@ -1037,10 +1040,11 @@ Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 </section>
 <section id="working-with-code-4" class="slide level2">
 <h2>Working with code</h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mpg-cars}</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: mpg-cars</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb

@@ -597,7 +597,7 @@ girafe(
 )
 ```
 
-# Tables {background-image="images/outdoor-patio.jpg" background-size="cover"}
+# Tables {background-image="images/outdoor-patio.jpg" background-size="cover" background-color="black"}
 
 ## `gt` + `gtExtras`
 

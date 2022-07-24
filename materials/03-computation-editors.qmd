@@ -439,7 +439,8 @@ A special chunk! There can ONLY be one chunk named `setup`. It typically is used
 . . .
 
 ````
-```{{r setup}}
+```{{r}}
+#| label: setup
 #| include: false
 knitr::opts_chunk$set(
   comment = '#>', fig.width = 6, fig.height = 6
@@ -582,7 +583,8 @@ List of 2
 ::: {.column width="50%"}
 
 ````md
-```{{r myPlt}}
+```{{r}}
+#| label: myPlt
 #| eval: false
 ggplot(mtcars, aes(x = disp, y = mpg, 
     color = factor(cyl))) +
@@ -598,7 +600,8 @@ Note that you when using **named chunks** you can't alter the internal code, onl
 
 
 ````md
-```{{r myPlt}}
+```{{r}}
+#| label: myPlt
 #| eval: true
 #| dpi: 300
 #| fig-height: 6
@@ -654,13 +657,15 @@ mpg_cars
 ## Working with code
 
 ````
-```{{r mpg-cars}}
+```{{r}}
+#| label: mpg-cars
 #| echo: false
 #| eval: true
 ```
 ````
 
-```{r mpg-cars}
+```{r}
+#| label: mpg-cars
 #| echo: false
 #| eval: true
 ```

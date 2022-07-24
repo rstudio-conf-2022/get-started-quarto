@@ -886,7 +886,7 @@
     "href": "materials/03-computation-editors.html#setup-chunk",
     "title": "Get Started with Quarto",
     "section": "Setup Chunk",
-    "text": "Setup Chunk\nA special chunk! There can ONLY be one chunk named setup. It typically is used to set up the default values for the entire document with knitr::opts_chunk$set() and loading global R packages.\n\n```{r setup}\n#| include: false\nknitr::opts_chunk$set(\n  comment = '#>', fig.width = 6, fig.height = 6\n)\n```\n\n\nQuarto also introduces some of these as options for execute: in YAML, for similar concepts in other languages.\n---\nformat: html\nexecute:\n  echo: false\n  warning: false\n---"
+    "text": "Setup Chunk\nA special chunk! There can ONLY be one chunk named setup. It typically is used to set up the default values for the entire document with knitr::opts_chunk$set() and loading global R packages.\n\n```{r}\n#| label: setup\n#| include: false\nknitr::opts_chunk$set(\n  comment = '#>', fig.width = 6, fig.height = 6\n)\n```\n\n\nQuarto also introduces some of these as options for execute: in YAML, for similar concepts in other languages.\n---\nformat: html\nexecute:\n  echo: false\n  warning: false\n---"
   },
   {
     "objectID": "materials/03-computation-editors.html#knitropts_chunk-defaults",
@@ -928,7 +928,7 @@
     "href": "materials/03-computation-editors.html#named-chunks-can-be-re-used",
     "title": "Get Started with Quarto",
     "section": "Named chunks can be re-used!",
-    "text": "Named chunks can be re-used!\n\n\n```{r myPlt}\n#| eval: false\nggplot(mtcars, aes(x = disp, y = mpg, \n    color = factor(cyl))) +\n  geom_point()\n```\nNote that you when using named chunks you can’t alter the internal code, only the chunk options. This is necessary because you are referencing the initially defined code in that chunk.\n\n```{r myPlt}\n#| eval: true\n#| dpi: 300\n#| fig-height: 6\n#| fig-width: 4\n```"
+    "text": "Named chunks can be re-used!\n\n\n```{r}\n#| label: myPlt\n#| eval: false\nggplot(mtcars, aes(x = disp, y = mpg, \n    color = factor(cyl))) +\n  geom_point()\n```\nNote that you when using named chunks you can’t alter the internal code, only the chunk options. This is necessary because you are referencing the initially defined code in that chunk.\n\n```{r}\n#| label: myPlt\n#| eval: true\n#| dpi: 300\n#| fig-height: 6\n#| fig-width: 4\n```"
   },
   {
     "objectID": "materials/03-computation-editors.html#working-with-code",
@@ -963,7 +963,7 @@
     "href": "materials/03-computation-editors.html#working-with-code-4",
     "title": "Get Started with Quarto",
     "section": "Working with code",
-    "text": "Working with code\n```{r mpg-cars}\n#| echo: false\n#| eval: true\n```\n\n\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2"
+    "text": "Working with code\n```{r}\n#| label: mpg-cars\n#| echo: false\n#| eval: true\n```\n\n\n                mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nFiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nFiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2"
   },
   {
     "objectID": "materials/03-computation-editors.html#rstudio-quick-intro",
@@ -2286,7 +2286,7 @@
     "href": "materials/08-advanced-knitr.html#paramaterized-report",
     "title": "Get Started with Quarto",
     "section": "Paramaterized report",
-    "text": "Paramaterized report\n---\ntitle: \"Penguins\"\ndate: 2020-08-11\nformat: html\nparams:\n  species: Adelie\n---\n```{r setup}\n#| inclue: false\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nsmaller <- penguins |> \n  filter(species == params$species, \n         !is.na(body_mass_g))\n```\n\nWe have data about `r nrow(penguins)` penguins. \nThe distribution of the \n`r params$species` penguins are shown below:\n\n```{r}\n#| echo: false\nsmaller |> \n  ggplot(aes(body_mass_g)) + \n  geom_histogram(binwidth = 100)\n```"
+    "text": "Paramaterized report\n---\ntitle: \"Penguins\"\ndate: 2020-08-11\nformat: html\nparams:\n  species: Adelie\n---\n```{r}\n#| label: setup\n#| include: false\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nsmaller <- penguins |> \n  filter(species == params$species, \n         !is.na(body_mass_g))\n```\n\nWe have data about `r nrow(penguins)` penguins. \nThe distribution of the \n`r params$species` penguins are shown below:\n\n```{r}\n#| echo: false\nsmaller |> \n  ggplot(aes(body_mass_g)) + \n  geom_histogram(binwidth = 100)\n```"
   },
   {
     "objectID": "materials/08-advanced-knitr.html#rendering",

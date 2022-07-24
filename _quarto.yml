@@ -12,7 +12,7 @@ website:
     description: "rstudio::conf-2022 2 day workshop on getting started with Quarto"
     image: "https://raw.githubusercontent.com/rstudio-conf-2022/get-started-quarto/main/preview.jpeg"
   page-footer:
-    left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "This page was built with ❤️ and [Quarto](https://quarto.org/) by [Tom Mock](https://themockup.blog)."
   navbar:
     background: "#447099"
     left:
