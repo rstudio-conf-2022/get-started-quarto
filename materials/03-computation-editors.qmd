@@ -17,6 +17,33 @@ editor: source
 
 [03 - Code and Editors]{style="color: white; font-size: 250px;"}
 
+```{r}
+#| echo: false
+library(countdown)
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown(
+    minutes = minutes,
+    # Fanfare when it's over
+    play_sound = play_sound,
+    # Set timer theme to match solarized colors
+    color_border              = "#404041",
+    color_text                = "white",
+    color_background = "#447099",
+    color_running_background  = "#72994E",
+    color_running_text        = "white",
+    color_finished_background = "#EE6331",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
 # {background-color="#6a9c42"}
 
 [Code]{style="color: white; font-size: 200px;"}
@@ -268,6 +295,11 @@ Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`
   - Chunk 2: Create a summary by sex/species of the average and median body weight and bill length
   - Chunk 3: Create a plot of body mass (x) by bill length (y)
   - Render it!
+  
+```{r}
+#| echo: false
+countdown_timer(2)
+```
 
 ## Inline code
 
@@ -347,6 +379,12 @@ The radius of the circle is $radius.
 - Open `materials/workshop/03-authoring/inline-code.qmd`
 - Look through the source code, and then render it
 - Check out the appearance and building up of inline code -> inline output
+- Try to add your own new calculations for inline reporting
+
+```{r}
+#| echo: false
+countdown_timer(4)
+```
 
 ## Code chunks options
 
@@ -539,15 +577,17 @@ List of 2
 
 ::::
 
-# Demo: Navigating within RStudio {background-color="black"}
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
+- Open RStudio and `materials/workshop/broken-notebook`
+- Try to render it, see the errors
+- Fix the errors by finding their named chunks and then render again!
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+```{r}
+#| echo: false
+countdown_timer(3)
+```
 
-- Open RStudio and `materials/workshop/visual-editor.qmd`
-- Explore the navigation options
-- Turn Visual Editor mode on/off and explore the sections
-- Render the document and find the broken code, then fix it and render again!
 
 ## Chunk names, good and bad
 
@@ -729,6 +769,11 @@ You can use tab-completion inside `knitr` chunk options for RMarkdown style or Q
 - Open `auto-complete.qmd`
 - Follow instructions in the document
 
+```{r}
+#| echo: false
+countdown_timer(2)
+```
+
 ## RStudio Visual Editor
 
 ![](https://quarto.org/docs/visual-editor/images/visual-editing.png)
@@ -737,46 +782,18 @@ You can use tab-completion inside `knitr` chunk options for RMarkdown style or Q
 
 - Open `materials/workshop/03-authoring/visual-editor.qmd`
 - Explore the UI elements and visual editor mode
-
-## Quarto workflow
-
-Running Quarto Render will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
-
-## Rendering
-
-1. Render in RStudio, starts a background job and previews the output  
-
-![](https://quarto.org/docs/tools/images/rstudio-render.png)
-
-. . .
-
-2. System shell via `quarto render`
-
-```{bash}
-#| eval: false
-#| echo: true
-quarto render document.qmd # defaults to html
-quarto render document.qmd --to pdf
-quarto render document.qmd --to docx
-```
-
-- Renders via terminal
-
-. . .
-
-3. R console via `quarto` R package
+- Turn Visual Editor mode on/off and explore the sections
+- Render the document and compare the viewer to Visual Mode!
 
 ```{r}
-#| eval: false
-#| echo: true
-library(quarto)
-quarto_render("document.qmd") # defaults to html
-quarto_render("document.qmd", output_format = "pdf")
+#| echo: false
+countdown_timer(2)
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
-- Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
+```{r}
+#| echo: false
+countdown_timer(4)
+```
 
 ## VS Code
 

@@ -15,6 +15,33 @@ editor: source
 
 # 04 - Static Quarto Documents {background-image="images/write-something.jpg" background-size="cover" background-color="black" style="font-size: 90px;"}
 
+```{r}
+#| echo: false
+library(countdown)
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown(
+    minutes = minutes,
+    # Fanfare when it's over
+    play_sound = play_sound,
+    # Set timer theme to match solarized colors
+    color_border              = "#404041",
+    color_text                = "white",
+    color_background = "#447099",
+    color_running_background  = "#72994E",
+    color_running_text        = "white",
+    color_finished_background = "#EE6331",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
 ## HTML Workhorse
 
 [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)

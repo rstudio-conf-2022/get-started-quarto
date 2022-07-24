@@ -16,6 +16,33 @@ execute:
 
 # 02 - Authoring Quarto {background-color="#447099" background-image="images/typewriter.jpg" background-size="cover"}
 
+```{r}
+#| include: false
+library(countdown)
+countdown_timer <- function(
+    minutes = 1, 
+    play_sound = TRUE, 
+    font_size = "2em", 
+    ...
+) {
+  countdown(
+    minutes = minutes,
+    # Fanfare when it's over
+    play_sound = play_sound,
+    # Set timer theme to match solarized colors
+    color_border              = "#404041",
+    color_text                = "white",
+    color_background = "#447099",
+    color_running_background  = "#72994E",
+    color_running_text        = "white",
+    color_finished_background = "#EE6331",
+    color_finished_text       = "white",
+    font_size = font_size,
+    ...
+  )
+}
+```
+
 ## Quarto, anatomy
 
 1.  Metadata: YAML
@@ -201,6 +228,48 @@ quarto render document.qmd --to html -M code-fold:true
 quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
 ```
 
+# Demo: Navigating within RStudio {background-color="black"}
+
+## Quarto workflow
+
+Running Quarto Render will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
+
+## Rendering
+
+1. Render in RStudio, starts a background job and previews the output  
+
+![](https://quarto.org/docs/tools/images/rstudio-render.png)
+
+. . .
+
+2. System shell via `quarto render`
+
+```{bash}
+#| eval: false
+#| echo: true
+quarto render document.qmd # defaults to html
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+- Renders via terminal
+
+. . .
+
+3. R console via `quarto` R package
+
+```{r}
+#| eval: false
+#| echo: true
+library(quarto)
+quarto_render("document.qmd") # defaults to html
+quarto_render("document.qmd", output_format = "pdf")
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
+
+- Open RStudio and `materials/workshop/visual-editor.qmd`
+- Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
 
 
 ## Quarto linting
@@ -230,6 +299,11 @@ RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
 -   Open a new Quarto document in RStudio
 -   Try <kbd>`Ctrl + space`</kbd> to see the available YAML options
 -   Try out the tab-completion of any options you remember
+
+```{r}
+#| echo: false
+countdown_timer(2)
+```
 
 ## HTML options
 
@@ -354,7 +428,12 @@ the document. The syntax is similar for embedding an inline image:
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
--   Explore, break, discuss with your neighbor
+-   Explore, add to it, try out new syntax, discuss with your neighbor
+
+```{r}
+#| echo: false
+countdown_timer(3)
+```
 
 ## Grid tables
 
@@ -665,6 +744,11 @@ Here is something under construction
 -   Try changing the types of callouts/remove them from code boxes and then render
 -   Open `materials/workshop/02-authoring/callout-pdf.qmd` and render it as well
 
+```{r}
+#| echo: false
+countdown_timer(3)
+```
+
 ## Figures
 
 Basic markdown syntax:
@@ -889,6 +973,11 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 
 -   Use `../../path/to/content` in YAML or in Markdown
 
+```{r}
+#| echo: false
+countdown_timer(5)
+```
+
 ## Subfigures
 
     ::: {#fig-bostons layout-nrow=2}
@@ -986,6 +1075,11 @@ Funny boston terrier videos
 
 -   Open `materials/workshop/02-authoring/figure-layout-2.qmd`
 -   Try out the various types of subfigures, chahing the nrow/ncol
+
+```{r}
+#| echo: false
+countdown_timer(3)
+```
 
 ## Footnotes
 

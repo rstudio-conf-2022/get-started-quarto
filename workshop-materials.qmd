@@ -3,6 +3,10 @@ format: html
 title: "Workshop Materials"
 ---
 
+To get access to the workshop materials, please clone the repo:
+
+<https://github.com/jthomasmock/quarto-workshop.git>
+
 ```{r}
 #| label: setup
 #| include: false
