@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "rstudio::conf 2022 Workshop",
     "section": "",
-    "text": "by Tom Mock\n\n\n\n\n\n\nWarning\n\n\n\nThis page is under construction and will be updated continuously until the workshop date. If you are a workshop attendee - please clone this repository via RStudio on evening of July 24th or morning of July 25th.\n\n\nPlease go to the workshop homepage for full instructions: https://rstudio-conf-2022.github.io/get-started-quarto/\n\n🗓️ July 25 and 26, 2022\n⏰ 09:00 - 17:00\n🏨 Maryland 2 ✍️ rstd.io/get-started-quarto"
+    "text": "by Tom Mock\n\n\n\n\n\n\nTip\n\n\n\nIf you are a workshop attendee - please clone https://github.com/jthomasmock/quarto-workshop.git via RStudio on Monday morning (July 25th).\n\n\nPlease go to the workshop homepage for full instructions: https://rstudio-conf-2022.github.io/get-started-quarto/\n\n🗓️ July 25 and 26, 2022\n⏰ 09:00 - 17:00\n🏨 Maryland 2\n✍️ rstd.io/get-started-quarto"
   },
   {
     "objectID": "index.html#learning-objectives",
@@ -25,7 +25,7 @@
     "href": "index.html#prework",
     "title": "rstudio::conf 2022 Workshop",
     "section": "Prework",
-    "text": "Prework\nIf you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!\n\nInstall latest version of RStudio, v2022.07.0-548 or later\nInstall latest version of Quarto (v1.0.36 or greater)\nAfter installing Quarto, open the terminal in RStudio:\n\nThe terminal is located in the tab next to the R console pane in RStudio\nInstall/Update TinyTeX for PDFs with quarto install tool tinytex\nInstall/Update Chromium with quarto install tool chromium\n\nIdeally upgrade/use to R 4.1 or R 4.2 (I’m showing base R pipe as |>)\nInstall these R packages:\n\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\n\n\n\n\n\n\nWorkshop Materials\n\n\n\nOn Sunday July 24th - clone/pull this repo (to get latest version)! https://github.com/jthomasmock/quarto-workshop.git"
+    "text": "Prework\nIf you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!\n\nInstall latest version of RStudio, v2022.07.0-548 or later\nInstall latest version of Quarto (v1.0.36 or greater)\nAfter installing Quarto, open the terminal in RStudio:\n\nThe terminal is located in the tab next to the R console pane in RStudio\nInstall/Update TinyTeX for PDFs with quarto install tool tinytex\nInstall/Update Chromium with quarto install tool chromium\n\nIdeally upgrade/use to R 4.1 or R 4.2 (I’m showing base R pipe as |>)\nInstall these R packages:\n\n\npkg_list <- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\n\n\n\n\n\n\nWorkshop Materials\n\n\n\nOn Monday morning July 25th - clone/pull this repo (to get latest version)! https://github.com/jthomasmock/quarto-workshop.git"
   },
   {
     "objectID": "index.html#schedule",

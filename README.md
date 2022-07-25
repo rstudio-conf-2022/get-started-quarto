@@ -10,8 +10,8 @@ editor_options:
 
 by Tom Mock
 
-:::{.callout-warning}
-This page is under construction and will be updated continuously until the workshop date. If you are a workshop attendee - please clone this repository via RStudio on evening of July 24th or morning of July 25th.
+:::{.callout-tip}
+If you are a workshop attendee - please clone <https://github.com/jthomasmock/quarto-workshop.git> via RStudio on Monday morning (July 25th).
 :::
 
 Please go to the workshop homepage for full instructions: <https://rstudio-conf-2022.github.io/get-started-quarto/>
@@ -20,7 +20,7 @@ Please go to the workshop homepage for full instructions: <https://rstudio-conf-
 
 🗓️ July 25 and 26, 2022\
 ⏰ 09:00 - 17:00\
-🏨 Maryland 2
+🏨 Maryland 2  
 ✍️ [rstd.io/get-started-quarto](https://rstd.io/get-started-quarto)
 
 ------------------------------------------------------------------------
@@ -50,7 +50,7 @@ install.packages(pkg_list)
 
 ## Workshop Materials
 
-On Sunday July 24th - clone this repo in RStudio!
+On Monday July 25th - clone this repo in RStudio!
 <https://github.com/jthomasmock/quarto-workshop.git>
 
 :::
@@ -151,7 +151,7 @@ If you are a workshop attendee and have any trouble with installation locally, p
 
 ## Workshop Materials
 
-On Sunday July 24th - clone/pull this repo (to get latest version)!
+On Monday morning July 25th - clone/pull this repo (to get latest version)!
 <https://github.com/jthomasmock/quarto-workshop.git>
 
 :::
