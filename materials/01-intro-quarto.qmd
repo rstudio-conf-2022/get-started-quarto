@@ -283,7 +283,7 @@ countdown_timer <- function(
 <br>
 <br>
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(1)
 ```
@@ -599,7 +599,7 @@ quarto_render("document.qmd", output_format = "pdf")
 -   Create two sections, one with fact you want to learn and your favorite thing about R
 -   Render it with RStudio button, then try with the R package and terminal
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(2)
 ```
@@ -879,7 +879,7 @@ quarto render --help
 
 -   Compare to the HTML version
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(3)
 ```
