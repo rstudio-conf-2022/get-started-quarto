@@ -97,6 +97,11 @@ format:
 - Open `materials/workshop/04-static/old-rmarkdown.rmd`
 - Render via Quarto CLI
 
+```{R}
+#| echo: false
+countdown_timer(2)
+```
+
 ## Static documents
 
 - A static document is your "daily driver" - has the power for a complex table of contents, figure alignment, control of ouptut/code, and other niceties
@@ -324,6 +329,11 @@ format:
 - Change the code to all fold, render
 - Change the code to source and toggle
 
+```{R}
+#| echo: false
+countdown_timer(4)
+```
+
 # Code appearance {background-color="#4f6952"}
 
 ## Code highlighting
@@ -430,12 +440,14 @@ format:
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 - Open `materials/workshop/04-static/bootswatch-themed.qmd` and try out some themes!
-
-- Core Quarto (YAML, Markdown/Text, Code)
-- CSS/SCSS (styling and appearance) 
 - 25 bootswatch themes
 - https://quarto.org/docs/output-formats/html-themes.html
 - https://quarto.org/docs/output-formats/html-themes-more.html
+
+```{R}
+#| echo: false
+countdown_timer(2)
+```
 
 ## CSS
 
@@ -600,3 +612,8 @@ TIP!
 
 - Open `materials/workshop/01-intro/history.qmd`
 - Render as HTML and then render as PDF
+
+```{R}
+#| echo: false
+countdown_timer(3)
+```

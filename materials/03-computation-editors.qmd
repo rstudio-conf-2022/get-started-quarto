@@ -296,7 +296,7 @@ Or use the Command Palette: <kbd>`Cmd + Shift + P`</kbd>/<kbd>`Ctrl + Shift + P`
   - Chunk 3: Create a plot of body mass (x) by bill length (y)
   - Render it!
   
-```{r}
+```{R}
 #| echo: false
 countdown_timer(2)
 ```
@@ -381,7 +381,7 @@ The radius of the circle is $radius.
 - Check out the appearance and building up of inline code -> inline output
 - Try to add your own new calculations for inline reporting
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(4)
 ```
@@ -583,7 +583,7 @@ List of 2
 - Try to render it, see the errors
 - Fix the errors by finding their named chunks and then render again!
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(3)
 ```
@@ -769,7 +769,7 @@ You can use tab-completion inside `knitr` chunk options for RMarkdown style or Q
 - Open `auto-complete.qmd`
 - Follow instructions in the document
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(2)
 ```
@@ -785,12 +785,7 @@ countdown_timer(2)
 - Turn Visual Editor mode on/off and explore the sections
 - Render the document and compare the viewer to Visual Mode!
 
-```{r}
-#| echo: false
-countdown_timer(2)
-```
-
-```{r}
+```{R}
 #| echo: false
 countdown_timer(4)
 ```

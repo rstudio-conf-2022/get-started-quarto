@@ -273,7 +273,7 @@ quarto_render("document.qmd", output_format = "pdf")
 - Open RStudio and `materials/workshop/visual-editor.qmd`
 - Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
 
-```{r}
+```{R}
 #| echo: false
 
 countdown_timer(2)
@@ -309,7 +309,7 @@ RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
 -   Try <kbd>`Ctrl + space`</kbd> to see the available YAML options
 -   Try out the tab-completion of any options you remember
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(2)
 ```
@@ -439,7 +439,7 @@ the document. The syntax is similar for embedding an inline image:
 -   Open `materials/workshop/02-authoring/markdown-syntax.qmd`
 -   Explore, add to it, try out new syntax, discuss with your neighbor
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(3)
 ```
@@ -753,7 +753,7 @@ Here is something under construction
 -   Try changing the types of callouts/remove them from code boxes and then render
 -   Open `materials/workshop/02-authoring/callout-pdf.qmd` and render it as well
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(3)
 ```
@@ -982,7 +982,7 @@ Because Quarto is a command line interface (CLI), there are times you'll need to
 
 -   Use `../../path/to/content` in YAML or in Markdown
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(5)
 ```
@@ -1085,7 +1085,7 @@ Funny boston terrier videos
 -   Open `materials/workshop/02-authoring/figure-layout-2.qmd`
 -   Try out the various types of subfigures, chahing the nrow/ncol
 
-```{r}
+```{R}
 #| echo: false
 countdown_timer(3)
 ```
@@ -1152,7 +1152,7 @@ flowchart LR
 ```
 ````
 
-![](images/mermaid.jpg)
+![](images/mermaid.jpeg)
 
 . . .
 
