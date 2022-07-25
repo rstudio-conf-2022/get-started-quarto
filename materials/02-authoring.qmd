@@ -232,7 +232,9 @@ quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
 
 ## Quarto workflow
 
-Running Quarto Render will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
+Executing the Quarto Render button in RStudio will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
+
+![](images/background-job.png)
 
 ## Rendering
 
@@ -270,6 +272,13 @@ quarto_render("document.qmd", output_format = "pdf")
 
 - Open RStudio and `materials/workshop/visual-editor.qmd`
 - Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
+
+```{r}
+#| echo: false
+
+countdown_timer(2)
+```
+
 
 
 ## Quarto linting

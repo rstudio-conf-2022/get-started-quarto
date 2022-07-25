@@ -195,9 +195,9 @@ install.packages(pkg_list)
 
 In-session:
 
--   `r fa("square", "pink")` = Tom isn't explaining it well enough or I need time
+-   `r fa("square", "yellow")` = Tom isn't explaining it well enough or I need time
 
--   `r fa("square", "green")` = I have completed the "Our Turn"
+-   `r fa("square", "purple")` = I have completed the "Our Turn"
 
 -   Raised hand = I have a question for Tom/TA - please try and make eye-contact with me or the TA, based on I have a "general question" or I'm running into a code error.
 
@@ -277,8 +277,16 @@ countdown_timer <- function(
     ...
   )
 }
+
 ```
 
+<br>
+<br>
+
+```{r}
+#| echo: false
+countdown_timer(1)
+```
 
 ## Hello Quarto
 
@@ -603,7 +611,7 @@ countdown_timer(2)
 
 . . .
 
--   Quarto v1.0 comes pre-installed in RStudio Workbench 2022.07.0 and later. You can use Quarto in RStudio Workbench's RStudio IDE, JupyterLab/Jupyter notebooks, or VSCode.
+-   Quarto v1.0 comes pre-installed in RStudio Workbench 2022.07.1 and later. You can use Quarto in RStudio Workbench's RStudio IDE, JupyterLab/Jupyter notebooks, or VSCode.
 
 . . .
 

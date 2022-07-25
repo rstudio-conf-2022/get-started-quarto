@@ -284,7 +284,7 @@
     "href": "materials/01-intro-quarto.html#what-about-for-data-science-at-work",
     "title": "Get Started with Quarto",
     "section": "What about for Data Science at Work?",
-    "text": "What about for Data Science at Work?\n\nQuarto can be used in RStudio Team today!\n\n\n\nQuarto v1.0 comes pre-installed in RStudio Workbench 2022.07.0 and later. You can use Quarto in RStudio Workbench’s RStudio IDE, JupyterLab/Jupyter notebooks, or VSCode.\n\n\n\n\nQuarto can be published and re-executed by RStudio Connect!"
+    "text": "What about for Data Science at Work?\n\nQuarto can be used in RStudio Team today!\n\n\n\nQuarto v1.0 comes pre-installed in RStudio Workbench 2022.07.1 and later. You can use Quarto in RStudio Workbench’s RStudio IDE, JupyterLab/Jupyter notebooks, or VSCode.\n\n\n\n\nQuarto can be published and re-executed by RStudio Connect!"
   },
   {
     "objectID": "materials/01-intro-quarto.html#why-quarto-instead-of-rmarkdown",
@@ -473,7 +473,7 @@
     "href": "materials/02-authoring.html#quarto-workflow",
     "title": "Get Started with Quarto",
     "section": "Quarto workflow",
-    "text": "Quarto workflow\nRunning Quarto Render will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop."
+    "text": "Quarto workflow\nExecuting the Quarto Render button in RStudio will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop."
   },
   {
     "objectID": "materials/02-authoring.html#rendering",
@@ -1299,7 +1299,7 @@
     "href": "materials/04-static-documents.html#format-pdf",
     "title": "Get Started with Quarto",
     "section": "format: PDF",
-    "text": "format: PDF\nTIP! - pandoc divs/spans are generally transferrable - CSS is not transferrable - Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX"
+    "text": "format: PDF\nTIP! - pandoc divs/spans are generally transferrable - CSS is not transferable - Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX"
   },
   {
     "objectID": "materials/05-presentations.html#quarto-presentation-formats",
@@ -2471,6 +2471,13 @@
     "text": "To get access to the workshop materials, please clone the repo:\nhttps://github.com/jthomasmock/quarto-workshop.git"
   },
   {
+    "objectID": "workshop-materials.html#intro",
+    "href": "workshop-materials.html#intro",
+    "title": "Workshop Materials",
+    "section": "01-intro",
+    "text": "01-intro\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/01-intro\nhistory.qmd"
+  },
+  {
     "objectID": "workshop-materials.html#authoring",
     "href": "workshop-materials.html#authoring",
     "title": "Workshop Materials",
@@ -2511,12 +2518,5 @@
     "title": "Workshop Materials",
     "section": "08-knitr",
     "text": "08-knitr\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/08-knitr\nfa-example.qmd\n\n\nmaterials/workshop/08-knitr\nlightbox-extension.qmd\n\n\nmaterials/workshop/08-knitr\npenguin-params.qmd"
-  },
-  {
-    "objectID": "workshop-materials.html#intro",
-    "href": "workshop-materials.html#intro",
-    "title": "Workshop Materials",
-    "section": "01-intro",
-    "text": "01-intro\n\n\n\n\n\n\n\nfolder\nfile\n\n\n\n\nmaterials/workshop/01-intro\nhistory.qmd"
   }
 ]

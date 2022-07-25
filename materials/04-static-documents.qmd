@@ -593,7 +593,7 @@ $primary_3: #878f99;
 
 TIP!
 - pandoc divs/spans are generally transferrable
-- CSS is _not_ transferrable
+- CSS is _not_ transferable
 - Lean on Quarto/Pandoc tooling and then reach for raw CSS/LaTeX
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
