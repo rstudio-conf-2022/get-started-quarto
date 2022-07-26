@@ -1060,34 +1060,34 @@ Automatically animate matching elements across slides with Auto-Animate.
 :::
 :::
 
-## Auto-Animate 
+<!-- ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"} -->
 
-::: {style="font-size: 160px; text-align: center;" auto-animate="true" auto-animate-easing="ease-in-out"}
-IMPORTANT POINT!
-:::
+<!-- ::: {style="font-size: 160px; text-align: center;"} -->
+<!-- IMPORTANT POINT! -->
+<!-- ::: -->
 
-##  
+<!-- ##  {auto-animate="true" auto-animate-easing="ease-in-out"} -->
 
-::: {style="font-size: 25px;" auto-animate="true" auto-animate-easing="ease-in-out"}
-Ok, not that important!
-:::
+<!-- ::: {style="font-size: 25px;"} -->
+<!-- Ok, not that important! -->
+<!-- ::: -->
 
-## 
+<!-- ##  -->
 
-``` code
-## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"}
+<!-- ``` code -->
+<!-- ## Auto-Animate {auto-animate="true" auto-animate-easing="ease-in-out"} -->
 
-::: {style="font-size: 160px; text-align: center;"}
+<!-- ::: {style="font-size: 160px; text-align: center;"} -->
 
-IMPORTANT POINT!
+<!-- IMPORTANT POINT! -->
 
-:::
+<!-- ::: -->
 
-##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+<!-- ##  {auto-animate="true" auto-animate-easing="ease-in-out"} -->
 
-::: {style="font-size: 25px;"}
+<!-- ::: {style="font-size: 25px;"} -->
 
-Ok, not that important!
+<!-- Ok, not that important! -->
 
-:::
-```
+<!-- ::: -->
+<!-- ``` -->
