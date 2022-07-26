@@ -2,29 +2,10 @@
 format: revealjs
 ---
 
-## Make these columns appear in order
+## Instructions
 
-::::: {.columns}
+- Add 3 new slides
+  - Create a list of incremental reveal (`:::` + `.incremental`)
+  - Create at least two `:::` div fragments (`.fragment` + one of `.fade-out` + `.highlight-red` + `.fade-in-then-out`)
+  - Add one span fragment with `[text]{.fragment .type-of-fragment}` syntax
 
-:::: {.column width="50%"}
-
-### These appear first
-
-- Make
-- Your 
-- List
-
-::::
-
-:::: {.column width="50%"}
-
-### Then this
-
-```{r}
-#| echo: fenced
-head(mtcars)
-```
-
-::::
-
-:::::

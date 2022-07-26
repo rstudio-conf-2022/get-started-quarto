@@ -676,35 +676,35 @@
     "href": "materials/02-authoring.html#absolute-vs-relative",
     "title": "Get Started with Quarto",
     "section": "Absolute vs Relative:",
-    "text": "Absolute vs Relative:\nIn places like markdown, YAML, or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"schedule.qmd\"             \"workshop-conf-2022.Rproj\"\n[15] \"workshop-materials.qmd\""
+    "text": "Absolute vs Relative:\nIn places like markdown, YAML, or the command line/shell/terminal you’ll need to use absolute or relative file paths:\n\nAbsolute = BAD: \"/Users/thomasmock/get-started-quarto\" - who’s computer will this work on?\n\nlist.files(\"/Users/thomasmock/get-started-quarto\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\""
   },
   {
     "objectID": "materials/02-authoring.html#relative-file-paths",
     "href": "materials/02-authoring.html#relative-file-paths",
     "title": "Get Started with Quarto",
     "section": "Relative file paths",
-    "text": "Relative file paths\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth\n\n/.. or / = start from root directory of your current computer\n\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"schedule.qmd\"             \"workshop-conf-2022.Rproj\"\n[15] \"workshop-materials.qmd\"  \n\n\n\n\"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"schedule.qmd\"             \"workshop-conf-2022.Rproj\"\n[15] \"workshop-materials.qmd\""
+    "text": "Relative file paths\nBetter, HTML style relative paths: \"../ = up one directory - ../../ = up two directories and so forth\n\n/.. or / = start from root directory of your current computer\n\n\nlist.files(\"../\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\"  \n\n\n\n\"~/get-started-quarto/\" where “~” is a shortcut for your home directory (like thomasmock on my computer)\n\nlist.files(\"~/get-started-quarto/\")\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\""
   },
   {
     "objectID": "materials/02-authoring.html#mental-model",
     "href": "materials/02-authoring.html#mental-model",
     "title": "Get Started with Quarto",
     "section": "Mental Model",
-    "text": "Mental Model\nWorking left to right (parent to child)\n\nlist.files(\"~/get-started-quarto/materials\")\n\n [1] \"01-intro-quarto.qmd\"        \"02-authoring_files\"        \n [3] \"02-authoring.html\"          \"02-authoring.qmd\"          \n [5] \"02-authoring.rmarkdown\"     \"03-computation-editors.qmd\"\n [7] \"04-static-documents.qmd\"    \"05-presentations.qmd\"      \n [9] \"06-websites.qmd\"            \"07-plots-tables.qmd\"       \n[11] \"08-advanced-knitr.qmd\"      \"images\"                    \n[13] \"palmer-penguins.csv\"        \"resources_files\"           \n[15] \"static\"                     \"theme\"                     \n[17] \"workshop\"                  \n\n\n\nWorking right to left (child to parent)\n\nlist.files(\"../materials\")\n\n [1] \"01-intro-quarto.qmd\"        \"02-authoring_files\"        \n [3] \"02-authoring.html\"          \"02-authoring.qmd\"          \n [5] \"02-authoring.rmarkdown\"     \"03-computation-editors.qmd\"\n [7] \"04-static-documents.qmd\"    \"05-presentations.qmd\"      \n [9] \"06-websites.qmd\"            \"07-plots-tables.qmd\"       \n[11] \"08-advanced-knitr.qmd\"      \"images\"                    \n[13] \"palmer-penguins.csv\"        \"resources_files\"           \n[15] \"static\"                     \"theme\"                     \n[17] \"workshop\""
+    "text": "Mental Model\nWorking left to right (parent to child)\n\nlist.files(\"~/get-started-quarto/materials\")\n\n [1] \"01-intro-quarto_files\"      \"01-intro-quarto.html\"      \n [3] \"01-intro-quarto.qmd\"        \"02-authoring.qmd\"          \n [5] \"02-authoring.rmarkdown\"     \"03-computation-editors.qmd\"\n [7] \"04-static-documents.qmd\"    \"05-presentations.qmd\"      \n [9] \"06-websites.qmd\"            \"07-plots-tables.qmd\"       \n[11] \"08-advanced-knitr.qmd\"      \"images\"                    \n[13] \"palmer-penguins.csv\"        \"resources_files\"           \n[15] \"static\"                     \"test-layout.qmd\"           \n[17] \"theme\"                      \"workshop\"                  \n\n\n\nWorking right to left (child to parent)\n\nlist.files(\"../materials\")\n\n [1] \"01-intro-quarto_files\"      \"01-intro-quarto.html\"      \n [3] \"01-intro-quarto.qmd\"        \"02-authoring.qmd\"          \n [5] \"02-authoring.rmarkdown\"     \"03-computation-editors.qmd\"\n [7] \"04-static-documents.qmd\"    \"05-presentations.qmd\"      \n [9] \"06-websites.qmd\"            \"07-plots-tables.qmd\"       \n[11] \"08-advanced-knitr.qmd\"      \"images\"                    \n[13] \"palmer-penguins.csv\"        \"resources_files\"           \n[15] \"static\"                     \"test-layout.qmd\"           \n[17] \"theme\"                      \"workshop\""
   },
   {
     "objectID": "materials/02-authoring.html#referencing-paths-in-r-code",
     "href": "materials/02-authoring.html#referencing-paths-in-r-code",
     "title": "Get Started with Quarto",
     "section": "Referencing paths in R code",
-    "text": "Referencing paths in R code\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"schedule.qmd\"             \"workshop-conf-2022.Rproj\"\n[15] \"workshop-materials.qmd\"  \n\n\nhere() always starts at the top-level directory of a .RProj"
+    "text": "Referencing paths in R code\nIn code you can use here::here():\n\nThe goal of the here package is to enable easy file referencing in project-oriented workflows\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\"  \n\n\nhere() always starts at the top-level directory of a .RProj"
   },
   {
     "objectID": "materials/02-authoring.html#herehere",
     "href": "materials/02-authoring.html#herehere",
     "title": "Get Started with Quarto",
     "section": "here::here()",
-    "text": "here::here()\n\nhere::here()\n\n[1] \"/Users/thomasmock/get-started-quarto\"\n\n\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.qmd\"                 \n [5] \"docs\"                     \"index.qmd\"               \n [7] \"LICENSE.md\"               \"materials\"               \n [9] \"preview-image-build.R\"    \"preview.jpeg\"            \n[11] \"preview.png\"              \"README.md\"               \n[13] \"schedule.qmd\"             \"workshop-conf-2022.Rproj\"\n[15] \"workshop-materials.qmd\""
+    "text": "here::here()\n\nhere::here()\n\n[1] \"/Users/thomasmock/get-started-quarto\"\n\n\n\n\nlist.files(here::here())\n\n [1] \"_extensions\"              \"_freeze\"                 \n [3] \"_quarto.yml\"              \"404.html\"                \n [5] \"404.qmd\"                  \"docs\"                    \n [7] \"index.html\"               \"index.qmd\"               \n [9] \"LICENSE.md\"               \"materials\"               \n[11] \"preview-image-build.R\"    \"preview.jpeg\"            \n[13] \"preview.png\"              \"README.md\"               \n[15] \"schedule.qmd\"             \"site_libs\"               \n[17] \"workshop-conf-2022.Rproj\" \"workshop-materials.qmd\""
   },
   {
     "objectID": "materials/02-authoring.html#herehere-1",
@@ -1309,13 +1309,6 @@
     "text": "Quarto presentation formats\n\nrevealjs - essentially the replacement for xaringan, but with Pandoc-native syntax\nbeamer for LaTex slides\nPowerpoint for when you have to collaborate via Office"
   },
   {
-    "objectID": "materials/05-presentations.html#core-workflow",
-    "href": "materials/05-presentations.html#core-workflow",
-    "title": "Get Started with Quarto",
-    "section": "Core workflow",
-    "text": "Core workflow\n---\nformat: revealjs\n---\n\n## Step 1\n- Split slides up with level 2 headers: `## Heading 2`\n- Add some markdown + text and/or some R/Python code\n\n## Step 2\n- quarto render\n\n## Step 3\n- Profit"
-  },
-  {
     "objectID": "materials/05-presentations.html#revealjs",
     "href": "materials/05-presentations.html#revealjs",
     "title": "Get Started with Quarto",
@@ -1323,11 +1316,18 @@
     "text": "revealjs\n\nreveal.js is an open source HTML presentation framework. It’s a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.\n\n\n\nrevealjs for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides\nUser guide: https://quarto.org/docs/presentations/revealjs/"
   },
   {
+    "objectID": "materials/05-presentations.html#core-workflow",
+    "href": "materials/05-presentations.html#core-workflow",
+    "title": "Get Started with Quarto",
+    "section": "Core workflow",
+    "text": "Core workflow\n---\nformat: revealjs\n---\n\n## Step 1\n- Split slides up with level 2 headers: `## Heading 2`\n- Add some markdown + text and/or some R/Python code\n\n## Step 2\n- quarto render\n\n## Step 3\n- Profit"
+  },
+  {
     "objectID": "materials/05-presentations.html#yaml-for-these-slides",
     "href": "materials/05-presentations.html#yaml-for-these-slides",
     "title": "Get Started with Quarto",
     "section": "YAML for these slides",
-    "text": "YAML for these slides\n---\nformat: \n  revealjs:\n    slide-number: c/t\n    width: 1920\n    height: 1080\n    logo: \"https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png\"\n    footer: \"[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)\"\n    css: [\"theme/theme.css\"]\n    theme: simple\n    echo: true\n---"
+    "text": "YAML for these slides\n---\nformat: \n  revealjs:\n    slide-number: c/t\n    width: 1600\n    height: 900\n    logo: \"https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png\"\n    footer: \"[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)\"\n    css: [\"theme/theme.css\"]\n    theme: simple\n    echo: true\n---"
   },
   {
     "objectID": "materials/05-presentations.html#transitions",
@@ -1390,7 +1390,14 @@
     "href": "materials/05-presentations.html#lists",
     "title": "Get Started with Quarto",
     "section": "Lists",
-    "text": "Lists\n\nCreate lists with - or * or 1.\n\n\nIncrementally reveal elements with:\n::: {.incremental}\n\n- First item\n- Second item\n\n:::\n\n\nOr affect globally:\nformat:\n  revealjs:\n    incremental: true\n\n\n::: {.nonincremental}\n\n- 1st Item\n- 2nd Item\n\n:::"
+    "text": "Lists\n\nCreate lists with - or * or 1.\n\n\nIncrementally reveal elements with:\n::: {.incremental}\n\n- First item\n- Second item\n\n:::\n\n\nOr affect globally:\nformat:\n  revealjs:\n    incremental: true\n\n\nOr turn it off for specific lists\n::: {.nonincremental}\n\n- 1st Item\n- 2nd Item\n\n:::"
+  },
+  {
+    "objectID": "materials/05-presentations.html#incremental-lists",
+    "href": "materials/05-presentations.html#incremental-lists",
+    "title": "Get Started with Quarto",
+    "section": "Incremental lists",
+    "text": "Incremental lists\n\n\nFirst item\nSecond item\nLast item"
   },
   {
     "objectID": "materials/05-presentations.html#incremental-reveal",
@@ -1523,7 +1530,7 @@
     "href": "materials/05-presentations.html#column-layout-arbitrary-fragment-1",
     "title": "Get Started with Quarto",
     "section": "Column Layout, arbitrary fragment",
-    "text": "Column Layout, arbitrary fragment\nYou can nest .incremental + .fragment to get your expected behavior.\n## Column Layout, arbitrary fragment\n\n::::: {.columns}\n\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### These appear first\n\n::: {.incremental}\n- Make\n- Your \n- List\n:::\n\n:::\n\n::::\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### Then this\n\n```{r}\n#| echo: fenced\nhead(mtcars)\n```\n\n\n:::\n\n::::\n\n:::::"
+    "text": "Column Layout, arbitrary fragment\nYou can nest .incremental + .fragment to get your expected behavior.\n\n\n## Column Layout, arbitrary fragment\n\n::::: {.columns}\n\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### These appear first\n\n::: {.incremental}\n- Make\n- Your \n- List\n:::\n\n:::\n\n::::\n\n\n:::: {.column width=\"50%\"}\n\n::: {.fragment}\n\n### Then this\n\n```{r}\n#| echo: fenced\nhead(mtcars)\n```\n\n\n:::\n\n::::\n\n:::::"
   },
   {
     "objectID": "materials/05-presentations.html#images",
@@ -2107,6 +2114,13 @@
     "text": "Block layout, arbitrary content\n\n\n\n\nItem X\nItem Y\nItem Z\n\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa."
   },
   {
+    "objectID": "materials/07-plots-tables.html#grid-custom-layout",
+    "href": "materials/07-plots-tables.html#grid-custom-layout",
+    "title": "Get Started with Quarto",
+    "section": "Grid, custom layout",
+    "text": "Grid, custom layout\nThe “grid” layout in Quarto is 12 units wide - you can break up the grid into different subsections as long as they add up to 12.\n\n\nThis column takes 1/3 of the page \n\n\nThis column takes 2/3 of the page \n\n\n\n::: {.grid}\n\n::: {.g-col-4}\nThis column takes 1/3 of the page\n![](boston-terrier.png)\n:::\n\n::: {.g-col-8}\nThis column takes 2/3 of the page\n![](boston-sleep.png)\n:::\n\n:::"
+  },
+  {
     "objectID": "materials/07-plots-tables.html#article-layout",
     "href": "materials/07-plots-tables.html#article-layout",
     "title": "Get Started with Quarto",
@@ -2455,6 +2469,13 @@
     "title": "Get Started with Quarto",
     "section": "",
     "text": "Howard on a couch\n\n\n\n\n \n\n\n\n\n\nHoward sleeping\n\n\n\n\n\n\n\n\n\nHoward in a table"
+  },
+  {
+    "objectID": "materials/test-layout.html",
+    "href": "materials/test-layout.html",
+    "title": "Get Started with Quarto",
+    "section": "",
+    "text": "Excited\n\n\n\n\n\n\n\nSleeping\n\n\n\n\n\n\n\n\n\nStill Excited\n\n\n\n\n\n\n\nStill sleeping\n\n\n\n\n\n\nTwo states of Howard, twice"
   },
   {
     "objectID": "schedule.html",

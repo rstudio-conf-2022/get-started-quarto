@@ -279,6 +279,7 @@ mtcars |>
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/07-visuals/plot-layout.qmd`
+-   Explore, try it out and render
 
 ## Block layout, arbitrary content
 
@@ -332,7 +333,49 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu er
 -   Item Z
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa.
+
 :::
+
+## Grid, custom layout
+
+The "grid" layout in Quarto is 12 units wide - you can break up the grid into different subsections as long as they add up to 12.
+
+::: {.grid}
+
+::: {.g-col-4}
+This column takes 1/3 of the page
+![](images/boston-terrier.png)
+:::
+
+::: {.g-col-8}
+This column takes 2/3 of the page
+![](images/howard-comfy.png)
+:::
+
+:::
+
+. . .
+
+```code
+::: {.grid}
+
+::: {.g-col-4}
+This column takes 1/3 of the page
+![](boston-terrier.png)
+:::
+
+::: {.g-col-8}
+This column takes 2/3 of the page
+![](boston-sleep.png)
+:::
+
+:::
+```
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+- Create a new Quarto doc
+- Try out the grid layout in the previous slide, modifying the `.g-col-8` to add up to a total of 12
+
 
 ## Article Layout
 

@@ -404,6 +404,18 @@ Tom Mock | 2022-07-25
 
 </div>
 </section>
+<section id="revealjs" class="slide level2">
+<h2><code>revealjs</code></h2>
+<blockquote>
+<p>reveal.js is an open source HTML presentation framework. It’s a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.</p>
+</blockquote>
+<div class="fragment">
+<ul>
+<li><p><code>revealjs</code> for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides</p></li>
+<li><p>User guide: <a href="https://quarto.org/docs/presentations/revealjs/" class="uri">https://quarto.org/docs/presentations/revealjs/</a></p></li>
+</ul>
+</div>
+</section>
 <section id="section" class="slide level2" data-background-image="images/quarto-slides.png" data-background-position="center" data-background-size="auto 50%">
 <h2></h2>
 <div class="fragment">
@@ -429,18 +441,16 @@ format: revealjs
 
 ## Step 3
 - Profit</code></pre>
-</section>
-<section id="revealjs" class="slide level2">
-<h2><code>revealjs</code></h2>
-<blockquote>
-<p>reveal.js is an open source HTML presentation framework. It’s a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.</p>
-</blockquote>
-<div class="fragment">
+</section></section>
+<section>
+<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li><p><code>revealjs</code> for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides</p></li>
-<li><p>User guide: <a href="https://quarto.org/docs/presentations/revealjs/" class="uri">https://quarto.org/docs/presentations/revealjs/</a></p></li>
+<li>Open <code>materials/workshop/05-presentations/revealjs-penguins.qmd</code></li>
+<li>Explore the code</li>
+<li>Add a new slide with a level 2 header and some text</li>
+<li>Render it!</li>
 </ul>
-</div>
 </section>
 <section id="yaml-for-these-slides" class="slide level2">
 <h2>YAML for these slides</h2>
@@ -448,8 +458,8 @@ format: revealjs
 format: 
   revealjs:
     slide-number: c/t
-    width: 1920
-    height: 1080
+    width: 1600
+    height: 900
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]
@@ -575,7 +585,7 @@ format:
 </div>
 </section></section>
 <section>
-<section id="your-turn" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Using RStudio, create a new <code>revealjs</code> Quarto presentation</li>
@@ -587,7 +597,7 @@ format:
 </ul></li>
 <li>Write out what you did this morning (woke up, ate breakfast, walked to this room, etc) in sub-sections</li>
 <li>New sections should have level 2 headers</li>
-<li>Add some code to generate a basic plot using either the <code>palmerpenguins</code> dataset or <code>mtcars</code></li>
+<li>Add a code chunk</li>
 <li>Link out to an image with markdown syntax</li>
 <li>Render it!</li>
 </ul>
@@ -649,12 +659,23 @@ format:
 <span id="cb9-3"><a href="#cb9-3"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
+<p>Or turn it off for specific lists</p>
 <pre><code>::: {.nonincremental}
 
 - 1st Item
 - 2nd Item
 
 :::</code></pre>
+</div>
+</section>
+<section id="incremental-lists" class="slide level2">
+<h2>Incremental lists</h2>
+<div>
+<ul>
+<li class="fragment">First item</li>
+<li class="fragment">Second item</li>
+<li class="fragment">Last item</li>
+</ul>
 </div>
 </section>
 <section id="incremental-reveal" class="slide level2">
@@ -791,16 +812,6 @@ Appears first
 ::: {.fragment fragment-index=2}
 Appears second
 :::</code></pre>
-</section></section>
-<section>
-<section id="your-turn-1" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
-<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
-<ul>
-<li>Open <code>materials/workshop/05-presentations/revealjs-penguins.qmd</code></li>
-<li>Explore the code</li>
-<li>Add a new slide with a set of fragments</li>
-<li>Render it!</li>
-</ul>
 </section>
 <section id="column-layout" class="slide level2">
 <h2>Column layout</h2>
@@ -815,6 +826,14 @@ contents...
 :::
 
 ::::</code></pre>
+</section></section>
+<section>
+<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
+<ul>
+<li>Open <code>materials/workshop/05-presentation/fragments.qmd</code></li>
+<li>Make the portions appear in order: top -&gt; bottom and left -&gt; right</li>
+</ul>
 </section>
 <section id="column-layout-1" class="slide level2">
 <h2>Column layout</h2>
@@ -984,6 +1003,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <section id="column-layout-arbitrary-fragment-1" class="slide level2">
 <h2>Column Layout, arbitrary fragment</h2>
 <p>You <em>can</em> nest <code>.incremental</code> + <code>.fragment</code> to get your expected behavior.</p>
+<div class=".columns">
+<div class=".column">
 <div class="sourceCode" id="cb28"><pre class="sourceCode numberSource code number-lines code-with-copy"><code class="sourceCode"><span id="cb28-1"><a href="#cb28-1"></a>## Column Layout, arbitrary fragment</span>
 <span id="cb28-2"><a href="#cb28-2"></a></span>
 <span id="cb28-3"><a href="#cb28-3"></a>::::: {.columns}</span>
@@ -1003,6 +1024,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb28-17"><a href="#cb28-17"></a>:::</span>
 <span id="cb28-18"><a href="#cb28-18"></a></span>
 <span id="cb28-19"><a href="#cb28-19"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class=".column">
 <div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown code number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1"></a>:::: {.column width="50%"}</span>
 <span id="cb29-2"><a href="#cb29-2"></a></span>
 <span id="cb29-3"><a href="#cb29-3"></a>::: {.fragment}</span>
@@ -1020,13 +1043,15 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb29-15"><a href="#cb29-15"></a>::::</span>
 <span id="cb29-16"><a href="#cb29-16"></a></span>
 <span id="cb29-17"><a href="#cb29-17"></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="your-turn-2" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
-<li>Open <code>materials/workshop/05-presentation/fragments.qmd</code></li>
-<li>Make the portions appear in order: top -&gt; bottom and left -&gt; right</li>
+<li>Create a new presentation with RStudio&gt; New Quarto Presentation</li>
+<li>Create two columns with the <code>::: {.columns}</code> and use <code>.fragment</code> tags on the columns for incremental reveal of those columns</li>
 </ul>
 </section>
 <section id="images" class="slide level2">
@@ -1294,7 +1319,7 @@ They are placed above footnotes if footnotes are present on the page
 <aside><div>
 <pre><code>They are placed above footnotes if footnotes are present on the page</code></pre>
 </div><ol class="aside-footnotes"><li id="fn3" role="doc-endnote"><p>Unlike feet that at least have like a shoe size or something?</p></li></ol></aside></section></section>
-<section id="your-turn-3" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
+<section id="your-turn-4" class="title-slide slide level1 center" data-background-color="#447099" data-transition="slide-in">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:white;overflow:visible;position:relative;"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg> Your Turn</h1>
 <ul>
 <li>Create a new <code>revealjs</code> presentation</li>
@@ -1689,9 +1714,9 @@ They are placed above footnotes if footnotes are present on the page
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1920,
+        width: 1600,
 
-        height: 1080,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

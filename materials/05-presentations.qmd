@@ -2,8 +2,8 @@
 format: 
   revealjs:
     slide-number: c/t
-    width: 1920
-    height: 1080
+    width: 1600
+    height: 900
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]
@@ -51,6 +51,16 @@ countdown_timer <- function(
 }
 ```
 
+## `revealjs`
+
+> reveal.js is an open source HTML presentation framework. It's a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.
+
+. . .
+
+-   `revealjs` for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides
+
+-   User guide: <https://quarto.org/docs/presentations/revealjs/>
+
 ##  {background-image="images/quarto-slides.png" background-position="center" background-size="auto 50%"}
 
 . . .
@@ -72,16 +82,13 @@ countdown_timer <- function(
 
     ## Step 3
     - Profit
+    
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
-## `revealjs`
-
-> reveal.js is an open source HTML presentation framework. It's a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.
-
-. . .
-
--   `revealjs` for Quarto is a framework for turning Pandoc-friendly markdown + code into beautiful slides
-
--   User guide: <https://quarto.org/docs/presentations/revealjs/>
+-   Open `materials/workshop/05-presentations/revealjs-penguins.qmd`
+-   Explore the code
+-   Add a new slide with a level 2 header and some text
+-   Render it!
 
 ## YAML for these slides
 
@@ -89,8 +96,8 @@ countdown_timer <- function(
     format: 
       revealjs:
         slide-number: c/t
-        width: 1920
-        height: 1080
+        width: 1600
+        height: 900
         logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
         footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
         css: ["theme/theme.css"]
@@ -190,7 +197,7 @@ format:
     -   Add slide numbering (what do the different types mean?)
 -   Write out what you did this morning (woke up, ate breakfast, walked to this room, etc) in sub-sections
 -   New sections should have level 2 headers
--   Add some code to generate a basic plot using either the `palmerpenguins` dataset or `mtcars`
+-   Add a code chunk
 -   Link out to an image with markdown syntax
 -   Render it!
 
@@ -256,12 +263,24 @@ format:
 
 . . .
 
+Or turn it off for specific lists
+
     ::: {.nonincremental}
 
     - 1st Item
     - 2nd Item
 
     :::
+    
+## Incremental lists
+
+::: {.incremental}
+
+- First item
+- Second item
+- Last item
+
+:::
 
 ## Incremental reveal
 
@@ -403,12 +422,6 @@ Appears second
     Appears second
     :::
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Open `materials/workshop/05-presentations/revealjs-penguins.qmd`
--   Explore the code
--   Add a new slide with a set of fragments
--   Render it!
 
 ## Column layout
 
@@ -423,6 +436,11 @@ Appears second
     :::
 
     ::::
+    
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+- Open `materials/workshop/05-presentation/fragments.qmd`
+- Make the portions appear in order: top -> bottom and left -> right
 
 ## Column layout
 
@@ -560,6 +578,10 @@ head(mtcars)
 
 You _can_ nest `.incremental` + `.fragment` to get your expected behavior.
 
+::::.columns
+
+::: .column
+
 ```code
 ## Column Layout, arbitrary fragment
 
@@ -581,6 +603,11 @@ You _can_ nest `.incremental` + `.fragment` to get your expected behavior.
 
 ::::
 ```
+
+:::
+
+::: .column
+
 ````code
 :::: {.column width="50%"}
 
@@ -601,10 +628,13 @@ head(mtcars)
 :::::
 ````
 
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+:::
 
-- Open `materials/workshop/05-presentation/fragments.qmd`
-- Make the portions appear in order: top -> bottom and left -> right
+::::
+
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+- Create a new presentation with RStudio> New Quarto Presentation
+- Create two columns with the `::: {.columns}` and use `.fragment` tags on the columns for incremental reveal of those columns
 
 ## Images
 

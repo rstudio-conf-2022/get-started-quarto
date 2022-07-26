@@ -1,0 +1,15 @@
+---
+format: html
+---
+
+::: {layout-ncol="2"}
+![Excited](images/boston-terrier.png){width="250px"}
+
+![Sleeping](images/boston-sleep.png){width="250px"}
+
+![Still Excited](images/boston-terrier.png){width="250px"}
+
+![Still sleeping](images/boston-sleep.png){width="250px"}
+
+Two states of Howard, twice
+:::
