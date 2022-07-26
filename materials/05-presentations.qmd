@@ -422,6 +422,11 @@ Appears second
     Appears second
     :::
 
+    
+# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+
+- Open `materials/workshop/05-presentation/fragments.qmd`
+- Make the portions appear in order: top -> bottom and left -> right
 
 ## Column layout
 
@@ -436,11 +441,6 @@ Appears second
     :::
 
     ::::
-    
-# `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
-- Open `materials/workshop/05-presentation/fragments.qmd`
-- Make the portions appear in order: top -> bottom and left -> right
 
 ## Column layout
 

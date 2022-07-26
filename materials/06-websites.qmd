@@ -3,8 +3,8 @@ format:
   revealjs:
     scrollable: false
     slide-number: true
-    width: 1920
-    height: 1080
+    width: 1600
+    height: 900
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]

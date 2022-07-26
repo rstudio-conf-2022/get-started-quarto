@@ -373,8 +373,8 @@ This column takes 2/3 of the page
 ```
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-- Create a new Quarto doc
 - Try out the grid layout in the previous slide, modifying the `.g-col-8` to add up to a total of 12
+- Create a new Quarto doc
 
 
 ## Article Layout
