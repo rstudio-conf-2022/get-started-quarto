@@ -1,11 +1,3 @@
----
-format: html
-engine: knitr
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 ## Materials
 
 To access materials/slides, please visit:
